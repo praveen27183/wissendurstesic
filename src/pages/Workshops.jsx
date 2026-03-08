@@ -69,18 +69,11 @@ const Workshops = () => {
       {/* ── Hero / Header ── */}
       {!inDetail && (
         <>
-          <section
-            className="relative h-[40vh] md:h-[55vh] flex items-center justify-center bg-cover bg-center overflow-hidden"
-            style={{ backgroundImage: `url('https://images.unsplash.com/photo-1576091160550-217359f4ecf8?auto=format&fit=crop&q=80&w=1920&h=1080')` }}
-          >
-            <div className="absolute inset-0 bg-renaissance-dark/75"></div>
-            <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-              <h1 className="text-4xl sm:text-6xl md:text-8xl font-milanesa font-black text-[#FBF1CF] tracking-widest uppercase mb-4 drop-shadow-2xl">
-                WORKSHOPS
-              </h1>
-              <p className="text-sm md:text-base text-gray-300 mb-6 max-w-xl mx-auto leading-relaxed">
-                15 hands-on workshops across three days of the Renaissance academic experience.
-              </p>
+          <section className="w-full pt-20">
+            <div
+              className="relative w-full h-[30vh] md:h-[50vh] lg:h-[60vh] flex items-center justify-center bg-contain bg-center bg-no-repeat bg-[#1A0D0D]"
+              style={{ backgroundImage: `url('/Workshop.jpg')` }}
+            >
             </div>
           </section>
 
@@ -103,31 +96,47 @@ const Workshops = () => {
           </div>
 
           {/* ── Workshop Cards Grid ── */}
-          <section className="py-14 px-4">
-            <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <section className="py-16 px-4 sm:px-8 bg-[#0a0000]">
+
+            {/* Section Header */}
+            <div className="flex items-center justify-center max-w-7xl mx-auto mb-10">
+              <div className="h-[1px] bg-[#D4AF37]/50 flex-1 max-w-[150px] mr-4"></div>
+              <h2 className="text-[#D4AF37] font-bold tracking-[0.2em] uppercase text-sm md:text-base">Workshop Sessions</h2>
+              <div className="h-[1px] bg-[#D4AF37]/50 flex-1 max-w-[150px] ml-4"></div>
+            </div>
+
+            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
               {currentList.map((workshop, index) => (
                 <div
                   key={workshop.id}
-                  className="relative group overflow-hidden rounded-xl cursor-pointer shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-1"
-                  style={{ aspectRatio: '4/3' }}
+                  className="group flex flex-col bg-[#1c182d] cursor-pointer hover:-translate-y-1 transition-transform duration-300"
                   onClick={() => setDetailIndex(index)}
                 >
-                  <div
-                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                    style={{ backgroundImage: `url(${currentBgs[index % currentBgs.length]})` }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-                  {/* Bottom content */}
-                  <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <h4 className="text-xl sm:text-2xl font-milanesa font-black text-[#FBF1CF] uppercase tracking-tight leading-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]">
+                  {/* Image top half */}
+                  <div className="relative w-full aspect-video overflow-hidden">
+                    <div
+                      className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                      style={{ backgroundImage: `url(${currentBgs[index % currentBgs.length]})` }}
+                    />
+                  </div>
+
+                  {/* Text bottom half */}
+                  <div className="flex flex-col p-5 md:p-6 flex-1 border-t-2 border-[#1c182d]">
+                    <span className="text-[#D4AF37] text-[10px] md:text-xs font-black tracking-widest uppercase mb-2 block">
+                      Workshop
+                    </span>
+                    <h3
+                      className="text-white text-lg md:text-xl font-bold uppercase leading-tight mb-4 group-hover:text-[#FBF1CF] transition-colors"
+                      style={{ fontFamily: '"DM Serif Display", serif' }}
+                    >
                       {workshop.title}
-                    </h4>
-                    <p className="text-[10px] text-renaissance-gold/80 uppercase tracking-widest mt-0.5">
-                      {allDays.find(d => d.key === activeDay)?.label}
-                    </p>
-                    <button className="mt-3 px-5 py-1.5 bg-renaissance-gold text-renaissance-dark font-milanesa font-bold text-xs uppercase rounded tracking-widest hover:bg-[#FBF1CF] transition-all shadow-lg">
-                      See more
-                    </button>
+                    </h3>
+
+                    <div className="mt-auto pt-2 text-[#9fa0b8] text-[10px] md:text-xs">
+                      <span>by Wissendurst Staff</span>
+                      <span className="mx-2">|</span>
+                      <span>{allDays.find(d => d.key === activeDay)?.label}</span>
+                    </div>
                   </div>
                 </div>
               ))}

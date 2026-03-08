@@ -45,35 +45,47 @@ const Events = () => {
       </section>
 
       {/* ── Event Cards Grid ── */}
-      <section className="py-14 px-4 sm:px-8 bg-[#1a1008]">
-        <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <section className="py-16 px-4 sm:px-8 bg-[#0a0000]">
+
+        {/* Section Header */}
+        <div className="flex items-center justify-center max-w-7xl mx-auto mb-10">
+          <div className="h-[1px] bg-[#D4AF37]/50 flex-1 max-w-[150px] mr-4"></div>
+          <h2 className="text-[#D4AF37] font-bold tracking-[0.2em] uppercase text-sm md:text-base">Recent Events</h2>
+          <div className="h-[1px] bg-[#D4AF37]/50 flex-1 max-w-[150px] ml-4"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
           {events.map((event, index) => (
             <div
               key={event.id}
-              className="relative group overflow-hidden rounded-xl cursor-pointer shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-1"
-              style={{ aspectRatio: '4/3' }}
+              className="group flex flex-col bg-[#1c182d] cursor-pointer hover:-translate-y-1 transition-transform duration-300"
               onClick={() => setDetailIndex(index)}
             >
-              {/* Painting background */}
-              <div
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                style={{ backgroundImage: `url(${eventBackgrounds[index] || event.image})` }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+              {/* Image top half */}
+              <div className="relative w-full aspect-video overflow-hidden">
+                <div
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                  style={{ backgroundImage: `url(${eventBackgrounds[index] || event.image})` }}
+                />
+              </div>
 
-              {/* Bottom content */}
-              <div className="absolute bottom-0 left-0 right-0 p-4">
-                <h3 className="text-xl sm:text-2xl font-milanesa font-black text-[#FBF1CF] uppercase tracking-tight leading-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]">
+              {/* Text bottom half */}
+              <div className="flex flex-col p-5 md:p-6 flex-1 border-t-2 border-[#1c182d]">
+                <span className="text-[#D4AF37] text-[10px] md:text-xs font-black tracking-widest uppercase mb-2 block">
+                  Event
+                </span>
+                <h3
+                  className="text-white text-lg md:text-xl font-bold uppercase leading-tight mb-4 group-hover:text-[#FBF1CF] transition-colors"
+                  style={{ fontFamily: '"DM Serif Display", serif' }}
+                >
                   {event.title}
                 </h3>
-                {event.subtitle && (
-                  <p className="text-sm font-bold text-[#FBF1CF]/80 uppercase tracking-wide mt-0.5 drop-shadow-md">
-                    {event.subtitle}
-                  </p>
-                )}
-                <button className="mt-3 px-5 py-1.5 bg-renaissance-gold text-renaissance-dark font-milanesa font-bold text-xs uppercase rounded tracking-widest hover:bg-[#FBF1CF] transition-all shadow-lg">
-                  See more
-                </button>
+
+                <div className="mt-auto pt-2 text-[#9fa0b8] text-[10px] md:text-xs">
+                  <span>by Wissendurst Staff</span>
+                  <span className="mx-2">|</span>
+                  <span>{event.subtitle || '2026 Season'}</span>
+                </div>
               </div>
             </div>
           ))}
