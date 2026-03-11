@@ -7,10 +7,12 @@ import Events from './pages/Events';
 import Workshops from './pages/Workshops';
 import Registration from './pages/Registration';
 import FoodAccommodation from './pages/FoodAccommodation';
-import Offers from './pages/Offers';
 import About from './pages/About';
+import Contactus from './pages/Contactus';
 import IntroAnimation from './components/IntroAnimation';
 import Quizzes from './pages/Quizzes';
+import Academicevents from './pages/Academicevents';
+import Debateandoratory from './pages/Debateandoratory.jsx';
 
 // Scroll to top whenever the route changes
 const ScrollToTop = () => {
@@ -43,11 +45,13 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/events" element={<Events />} />
+              <Route path="/academicevents" element={<Academicevents />} />
+              <Route path="/debateandoratory" element={<Debateandoratory />} />
               <Route path="/workshops" element={<Workshops />} />
               <Route path="/registration" element={<Registration />} />
-              <Route path="/food-accommodation" element={<FoodAccommodation />} />
-              <Route path="/offers" element={<Offers />} />
+              <Route path="/foodaccommodation" element={<FoodAccommodation />} />
               <Route path="/aboutus" element={<About />} />
+              <Route path="/contact" element={<Contactus />} />
               <Route path="/quizzes" element={<Quizzes />} />
             </Routes>
           </main>

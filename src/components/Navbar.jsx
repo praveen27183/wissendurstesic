@@ -68,9 +68,9 @@ const Navbar = () => {
               <Link to="/quizzes" className={`text-[10px] xl:text-xs uppercase font-bold transition ${isActive('/quizzes') ? 'text-[#FBF1CF]' : 'text-[#D4AF37]/80 hover:text-[#FBF1CF]'}`}>Quizzes</Link>
               <Link to="/workshops" className={`text-[10px] xl:text-xs uppercase font-bold transition ${isActive('/workshops') ? 'text-[#FBF1CF]' : 'text-[#D4AF37]/80 hover:text-[#FBF1CF]'}`}>Workshops</Link>
               <Link to="/events" className={`text-[10px] xl:text-xs uppercase font-bold transition ${isActive('/events') ? 'text-[#FBF1CF]' : 'text-[#D4AF37]/80 hover:text-[#FBF1CF]'}`}>Events</Link>
-              <Link to="/academic-events" className={`text-[10px] xl:text-xs uppercase font-bold transition whitespace-nowrap ${isActive('/academic-events') ? 'text-[#FBF1CF]' : 'text-[#D4AF37]/80 hover:text-[#FBF1CF]'}`}>Academic Events</Link>
-              <Link to="/debate-and-oratory-forum" className={`text-[10px] xl:text-xs uppercase font-bold transition whitespace-nowrap ${isActive('/debate-and-oratory-forum') ? 'text-[#FBF1CF]' : 'text-[#D4AF37]/80 hover:text-[#FBF1CF]'}`}>Debate Forum</Link>
-              <Link to="/food-accommodation" className={`text-[10px] xl:text-xs uppercase font-bold transition whitespace-nowrap ${isActive('/food-accommodation') ? 'text-[#FBF1CF]' : 'text-[#D4AF37]/80 hover:text-[#FBF1CF]'}`}>Food & Accomm.</Link>
+              <Link to="/academicevents" className={`text-[10px] xl:text-xs uppercase font-bold transition whitespace-nowrap ${isActive('/academicevents') ? 'text-[#FBF1CF]' : 'text-[#D4AF37]/80 hover:text-[#FBF1CF]'}`}>Academic Events</Link>
+              <Link to="/debateandoratory" className={`text-[10px] xl:text-xs uppercase font-bold transition whitespace-nowrap ${isActive('/debateandoratory') ? 'text-[#FBF1CF]' : 'text-[#D4AF37]/80 hover:text-[#FBF1CF]'}`}>Debate Forum</Link>
+              <Link to="/foodaccommodation" className={`text-[10px] xl:text-xs uppercase font-bold transition whitespace-nowrap ${isActive('/foodaccommodation') ? 'text-[#FBF1CF]' : 'text-[#D4AF37]/80 hover:text-[#FBF1CF]'}`}>Food & Accomm.</Link>
               <Link to="/aboutus" className={`text-[10px] xl:text-xs uppercase font-bold transition whitespace-nowrap ${isActive('/aboutus') ? 'text-[#FBF1CF]' : 'text-[#D4AF37]/80 hover:text-[#FBF1CF]'}`}>About Us</Link>
               <Link to="/contact" className={`text-[10px] xl:text-xs uppercase font-bold transition whitespace-nowrap ${isActive('/contact') ? 'text-[#FBF1CF]' : 'text-[#D4AF37]/80 hover:text-[#FBF1CF]'}`}>Contact Us</Link>
             </div>
@@ -126,10 +126,11 @@ const Navbar = () => {
           <div className="grid grid-cols-2 gap-x-12 gap-y-6 w-full pt-10 pl-6">
             <Link to="/registration" onClick={() => setIsOpen(false)} className="font-title text-xl text-gray-300 hover:text-white transition-colors underline underline-offset-4 decoration-1" style={{ fontFamily: '"DM Serif Display", serif' }}>Registration</Link>
             <Link to="/workshops" onClick={() => setIsOpen(false)} className="font-title text-xl text-gray-300 hover:text-white transition-colors underline underline-offset-4 decoration-1" style={{ fontFamily: '"DM Serif Display", serif' }}>Workshops</Link>
-            <Link to="/academic-events" onClick={() => setIsOpen(false)} className="font-title text-xl text-gray-300 hover:text-white transition-colors underline underline-offset-4 decoration-1" style={{ fontFamily: '"DM Serif Display", serif' }}>Academic</Link>
+            <Link to="/academicevents" onClick={() => setIsOpen(false)} className="font-title text-xl text-gray-300 hover:text-white transition-colors underline underline-offset-4 decoration-1" style={{ fontFamily: '"DM Serif Display", serif' }}>Academic</Link>
             <Link to="/quizzes" onClick={() => setIsOpen(false)} className="font-title text-xl text-gray-300 hover:text-white transition-colors underline underline-offset-4 decoration-1" style={{ fontFamily: '"DM Serif Display", serif' }}>Quizzes</Link>
-            <Link to="/debate-and-oratory-forum" onClick={() => setIsOpen(false)} className="font-title text-xl text-gray-300 hover:text-white transition-colors underline underline-offset-4 decoration-1" style={{ fontFamily: '"DM Serif Display", serif' }}>Debate Forum</Link>
+            <Link to="/debateandoratory" onClick={() => setIsOpen(false)} className="font-title text-xl text-gray-300 hover:text-white transition-colors underline underline-offset-4 decoration-1" style={{ fontFamily: '"DM Serif Display", serif' }}>Debate Forum</Link>
             <Link to="/contact" onClick={() => setIsOpen(false)} className="font-title text-xl text-gray-300 hover:text-white transition-colors underline underline-offset-4 decoration-1" style={{ fontFamily: '"DM Serif Display", serif' }}>Contact us</Link>
+            <Link to="/foodaccommodation" onClick={() => setIsOpen(false)} className="font-title text-xl text-gray-300 hover:text-white transition-colors underline underline-offset-4 decoration-1" style={{ fontFamily: '"DM Serif Display", serif' }}>Food & Accommodation</Link>
           </div>
         </div>
       </div>

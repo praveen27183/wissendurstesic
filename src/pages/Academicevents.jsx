@@ -1,0 +1,476 @@
+import { useState } from 'react';
+import { ChevronLeft, ChevronRight, Clock, Calendar, X, ChevronDown, CheckCircle2 } from 'lucide-react';
+
+const academicEvents = [
+    {
+        id: 1,
+        title: "Bloodlines: The Hematology Showcase",
+        subtitle: "Pathology Poster Presentation",
+        date: "28.04.2026 (Tuesday)",
+        image: "https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&q=80&w=1280",
+        description: "Coursing through the vascular system is a dynamic and intricate stream of countless entities... Participants are formally invited to present rare, unusual, and diagnostically challenging hematological cases.",
+        sections: [
+            {
+                title: "Subject Details",
+                items: ["Diagnostic reasoning, clarity, and pathological correlation will be key judging criteria."]
+            },
+            {
+                title: "General Instructions",
+                items: [
+                    "Maximum 2 per team, individual participation allowed.",
+                    "Eligibility: All MBBS students including CRMI.",
+                    "Team members must belong to the same college.",
+                    "Only one submission per team. The same participant should not be associated with multiple teams."
+                ]
+            },
+            {
+                title: "Instructions for Abstract",
+                items: [
+                    "Font size: 12, Font style: Times New Roman, Line spacing: 1.5, Font colour: Black (only).",
+                    "Word limit: 600 words (excluding References and Title.)",
+                    "Must include: History, Salient Examination Finding, Differential Diagnosis, Investigations (special emphasis on gross & microscopic features), Final/Provisional diagnosis, Management, Case relevance.",
+                    "Must not include personal details of patient and participant in the abstract.",
+                    "Ensure that the cases are original and treated at your institution.",
+                    "Abstract file must be named: Pathology Poster_Title in WORD (.docx) format (max 10MB).",
+                    "Plagiarism or malpractice of any form is strictly prohibited and will lead to direct disqualification.",
+                    "Last date for submission: 23.03.2026"
+                ]
+            },
+            {
+                title: "Finals Instructions",
+                items: [
+                    "Date: 28.04.2026 (Tuesday)",
+                    "Top 10 abstracts will be selected for finals",
+                    "Mode of Presentation: Poster (3x4 ft, Landscape or portrait)",
+                    "Time for Presentation: 5 minutes presentation and 3 minutes discussion.",
+                    "Judging Criteria will be announced 3 days before Finals."
+                ]
+            },
+            {
+                title: "Incharges",
+                items: [
+                    "Eshita Sudhakar - 88380 29901",
+                    "Diya Vinod- +91 87781 25205"
+                ]
+            }
+        ]
+    },
+    {
+        id: 2,
+        title: "Into the Pharmaverse",
+        subtitle: "Pharmacology Poster Presentation",
+        date: "28.04.2026 (Tuesday)",
+        image: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&q=80&w=1280",
+        description: "Participants are invited to present posters that distill and simplify key concepts, offering clarity and insight into the evolving landscape of contemporary neo-pharmacology.",
+        sections: [
+            {
+                title: "Topics",
+                items: [
+                    "Topic 1: Does one size fit all?- Exploring Pharmacogenomics",
+                    "Topic 2: AI in Drug discovery & ADR monitoring",
+                    "Topic 3: Bugs as drugs- Role of gut microbiome in drug therapy",
+                    "Topic 4: Drug repurposing",
+                    "Topic 5: Nutraceuticals & its safety concerns"
+                ]
+            },
+            {
+                title: "General Instructions",
+                items: [
+                    "Maximum 2 per team, individual participation allowed.",
+                    "Eligibility: All MBBS students excluding CRMI.",
+                    "Team members must belong to the same college."
+                ]
+            },
+            {
+                title: "Poster Instructions",
+                items: [
+                    "No preliminary round. All participants can present (if >15, top 10 shortlisted).",
+                    "Poster size: 3x4 ft, Landscape or portrait.",
+                    "References must be added.",
+                    "Time for Presentation: 4 minutes presentation and 3 minutes discussion.",
+                    "File size must be submitted in PDF format, file named: Pharmacology Poster_Title.",
+                    "Late date of submission: 01.04.2026"
+                ]
+            },
+            {
+                title: "Incharges",
+                items: [
+                    "Eshita Sudhakar - 88380 29901",
+                    "Diya Vinod- +91 87781 25205"
+                ]
+            }
+        ]
+    },
+    {
+        id: 3,
+        title: "Classified: Casefiles of 1983",
+        subtitle: "Case Presentation",
+        date: "30.04.2026 (Thursday)",
+        image: "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&q=80&w=1280",
+        description: "When textbook rarities come alive in the wards through uncommon presentations, they become lessons beyond the pages. Participants are encouraged to present rare and noteworthy clinical cases.",
+        sections: [
+            {
+                title: "Subjects",
+                items: ["General Medicine", "General Surgery", "Paediatrics", "Obstetrics and Gynaecology"]
+            },
+            {
+                title: "General Instructions",
+                items: [
+                    "Maximum 2 per team, individual participation allowed.",
+                    "Eligibility: 2nd year to CRMI.",
+                    "Cross College teams not allowed.",
+                    "Multiple Entries in the same subject are not allowed.",
+                    "The same participant should not be associated with multiple teams in the same subject."
+                ]
+            },
+            {
+                title: "Instructions for Abstract",
+                items: [
+                    "Word limit: 700 words (excluding References and Title).",
+                    "Must include: History, Salient Examination Findings, Differential Diagnosis, Investigations, Final/Provisional diagnosis, Management, Case relevance.",
+                    "Abstract file must be named: Subject_Title in WORD (.docx).",
+                    "Last date for submission: 23-03-2026 (Monday)"
+                ]
+            },
+            {
+                title: "Instructions for Finals",
+                items: [
+                    "Date: 30.04.2026 (Thursday)",
+                    "Top 10 abstracts will be selected for finals.",
+                    "Method of presentation: Oral (Total 10 minutes: 7 min presentation, 3-5 min discussion).",
+                    "Presentation limited to 20 slides."
+                ]
+            },
+            {
+                title: "Incharges",
+                items: [
+                    "Surgery: Dhanyaa Sai A - 9790743116",
+                    "Medicine: Diya Vinod - 87781 25205",
+                    "Paeds: Kavya DK- 6369185992",
+                    "OBG: Niranjana Natesan- 9445244014"
+                ]
+            }
+        ]
+    },
+    {
+        id: 4,
+        title: "Signals in the Static",
+        subtitle: "The Scientific Symposium",
+        date: "29.04.2026 (Wednesday)",
+        image: "https://images.unsplash.com/photo-1540317580384-e5d43616b9aa?auto=format&fit=crop&q=80&w=1280",
+        description: "In a profession where rote memorization holds little value, true understanding lies in conceptual clarity. We invite participants to bring challenging medical topics to life through innovative teaching methods.",
+        sections: [
+            {
+                title: "General Instructions",
+                items: [
+                    "Subjects: General Medicine, General Surgery.",
+                    "Eligibility: All MBBS students including CRMI.",
+                    "Number of participants: 3 to 6 per team. (Only 1 CRMI per team allowed).",
+                    "Cross College teams are not allowed."
+                ]
+            },
+            {
+                title: "Instructions for Abstract",
+                items: [
+                    "Summary word limit: 750 words.",
+                    "Must include: Subject, Title, Objective, List of subtopics covered, Summary, Teaching AIDS used, References.",
+                    "Last date for submission: 23-03-2026 (Monday)"
+                ]
+            },
+            {
+                title: "Instructions for Finals",
+                items: [
+                    "Date: 29-04-2026 (Wednesday)",
+                    "Top 6 selected teams must present their symposium.",
+                    "Mode of Presentation: Oral (Each team given 15 mins for presentation and 5-7 mins discussion).",
+                    "Evaluation based on: Choice of Topic, Novelty of Teaching Method, Clarity on Topic, Answer during Discussion."
+                ]
+            },
+            {
+                title: "Incharges",
+                items: [
+                    "Surgery symposium: Eshita Sudhakar- 88380 29901",
+                    "Medicine Symposium: Diya Vinod-+91 87781 25205"
+                ]
+            }
+        ]
+    },
+    {
+        id: 5,
+        title: "The Hawkins Hypothesis",
+        subtitle: "Research Protocol Presentation",
+        date: "29.04.2026 (Wednesday)",
+        image: "https://images.unsplash.com/photo-1532187863486-abf9db0c20a5?auto=format&fit=crop&q=80&w=1280",
+        description: "An idea holds potential, but a protocol gives it direction. It challenges minds to transform concepts into clear, structured plans where precision, feasibility, and vision shape the foundation of impactful research.",
+        sections: [
+            {
+                title: "General Instructions",
+                items: [
+                    "Maximum 2 per team, individual participation allowed.",
+                    "Eligibility: 1st year to CRMI.",
+                    "Cross College teams are allowed.",
+                    "The participant should NOT have commenced work on the project yet."
+                ]
+            },
+            {
+                title: "Instructions for Abstract",
+                items: [
+                    "Word limit: 350 words (excluding References and Title).",
+                    "Must include: Title, Background & Objectives, Methodology, Implications, References (5 to 7).",
+                    "Must submit the attestation form signed by HOD and faculty guide.",
+                    "Last Date for submission : 23-04-2026"
+                ]
+            },
+            {
+                title: "Instructions for Finals",
+                items: [
+                    "Date: 29.04.2026 (Wednesday)",
+                    "Top 10 abstracts selected for finals.",
+                    "Method of presentation: Oral (PowerPoint slideshow).",
+                    "Total 10 minutes: 7 minutes presentation and 3-5 minutes discussion.",
+                    "Presentation limited to 20 slides."
+                ]
+            },
+            {
+                title: "Incharges",
+                items: [
+                    "Safika Roselin R - +91 7708396669",
+                    "Dhanyaa Sai A - 9790743116"
+                ]
+            }
+        ]
+    },
+    {
+        id: 6,
+        title: "The Null Zone",
+        subtitle: "Research Poster Presentation",
+        date: "29.04.2026 (Tuesday)",
+        image: "https://images.unsplash.com/photo-1555421689-d68471e189f2?auto=format&fit=crop&q=80&w=1280",
+        description: "An idea sparks innovation, but research gives it power. Research celebrates curiosity, critical thinking, and evidence where questions evolve into discoveries and ideas stand strong on data.",
+        sections: [
+            {
+                title: "General Instructions",
+                items: [
+                    "Maximum 2 per team, individual participation allowed.",
+                    "Eligibility: 1st year to CRMI.",
+                    "Cross College teams are allowed.",
+                    "Participants are allowed to submit only completed original research projects and systematic review & meta-analysis projects."
+                ]
+            },
+            {
+                title: "Instructions for Abstract",
+                items: [
+                    "Word limit: 350 words max.",
+                    "Must include: Title, Background & Objectives, Methodology, Results, Conclusion, References (5 to 7).",
+                    "It is mandatory to attach the IEC approval along with the Attestation form at the time of submission.",
+                    "Last Date for submission : 23-04-2026"
+                ]
+            },
+            {
+                title: "Instructions for Finals",
+                items: [
+                    "Date: 29.04.2026 (Tuesday)",
+                    "Top 10 abstracts selected for finals.",
+                    "Mode of Presentation: Poster (3x4 ft, Landscape or portrait).",
+                    "Time for Presentation: 6 minutes presentation and 3 minutes discussion."
+                ]
+            },
+            {
+                title: "Incharges",
+                items: [
+                    "Diya Vinod - 87781 25205",
+                    "Rashmika T - 7358665375"
+                ]
+            }
+        ]
+    }
+];
+
+const Academicevents = () => {
+    const [detailIndex, setDetailIndex] = useState(null);
+
+    const inDetail = detailIndex !== null;
+    const detailEvent = inDetail ? academicEvents[detailIndex] : null;
+    const detailBg = inDetail ? detailEvent.image : null;
+
+    const prev = () => setDetailIndex(i => (i - 1 + academicEvents.length) % academicEvents.length);
+    const next = () => setDetailIndex(i => (i + 1) % academicEvents.length);
+
+    return (
+        <div className="min-h-screen font-body bg-renaissance-dark text-[#FBF1CF]">
+
+            {/* ── Hero ── */}
+            <section
+                className="relative h-[42vh] md:h-[55vh] flex items-center justify-center bg-cover bg-center overflow-hidden"
+                style={{ backgroundImage: `url('https://images.unsplash.com/photo-1511174511562-5f7f18b874f8?auto=format&fit=crop&q=80&w=1920')` }}
+            >
+                <div className="absolute inset-0 bg-black/65 backdrop-blur-[1px]" />
+                <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+                    <h1 className="text-4xl sm:text-6xl md:text-7xl font-milanesa font-black text-transparent bg-clip-text bg-gradient-to-r from-[#FBF1CF] via-renaissance-gold to-[#FBF1CF] tracking-[0.1em] uppercase mb-4 drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)]">
+                        PRESENTATION EVENTS
+                    </h1>
+                    <p className="text-sm md:text-lg text-renaissance-cream/80 mb-8 max-w-2xl mx-auto leading-relaxed">
+                        Academic showcases exploring hematology, pharmacology, rare clinical cases, and impactful research studies through structured posters, symposiums, and oral protocols.
+                    </p>
+                </div>
+            </section>
+
+            {/* ── Event Cards Grid ── */}
+            <section className="py-16 px-4 sm:px-8 bg-[#0a0000]">
+
+                {/* Section Header */}
+                <div className="flex items-center justify-center max-w-7xl mx-auto mb-10">
+                    <div className="h-[1px] bg-[#D4AF37]/50 flex-1 max-w-[150px] mr-4"></div>
+                    <h2 className="text-[#D4AF37] font-bold tracking-[0.2em] font-title uppercase text-sm md:text-base">Events Lineup</h2>
+                    <div className="h-[1px] bg-[#D4AF37]/50 flex-1 max-w-[150px] ml-4"></div>
+                </div>
+
+                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                    {academicEvents.map((event, index) => (
+                        <div
+                            key={event.id}
+                            className="group flex flex-col bg-[#1c182d] border border-renaissance-gold/20 rounded-xl overflow-hidden cursor-pointer hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(212,175,55,0.15)] transition-all duration-300"
+                            onClick={() => setDetailIndex(index)}
+                        >
+                            <div className="relative w-full aspect-video overflow-hidden">
+                                <div
+                                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                                    style={{ backgroundImage: `url(${event.image})` }}
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#1c182d] to-transparent"></div>
+                            </div>
+
+                            <div className="flex flex-col p-6 flex-1 bg-[#140c07] border-t border-renaissance-gold/20">
+                                <span className="text-[#D4AF37] text-[10px] md:text-xs font-black tracking-widest uppercase mb-2 block font-title">
+                                    {event.subtitle}
+                                </span>
+                                <h3 className="text-white text-xl md:text-2xl font-black uppercase leading-tight mb-4 group-hover:text-[#FBF1CF] transition-colors font-milanesa">
+                                    {event.title}
+                                </h3>
+
+                                <div className="mt-auto pt-4 flex items-center justify-between border-t border-white/5 text-[#9fa0b8] text-[10px] md:text-xs uppercase tracking-widest font-title font-bold">
+                                    <span className="flex items-center gap-2"><Calendar className="w-3.5 h-3.5 text-renaissance-gold" /> {event.date.split(' ')[0]}</span>
+                                    <span className="text-renaissance-gold/50 flex items-center gap-1 group-hover:text-renaissance-gold transition-colors">Details <ChevronRight className="w-3 h-3" /></span>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </section>
+
+            {/* ── Detail Overlay ── */}
+            {inDetail && detailEvent && (
+                <div className="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl flex flex-col overflow-hidden">
+
+                    {/* Mobile top back bar */}
+                    <div className="flex md:hidden items-center justify-between px-4 py-4 bg-[#100c06] border-b border-renaissance-gold/20 shrink-0 z-30">
+                        <button
+                            onClick={() => setDetailIndex(null)}
+                            className="flex items-center gap-2 text-renaissance-gold font-bold uppercase tracking-widest text-sm"
+                        >
+                            <ChevronLeft className="w-5 h-5" /> Back
+                        </button>
+                        <span className="text-renaissance-cream/50 text-xs font-title">{detailIndex + 1} / {academicEvents.length}</span>
+                    </div>
+
+                    {/* Inner split */}
+                    <div className="flex flex-col md:flex-row flex-1 overflow-hidden">
+
+                        {/* LEFT: Full painting & Controls */}
+                        <div className="relative w-full md:w-2/5 h-[30vh] md:h-full shrink-0 border-r border-renaissance-gold/20">
+                            <div
+                                className="absolute inset-0 bg-cover bg-center"
+                                style={{ backgroundImage: `url(${detailBg})` }}
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-black via-black/40 to-transparent" />
+
+                            {/* Desktop Details & Controls */}
+                            <div className="hidden md:flex absolute inset-0 flex-col justify-end p-10 pb-20">
+                                <span className="text-renaissance-gold text-xs font-black tracking-[0.3em] uppercase mb-4 block">{detailEvent.subtitle}</span>
+                                <h2 className="text-4xl lg:text-5xl font-milanesa font-black uppercase text-[#FBF1CF] leading-tight drop-shadow-xl mb-8">
+                                    {detailEvent.title}
+                                </h2>
+
+                                <div className="flex gap-4">
+                                    <button onClick={prev} className="w-12 h-12 rounded-full bg-black/50 border border-renaissance-gold/30 flex items-center justify-center text-renaissance-gold hover:bg-renaissance-gold hover:text-black transition-all group backdrop-blur-sm">
+                                        <ChevronLeft className="w-6 h-6 group-hover:-translate-x-1 transition-transform" />
+                                    </button>
+                                    <button onClick={next} className="w-12 h-12 rounded-full bg-black/50 border border-renaissance-gold/30 flex items-center justify-center text-renaissance-gold hover:bg-renaissance-gold hover:text-black transition-all group backdrop-blur-sm">
+                                        <ChevronRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* RIGHT: Detail content & Extensive Sections */}
+                        <div className="flex-1 overflow-y-auto bg-[#0a0604] relative">
+                            {/* Desktop close button */}
+                            <button
+                                onClick={() => setDetailIndex(null)}
+                                className="hidden md:flex fixed top-8 right-8 z-30 w-12 h-12 rounded-full bg-renaissance-dark/80 border border-renaissance-gold/40 items-center justify-center text-renaissance-gold hover:bg-renaissance-gold hover:text-black transition-all shadow-[0_0_15px_rgba(212,175,55,0.2)]"
+                            >
+                                <X className="w-5 h-5" />
+                            </button>
+
+                            <div className="p-6 sm:p-8 md:p-12 lg:p-16 max-w-4xl mx-auto">
+                                <div className="md:hidden mb-6 border-b border-renaissance-gold/20 pb-6">
+                                    <h2 className="text-3xl font-milanesa font-black uppercase tracking-wide text-[#FBF1CF] leading-tight mb-2">
+                                        {detailEvent.title}
+                                    </h2>
+                                    <p className="text-renaissance-gold font-bold font-title uppercase tracking-[0.1em] text-xs">
+                                        {detailEvent.subtitle}
+                                    </p>
+                                </div>
+
+                                <div className="flex flex-wrap gap-4 mb-8 text-renaissance-gold text-sm font-bold tracking-widest uppercase bg-renaissance-gold/10 inline-flex px-5 py-2.5 rounded-full border border-renaissance-gold/30 shadow-md">
+                                    <span className="flex items-center gap-2"><Calendar className="w-4 h-4" /> {detailEvent.date}</span>
+                                </div>
+
+                                <p className="text-renaissance-cream/90 leading-relaxed text-base md:text-lg font-light mb-12 italic border-l-4 border-renaissance-gold pl-6 py-2 bg-gradient-to-r from-white/5 to-transparent">
+                                    {detailEvent.description}
+                                </p>
+
+                                {/* Info Sections Stack */}
+                                <div className="space-y-8">
+                                    {detailEvent.sections.map((section, idx) => (
+                                        <div key={idx} className="bg-white/[0.03] border border-white/5 rounded-2xl p-6 md:p-8">
+                                            <h4 className="text-lg font-bold text-renaissance-gold uppercase tracking-[0.15em] mb-6 flex items-center justify-between border-b border-white/10 pb-4">
+                                                {section.title}
+                                            </h4>
+                                            <ul className="space-y-4">
+                                                {section.items.map((item, itemIdx) => (
+                                                    <li key={itemIdx} className="flex gap-4 items-start text-sm md:text-base text-[#FBF1CF]/80 leading-relaxed">
+                                                        <CheckCircle2 className="w-5 h-5 text-renaissance-gold/50 shrink-0 mt-0.5" />
+                                                        <span>{item}</span>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    ))}
+                                </div>
+
+                                <div className="mt-12 pt-8 border-t border-renaissance-gold/20 flex justify-center">
+                                    <button className="px-10 py-4 bg-renaissance-gold text-black rounded-full font-title font-black uppercase tracking-widest hover:scale-105 hover:bg-white transition-all shadow-[0_0_30px_rgba(212,175,55,0.3)] flex items-center gap-3">
+                                        Register For {detailEvent.subtitle.split(' ')[0]}
+                                    </button>
+                                </div>
+
+                                {/* Mobile arrows */}
+                                <div className="flex md:hidden items-center justify-between mt-12 mb-4 bg-black/40 p-4 rounded-2xl border border-white/5">
+                                    <button onClick={prev} className="flex items-center gap-2 px-5 py-2.5 border border-renaissance-gold/40 text-renaissance-gold text-sm font-bold uppercase tracking-widest rounded-full hover:bg-renaissance-gold hover:text-black transition-all">
+                                        <ChevronLeft className="w-4 h-4" /> Prev
+                                    </button>
+                                    <button onClick={next} className="flex items-center gap-2 px-5 py-2.5 border border-renaissance-gold/40 text-renaissance-gold text-sm font-bold uppercase tracking-widest rounded-full hover:bg-renaissance-gold hover:text-black transition-all">
+                                        Next <ChevronRight className="w-4 h-4" />
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
+        </div>
+    );
+};
+
+export default Academicevents;

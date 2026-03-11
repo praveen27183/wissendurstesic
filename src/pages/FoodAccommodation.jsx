@@ -1,128 +1,225 @@
-import { UtensilsCrossed, Hotel } from 'lucide-react';
+import { UtensilsCrossed, Hotel } from "lucide-react";
 
 const FoodAccommodation = () => {
-  const listStyle = "flex items-start gap-3 mb-4 text-sm md:text-base leading-relaxed pl-2 relative";
-  const dotStyle = "mt-2.5 w-1.5 h-1.5 bg-renaissance-gold rounded-full flex-shrink-0";
+  const listStyle =
+    "flex items-start gap-3 text-sm md:text-base leading-relaxed";
+  const dotStyle =
+    "mt-2 w-2 h-2 bg-renaissance-gold rounded-full flex-shrink-0";
 
   return (
-    <div className="min-h-screen font-body bg-white text-renaissance-dark">
-      {/* Hero Section */}
+    <div className="min-h-screen w-full bg-[#1b120c] text-[#FBF1CF] font-body overflow-x-hidden">
+
+      {/* HERO */}
       <section
-        className="relative h-[60vh] flex items-center justify-center bg-cover bg-center overflow-hidden"
-        style={{ backgroundImage: `url('https://images.unsplash.com/photo-1544967082-d9d25d867d66?auto=format&fit=crop&q=80&w=1920&h=1080')`, backgroundAttachment: 'fixed' }}
+        className="relative min-h-[70vh] flex items-center justify-center bg-cover bg-center"
+        style={{
+          backgroundImage:
+            "url(https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?q=80&w=2070)",
+        }}
       >
-        <div className="absolute inset-0 bg-renaissance-dark/65"></div>
-        <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
-          <h1 className="text-6xl md:text-7xl font-title font-black text-white tracking-[0.05em] uppercase mb-8 leading-tight">
-            FOOD AND ACCOMMODATION
+        <div className="absolute inset-0 bg-black/75"></div>
+
+        <div className="relative z-10 text-center px-6 max-w-6xl">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-milanesa font-black tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-[#FBF1CF] via-renaissance-gold to-[#FBF1CF]">
+            FOOD & ACCOMMODATION
           </h1>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-2 bg-renaissance-burgundy text-renaissance-gold border border-renaissance-gold rounded-full font-title font-bold uppercase text-xs hover:bg-renaissance-gold hover:text-renaissance-burgundy transition-all">
-              AVAIL FOOD
-            </button>
-            <button className="px-8 py-2 bg-renaissance-burgundy text-renaissance-gold border border-renaissance-gold rounded-full font-title font-bold uppercase text-xs hover:bg-renaissance-gold hover:text-renaissance-burgundy transition-all">
-              AVAIL ACCOMMODATION
-            </button>
-          </div>
+
+          <p className="mt-6 text-sm md:text-lg text-[#FBF1CF]/80 max-w-2xl mx-auto">
+            Essential information about meals and stay arrangements during
+            Wissendurst 2026.
+          </p>
         </div>
       </section>
 
-      {/* Main Content Sections */}
-      <section className="py-24 px-4">
-        <div className="max-w-4xl mx-auto space-y-32">
+      {/* MAIN CONTENT */}
+      <section
+        className="py-16 md:py-24 px-5 relative"
+      >
+        <div className="absolute inset-0 bg-[#1b120c]/80 -z-10 bg-[url('https://www.transparenttextures.com/patterns/staged-paper.png')] mix-blend-overlay opacity-30"></div>
+        <div className="max-w-6xl mx-auto space-y-20 relative z-10">
 
-          {/* Food Section */}
-          <div className="relative p-1 border-4 border-renaissance-gold/20">
-            <div className="bg-white p-10 md:p-16 relative">
-              <div className="flex items-center justify-between mb-12">
-                <h2 className="text-5xl md:text-6xl font-title font-black tracking-tighter">FOOD</h2>
-                <div className="flex gap-4 items-center">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Mani%27s_Dum_Biryani_logo.png/150px-Mani%27s_Dum_Biryani_logo.png" alt="Mani's Logo" className="h-10 opacity-70 grayscale" />
-                  <div className="h-10 w-24 bg-gray-100 flex items-center justify-center font-bold text-gray-400 text-xs italic">ADB Logo</div>
-                </div>
+          {/* FOOD SECTION */}
+          <div className="bg-[#140c07] border border-renaissance-gold/30 rounded-2xl shadow-xl p-6 md:p-12 relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-96 h-96 bg-renaissance-gold/5 rounded-full blur-3xl pointer-events-none -translate-y-1/2 -translate-x-1/2"></div>
+
+            <div className="relative z-10">
+              <div className="flex items-center justify-between mb-10 border-b border-renaissance-gold/20 pb-6">
+                <h2 className="text-3xl md:text-5xl font-milanesa font-black text-transparent bg-clip-text bg-gradient-to-r from-renaissance-gold to-[#FBF1CF]">
+                  FOOD
+                </h2>
+
+                <UtensilsCrossed className="text-renaissance-gold w-8 h-8 md:w-10 md:h-10" />
               </div>
 
-              <div className="space-y-2 mb-12 italic">
+              {/* FOOD INFO */}
+              <div className="space-y-4 mb-10">
+
                 <div className={listStyle}>
                   <div className={dotStyle}></div>
-                  Lunch will be made available on all 3 days within the college campus.
+                  Lunch will be available on all 3 days inside the college campus.
                 </div>
+
                 <div className={listStyle}>
                   <div className={dotStyle}></div>
-                  Both vegetarian and non-vegetarian options will be available. (<a href="#" className="text-renaissance-gold font-bold underline">Click here</a> to view the menu)
+                  Lunch is included only for the MUN event registration.
                 </div>
+
                 <div className={listStyle}>
                   <div className={dotStyle}></div>
-                  Timings : <span className="font-bold text-renaissance-burgundy">12 PM to 2 PM</span>
+                  Both vegetarian and non-vegetarian options are available.
+                </div>
+
+                <div className={listStyle}>
+                  <div className={dotStyle}></div>
+                  Lunch Timing :{" "}
+                  <span className="text-renaissance-gold font-bold ml-2">
+                    12:00 PM – 2:00 PM
+                  </span>
                 </div>
               </div>
 
-              <div className="grid md:grid-cols-[1fr_200px] gap-8 items-end">
-                <div className="space-y-4 text-sm">
-                  <p className={listStyle}>
-                    <div className={dotStyle}></div>
-                    Cost: <span className="text-renaissance-gold font-bold mx-2">Vegetarian:</span> Rs. <span className="font-black text-lg">240/-</span> per person per day
-                  </p>
-                  <p className={listStyle + " pl-10"}>
-                    <span className="text-renaissance-gold font-bold mx-2">Non Vegetarian:</span> Rs. <span className="font-black text-lg">260/-</span> per person per day
-                  </p>
-                  <p className={listStyle + " mt-8 opacity-70"}>
-                    <div className={dotStyle}></div>
-                    On successful completion of payment and submission of google form, a food token can be collected on the day of the event.
-                  </p>
+              {/* Menu Grid */}
+              <div className="grid lg:grid-cols-2 gap-8 mb-16">
+
+                {/* Vegetarian Menu */}
+                <div className="bg-[#1b120c]/80 border border-green-800/20 rounded-2xl p-6 md:p-8 shadow-lg hover:border-green-800/40 transition-colors backdrop-blur-sm relative overflow-hidden group">
+                  <div className="absolute inset-0 bg-green-900/5 group-hover:bg-green-900/10 transition-colors"></div>
+                  <div className="relative z-10">
+                    <div className="flex justify-between items-center mb-8 border-b border-green-800/20 pb-4">
+                      <h3 className="text-2xl font-black text-green-500 uppercase tracking-widest font-title">Vegetarian</h3>
+                      <p className="bg-green-900/30 text-green-400 border border-green-800/30 font-black px-4 py-2 rounded-full text-lg shadow-sm">₹ 250 <span className="text-[10px] uppercase tracking-widest font-medium opacity-80">/day</span></p>
+                    </div>
+
+                    <div className="space-y-6">
+                      <div>
+                        <h4 className="font-bold text-[#FBF1CF]/50 text-xs mb-2 tracking-[0.2em] uppercase">Day 1 Menu</h4>
+                        <p className="font-bold text-[#FBF1CF]/90 text-[15px] leading-relaxed">Kesari, Veg Dum Biryani, Gobi-65, Roti, Paneer Curry, Curd Rice, Mango Pickle</p>
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-[#FBF1CF]/50 text-xs mb-2 tracking-[0.2em] uppercase">Day 2 Menu</h4>
+                        <p className="font-bold text-[#FBF1CF]/90 text-[15px] leading-relaxed">Gulab Jaamun, Peas Pulao, Baby Corn 65, Parotta, Veg Curry</p>
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-[#FBF1CF]/50 text-xs mb-2 tracking-[0.2em] uppercase">Day 3 Menu</h4>
+                        <p className="font-bold text-[#FBF1CF]/90 text-[15px] leading-relaxed">Pineapple Kesari, Veg Biryani, Veg Manchurian, Chapati, Gobi Curry, Curd Rice, Mango Pickle</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="text-right">
-                  <p className="text-[10px] font-title font-bold text-renaissance-gold border-b border-renaissance-gold pb-1 mb-2">STUDENT INCHARGES</p>
-                  <p className="text-xs uppercase font-black">AADINARAYAN C : <a href="tel:6238381469" className="underline font-normal text-[10px]">6238381469</a></p>
-                  <p className="text-xs uppercase font-black">NIKHIL B R : <a href="tel:7306544908" className="underline font-normal text-[10px]">7306544908</a></p>
+
+                {/* Non-Vegetarian Menu */}
+                <div className="bg-[#1b120c]/80 border border-red-800/20 rounded-2xl p-6 md:p-8 shadow-lg hover:border-red-800/40 transition-colors backdrop-blur-sm relative overflow-hidden group">
+                  <div className="absolute inset-0 bg-red-900/5 group-hover:bg-red-900/10 transition-colors"></div>
+                  <div className="relative z-10">
+                    <div className="flex justify-between items-center mb-8 border-b border-red-800/20 pb-4">
+                      <h3 className="text-2xl font-black text-red-500 uppercase tracking-widest font-title">Non-Vegetarian</h3>
+                      <p className="bg-red-900/30 text-red-400 border border-red-800/30 font-black px-4 py-2 rounded-full text-lg shadow-sm">₹ 260 <span className="text-[10px] uppercase tracking-widest font-medium opacity-80">/day</span></p>
+                    </div>
+
+                    <div className="space-y-6">
+                      <div>
+                        <h4 className="font-bold text-[#FBF1CF]/50 text-xs mb-2 tracking-[0.2em] uppercase">Day 1 Menu</h4>
+                        <p className="font-bold text-[#FBF1CF]/90 text-[15px] leading-relaxed">Chicken Masaledar Biryani, Raita, Salan</p>
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-[#FBF1CF]/50 text-xs mb-2 tracking-[0.2em] uppercase">Day 2 Menu</h4>
+                        <p className="font-bold text-[#FBF1CF]/90 text-[15px] leading-relaxed">Chicken Achari Biryani, Raita, Salan</p>
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-[#FBF1CF]/50 text-xs mb-2 tracking-[0.2em] uppercase">Day 3 Menu</h4>
+                        <p className="font-bold text-[#FBF1CF]/90 text-[15px] leading-relaxed">Chicken IPL Biryani, Raita, Salan</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              {/* Contacts & CTA */}
+              <div className="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-8 backdrop-blur-sm">
+                <div>
+                  <p className="text-xs font-title font-bold text-renaissance-gold uppercase tracking-[0.2em] mb-4">For any queries, contact:</p>
+                  <div className="flex flex-col sm:flex-row gap-6">
+                    <p className="font-black text-sm uppercase flex items-center gap-2">
+                      ADARSH :
+                      <a href="tel:8590765094" className="font-bold text-[#FBF1CF] hover:text-renaissance-gold transition-colors underline underline-offset-4 decoration-2 px-2 py-1 bg-white/5 rounded">85907 65094</a>
+                    </p>
+                    <p className="font-black text-sm uppercase flex items-center gap-2">
+                      PRATYUSH :
+                      <a href="tel:8903088587" className="font-bold text-[#FBF1CF] hover:text-renaissance-gold transition-colors underline underline-offset-4 decoration-2 px-2 py-1 bg-white/5 rounded">89030 88587</a>
+                    </p>
+                  </div>
                 </div>
               </div>
 
-              <div className="mt-12 text-center">
-                <button className="px-10 py-3 bg-renaissance-burgundy text-renaissance-gold border-2 border-renaissance-gold rounded-full font-title font-bold uppercase tracking-widest hover:bg-renaissance-gold hover:text-renaissance-burgundy transition-all duration-300">
-                  AVAIL FOOD
-                </button>
-              </div>
             </div>
           </div>
 
-          {/* Accomodation Section */}
-          <div className="bg-renaissance-cream p-12 md:p-16 border-l-[16px] border-renaissance-gold relative shadow-xl">
-            <h2 className="text-5xl md:text-6xl font-title font-black tracking-tighter mb-12 text-renaissance-dark">ACCOMODATION</h2>
+          {/* ACCOMMODATION TITLE AND INFO */}
+          <div className="bg-[#140c07] border border-renaissance-gold/30 rounded-2xl p-6 md:p-12 shadow-xl relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-96 h-96 bg-[#FBF1CF]/5 rounded-full blur-3xl pointer-events-none -translate-y-1/2 translate-x-1/2"></div>
 
-            <div className="space-y-8 italic">
-              <div className={listStyle}>
-                <div className={dotStyle}></div>
-                Rooms will be provided on a first come first serve sharing basis in the ESIC hostel for stay.
-              </div>
-              <div className={listStyle}>
-                <div className={dotStyle}></div>
-                Cost: Rs. <span className="font-black text-2xl text-renaissance-burgundy ml-2">150</span> per day per person.
+            <div className="relative z-10">
+              <div className="flex items-center justify-between mb-10 border-b border-renaissance-gold/20 pb-6">
+                <h2 className="text-3xl md:text-5xl font-milanesa font-black text-transparent bg-clip-text bg-gradient-to-r from-[#FBF1CF] to-renaissance-gold">
+                  ACCOMMODATION
+                </h2>
+
+                <Hotel className="text-renaissance-gold w-8 h-8" />
               </div>
 
-              <div className="bg-white/40 p-6 rounded-sm border-l-2 border-renaissance-burgundy/20 mt-12">
-                <p className="mb-4 text-sm leading-relaxed">For those who need access to the rooms and washrooms only in the morning to refresh before your event, please complete the form below.</p>
-                <p className={listStyle}>
-                  <div className={dotStyle}></div>
-                  Cost: Rs. <span className="font-black text-2xl text-renaissance-burgundy ml-2">50</span> per person per day
+              <div className="space-y-6 text-sm md:text-base text-[#FBF1CF]/90 max-w-3xl">
+
+                <p>
+                  Accommodation will <span className="text-renaissance-gold font-bold">
+                    NOT
+                  </span> be provided by ESIC Medical College for participants.
                 </p>
+
+                <p>
+                  Participants are requested to arrange their own stay.
+                </p>
+
+                <div className="bg-renaissance-gold/10 border-l-4 border-renaissance-gold p-5 rounded">
+                  Nearby hostels, PG accommodations, and hotels will be shared
+                  through WhatsApp after filling the assistance form.
+                </div>
+
               </div>
+
+              {/* CONTACT AND ASSISTANCE CTA */}
+              <div className="mt-12 pt-8 border-t border-renaissance-gold/10 flex flex-col md:flex-row gap-8 md:items-center md:justify-between relative z-10">
+
+                <div className="space-y-4">
+                  <p className="text-xs uppercase tracking-widest text-renaissance-gold/80 font-bold border-b border-renaissance-gold/10 pb-2 inline-block">
+                    Accommodation Incharges
+                  </p>
+
+                  <div className="flex flex-col sm:flex-row gap-6">
+                    <p className="font-black text-sm uppercase flex items-center gap-2">
+                      AFLAHA T :
+                      <a href="tel:8281757052" className="text-renaissance-gold hover:text-white transition-colors bg-white/5 px-2 py-1 rounded">
+                        82817 57052
+                      </a>
+                    </p>
+
+                    <p className="font-black text-sm uppercase flex items-center gap-2">
+                      ARAVIND C :
+                      <a href="tel:9489544801" className="text-renaissance-gold hover:text-white transition-colors bg-white/5 px-2 py-1 rounded">
+                        94895 44801
+                      </a>
+                    </p>
+                  </div>
+                </div>
+
+                <button className="px-8 py-4 border-2 border-renaissance-gold bg-renaissance-gold/10 text-renaissance-gold font-black uppercase text-sm tracking-widest rounded-full hover:scale-105 hover:bg-renaissance-gold hover:text-black transition-all shadow-[0_0_15px_rgba(212,175,55,0.2)]">
+                  Request Assistance
+                </button>
+
+              </div>
+
             </div>
 
-            <div className="mt-16 pt-8 border-t border-renaissance-dark/10 grid md:grid-cols-[1fr_200px] gap-8 items-end">
-              <div className="text-left font-title">
-                <p className="font-bold text-renaissance-gold uppercase tracking-widest mb-4">STUDENT INCHARGES</p>
-                <div className="flex flex-col gap-1 text-sm font-black">
-                  <p>VISHAL V : <a href="tel:9098818496" className="font-normal text-xs underline">9098818496</a></p>
-                  <p>ASHIKA P : <a href="tel:6383548591" className="font-normal text-xs underline">6383548591</a></p>
-                </div>
-              </div>
-              <div className="text-right">
-                <button className="px-10 py-3 bg-renaissance-burgundy text-renaissance-gold border-2 border-renaissance-gold rounded-full font-title font-bold uppercase tracking-widest hover:bg-renaissance-gold hover:text-renaissance-burgundy transition-all duration-300">
-                  AVAIL ACCOMODATION
-                </button>
-              </div>
-            </div>
           </div>
         </div>
       </section>
