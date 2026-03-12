@@ -64,119 +64,98 @@ export const events = [
   }
 ];
 
-export const workshops = {
-  day1: [
-    {
-      id: 1,
-      title: "MEDICINE",
-      description: "Comprehensive medical workshop covering diagnosis and treatment protocols.",
-      image: "https://images.pexels.com/photos/4021807/pexels-photo-4021807.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      day: "Day 1"
-    },
-    {
-      id: 2,
-      title: "PATHOLOGY",
-      description: "Explore disease mechanisms and diagnostic pathology techniques.",
-      image: "https://images.pexels.com/photos/8460157/pexels-photo-8460157.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      day: "Day 1"
-    },
-    {
-      id: 3,
-      title: "SURGERY",
-      description: "Hands-on surgical techniques and procedural training.",
-      image: "https://images.pexels.com/photos/2324837/pexels-photo-2324837.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      day: "Day 1"
-    },
-    {
-      id: 4,
-      title: "COMMUNITY MEDICINE",
-      description: "Public health approaches and community healthcare strategies.",
-      image: "https://images.pexels.com/photos/3184405/pexels-photo-3184405.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      day: "Day 1"
-    },
-    {
-      id: 5,
-      title: "ENT",
-      description: "Ear, nose, and throat examination and treatment techniques.",
-      image: "https://images.pexels.com/photos/3902881/pexels-photo-3902881.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      day: "Day 1"
-    },
-    {
-      id: 6,
-      title: "ORTHOPEDICS",
-      description: "Musculoskeletal system assessment and orthopedic procedures.",
-      image: "https://images.pexels.com/photos/4021870/pexels-photo-4021870.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      day: "Day 1"
-    }
-  ],
-  day2: [
-    {
-      id: 7,
-      title: "CRIME SCENE",
-      description: "Forensic medicine and crime scene investigation techniques.",
-      image: "https://images.pexels.com/photos/4099355/pexels-photo-4099355.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      day: "Day 2"
-    },
-    {
-      id: 8,
-      title: "MICROBIOLOGY",
-      description: "Microbial identification and laboratory diagnostic methods.",
-      image: "https://images.pexels.com/photos/3938023/pexels-photo-3938023.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      day: "Day 2"
-    },
-    {
-      id: 9,
-      title: "BIOCHEMISTRY",
-      description: "Clinical biochemistry and metabolic analysis.",
-      image: "https://images.pexels.com/photos/2280547/pexels-photo-2280547.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      day: "Day 2"
-    },
-    {
-      id: 10,
-      title: "PAEDIATRICS",
-      description: "Child health assessment and pediatric care protocols.",
-      image: "https://images.pexels.com/photos/1648377/pexels-photo-1648377.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      day: "Day 2"
-    },
-    {
-      id: 11,
-      title: "PSYCHIATRY",
-      description: "Mental health assessment and psychiatric care approaches.",
-      image: "https://images.pexels.com/photos/4101143/pexels-photo-4101143.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      day: "Day 2"
-    },
-    {
-      id: 12,
-      title: "OPHTHALMOLOGY",
-      description: "Eye examination techniques and ophthalmologic procedures.",
-      image: "https://images.pexels.com/photos/5752287/pexels-photo-5752287.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      day: "Day 2"
-    }
-  ],
-  day3: [
-    {
-      id: 13,
-      title: "AUTOPSY",
-      description: "Post-mortem examination and forensic pathology procedures.",
-      image: "https://images.pexels.com/photos/8460347/pexels-photo-8460347.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      day: "Day 3"
-    },
-    {
-      id: 14,
-      title: "OBSGYN",
-      description: "Obstetrics and gynecology clinical skills and procedures.",
-      image: "https://images.pexels.com/photos/1416530/pexels-photo-1416530.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      day: "Day 3"
-    },
-    {
-      id: 15,
-      title: "EMERGENCY MEDICINE",
-      description: "Emergency response protocols and acute care management.",
-      image: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      day: "Day 3"
-    }
-  ]
-};
+export const workshops = [
+  {
+    id: 1,
+    title: "Anatomy - Kali's prowess",
+    description: "Kali's prowess.",
+    image: "https://images.pexels.com/photos/3184405/pexels-photo-3184405.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  },
+  {
+    id: 2,
+    title: "Biochemistry - Exposing the Hawkins lab",
+    description: "Exposing the Hawkins lab.",
+    image: "https://images.pexels.com/photos/2280547/pexels-photo-2280547.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  },
+  {
+    id: 3,
+    title: "Pathology - Brenners blueprint: needles and nodes",
+    description: "Brenner's blueprint: needles and nodes.",
+    image: "https://images.pexels.com/photos/8460157/pexels-photo-8460157.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  },
+  {
+    id: 4,
+    title: "Microbiology - spores of the upside down",
+    description: "Spores of the upside down.",
+    image: "https://images.pexels.com/photos/3938023/pexels-photo-3938023.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  },
+  {
+    id: 5,
+    title: "FM Autopsy - Code black: The Hopper Case file",
+    description: "Code black: The Hopper Case file.",
+    image: "https://images.pexels.com/photos/8460347/pexels-photo-8460347.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  },
+  {
+    id: 6,
+    title: "FM Crime scene - Code Hawkins: The Hopper case files",
+    description: "Code Hawkins: The Hopper case files.",
+    image: "https://images.pexels.com/photos/4099355/pexels-photo-4099355.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  },
+  {
+    id: 7,
+    title: "ENT - Running Up the Decibel",
+    description: "Running Up the Decibel.",
+    image: "https://images.pexels.com/photos/3902881/pexels-photo-3902881.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  },
+  {
+    id: 8,
+    title: "Ophthalmology - El’s Vision",
+    description: "El's Vision.",
+    image: "https://images.pexels.com/photos/5752287/pexels-photo-5752287.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  },
+  {
+    id: 9,
+    title: "General medicine - echoes from camazotz",
+    description: "Echoes from Camazotz.",
+    image: "https://images.pexels.com/photos/4021807/pexels-photo-4021807.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  },
+  {
+    id: 10,
+    title: "General surgery - Papa’s gloves",
+    description: "Papa's gloves.",
+    image: "https://images.pexels.com/photos/2324837/pexels-photo-2324837.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  },
+  {
+    id: 11,
+    title: "OBG - Project Karen",
+    description: "Project Karen.",
+    image: "https://images.pexels.com/photos/1416530/pexels-photo-1416530.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  },
+  {
+    id: 12,
+    title: "Paediatrics - Vecna’s vessels",
+    description: "Vecna's vessels.",
+    image: "https://images.pexels.com/photos/1648377/pexels-photo-1648377.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  },
+  {
+    id: 13,
+    title: "Psychiatry - The Hive Mind",
+    description: "The Hive Mind.",
+    image: "https://images.pexels.com/photos/4101143/pexels-photo-4101143.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  },
+  {
+    id: 14,
+    title: "EM & Anaesthesia - Turnbows in the barn",
+    description: "Turnbows in the barn.",
+    image: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  },
+  {
+    id: 15,
+    title: "Orthopaedics - Walkman's canals",
+    description: "Walkman's canals.",
+    image: "https://images.pexels.com/photos/4021870/pexels-photo-4021870.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  }
+];
 
 export const offers = {
   individual: [

@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const location = useLocation();
@@ -25,6 +26,49 @@ const Navbar = () => {
       document.body.style.overflow = 'unset';
     }
   }, [isOpen]);
+
+  const menuVariants = {
+    closed: {
+      clipPath: "circle(0px at calc(100% - 40px) 44px)",
+      transition: {
+        duration: 0.8,
+        ease: [0.76, 0, 0.24, 1],
+        delay: 0.1,
+      }
+    },
+    open: {
+      clipPath: "circle(150% at calc(100% - 40px) 44px)",
+      transition: {
+        duration: 0.8,
+        ease: [0.76, 0, 0.24, 1],
+      }
+    }
+  };
+
+  const linkContainerVariants = {
+    closed: {
+      transition: {
+        staggerChildren: 0.05,
+        staggerDirection: -1
+      }
+    },
+    open: {
+      transition: {
+        staggerChildren: 0.08,
+        delayChildren: 0.3
+      }
+    }
+  };
+
+  const mainLinkVariants = {
+    closed: { y: 40, opacity: 0, transition: { duration: 0.4, ease: [0.76, 0, 0.24, 1] } },
+    open: { y: 0, opacity: 1, transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1] } }
+  };
+
+  const secondaryLinkVariants = {
+    closed: { y: 20, opacity: 0, transition: { duration: 0.4, ease: [0.76, 0, 0.24, 1] } },
+    open: { y: 0, opacity: 1, transition: { duration: 0.6, ease: [0.76, 0, 0.24, 1] } }
+  };
 
   return (
     <>
@@ -90,50 +134,77 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* Fullscreen Mobile Menu (Screenshot Design) */}
-      <div
-        className={`fixed inset-0 z-[100] bg-renaissance-dark text-white transition-opacity duration-700 flex flex-col justify-center items-center ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
-      >
-        {/* Close Button */}
-        <button
-          onClick={() => setIsOpen(false)}
-          className="absolute top-6 right-6 lg:top-10 lg:right-10 w-16 h-16 rounded-full border border-gray-600 flex items-center justify-center text-gray-400 hover:text-white hover:border-white transition-colors z-50"
-        >
-          <X strokeWidth={1} size={32} />
-        </button>
+      {/* Fullscreen Mobile Menu (Framer Motion Design) */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            variants={menuVariants}
+            initial="closed"
+            animate="open"
+            exit="closed"
+            className="fixed inset-0 z-[100] bg-[#1A0D0D]/95 backdrop-blur-xl text-white flex flex-col justify-center items-center overflow-hidden"
+          >
+            {/* Close Button */}
+            <button
+              onClick={() => setIsOpen(false)}
+              className="absolute top-6 right-6 lg:top-10 lg:right-10 w-12 h-12 lg:w-16 lg:h-16 rounded-full border border-gray-600 flex items-center justify-center text-gray-400 hover:text-white hover:border-white transition-colors z-[101]"
+            >
+              <X strokeWidth={1} size={28} />
+            </button>
 
-        <div className="flex flex-col items-center justify-center w-full px-6 space-y-10 max-w-sm mt-8">
+            <motion.div
+              variants={linkContainerVariants}
+              initial="closed"
+              animate="open"
+              exit="closed"
+              className="flex flex-col items-center justify-center w-full px-6 space-y-10 max-w-sm mt-8"
+            >
+              {/* Main Links */}
+              <div className="flex flex-col items-start space-y-4 w-full pl-4 overflow-hidden py-4">
+                <motion.div variants={mainLinkVariants} className="w-full">
+                  <Link to="/" onClick={() => setIsOpen(false)} className="flex items-center group overflow-hidden">
+                    <div className="w-10 h-10 rounded-full border border-gray-500 flex items-center justify-center mr-6 text-sm font-serif text-gray-400 group-hover:border-white group-hover:text-white transition-colors duration-500">I</div>
+                    <span className="text-6xl sm:text-7xl font-title uppercase text-[#eeeeee] tracking-tight group-hover:text-white transition-colors duration-500" style={{ fontFamily: '"DM Serif Display", serif', letterSpacing: '-0.03em' }}>HOME</span>
+                  </Link>
+                </motion.div>
 
-          {/* Main Links */}
-          <div className="flex flex-col items-start space-y-4 w-full pl-4 overflow-hidden py-4">
-            <Link to="/" onClick={() => setIsOpen(false)} className="flex items-center group overflow-hidden">
-              <div className={`w-10 h-10 rounded-full border border-gray-500 flex items-center justify-center mr-6 text-sm font-serif text-gray-400 group-hover:border-white group-hover:text-white transition-all duration-700 ease-out transform ${isOpen ? 'translate-y-0 opacity-100 delay-[100ms]' : 'translate-y-12 opacity-0 delay-0'}`}>I</div>
-              <span className={`text-6xl sm:text-7xl font-title uppercase text-[#eeeeee] tracking-tight group-hover:text-white transition-all duration-700 ease-out transform ${isOpen ? 'translate-y-0 opacity-100 delay-[200ms]' : 'translate-y-full opacity-0 delay-0'}`} style={{ fontFamily: '"DM Serif Display", serif', letterSpacing: '-0.03em' }}>HOME</span>
-            </Link>
+                <motion.div variants={mainLinkVariants} className="w-full">
+                  <Link to="/events" onClick={() => setIsOpen(false)} className="flex items-center group overflow-hidden">
+                    <div className="w-10 h-10 rounded-full border border-gray-500 flex items-center justify-center mr-6 text-sm font-serif text-gray-400 group-hover:border-white group-hover:text-white transition-colors duration-500">II</div>
+                    <span className="text-6xl sm:text-7xl font-title uppercase text-[#eeeeee] tracking-tight group-hover:text-white transition-colors duration-500" style={{ fontFamily: '"DM Serif Display", serif', letterSpacing: '-0.03em' }}>EVENTS</span>
+                  </Link>
+                </motion.div>
 
-            <Link to="/events" onClick={() => setIsOpen(false)} className="flex items-center group overflow-hidden">
-              <div className={`w-10 h-10 rounded-full border border-gray-500 flex items-center justify-center mr-6 text-sm font-serif text-gray-400 group-hover:border-white group-hover:text-white transition-all duration-700 ease-out transform ${isOpen ? 'translate-y-0 opacity-100 delay-[300ms]' : 'translate-y-12 opacity-0 delay-0'}`}>II</div>
-              <span className={`text-6xl sm:text-7xl font-title uppercase text-[#eeeeee] tracking-tight group-hover:text-white transition-all duration-700 ease-out transform ${isOpen ? 'translate-y-0 opacity-100 delay-[400ms]' : 'translate-y-full opacity-0 delay-0'}`} style={{ fontFamily: '"DM Serif Display", serif', letterSpacing: '-0.03em' }}>EVENTS</span>
-            </Link>
+                <motion.div variants={mainLinkVariants} className="w-full">
+                  <Link to="/aboutus" onClick={() => setIsOpen(false)} className="flex items-center group overflow-hidden">
+                    <div className="w-10 h-10 rounded-full border border-gray-500 flex items-center justify-center mr-6 text-sm font-serif text-gray-400 group-hover:border-white group-hover:text-white transition-colors duration-500">III</div>
+                    <span className="text-6xl sm:text-7xl font-title uppercase text-[#eeeeee] tracking-tight group-hover:text-white transition-colors duration-500" style={{ fontFamily: '"DM Serif Display", serif', letterSpacing: '-0.03em' }}>ABOUT</span>
+                  </Link>
+                </motion.div>
+              </div>
 
-            <Link to="/aboutus" onClick={() => setIsOpen(false)} className="flex items-center group overflow-hidden">
-              <div className={`w-10 h-10 rounded-full border border-gray-500 flex items-center justify-center mr-6 text-sm font-serif text-gray-400 group-hover:border-white group-hover:text-white transition-all duration-700 ease-out transform ${isOpen ? 'translate-y-0 opacity-100 delay-[500ms]' : 'translate-y-12 opacity-0 delay-0'}`}>III</div>
-              <span className={`text-6xl sm:text-7xl font-title uppercase text-[#eeeeee] tracking-tight group-hover:text-white transition-all duration-700 ease-out transform ${isOpen ? 'translate-y-0 opacity-100 delay-[600ms]' : 'translate-y-full opacity-0 delay-0'}`} style={{ fontFamily: '"DM Serif Display", serif', letterSpacing: '-0.03em' }}>ABOUT</span>
-            </Link>
-          </div>
-
-          {/* Secondary Links Grid */}
-          <div className="grid grid-cols-2 gap-x-12 gap-y-6 w-full pt-10 pl-6">
-            <Link to="/registration" onClick={() => setIsOpen(false)} className="font-title text-xl text-gray-300 hover:text-white transition-colors underline underline-offset-4 decoration-1" style={{ fontFamily: '"DM Serif Display", serif' }}>Registration</Link>
-            <Link to="/workshops" onClick={() => setIsOpen(false)} className="font-title text-xl text-gray-300 hover:text-white transition-colors underline underline-offset-4 decoration-1" style={{ fontFamily: '"DM Serif Display", serif' }}>Workshops</Link>
-            <Link to="/academicevents" onClick={() => setIsOpen(false)} className="font-title text-xl text-gray-300 hover:text-white transition-colors underline underline-offset-4 decoration-1" style={{ fontFamily: '"DM Serif Display", serif' }}>Academic</Link>
-            <Link to="/quizzes" onClick={() => setIsOpen(false)} className="font-title text-xl text-gray-300 hover:text-white transition-colors underline underline-offset-4 decoration-1" style={{ fontFamily: '"DM Serif Display", serif' }}>Quizzes</Link>
-            <Link to="/debateandoratory" onClick={() => setIsOpen(false)} className="font-title text-xl text-gray-300 hover:text-white transition-colors underline underline-offset-4 decoration-1" style={{ fontFamily: '"DM Serif Display", serif' }}>Debate Forum</Link>
-            <Link to="/contact" onClick={() => setIsOpen(false)} className="font-title text-xl text-gray-300 hover:text-white transition-colors underline underline-offset-4 decoration-1" style={{ fontFamily: '"DM Serif Display", serif' }}>Contact us</Link>
-            <Link to="/foodaccommodation" onClick={() => setIsOpen(false)} className="font-title text-xl text-gray-300 hover:text-white transition-colors underline underline-offset-4 decoration-1" style={{ fontFamily: '"DM Serif Display", serif' }}>Food & Accommodation</Link>
-          </div>
-        </div>
-      </div>
+              {/* Secondary Links Grid */}
+              <div className="grid grid-cols-2 gap-x-12 gap-y-6 w-full pt-10 pl-6">
+                {[
+                  { name: 'Registration', path: '/registration' },
+                  { name: 'Workshops', path: '/workshops' },
+                  { name: 'Academic', path: '/academicevents' },
+                  { name: 'Quizzes', path: '/quizzes' },
+                  { name: 'Debate Forum', path: '/debateandoratory' },
+                  { name: 'Contact us', path: '/contact' },
+                  { name: 'Food & Accommodation', path: '/foodaccommodation' },
+                ].map((link, index) => (
+                  <motion.div key={index} variants={secondaryLinkVariants}>
+                    <Link to={link.path} onClick={() => setIsOpen(false)} className="font-title text-xl text-gray-300 hover:text-white transition-colors underline underline-offset-4 decoration-1 whitespace-nowrap" style={{ fontFamily: '"DM Serif Display", serif' }}>
+                      {link.name}
+                    </Link>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };

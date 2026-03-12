@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Clock, Calendar, X, ChevronDown, CheckCircle2 } from 'lucide-react';
 
 const academicEvents = [
@@ -287,7 +287,67 @@ const academicEvents = [
 ];
 
 const Academicevents = () => {
+    const [showIntro, setShowIntro] = useState(true);
     const [detailIndex, setDetailIndex] = useState(null);
+
+    useEffect(() => {
+        // Automatically hide intro after 8 seconds
+        const timer = setTimeout(() => setShowIntro(false), 8000);
+        return () => clearTimeout(timer);
+    }, []);
+
+    if (showIntro) {
+        return (
+            <div
+                className="fixed inset-0 z-[100] bg-black flex items-center justify-center p-4 cursor-pointer"
+                onClick={() => setShowIntro(false)}
+            >
+                {/* Style for the text outline effect */}
+                <style dangerouslySetInnerHTML={{
+                    __html: `
+                        .text-outline {
+                            color: transparent;
+                            -webkit-text-stroke: 1px rgba(255,255,255,0.4);
+                        }
+                        .text-fill-anim {
+                            color: transparent;
+                            -webkit-text-stroke: 1px rgba(255,255,255,0.6);
+                            background: linear-gradient(to right, white 50%, transparent 50%);
+                            background-size: 200% 100%;
+                            background-position: 100% 0;
+                            -webkit-background-clip: text;
+                            background-clip: text;
+                            animation: fillText 2.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+                        }
+                        .delay-1 { animation-delay: 0.5s; }
+                        .delay-2 { animation-delay: 0.5s; }
+                        @keyframes fillText {
+                            100% { background-position: 0 0; }
+                        }
+                    `}} />
+                <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet" />
+                <div
+                    className="text-center w-full flex flex-col items-center justify-center animate-[fadeIn_3s_ease-out_forwards]"
+                    style={{ fontFamily: "'Cinzel', serif" }}
+                >
+                    <h1 className="text-[1.75rem] sm:text-5xl md:text-5xl lg:text-[5.5rem] xl:text-[6.5rem] font-bold leading-[1.1] sm:leading-[1.0] tracking-[0.05em] uppercase flex flex-col items-center justify-center w-full">
+                        <span className="text-outline w-full block">A PURSUIT OF</span>
+                        <span className="text-fill-anim delay-1 w-full block py-1">IDEAS.</span>
+                        <span className="text-outline w-full block mt-3 sm:mt-4 md:mt-5">FROM CURIOUS MINDS</span>
+                        <span className="text-fill-anim delay-2 w-full block pb-1">TO MEANINGFUL DISCUSSIONS,</span>
+                        <span className="text-outline w-full block mt-3 sm:mt-4 md:mt-5">EVERY GATHERING</span>
+                        <span className="text-outline w-full block">BECOMES AN</span>
+                        <span className="text-fill-anim delay-2 w-full block pb-1">ACADEMIC FORUM.</span>
+                    </h1>
+                </div>
+                <div className="absolute bottom-8 sm:bottom-12 w-full flex justify-center">
+                    <p className="text-white/90 text-sm sm:text-base md:text-lg lg:text-[20px] tracking-[0.2em] sm:tracking-[0.3em] font-sans uppercase animate-pulse">
+                        Click anywhere to continue ----&gt;
+                    </p>
+                </div>
+            </div>
+        );
+    }
 
     const inDetail = detailIndex !== null;
     const detailEvent = inDetail ? academicEvents[detailIndex] : null;
@@ -297,7 +357,7 @@ const Academicevents = () => {
     const next = () => setDetailIndex(i => (i + 1) % academicEvents.length);
 
     return (
-        <div className="min-h-screen font-body bg-renaissance-dark text-[#FBF1CF]">
+        <div className="min-h-screen font-body bg-renaissance-dark text-[#FBF1CF] animate-[fadeIn_1s_ease-out]">
 
             {/* ── Hero ── */}
             <section

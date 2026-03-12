@@ -36,10 +36,18 @@ const Home = () => {
             </Link>
             <Link to="/events">
               <button className="px-8 py-3 bg-renaissance-burgundy text-renaissance-gold border-2 border-renaissance-gold rounded-full font-title font-bold uppercase tracking-widest hover:bg-renaissance-gold hover:text-renaissance-burgundy transition-all duration-500 shadow-[0_0_15px_rgba(212,175,55,0.3)]">
-                View Brochure
+                event registration
               </button>
             </Link>
+            
           </div>
+          <div  class="mt-10" >
+          <Link to="/workshops">
+              <button className="px-8 py-3 bg-renaissance-burgundy text-renaissance-gold border-2 border-renaissance-gold font-title font-bold uppercase tracking-widest hover:bg-renaissance-gold hover:text-renaissance-burgundy transition-all duration-500 shadow-[0_0_15px_rgba(212,175,55,0.3)]">
+                view brochure 
+              </button>
+            </Link>
+            </div>
         </div>
       </section>
 
