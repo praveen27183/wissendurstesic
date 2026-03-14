@@ -347,7 +347,17 @@ const About = () => {
               </div>
 
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4 relative z-10 mt-auto">
-                {[74, 1640777, 262706, 273671, 1030643, 271708, 1105953, 3184398, 1438081].map((id, i) => (
+                {[
+                  { name: 'Sivan Park', img: 'https://images.unsplash.com/photo-1585938389612-a552a28d6914?auto=format&fit=crop&q=80&w=800' },
+                  { name: 'Vadapalani Temple', img: 'https://images.unsplash.com/photo-1600080301053-485989fa6d03?auto=format&fit=crop&q=80&w=800' },
+                  { name: 'Nexus Vijaya Mall', img: 'https://images.unsplash.com/photo-1519999482648-25049ddd37b1?auto=format&fit=crop&q=80&w=800' },
+                  { name: 'Marina Beach', img: 'https://images.unsplash.com/photo-1596395819057-e37f55a8516d?auto=format&fit=crop&q=80&w=800' },
+                  { name: 'Guindy Park', img: 'https://images.unsplash.com/photo-1615024195191-2dc04aefc583?auto=format&fit=crop&q=80&w=800' },
+                  { name: 'Semmozhi Poonga', img: 'https://images.unsplash.com/photo-1590409403882-9571ff55cb1e?auto=format&fit=crop&q=80&w=800' },
+                  { name: 'Ashok Pillar', img: 'https://images.unsplash.com/photo-1588697966961-73934d400713?auto=format&fit=crop&q=80&w=800' },
+                  { name: 'Kathipara', img: 'https://images.unsplash.com/photo-1585671168128-403b9ad6090e?auto=format&fit=crop&q=80&w=800' },
+                  { name: 'Anna Centenary', img: 'https://images.unsplash.com/photo-1568667256549-094345857637?auto=format&fit=crop&q=80&w=800' }
+                ].map((place, i) => (
                   <div
                     key={i}
                     className={`relative overflow-hidden rounded-2xl group cursor-pointer shadow-xl ${i === 0 ? 'row-span-2 col-span-2 sm:col-span-1 h-full' :
@@ -357,13 +367,14 @@ const About = () => {
                     {/* Glowing border effect */}
                     <div className="absolute inset-0 border border-renaissance-gold/20 rounded-2xl z-20 transition-all duration-500 group-hover:border-renaissance-gold/80" />
                     {/* image */}
+                    <img src={place.img} alt={place.name} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
 
                     {/* Subtle vignette / overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-[#1a0f0a]/90 via-transparent to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-500 z-10" />
 
                     <div className="absolute bottom-4 left-4 right-4 z-20 translate-y-4 opacity-0 transition-transform duration-500 group-hover:translate-y-0 group-hover:opacity-100">
                       <p className="text-[#FBF1CF] font-bold text-xs tracking-wider uppercase drop-shadow-md flex items-center gap-1 border-l-2 border-renaissance-gold pl-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-renaissance-gold" /> View
+                        <span className="w-1.5 h-1.5 rounded-full bg-renaissance-gold" /> {place.name}
                       </p>
                     </div>
                   </div>
@@ -371,6 +382,39 @@ const About = () => {
               </div>
             </div>
 
+          </div>
+        </div>
+      </SectionBg>
+
+      {/* ── Gallery Section ── */}
+      <SectionBg src={FRENCH_PAINTINGS.gallery} opacity="opacity-15" className="py-24 md:py-32 border-t border-renaissance-gold/15 relative overflow-hidden">
+        <div className="absolute top-20 left-1/2 w-[600px] h-[150px] -translate-x-1/2 bg-renaissance-gold/10 blur-[120px] rounded-[100%] pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-4 text-center relative z-10">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-milanesa font-black mb-16 text-transparent bg-clip-text bg-gradient-to-r from-[#FBF1CF] via-renaissance-gold to-[#FBF1CF] uppercase tracking-wide drop-shadow-sm">
+            Gallery
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { src: 'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&q=80&w=800', alt: 'Conference' },
+              { src: 'https://images.unsplash.com/photo-1544928147-79a2dbc1f389?auto=format&fit=crop&q=80&w=800', alt: 'Students' },
+              { src: 'https://images.unsplash.com/photo-1511629091441-ee46146481b6?auto=format&fit=crop&q=80&w=800', alt: 'Learning' },
+              { src: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=800', alt: 'Medical' },
+              { src: 'https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&q=80&w=800', alt: 'Medical Event' },
+              { src: 'https://images.unsplash.com/photo-1551818255-e6e10975bc17?auto=format&fit=crop&q=80&w=800', alt: 'Activities' }
+            ].map((img, i) => (
+              <div key={i} className="group relative aspect-video overflow-hidden rounded-2xl border border-renaissance-gold/20 shadow-xl cursor-pointer">
+                <div className="absolute inset-0 bg-renaissance-dark/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
+                <img 
+                  src={img.src} 
+                  alt={img.alt} 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-renaissance-dark to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20">
+                  <p className="text-[#FBF1CF] font-bold tracking-widest uppercase text-sm">{img.alt}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </SectionBg>

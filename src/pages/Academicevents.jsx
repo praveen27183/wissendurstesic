@@ -5,8 +5,8 @@ import HeroSection from '../components/herosection';
 const academicEvents = [
     {
         id: 1,
-        title: "Bloodlines: The Hematology Showcase",
-        subtitle: "Pathology Poster Presentation",
+        title: "Pathology Poster Presentation",
+        subtitle: "Bloodlines: The Hematology Showcase",
         date: "28.04.2026 (Tuesday)",
         image: "https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&q=80&w=1280",
         description: "Coursing through the vascular system is a dynamic and intricate stream of countless entities... Participants are formally invited to present rare, unusual, and diagnostically challenging hematological cases.",
@@ -58,8 +58,8 @@ const academicEvents = [
     },
     {
         id: 2,
-        title: "Into the Pharmaverse",
-        subtitle: "Pharmacology Poster Presentation",
+        title: "Pharmacology Poster Presentation",
+        subtitle: "Into the Pharmaverse",
         date: "28.04.2026 (Tuesday)",
         image: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&q=80&w=1280",
         description: "Participants are invited to present posters that distill and simplify key concepts, offering clarity and insight into the evolving landscape of contemporary neo-pharmacology.",
@@ -104,15 +104,20 @@ const academicEvents = [
     },
     {
         id: 3,
-        title: "Classified: Casefiles of 1983",
-        subtitle: "Case Presentation",
+        title: "Case Presentation",
+        subtitle: "Classified: Casefiles of 1983",
         date: "30.04.2026 (Thursday)",
         image: "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&q=80&w=1280",
         description: "When textbook rarities come alive in the wards through uncommon presentations, they become lessons beyond the pages. Participants are encouraged to present rare and noteworthy clinical cases.",
         sections: [
             {
                 title: "Subjects",
-                items: ["General Medicine", "General Surgery", "Paediatrics", "Obstetrics and Gynaecology"]
+                items: [
+                    "General Medicine", 
+                    "General Surgery", 
+                    "Obstetrics and Gynaecology",
+                    "Pediatrics"
+                ]
             },
             {
                 title: "General Instructions",
@@ -155,16 +160,22 @@ const academicEvents = [
     },
     {
         id: 4,
-        title: "Signals in the Static",
-        subtitle: "The Scientific Symposium",
+        title: "The Scientific Symposium",
+        subtitle: "Signals in the Static",
         date: "29.04.2026 (Wednesday)",
         image: "https://images.unsplash.com/photo-1540317580384-e5d43616b9aa?auto=format&fit=crop&q=80&w=1280",
         description: "In a profession where rote memorization holds little value, true understanding lies in conceptual clarity. We invite participants to bring challenging medical topics to life through innovative teaching methods.",
         sections: [
             {
+                title: "Subjects",
+                items: [
+                    "General Medicine",
+                    "General Surgery"
+                ]
+            },
+            {
                 title: "General Instructions",
                 items: [
-                    "Subjects: General Medicine, General Surgery.",
                     "Eligibility: All MBBS students including CRMI.",
                     "Number of participants: 3 to 6 per team. (Only 1 CRMI per team allowed).",
                     "Cross College teams are not allowed."
@@ -198,8 +209,8 @@ const academicEvents = [
     },
     {
         id: 5,
-        title: "The Hawkins Hypothesis",
-        subtitle: "Research Protocol Presentation",
+        title: "Research Protocol Presentation",
+        subtitle: "The Hawkins Hypothesis",
         date: "29.04.2026 (Wednesday)",
         image: "https://images.unsplash.com/photo-1532187863486-abf9db0c20a5?auto=format&fit=crop&q=80&w=1280",
         description: "An idea holds potential, but a protocol gives it direction. It challenges minds to transform concepts into clear, structured plans where precision, feasibility, and vision shape the foundation of impactful research.",
@@ -243,8 +254,8 @@ const academicEvents = [
     },
     {
         id: 6,
-        title: "The Null Zone",
-        subtitle: "Research Poster Presentation",
+        title: "Research Poster Presentation",
+        subtitle: "The Null Zone",
         date: "29.04.2026 (Tuesday)",
         image: "https://images.unsplash.com/photo-1555421689-d68471e189f2?auto=format&fit=crop&q=80&w=1280",
         description: "An idea sparks innovation, but research gives it power. Research celebrates curiosity, critical thinking, and evidence where questions evolve into discoveries and ideas stand strong on data.",
@@ -281,6 +292,101 @@ const academicEvents = [
                 items: [
                     "Diya Vinod - 87781 25205",
                     "Rashmika T - 7358665375"
+                ]
+            }
+        ]
+    },
+    {
+        id: 7,
+        title: "Public Health Quests",
+        subtitle: "Hellfire Club: The Health Detectives",
+        date: "TBD",
+        image: "https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&q=80&w=1280",
+        description: "Public health is medicine beyond hospital walls. For medical students, it means looking beyond individual patients to the health of entire communities through prevention, epidemiology, and health programs, becoming true health detectives. Sharp minds and keen eyes will reveal the answers. Let the challenge begin.",
+        sections: [
+            {
+                title: "General Instructions",
+                items: [
+                    "Teams will venture through ten stations in the preliminary round and solve the puzzles given.",
+                    "Earn your clues through each station, and be one of the six teams to chart their path into the final round.",
+                    "Three participants per team. Lone wolves are welcome."
+                ]
+            },
+            {
+                title: "Station Puzzle Topics",
+                items: [
+                    "Research Methodology",
+                    "Biostatistics",
+                    "Outbreak Investigation",
+                    "Maternal and Child Health",
+                    "National Health Programs",
+                    "Graphs, charts and plots",
+                    "Geriatrics",
+                    "Nutrition",
+                    "Diseases of public health importance",
+                    "Health planning and Management"
+                ]
+            },
+            {
+                title: "Registration Fee",
+                items: [
+                    "Early bird: ₹300 per team",
+                    "Late bird: ₹400 per team",
+                    "Early Bird Registration Deadline: 1st April, 2026"
+                ]
+            },
+            {
+                title: "Incharges",
+                items: [
+                    "Haripriya D V (99415 37867)",
+                    "Ashya A (97899 66052)"
+                ]
+            }
+        ]
+    },
+    {
+        id: 8,
+        title: "Face and Body Painting",
+        subtitle: "Henry’s Disguise",
+        date: "TBD",
+        image: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&q=80&w=1280",
+        description: "Anatomy unveiled through scalpel and skin beyond the pages of textbooks. We invite you to bring anatomy to life in an engaging and artistic face-painting competition. Explore the depths of muscle, nerve, vessel and transform knowledge into visual expression.",
+        sections: [
+            {
+                title: "General Instructions",
+                items: [
+                    "Participants must compete in teams of two: One Artist And One Model.",
+                    "Eligibility: Open to all MBBS, BDS, and AHS students (excluding all interns).",
+                    "Cross college teams are not allowed.",
+                    "Topic: ONLY Gross anatomy of any region.",
+                    "Participants must bring their own materials.",
+                    "No references allowed during the competition. No devices, printed images, or photocopies permitted.",
+                    "Participants will be continuously monitored.",
+                    "Plagiarism or malpractice of any form will lead to immediate disqualification.",
+                    "Duration of event: 1 hour."
+                ]
+            },
+            {
+                title: "Judging Criteria",
+                items: [
+                    "1. Anatomical Accuracy & Appeal",
+                    "2. Neatness, Innovation & Creativity",
+                    "3. Ability to Answer Judge’s Questions"
+                ]
+            },
+            {
+                title: "Registration Fee",
+                items: [
+                    "Early bird: ₹300 per team",
+                    "Late bird: ₹400 per team",
+                    "Early Bird Registration Deadline: 1st April, 2026"
+                ]
+            },
+            {
+                title: "Incharges",
+                items: [
+                    "Haripriya D V (99415 37867)",
+                    "Luckshanya V K (89393 11539)"
                 ]
             }
         ]
@@ -490,14 +596,30 @@ const Academicevents = () => {
                                             <h4 className="text-lg font-bold text-renaissance-gold uppercase tracking-[0.15em] mb-6 flex items-center justify-between border-b border-white/10 pb-4">
                                                 {section.title}
                                             </h4>
-                                            <ul className="space-y-4">
-                                                {section.items.map((item, itemIdx) => (
-                                                    <li key={itemIdx} className="flex gap-4 items-start text-sm md:text-base text-[#FBF1CF]/80 leading-relaxed">
-                                                        <CheckCircle2 className="w-5 h-5 text-renaissance-gold/50 shrink-0 mt-0.5" />
-                                                        <span>{item}</span>
-                                                    </li>
-                                                ))}
-                                            </ul>
+                                            {section.title === "Subjects" ? (
+                                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                                    {section.items.map((item, itemIdx) => (
+                                                        <div 
+                                                            key={itemIdx} 
+                                                            className="group relative overflow-hidden bg-[#1c182d]/50 border border-renaissance-gold/20 rounded-xl cursor-default hover:-translate-y-1 hover:shadow-[0_5px_15px_rgba(212,175,55,0.15)] transition-all duration-300 flex items-center justify-center p-6 sm:p-8"
+                                                        >
+                                                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                                            <h3 className="relative z-10 text-white text-lg font-black uppercase tracking-wider group-hover:text-renaissance-gold transition-colors text-center font-milanesa mt-1">
+                                                                {item}
+                                                            </h3>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            ) : (
+                                                <ul className="space-y-4">
+                                                    {section.items.map((item, itemIdx) => (
+                                                        <li key={itemIdx} className="flex gap-4 items-start text-sm md:text-base text-[#FBF1CF]/80 leading-relaxed">
+                                                            <CheckCircle2 className="w-5 h-5 text-renaissance-gold/50 shrink-0 mt-0.5" />
+                                                            <span>{item}</span>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            )}
                                         </div>
                                     ))}
                                 </div>

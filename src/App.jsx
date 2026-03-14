@@ -12,6 +12,9 @@ import IntroAnimation from './components/IntroAnimation';
 import Quizzes from './pages/Quizzes';
 import Academicevents from './pages/Academicevents';
 import Debateandoratory from './pages/Debateandoratory.jsx';
+import SplashCursor from './components/splash';
+
+
 
 // Scroll to top whenever the route changes
 const ScrollToTop = () => {
@@ -34,6 +37,7 @@ function App() {
 
   return (
     <Router>
+      <SplashCursor />
       <ScrollToTop />
       {showIntro ? (
         <IntroAnimation onComplete={handleIntroComplete} />
