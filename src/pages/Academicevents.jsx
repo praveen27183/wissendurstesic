@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Clock, Calendar, X, ChevronDown, CheckCircle2 } from 'lucide-react';
+import HeroSection from '../components/herosection';
 
 const academicEvents = [
     {
@@ -360,20 +361,12 @@ const Academicevents = () => {
         <div className="min-h-screen font-body bg-renaissance-dark text-[#FBF1CF] animate-[fadeIn_1s_ease-out]">
 
             {/* ── Hero ── */}
-            <section
-                className="relative h-[42vh] md:h-[55vh] flex items-center justify-center bg-cover bg-center overflow-hidden"
-                style={{ backgroundImage: `url('https://images.unsplash.com/photo-1511174511562-5f7f18b874f8?auto=format&fit=crop&q=80&w=1920')` }}
-            >
-                <div className="absolute inset-0 bg-black/65 backdrop-blur-[1px]" />
-                <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-                    <h1 className="text-4xl sm:text-6xl md:text-7xl font-milanesa font-black text-transparent bg-clip-text bg-gradient-to-r from-[#FBF1CF] via-renaissance-gold to-[#FBF1CF] tracking-[0.1em] uppercase mb-4 drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)]">
-                        PRESENTATION EVENTS
-                    </h1>
-                    <p className="text-sm md:text-lg text-renaissance-cream/80 mb-8 max-w-2xl mx-auto leading-relaxed">
-                        Academic showcases exploring hematology, pharmacology, rare clinical cases, and impactful research studies through structured posters, symposiums, and oral protocols.
-                    </p>
-                </div>
-            </section>
+            <HeroSection 
+                title="ACADEMIC EVENTS"
+                subtitle="PRESENTATION EVENTS"
+                description="Academic showcases exploring hematology, pharmacology, rare clinical cases, and impactful research studies through structured posters, symposiums, and oral protocols."
+                image="/asset/hero_sec_for_all/acedemic_event.png"
+            />
 
             {/* ── Event Cards Grid ── */}
             <section className="py-16 px-4 sm:px-8 bg-[#0a0000]">

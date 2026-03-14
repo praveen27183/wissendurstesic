@@ -1,6 +1,7 @@
+import { useState, useEffect } from 'react';
 import { MapPin, Bus, Train, Plane } from 'lucide-react';
 import esicBuildingImg from '../../asset/ESCIBUILD.png';
-
+import HeroSection from '../components/herosection.jsx';
 // Ancient French paintings for section backgrounds
 const FRENCH_PAINTINGS = {
   hero: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Eug%C3%A8ne_Delacroix_-_La_libert%C3%A9_guidant_le_peuple.jpg/1280px-Eug%C3%A8ne_Delacroix_-_La_libert%C3%A9_guidant_le_peuple.jpg',
@@ -20,11 +21,77 @@ const SectionBg = ({ src, opacity = 'opacity-20', children, className = '' }) =>
 );
 
 const About = () => {
+  const [showIntro, setShowIntro] = useState(true);
+
+  useEffect(() => {
+    // Automatically hide intro after 8 seconds
+    const timer = setTimeout(() => setShowIntro(false), 8000);
+    return () => clearTimeout(timer);
+  }, []);
+  if (showIntro) {
+    return (
+      <div
+        className="fixed inset-0 z-[100] bg-black flex items-center justify-center p-4 cursor-pointer"
+        onClick={() => setShowIntro(false)}
+      >
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            .text-outline {
+              color: transparent;
+              -webkit-text-stroke: 1px rgba(255,255,255,0.4);
+            }
+            .text-fill-anim {
+              color: transparent;
+              -webkit-text-stroke: 1px rgba(255,255,255,0.6);
+              background: linear-gradient(to right, white 50%, transparent 50%);
+              background-size: 200% 100%;
+              background-position: 100% 0;
+              -webkit-background-clip: text;
+              background-clip: text;
+              animation: fillText 2.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            }
+            .delay-1 { animation-delay: 0.5s; }
+            .delay-2 { animation-delay: 0.5s; }
+            @keyframes fillText {
+              100% { background-position: 0 0; }
+            }
+          `}} />
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet" />
+        <div
+          className="text-center w-full flex flex-col items-center justify-center animate-[fadeIn_3s_ease-out_forwards]"
+          style={{ fontFamily: "'Cinzel', serif" }}
+        >
+          <h1 className="text-[1.75rem] sm:text-5xl md:text-5xl lg:text-[5.5rem] xl:text-[6.5rem] font-bold leading-[1.1] sm:leading-[1.0] tracking-[0.05em] uppercase flex flex-col items-center justify-center w-full">
+            <span className="text-outline w-full block">A COMMUNITY OF</span>
+            <span className="text-fill-anim delay-1 w-full block py-1">LEARNING.</span>
+            <span className="text-outline w-full block mt-3 sm:mt-4 md:mt-5">FROM PASSION</span>
+            <span className="text-fill-anim delay-2 w-full block pb-1">TO MENTORSHIP,</span>
+            <span className="text-outline w-full block mt-3 sm:mt-4 md:mt-5">EVERY EVENT</span>
+            <span className="text-outline w-full block">BECOMES A</span>
+            <span className="text-fill-anim delay-2 w-full block pb-1">PLATFORM.</span>
+          </h1>
+        </div>
+        <div className="absolute bottom-8 sm:bottom-12 w-full flex justify-center">
+          <p className="text-white/90 text-sm sm:text-base md:text-lg lg:text-[20px] tracking-[0.2em] sm:tracking-[0.3em] font-sans uppercase animate-pulse">
+            Click anywhere to continue ----&gt;
+          </p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen font-milanesa bg-renaissance-dark text-[#FBF1CF]">
-
       {/* ── Hero ── */}
-      <SectionBg src={FRENCH_PAINTINGS.hero} opacity="opacity-20" className="py-24 md:py-32 relative">
+<HeroSection 
+        title="About Wissendurst '26"
+        subtitle="sample subtitle"
+        description="sample description"
+        image="/asset/hero_sec_for_all/about.png"
+        />
+      
+      
+        
         {/* Subtle Ambient Glow Effect inside Background */}
         <div className="absolute top-0 left-1/2 w-full max-w-4xl h-[30vh] -translate-x-1/2 bg-renaissance-gold/10 blur-[120px] rounded-[100%] pointer-events-none" />
 
@@ -160,7 +227,7 @@ const About = () => {
           </div>
 
         </div>
-      </SectionBg>
+     
 
       {/* ── How to Reach Us & Explore Around Us Split Section ── */}
       <SectionBg src={FRENCH_PAINTINGS.reach} opacity="opacity-20" className="py-24 md:py-32 relative border-t border-renaissance-gold/20 overflow-hidden">

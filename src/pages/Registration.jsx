@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import {
   ArrowDown, ChevronRight, Phone, AlertCircle,
   IndianRupee, ExternalLink, Info, CheckCircle2, ShieldAlert,
@@ -5,6 +6,13 @@ import {
 } from 'lucide-react';
 
 const Registration = () => {
+  const [showIntro, setShowIntro] = useState(true);
+
+  useEffect(() => {
+    // Automatically hide intro after 8 seconds
+    const timer = setTimeout(() => setShowIntro(false), 8000);
+    return () => clearTimeout(timer);
+  }, []);
   const workshopsList = [
     "Anatomy", "Biochemistry", "Pathology", "Microbiology", "FM Autopsy", "FM Crime scene",
     "ENT", "Ophthalmology", "General medicine", "General surgery", "OBG",
@@ -29,6 +37,58 @@ const Registration = () => {
     </div>
   );
 
+  if (showIntro) {
+    return (
+      <div
+        className="fixed inset-0 z-[100] bg-black flex items-center justify-center p-4 cursor-pointer"
+        onClick={() => setShowIntro(false)}
+      >
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            .text-outline {
+              color: transparent;
+              -webkit-text-stroke: 1px rgba(255,255,255,0.4);
+            }
+            .text-fill-anim {
+              color: transparent;
+              -webkit-text-stroke: 1px rgba(255,255,255,0.6);
+              background: linear-gradient(to right, white 50%, transparent 50%);
+              background-size: 200% 100%;
+              background-position: 100% 0;
+              -webkit-background-clip: text;
+              background-clip: text;
+              animation: fillText 2.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            }
+            .delay-1 { animation-delay: 0.5s; }
+            .delay-2 { animation-delay: 0.5s; }
+            @keyframes fillText {
+              100% { background-position: 0 0; }
+            }
+          `}} />
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet" />
+        <div
+          className="text-center w-full flex flex-col items-center justify-center animate-[fadeIn_3s_ease-out_forwards]"
+          style={{ fontFamily: "'Cinzel', serif" }}
+        >
+          <h1 className="text-[1.75rem] sm:text-5xl md:text-5xl lg:text-[5.5rem] xl:text-[6.5rem] font-bold leading-[1.1] sm:leading-[1.0] tracking-[0.05em] uppercase flex flex-col items-center justify-center w-full">
+            <span className="text-outline w-full block">A GATEWAY TO</span>
+            <span className="text-fill-anim delay-1 w-full block py-1">PARTICIPATION.</span>
+            <span className="text-outline w-full block mt-3 sm:mt-4 md:mt-5">FROM SIGN-UP</span>
+            <span className="text-fill-anim delay-2 w-full block pb-1">TO EXPERIENCE,</span>
+            <span className="text-outline w-full block mt-3 sm:mt-4 md:mt-5">EVERY REGISTRATION</span>
+            <span className="text-outline w-full block">OPENS THE DOOR TO</span>
+            <span className="text-fill-anim delay-2 w-full block pb-1">LEARNING.</span>
+          </h1>
+        </div>
+        <div className="absolute bottom-8 sm:bottom-12 w-full flex justify-center">
+          <p className="text-white/90 text-sm sm:text-base md:text-lg lg:text-[20px] tracking-[0.2em] sm:tracking-[0.3em] font-sans uppercase animate-pulse">
+            Click anywhere to continue ----&gt;
+          </p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen font-body bg-[#110a07] relative overflow-hidden">
 
@@ -48,7 +108,7 @@ const Registration = () => {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 text-center mt-20">
           <div className="inline-block relative mb-8 group">
-            <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-milanesa font-black text-transparent bg-clip-text bg-gradient-to-br from-[#FBF1CF] via-renaissance-gold to-[#a17a15] tracking-[0.1em] uppercase drop-shadow-2xl">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-9xl font-milanesa font-black text-transparent bg-clip-text bg-gradient-to-br from-[#FBF1CF] via-renaissance-gold to-[#a17a15] tracking-[0.05em] sm:tracking-[0.1em] uppercase drop-shadow-2xl">
               REGISTRATION
             </h1>
             {/* Glowing Gold Underline Animation */}
@@ -60,7 +120,7 @@ const Registration = () => {
             Secure your presence at Wissendurst 2026. Experience elevated academic discourse, premium workshops, and peerless medical events.
           </p>
 
-          <button className="group relative px-10 py-5 bg-gradient-to-r from-renaissance-gold to-[#e3ba31] text-black rounded-full font-title font-black uppercase tracking-[0.2em] text-sm md:text-base overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-[0_0_40px_rgba(201,162,39,0.5)] shadow-[0_0_20px_rgba(201,162,39,0.3)]">
+          <button className="group relative px-6 sm:px-10 py-4 sm:py-5 bg-gradient-to-r from-renaissance-gold to-[#e3ba31] text-black rounded-full font-title font-black uppercase tracking-[0.1em] sm:tracking-[0.2em] text-xs sm:text-sm md:text-base overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-[0_0_40px_rgba(201,162,39,0.5)] shadow-[0_0_20px_rgba(201,162,39,0.3)]">
             <span className="relative z-10 flex items-center gap-3">
               Proceed to Register <ArrowDown className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
             </span>
@@ -72,7 +132,7 @@ const Registration = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 pb-32">
 
         {/* ── 2. INFORMATION CARDS ── */}
-        <div className="grid lg:grid-cols-2 gap-8 mb-32">
+        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 mb-20 md:mb-32">
           {/* About Wissendurst */}
           <div className="bg-white/[0.02] backdrop-blur-xl border border-renaissance-gold/20 p-8 md:p-12 rounded-3xl relative overflow-hidden group hover:-translate-y-2 hover:border-renaissance-gold/50 transition-all duration-500 shadow-2xl hover:shadow-[0_20px_40px_rgba(201,162,39,0.05)]">
             <div className="absolute -right-20 -top-20 w-64 h-64 bg-renaissance-gold/5 rounded-full blur-3xl pointer-events-none group-hover:bg-renaissance-gold/10 transition-colors duration-500"></div>
@@ -113,8 +173,8 @@ const Registration = () => {
 
         {/* ── 3. REGISTRATION RULES & EXCEPTIONS ── */}
         <div className="mb-32">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-title font-black text-[#FBF1CF] uppercase tracking-[0.2em] mb-6">
+          <div className="text-center mb-10 sm:mb-16 px-4">
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-title font-black text-[#FBF1CF] uppercase tracking-[0.1em] sm:tracking-[0.2em] mb-6">
               Registration Rules
             </h2>
             <p className="text-renaissance-gold/80 max-w-2xl mx-auto text-base md:text-lg font-light leading-relaxed">
@@ -122,9 +182,9 @@ const Registration = () => {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-12 gap-8">
+          <div className="grid lg:grid-cols-12 gap-6 sm:gap-8">
             {/* Categories */}
-            <div className="lg:col-span-4 bg-black/40 backdrop-blur-md border border-renaissance-gold/20 rounded-3xl p-8 hover:border-renaissance-gold/40 transition-colors">
+            <div className="lg:col-span-4 bg-black/40 backdrop-blur-md border border-renaissance-gold/20 rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover:border-renaissance-gold/40 transition-colors">
               <h3 className="text-xl font-title font-bold text-renaissance-gold mb-8 uppercase tracking-widest flex items-center gap-3">
                 <UserPlus className="w-6 h-6" /> Categories
               </h3>
@@ -149,7 +209,7 @@ const Registration = () => {
             </div>
 
             {/* Events Without General Registration */}
-            <div className="lg:col-span-8 bg-black/40 backdrop-blur-md border border-renaissance-gold/20 rounded-3xl p-8 hover:border-renaissance-gold/40 transition-colors">
+            <div className="lg:col-span-8 bg-black/40 backdrop-blur-md border border-renaissance-gold/20 rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover:border-renaissance-gold/40 transition-colors">
               <h3 className="text-xl font-title font-bold text-renaissance-gold mb-8 uppercase tracking-widest border-b border-renaissance-gold/20 pb-6 flex items-center gap-3">
                 <ShieldAlert className="w-6 h-6" /> Events Exempt from General Registration
               </h3>
@@ -179,15 +239,15 @@ const Registration = () => {
         <div className="space-y-16 mb-32">
 
           {/* General Registration Track */}
-          <div className="bg-[#18110c] border border-renaissance-gold/20 rounded-[2rem] p-8 md:p-16 shadow-2xl relative overflow-hidden group">
+          <div className="bg-[#18110c] border border-renaissance-gold/20 rounded-3xl sm:rounded-[2rem] p-6 sm:p-8 md:p-16 shadow-2xl relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-renaissance-gold/5 rounded-full blur-[100px] pointer-events-none transform translate-x-1/3 -translate-y-1/3 group-hover:bg-renaissance-gold/10 transition-colors duration-700"></div>
 
-            <div className="grid lg:grid-cols-[1fr_1.5fr] gap-12 relative z-10">
+            <div className="grid lg:grid-cols-[1fr_1.5fr] gap-8 lg:gap-12 relative z-10">
               <div className="space-y-8">
                 <div className="inline-flex items-center gap-3 px-4 py-2 bg-renaissance-gold/10 rounded-full border border-renaissance-gold/30 text-renaissance-gold text-sm font-bold uppercase tracking-widest">
                   Track 01
                 </div>
-                <h2 className="text-4xl md:text-5xl font-milanesa font-black text-[#FBF1CF] tracking-wide leading-tight">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-milanesa font-black text-[#FBF1CF] tracking-wide leading-tight">
                   GENERAL<br />REGISTRATION
                 </h2>
 
@@ -209,8 +269,8 @@ const Registration = () => {
                 </p>
               </div>
 
-              <div className="bg-black/40 p-8 md:p-10 rounded-3xl border border-white/5">
-                <h3 className="text-xl font-title font-bold text-renaissance-gold mb-10 uppercase tracking-widest">
+              <div className="bg-black/40 p-6 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl border border-white/5">
+                <h3 className="text-lg sm:text-xl font-title font-bold text-renaissance-gold mb-8 sm:mb-10 uppercase tracking-widest">
                   Registration Process
                 </h3>
                 <div className="flex flex-col">
@@ -234,13 +294,13 @@ const Registration = () => {
           </div>
 
           {/* Workshop Registration Track */}
-          <div className="bg-[#18110c] border border-renaissance-gold/20 rounded-[2rem] p-8 md:p-16 shadow-2xl relative overflow-hidden group">
+          <div className="bg-[#18110c] border border-renaissance-gold/20 rounded-3xl sm:rounded-[2rem] p-6 sm:p-8 md:p-16 shadow-2xl relative overflow-hidden group">
             <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-renaissance-gold/5 rounded-full blur-[100px] pointer-events-none transform -translate-x-1/3 -translate-y-1/3 group-hover:bg-renaissance-gold/10 transition-colors duration-700"></div>
 
-            <div className="grid lg:grid-cols-[1.5fr_1fr] gap-12 lg:gap-20 relative z-10">
+            <div className="grid lg:grid-cols-[1.5fr_1fr] gap-8 lg:gap-20 relative z-10">
 
-              <div className="order-2 lg:order-1 bg-black/40 p-8 md:p-10 rounded-3xl border border-white/5">
-                <h3 className="text-xl font-title font-bold text-renaissance-gold mb-10 uppercase tracking-widest">
+              <div className="order-2 lg:order-1 bg-black/40 p-6 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl border border-white/5">
+                <h3 className="text-lg sm:text-xl font-title font-bold text-renaissance-gold mb-8 sm:mb-10 uppercase tracking-widest">
                   Registration Process
                 </h3>
                 <div className="flex flex-col">
@@ -258,7 +318,7 @@ const Registration = () => {
                 <div className="inline-flex items-center gap-3 px-4 py-2 bg-renaissance-gold/10 rounded-full border border-renaissance-gold/30 text-renaissance-gold text-sm font-bold uppercase tracking-widest">
                   Track 02
                 </div>
-                <h2 className="text-4xl md:text-5xl font-milanesa font-black text-[#FBF1CF] tracking-wide leading-tight">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-milanesa font-black text-[#FBF1CF] tracking-wide leading-tight">
                   WORKSHOP<br />REGISTRATION
                 </h2>
 
@@ -282,15 +342,15 @@ const Registration = () => {
           </div>
 
           {/* Event Registration Track */}
-          <div className="bg-[#18110c] border border-renaissance-gold/20 rounded-[2rem] p-8 md:p-16 shadow-2xl relative overflow-hidden group">
+          <div className="bg-[#18110c] border border-renaissance-gold/20 rounded-3xl sm:rounded-[2rem] p-6 sm:p-8 md:p-16 shadow-2xl relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-white/5 rounded-full blur-[100px] pointer-events-none transform translate-x-1/3 -translate-y-1/3 group-hover:bg-white/10 transition-colors duration-700"></div>
 
-            <div className="grid lg:grid-cols-[1fr_1.5fr] gap-12 relative z-10">
+            <div className="grid lg:grid-cols-[1fr_1.5fr] gap-8 lg:gap-12 relative z-10">
               <div className="space-y-8">
                 <div className="inline-flex items-center gap-3 px-4 py-2 bg-white/10 rounded-full border border-white/20 text-white text-sm font-bold uppercase tracking-widest">
                   Track 03
                 </div>
-                <h2 className="text-4xl md:text-5xl font-milanesa font-black text-[#FBF1CF] tracking-wide leading-tight">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-milanesa font-black text-[#FBF1CF] tracking-wide leading-tight">
                   EVENT<br />REGISTRATION
                 </h2>
 
@@ -305,8 +365,8 @@ const Registration = () => {
                 </div>
               </div>
 
-              <div className="bg-black/40 p-8 md:p-10 rounded-3xl border border-white/5">
-                <h3 className="text-xl font-title font-bold text-white mb-10 uppercase tracking-widest">
+              <div className="bg-black/40 p-6 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl border border-white/5">
+                <h3 className="text-lg sm:text-xl font-title font-bold text-white mb-8 sm:mb-10 uppercase tracking-widest">
                   Registration Process
                 </h3>
                 <div className="flex flex-col">
@@ -322,8 +382,8 @@ const Registration = () => {
 
         {/* ── 6. MANDATORY REQUIREMENTS ── */}
         <div className="mb-32">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-title font-black text-[#FBF1CF] uppercase tracking-widest mb-4">
+          <div className="text-center mb-10 sm:mb-16 px-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-title font-black text-[#FBF1CF] uppercase tracking-wider sm:tracking-widest mb-4">
               Mandatory On Event Day
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-transparent via-renaissance-gold to-transparent mx-auto"></div>
@@ -383,7 +443,7 @@ const Registration = () => {
             </div>
 
             {/* Styled Map / Address Card */}
-            <div className="bg-white/[0.02] border border-renaissance-gold/20 p-8 rounded-3xl relative overflow-hidden group hover:border-renaissance-gold/50 transition-all duration-500 min-h-[300px] flex flex-col justify-end">
+            <div className="bg-white/[0.02] border border-renaissance-gold/20 p-6 sm:p-8 rounded-2xl sm:rounded-3xl relative overflow-hidden group hover:border-renaissance-gold/50 transition-all duration-500 min-h-[300px] flex flex-col justify-end">
               {/* Subtle background map image pattern */}
               <div className="absolute inset-0 bg-[url('https://maps.googleapis.com/maps/api/staticmap?center=ESIC+Medical+College,Chennai&zoom=14&size=600x300&maptype=roadmap&style=feature:all|element:labels.text.fill|color:0x8ec3b9&style=feature:all|element:labels.text.stroke|color:0x1a3646&style=feature:landscape|element:geometry|color:0x1b120c&style=feature:poi|element:geometry|color:0x283d6a&style=feature:road|element:geometry.fill|color:0x342921&style=feature:water|element:geometry|color:0x0e1626')] bg-cover bg-center opacity-20 filter grayscale group-hover:opacity-40 transition-opacity duration-700"></div>
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>

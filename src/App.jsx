@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
-import Events from './pages/Events';
 import Workshops from './pages/Workshops';
 import Registration from './pages/Registration';
 import FoodAccommodation from './pages/FoodAccommodation';
@@ -44,7 +43,6 @@ function App() {
           <main className="flex-grow pt-16 md:pt-20 lg:pt-24">
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/events" element={<Events />} />
               <Route path="/academicevents" element={<Academicevents />} />
               <Route path="/debateandoratory" element={<Debateandoratory />} />
               <Route path="/workshops" element={<Workshops />} />

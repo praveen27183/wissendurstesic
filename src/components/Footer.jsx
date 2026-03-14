@@ -20,11 +20,12 @@ const Footer = () => {
 
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
-        <div className="flex items-center">
-          <img
-            src="./asset/wissendurstesic_logo.png"
+       
+        <div className="flex items-center gap-4">
+           <img
+            src="./asset/logo/wissennobg.png"
             alt="Wissendurst Logo"
-            className="h-16 w-auto object-contain drop-shadow-[0_0_10px_rgba(212,175,55,0.5)]"
+            className="h-16 w-auto object-contain"
           />
           <div className="flex flex-col">
             <span className="text-2xl font-black text-[#FBF1CF] tracking-[0.15em] leading-none">WISSENDURST</span>
@@ -141,10 +142,14 @@ const Footer = () => {
               <p className="text-[#D4AF37]/60 text-xs uppercase tracking-widest mb-3">Quick Links</p>
               <div className="flex flex-col gap-1 text-sm text-[#FBF1CF]/70">
                 {[
-                  { to: '/events', label: 'Events' },
+                  { to: '/academicevents', label: 'Academic Events' },
                   { to: '/workshops', label: 'Workshops' },
                   { to: '/registration', label: 'Register' },
                   { to: '/aboutus', label: 'About Us' },
+                  { to: '/contact', label: 'Contact Us' },
+                  { to: '/foodaccommodation', label: 'Food & Accommodation' },
+                  { to: '/debateandoratory', label: 'Debate & Oratory' },
+                  { to: '/quizzes', label: 'Quizzes' },
                 ].map(link => (
                   <Link key={link.to} to={link.to} className="hover:text-[#D4AF37] transition-colors duration-200">
                     → {link.label}

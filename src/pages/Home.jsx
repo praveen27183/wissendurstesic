@@ -10,7 +10,7 @@ const Home = () => {
       <section
         className="relative min-h-[70vh] md:min-h-screen flex items-center justify-center bg-cover bg-center overflow-hidden"
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&q=80&w=1920&h=1080')`
+          backgroundImage: `url('asset/starnger_thingsbg.jpeg')`
         }}
       >
         <div className="absolute inset-0 bg-renaissance-dark/60 backdrop-blur-[2px]"></div>
@@ -58,7 +58,7 @@ const Home = () => {
         <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/dark-leather.png')]"></div>
 
         <div className="max-w-7xl mx-auto px-4 relative z-10 text-center ">
-          <h2 className="text-3xl md:text-5xl font-milanesa font-bold text-renaissance-gold mb-12 uppercase tracking-wider drop-shadow-md">
+          <h2 className="text-3xl md:text-5xl font-milanesa font-bold text-[#FBF1CF] mb-12 uppercase tracking-wider drop-shadow-md">
             Registrations Open! Register Now!
           </h2>
 
@@ -125,7 +125,7 @@ const Home = () => {
               <div className="absolute inset-0 bg-renaissance-dark opacity-10 transition-opacity group-hover:opacity-100"></div>
               <div className="relative flex flex-col items-center">
                 <img
-                  src="/asset/wissendurstesic_logo.png"
+                  src="/asset/logo/wissennobg.png"
                   alt="Wissendurst Logo"
                   className="w-44 h-44 md:w-56 md:h-56 object-contain drop-shadow-[0_0_20px_rgba(212,175,55,0.6)] transition-transform duration-700 group-hover:scale-110"
                 />

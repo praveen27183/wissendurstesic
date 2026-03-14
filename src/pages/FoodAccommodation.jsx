@@ -1,35 +1,82 @@
+import { useState, useEffect } from 'react';
 import { UtensilsCrossed, Hotel } from "lucide-react";
+import HeroSection from '../components/herosection';
 
 const FoodAccommodation = () => {
+  const [showIntro, setShowIntro] = useState(true);
+
+  useEffect(() => {
+    // Automatically hide intro after 8 seconds
+    const timer = setTimeout(() => setShowIntro(false), 8000);
+    return () => clearTimeout(timer);
+  }, []);
   const listStyle =
     "flex items-start gap-3 text-sm md:text-base leading-relaxed";
   const dotStyle =
     "mt-2 w-2 h-2 bg-renaissance-gold rounded-full flex-shrink-0";
 
+  if (showIntro) {
+    return (
+      <div
+        className="fixed inset-0 z-[100] bg-black flex items-center justify-center p-4 cursor-pointer"
+        onClick={() => setShowIntro(false)}
+      >
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            .text-outline {
+              color: transparent;
+              -webkit-text-stroke: 1px rgba(255,255,255,0.4);
+            }
+            .text-fill-anim {
+              color: transparent;
+              -webkit-text-stroke: 1px rgba(255,255,255,0.6);
+              background: linear-gradient(to right, white 50%, transparent 50%);
+              background-size: 200% 100%;
+              background-position: 100% 0;
+              -webkit-background-clip: text;
+              background-clip: text;
+              animation: fillText 2.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            }
+            .delay-1 { animation-delay: 0.5s; }
+            .delay-2 { animation-delay: 0.5s; }
+            @keyframes fillText {
+              100% { background-position: 0 0; }
+            }
+          `}} />
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet" />
+        <div
+          className="text-center w-full flex flex-col items-center justify-center animate-[fadeIn_3s_ease-out_forwards]"
+          style={{ fontFamily: "'Cinzel', serif" }}
+        >
+          <h1 className="text-[1.75rem] sm:text-5xl md:text-5xl lg:text-[5.5rem] xl:text-[6.5rem] font-bold leading-[1.1] sm:leading-[1.0] tracking-[0.05em] uppercase flex flex-col items-center justify-center w-full">
+            <span className="text-outline w-full block">A PROMISE OF</span>
+            <span className="text-fill-anim delay-1 w-full block py-1">COMFORT.</span>
+            <span className="text-outline w-full block mt-3 sm:mt-4 md:mt-5">FROM WARM MEALS</span>
+            <span className="text-fill-anim delay-2 w-full block pb-1">TO SAFE STAY,</span>
+            <span className="text-outline w-full block mt-3 sm:mt-4 md:mt-5">EVERY ARRANGEMENT</span>
+            <span className="text-outline w-full block">MADE FOR</span>
+            <span className="text-fill-anim delay-2 w-full block pb-1">YOU.</span>
+          </h1>
+        </div>
+        <div className="absolute bottom-8 sm:bottom-12 w-full flex justify-center">
+          <p className="text-white/90 text-sm sm:text-base md:text-lg lg:text-[20px] tracking-[0.2em] sm:tracking-[0.3em] font-sans uppercase animate-pulse">
+            Click anywhere to continue ----&gt;
+          </p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen w-full bg-[#1b120c] text-[#FBF1CF] font-body overflow-x-hidden">
 
       {/* HERO */}
-      <section
-        className="relative min-h-[70vh] flex items-center justify-center bg-cover bg-center"
-        style={{
-          backgroundImage:
-            "url(https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?q=80&w=2070)",
-        }}
-      >
-        <div className="absolute inset-0 bg-black/75"></div>
-
-        <div className="relative z-10 text-center px-6 max-w-6xl">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-milanesa font-black tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-[#FBF1CF] via-renaissance-gold to-[#FBF1CF]">
-            FOOD & ACCOMMODATION
-          </h1>
-
-          <p className="mt-6 text-sm md:text-lg text-[#FBF1CF]/80 max-w-2xl mx-auto">
-            Essential information about meals and stay arrangements during
-            Wissendurst 2026.
-          </p>
-        </div>
-      </section>
+      <HeroSection 
+        title="FOOD & ACCOMMODATION"
+        subtitle="A PROMISE OF COMFORT"
+        description="Essential information about meals and stay arrangements during Wissendurst 2026."
+        image="/asset/hero_sec_for_all/food_and_accomodation.png"
+      />
 
       {/* MAIN CONTENT */}
       <section

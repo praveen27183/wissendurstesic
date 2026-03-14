@@ -1,26 +1,31 @@
 import { useState, useEffect } from 'react';
 import { workshops } from '../data/dummyData';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
+import HeroSection from '../components/herosection';
 
 const paintingBackgrounds = [
   // Day 1
-  'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Eug%C3%A8ne_Delacroix_-_La_libert%C3%A9_guidant_le_peuple.jpg/1280px-Eug%C3%A8ne_Delacroix_-_La_libert%C3%A9_guidant_le_peuple.jpg',
-  'https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Jacques-Louis_David_-_Oath_of_the_Horatii_-_Google_Art_Project.jpg/1280px-Jacques-Louis_David_-_Oath_of_the_Horatii_-_Google_Art_Project.jpg',
-  'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/David_Napoleon_crossing_the_Alps.jpg/800px-David_Napoleon_crossing_the_Alps.jpg',
-  'https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/JEAN-LOUIS_TH%C3%89ODORE_G%C3%89RICAULT_-_La_Balsa_de_la_Medusa_%28Museo_del_Louvre%2C_1818-19%29.jpg/1280px-JEAN-LOUIS_TH%C3%89ODORE_G%C3%89RICAULT_-_La_Balsa_de_la_Medusa_%28Museo_del_Louvre%2C_1818-19%29.jpg',
-  'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Fragonard%2C_The_Swing.jpg/800px-Fragonard%2C_The_Swing.jpg',
-  'https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Death_of_Marat_by_David.jpg/800px-Death_of_Marat_by_David.jpg',
+  "/asset/Workshops/Anatomy_Kali_s.jpg",
+  "/asset/Workshops/Biochemistry_Exposing_the_Hawkins_lab.jpg",
+  "/asset/Workshops/Pathology_Brenners_blueprint_Needles_and_Nodes.jpg",
+    "/asset/Workshops/Microbiology_Spores_of_the_Upside_Down.jpg",
+  "/asset/Workshops/FM_Autopsy_Code_Black_The_Hopper_Case_File.jpg",
+  //need to add
+  "/asset/Workshops/FM_Crime_Scene_Code_Hawkins_The_Hopper_Case_File.jpg",
+
   // Day 2
-  'https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Jacques_Louis_David_Coronation.jpg/1280px-Jacques_Louis_David_Coronation.jpg',
-  'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Jean_Auguste_Dominique_Ingres%2C_La_Grande_Odalisque%2C_1814.jpg/1280px-Jean_Auguste_Dominique_Ingres%2C_La_Grande_Odalisque%2C_1814.jpg',
-  'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Nicolas_Poussin_-_Et_in_Arcadia_ego_%28Louvre_version%2C_reframed%29.jpg/1280px-Nicolas_Poussin_-_Et_in_Arcadia_ego_%28Louvre_version%2C_reframed%29.jpg',
-  'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Antoine_Watteau_-_L%27Embarquement_pour_Cyth%C3%A8re_-_Louvre.jpg/1280px-Antoine_Watteau_-_L%27Embarquement_pour_Cyth%C3%A8re_-_Louvre.jpg',
-  'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Tres_Riches_Heures_du_duc_de_Berry_janvier.jpg/800px-Tres_Riches_Heures_du_duc_de_Berry_janvier.jpg',
-  'https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/%22The_School_of_Athens%22_by_Raffaello_Sanzio_da_Urbino.jpg/1280px-%22The_School_of_Athens%22_by_Raffaello_Sanzio_da_Urbino.jpg',
+  "/asset/Workshops/ENT_Running_Up_the_Decibel.jpg",
+  "/asset/Workshops/Ophthalmology_Els_Vision.jpg",
+  "/asset/Workshops/General_Medicine_Echoes_from_Camazotz.jpg",
+  "/asset/Workshops/General_Surgery_Papas_Gloves.jpg",
+  "/asset/Workshops/Obstetrics_and_Gynaecology_Project_Karen.jpg",
+  "/asset/Workshops/Paediatrics_Vecnas_Vessels.jpg",
+
   // Day 3
-  'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Michelangelo_-_Creation_of_Adam_%28cropped%29.jpg/1280px-Michelangelo_-_Creation_of_Adam_%28cropped%29.jpg',
-  'https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Eug%C3%A8ne_Delacroix_-_Women_of_Algiers_%28in_their_Apartment%29.jpg/1280px-Eug%C3%A8ne_Delacroix_-_Women_of_Algiers_%28in_their_Apartment%29.jpg',
-  'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Jean-Auguste-Dominique_Ingres_-_Le_Bain_turc.jpg/800px-Jean-Auguste-Dominique_Ingres_-_Le_Bain_turc.jpg',
+  "/asset/Workshops/Psychiatry_The_Hive_Mind.jpg",
+  //need to add
+  "/asset/Workshops/EM_and_Anaesthesia_Turnbows_in_the_Barn.jpg",
+  "/asset/Workshops/Orthopaedics_Walkmans_Canals.jpg",
 ];
 
 const Workshops = () => {
@@ -101,13 +106,12 @@ const Workshops = () => {
       {/* ── Hero / Header ── */}
       {!inDetail && (
         <>
-          <section className="w-full pt-20">
-            <div
-              className="relative w-full h-[30vh] md:h-[50vh] lg:h-[60vh] flex items-center justify-center bg-contain bg-center bg-no-repeat bg-[#1A0D0D]"
-              style={{ backgroundImage: `url('/Workshop.jpg')` }}
-            >
-            </div>
-          </section>
+          <HeroSection 
+            title="WORKSHOPS"
+            subtitle="A BUILDER OF SKILLS"
+            description="From learning to doing, every session becomes a workshop."
+            image="/asset/hero_sec_for_all/workshop.png"
+          />
 
           {/* ── Workshop Cards Grid ── */}
           <section className="py-16 px-4 sm:px-8 bg-[#0a0000]">
@@ -206,55 +210,150 @@ const Workshops = () => {
 
           {/* Detail content */}
           <section className="flex-1 bg-renaissance-dark/95 border-t border-renaissance-gold/20 py-12 md:py-16 px-4">
-            <div className="max-w-5xl mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
+            <div className="max-w-6xl mx-auto">
+              {/* Top Row: Description & Image */}
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 mb-12">
+                
+                
 
-                {/* Left: Image + thumbnails */}
-                <div className="md:col-span-4">
-                  <div className="rounded-xl overflow-hidden border border-renaissance-gold/30 shadow-[0_0_30px_rgba(0,0,0,0.8)]">
-                    <img
-                      src={detailWorkshop.image}
-                      alt={detailWorkshop.title}
-                      className="w-full h-48 sm:h-60 object-cover"
-                    />
-                  </div>
-                </div>
-
-                {/* Right: Description */}
-                <div className="md:col-span-8">
-                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-wide text-[#FBF1CF] leading-tight mb-2">
+                {/* Main Desc & Highlights */}
+                <div className="md:col-span-7 order-1 md:order-2">
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-wide text-[#FBF1CF] leading-tight mb-2">
                     {detailWorkshop.title}
                   </h2>
-                  <p className="text-renaissance-gold text-xs uppercase tracking-[0.2em] mb-6 border-b border-renaissance-gold/20 pb-4">
+                  <p className="text-renaissance-gold text-xs sm:text-sm uppercase tracking-[0.2em] mb-6 border-b border-renaissance-gold/20 pb-4">
                     Workshop Session
                   </p>
 
-                  <p className="text-[#FBF1CF]/80 leading-relaxed text-base md:text-lg font-semibold mb-8">
-                    {detailWorkshop.description}
+                  <p className="text-[#FBF1CF]/90 leading-relaxed text-base md:text-lg mb-8 font-light italic">
+                    "{detailWorkshop.description}"
                   </p>
 
-                  {/* Prev / Next navigation */}
-                  <div className="flex items-center gap-4 pt-4 border-t border-renaissance-gold/20">
-                    <button onClick={prevDetail} className="flex items-center gap-2 px-5 py-2 border border-renaissance-gold/40 text-renaissance-gold text-sm rounded-full hover:bg-renaissance-gold hover:text-renaissance-dark transition-all">
-                      <ChevronLeft className="w-4 h-4" /> Prev
-                    </button>
-                    <span className="text-[#FBF1CF]/40 text-xs tracking-widest uppercase mx-auto">
-                      {detailIndex + 1} / {workshops.length}
-                    </span>
-                    <button onClick={nextDetail} className="flex items-center gap-2 px-5 py-2 border border-renaissance-gold/40 text-renaissance-gold text-sm rounded-full hover:bg-renaissance-gold hover:text-renaissance-dark transition-all">
-                      Next <ChevronRight className="w-4 h-4" />
-                    </button>
-                  </div>
-
-                  {/* Back to grid */}
-                  <button
-                    onClick={closeDetail}
-                    className="mt-6 text-renaissance-gold/50 hover:text-renaissance-gold text-xs uppercase tracking-[0.3em] transition-colors"
-                  >
-                    ← Back to all workshops
-                  </button>
+                  {detailWorkshop.highlights && detailWorkshop.highlights.length > 0 && (
+                    <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-6 sm:p-8">
+                      <h4 className="text-renaissance-gold font-bold uppercase tracking-widest text-sm mb-6 flex items-center gap-3">
+                        <span className="w-8 h-[1px] bg-renaissance-gold/50"></span>
+                        Key Highlights
+                      </h4>
+                      <ul className="space-y-4">
+                        {detailWorkshop.highlights.map((hlt, i) => (
+                          <li key={i} className="flex items-start gap-4">
+                            <div className="w-1.5 h-1.5 rounded-full bg-renaissance-gold mt-2 shrink-0"></div>
+                            <span className="text-renaissance-cream/80 text-sm md:text-base leading-relaxed">{hlt}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
               </div>
+
+              {/* Bottom Row: Additional Details Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                
+                {/* Schedule & Venue */}
+                <div className="lg:col-span-2 bg-black/40 border border-renaissance-gold/20 p-6 rounded-2xl flex flex-col sm:flex-row gap-6 sm:gap-10">
+                  <div className="flex-1">
+                    <h5 className="text-white/50 text-[10px] uppercase font-bold tracking-widest mb-1">Date & Time</h5>
+                    <p className="text-[#FBF1CF] font-medium text-lg mb-1">{detailWorkshop.date || "TBD"}</p>
+                    <p className="text-renaissance-gold text-sm">{detailWorkshop.time || "TBD"}</p>
+                  </div>
+                  <div className="w-px bg-white/10 hidden sm:block"></div>
+                  <div className="flex-1">
+                    <h5 className="text-white/50 text-[10px] uppercase font-bold tracking-widest mb-1">Venue</h5>
+                    <p className="text-[#FBF1CF] font-medium text-base mb-1">{detailWorkshop.venue || "TBD"}</p>
+                    <p className="text-renaissance-cream/50 text-xs mt-2">Slots Available: <span className="text-white">{detailWorkshop.slots || "TBD"}</span></p>
+                  </div>
+                </div>
+
+                {/* Pricing / Fees */}
+                <div className="bg-black/40 border border-renaissance-gold/20 p-6 rounded-2xl flex flex-col justify-center">
+                  <h5 className="text-white/50 text-[10px] uppercase font-bold tracking-widest mb-3">Registration Fee</h5>
+                  {detailWorkshop.fees ? (
+                    <div className="space-y-2">
+                      {detailWorkshop.fees.earlyBird && (
+                        <div className="flex justify-between items-center text-sm">
+                          <span className="text-renaissance-cream/70">Early Bird</span>
+                          <span className="text-renaissance-gold font-bold">{detailWorkshop.fees.earlyBird}</span>
+                        </div>
+                      )}
+                      {detailWorkshop.fees.lateBird && (
+                        <div className="flex justify-between items-center text-sm">
+                          <span className="text-renaissance-cream/70">Late Registration</span>
+                          <span className="text-[#FBF1CF] font-bold">{detailWorkshop.fees.lateBird}</span>
+                        </div>
+                      )}
+                      {detailWorkshop.fees.spotPricing && (
+                        <div className="flex justify-between items-center text-sm">
+                          <span className="text-renaissance-cream/70">Spot Registration</span>
+                          <span className="text-renaissance-gold font-bold">{detailWorkshop.fees.spotPricing}</span>
+                        </div>
+                      )}
+                      {detailWorkshop.fees.regular && (
+                         <div className="flex justify-between items-center text-sm">
+                           <span className="text-renaissance-cream/70">Fee</span>
+                           <span className="text-renaissance-gold font-bold">{detailWorkshop.fees.regular}</span>
+                         </div>
+                      )}
+                    </div>
+                  ) : (
+                    <p className="text-renaissance-gold font-bold">TBD</p>
+                  )}
+                </div>
+
+                {/* Contact Incharges */}
+                <div className="bg-black/40 border border-renaissance-gold/20 p-6 rounded-2xl flex flex-col justify-center">
+                  <h5 className="text-white/50 text-[10px] uppercase font-bold tracking-widest mb-3">Incharges</h5>
+                  {detailWorkshop.incharges && detailWorkshop.incharges.length > 0 ? (
+                    <div className="space-y-3">
+                      {detailWorkshop.incharges.map((incharge, i) => (
+                        <div key={i} className="flex flex-col">
+                           <span className="text-[#FBF1CF] text-sm uppercase font-bold tracking-wider">{incharge.name}</span>
+                           <a href={`tel:+91${incharge.phone.replace(/\s/g, '')}`} className="text-renaissance-gold text-xs mt-0.5 hover:text-white transition-colors">+91 {incharge.phone}</a>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="text-renaissance-cream/50 text-xs italic">Details coming soon</p>
+                  )}
+                </div>
+
+              </div>
+
+              {/* Prev / Next navigation */}
+              <div className="flex items-center justify-between pt-8 border-t border-renaissance-gold/20 max-w-lg mx-auto">
+                <button onClick={prevDetail} className="group flex items-center gap-3 text-renaissance-gold hover:text-white transition-colors">
+                  <div className="w-10 h-10 rounded-full border border-renaissance-gold/40 flex items-center justify-center group-hover:bg-renaissance-gold group-hover:border-transparent group-hover:text-black transition-all">
+                    <ChevronLeft className="w-5 h-5" />
+                  </div>
+                  <span className="text-xs uppercase tracking-widest hidden sm:block font-bold">Prev</span>
+                </button>
+                <div className="flex flex-col items-center">
+                  <span className="text-[#FBF1CF] font-black tracking-widest text-lg">
+                    {detailIndex + 1}
+                  </span>
+                  <span className="text-white/30 text-[10px] uppercase tracking-widest">
+                    of {workshops.length}
+                  </span>
+                </div>
+                <button onClick={nextDetail} className="group flex items-center gap-3 text-renaissance-gold hover:text-white transition-colors">
+                  <span className="text-xs uppercase tracking-widest hidden sm:block font-bold">Next</span>
+                  <div className="w-10 h-10 rounded-full border border-renaissance-gold/40 flex items-center justify-center group-hover:bg-renaissance-gold group-hover:border-transparent group-hover:text-black transition-all">
+                    <ChevronRight className="w-5 h-5" />
+                  </div>
+                </button>
+              </div>
+
+              {/* Back to grid */}
+              <div className="text-center mt-12">
+                <button
+                  onClick={closeDetail}
+                  className="inline-block text-renaissance-gold/50 hover:text-renaissance-gold text-xs uppercase tracking-[0.3em] transition-colors pb-1 border-b border-renaissance-gold/30 hover:border-renaissance-gold"
+                >
+                  Back to all workshops
+                </button>
+              </div>
+
             </div>
           </section>
         </div>

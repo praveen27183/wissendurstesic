@@ -111,7 +111,6 @@ const Navbar = () => {
               <Link to="/registration" className={`text-[10px] xl:text-xs uppercase font-bold transition whitespace-nowrap ${isActive('/registration') ? 'text-[#FBF1CF]' : 'text-[#D4AF37]/80 hover:text-[#FBF1CF]'}`}>Registration</Link>
               <Link to="/quizzes" className={`text-[10px] xl:text-xs uppercase font-bold transition ${isActive('/quizzes') ? 'text-[#FBF1CF]' : 'text-[#D4AF37]/80 hover:text-[#FBF1CF]'}`}>Quizzes</Link>
               <Link to="/workshops" className={`text-[10px] xl:text-xs uppercase font-bold transition ${isActive('/workshops') ? 'text-[#FBF1CF]' : 'text-[#D4AF37]/80 hover:text-[#FBF1CF]'}`}>Workshops</Link>
-              <Link to="/events" className={`text-[10px] xl:text-xs uppercase font-bold transition ${isActive('/events') ? 'text-[#FBF1CF]' : 'text-[#D4AF37]/80 hover:text-[#FBF1CF]'}`}>Events</Link>
               <Link to="/academicevents" className={`text-[10px] xl:text-xs uppercase font-bold transition whitespace-nowrap ${isActive('/academicevents') ? 'text-[#FBF1CF]' : 'text-[#D4AF37]/80 hover:text-[#FBF1CF]'}`}>Academic Events</Link>
               <Link to="/debateandoratory" className={`text-[10px] xl:text-xs uppercase font-bold transition whitespace-nowrap ${isActive('/debateandoratory') ? 'text-[#FBF1CF]' : 'text-[#D4AF37]/80 hover:text-[#FBF1CF]'}`}>Debate Forum</Link>
               <Link to="/foodaccommodation" className={`text-[10px] xl:text-xs uppercase font-bold transition whitespace-nowrap ${isActive('/foodaccommodation') ? 'text-[#FBF1CF]' : 'text-[#D4AF37]/80 hover:text-[#FBF1CF]'}`}>Food & Accomm.</Link>
@@ -160,25 +159,25 @@ const Navbar = () => {
               className="flex flex-col items-center justify-center w-full px-6 space-y-10 max-w-sm mt-8"
             >
               {/* Main Links */}
-              <div className="flex flex-col items-start space-y-4 w-full pl-4 overflow-hidden py-4">
-                <motion.div variants={mainLinkVariants} className="w-full">
-                  <Link to="/" onClick={() => setIsOpen(false)} className="flex items-center group overflow-hidden">
-                    <div className="w-10 h-10 rounded-full border border-gray-500 flex items-center justify-center mr-6 text-sm font-serif text-gray-400 group-hover:border-white group-hover:text-white transition-colors duration-500">I</div>
-                    <span className="text-6xl sm:text-7xl font-title uppercase text-[#eeeeee] tracking-tight group-hover:text-white transition-colors duration-500" style={{ fontFamily: '"DM Serif Display", serif', letterSpacing: '-0.03em' }}>HOME</span>
+              <div className="flex flex-col items-start -space-y-2 sm:-space-y-4 w-full pl-0 sm:pl-4 overflow-hidden py-4">
+                <motion.div variants={mainLinkVariants} className="w-full flex ml-12 sm:ml-24">
+                  <Link to="/" onClick={() => setIsOpen(false)} className="flex items-center group w-fit">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-gray-500 flex items-center justify-center mr-3 sm:mr-4 text-xs sm:text-sm font-serif text-gray-400 group-hover:border-white group-hover:text-white transition-colors duration-500 shrink-0">I</div>
+                    <span className="text-[4rem] sm:text-[5.5rem] md:text-[7rem] font-title uppercase text-[#eeeeee] group-hover:text-white transition-colors duration-500 leading-none" style={{ fontFamily: '"DM Serif Display", serif', letterSpacing: '-0.03em' }}>HOME</span>
                   </Link>
                 </motion.div>
 
-                <motion.div variants={mainLinkVariants} className="w-full">
-                  <Link to="/events" onClick={() => setIsOpen(false)} className="flex items-center group overflow-hidden">
-                    <div className="w-10 h-10 rounded-full border border-gray-500 flex items-center justify-center mr-6 text-sm font-serif text-gray-400 group-hover:border-white group-hover:text-white transition-colors duration-500">II</div>
-                    <span className="text-6xl sm:text-7xl font-title uppercase text-[#eeeeee] tracking-tight group-hover:text-white transition-colors duration-500" style={{ fontFamily: '"DM Serif Display", serif', letterSpacing: '-0.03em' }}>EVENTS</span>
+                <motion.div variants={mainLinkVariants} className="w-full flex ml-0 sm:ml-4">
+                  <Link to="/aboutus" onClick={() => setIsOpen(false)} className="flex items-center group w-fit">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-gray-500 flex items-center justify-center mr-3 sm:mr-4 text-xs sm:text-sm font-serif text-gray-400 group-hover:border-white group-hover:text-white transition-colors duration-500 shrink-0">II</div>
+                    <span className="text-[4rem] sm:text-[5.5rem] md:text-[7rem] font-title uppercase text-[#eeeeee] group-hover:text-white transition-colors duration-500 leading-none" style={{ fontFamily: '"DM Serif Display", serif', letterSpacing: '-0.03em' }}>ABOUT</span>
                   </Link>
                 </motion.div>
 
-                <motion.div variants={mainLinkVariants} className="w-full">
-                  <Link to="/aboutus" onClick={() => setIsOpen(false)} className="flex items-center group overflow-hidden">
-                    <div className="w-10 h-10 rounded-full border border-gray-500 flex items-center justify-center mr-6 text-sm font-serif text-gray-400 group-hover:border-white group-hover:text-white transition-colors duration-500">III</div>
-                    <span className="text-6xl sm:text-7xl font-title uppercase text-[#eeeeee] tracking-tight group-hover:text-white transition-colors duration-500" style={{ fontFamily: '"DM Serif Display", serif', letterSpacing: '-0.03em' }}>ABOUT</span>
+                <motion.div variants={mainLinkVariants} className="w-full flex ml-6 sm:ml-12">
+                  <Link to="/quizzes" onClick={() => setIsOpen(false)} className="flex items-center group w-fit">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-gray-500 flex items-center justify-center mr-3 sm:mr-4 text-xs sm:text-sm font-serif text-gray-400 group-hover:border-white group-hover:text-white transition-colors duration-500 shrink-0">III</div>
+                    <span className="text-[4rem] sm:text-[5.5rem] md:text-[7rem] font-title uppercase text-[#eeeeee] group-hover:text-white transition-colors duration-500 leading-none" style={{ fontFamily: '"DM Serif Display", serif', letterSpacing: '-0.03em' }}>QUIZZES</span>
                   </Link>
                 </motion.div>
               </div>

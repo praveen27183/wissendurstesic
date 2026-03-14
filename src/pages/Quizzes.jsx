@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Clock, Calendar, X, ChevronDown, CheckCircle2 } from 'lucide-react';
+import HeroSection from '../components/herosection';
 
 const quizEvents = [
   {
@@ -7,7 +8,7 @@ const quizEvents = [
     title: "ERYTHRON",
     subtitle: "Hematology Quiz (ONLINE ARENA)",
     date: "08.04.2026",
-    image: "https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&q=80&w=1280",
+    image: "/asset/Quizzes/erythron.jpg",
     description: "From smear patterns to clotting cascades, hematology is far more than numbers on a report. It is the science that flows within us. Let us channel the courage of erythrocytes and the vigilance of leukocytes to sharpen our clinical instincts.",
     sections: [
       {
@@ -46,7 +47,7 @@ const quizEvents = [
     title: "AXIS",
     subtitle: "Endocrine Quiz (ONLINE ARENA)",
     date: "18.04.2026",
-    image: "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&fit=crop&q=80&w=1280",
+    image: "/asset/Quizzes/endocrine.jpg",
     description: "Think you can decide the body's hormone axes and feedback loops? Step into the realm of regulation and rhythm, and respond to the whispers of imbalanced systems wreaking havoc. From adrenal surges to sugar crashes, let's face it all at one place.",
     sections: [
       {
@@ -86,7 +87,7 @@ const quizEvents = [
     subtitle: "The Junior Quiz (OFFLINE ARENA)",
     date: "28.04.2026",
     time: "Prelims – 8:30 AM | Finals – 12:30 PM",
-    image: "https://images.unsplash.com/photo-1582560469780-e3251ee2bc96?auto=format&fit=crop&q=80&w=1280",
+    image: "/asset/Quizzes/minerva_junior.jpg",
     description: "Attention Quizzical minds! The strength of a clinician lies in the stability of their foundation. The 5th Edition of Minerva proudly presents The Junior Quiz, to take us to the concepts that shape our minds long before clinics and case sheets do. Are you ready to strengthen your core and step into the roots that anchor our medical minds?",
     sections: [
       {
@@ -138,7 +139,7 @@ const quizEvents = [
     subtitle: "The Senior Quiz (OFFLINE ARENA)",
     date: "30.04.2026",
     time: "Prelims – 8:30 AM | Finals – 11:30 AM",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=1280",
+    image: "/asset/Quizzes/minerva_senior.Jpg",
     description: "Attention Quizzical minds! Are you ready for your ultimate academic showdown? The 5th Edition of Minerva proudly presents The Senior Quiz to ignite your passion for learning and challenge your intellect. Take this moment to flex your mastery in human medicine and push the boundaries of your cerebral curiosity.",
     sections: [
       {
@@ -261,21 +262,12 @@ const Quizzes = () => {
     <div className="min-h-screen font-body bg-renaissance-dark text-[#FBF1CF] animate-[fadeIn_1s_ease-out]">
 
       {/* ── Hero ── */}
-      <section
-        className="relative h-[42vh] md:h-[55vh] flex items-center justify-center bg-cover bg-center overflow-hidden"
-        style={{ backgroundImage: `url('https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&q=80&w=1920')` }}
-      >
-        <div className="absolute inset-0 bg-black/65 backdrop-blur-[1px]" />
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-          <span className="text-renaissance-gold text-sm font-bold tracking-[0.3em] uppercase mb-4 block">THE INTELLECTUAL UPSIDEDOWN</span>
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-milanesa font-black text-transparent bg-clip-text bg-gradient-to-r from-[#FBF1CF] via-renaissance-gold to-[#FBF1CF] tracking-[0.1em] uppercase mb-4 drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)]">
-            QUIZZES
-          </h1>
-          <p className="text-sm md:text-lg text-renaissance-cream/80 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Not all battles are visible. Engage in the intellectual upsidedown through our challenging online and offline quiz arenas.
-          </p>
-        </div>
-      </section>
+      <HeroSection 
+        title="QUIZZES"
+        subtitle="THE INTELLECTUAL UPSIDEDOWN"
+        description="Not all battles are visible. Engage in the intellectual upsidedown through our challenging online and offline quiz arenas."
+        image="/asset/hero_sec_for_all/quizzes.png"
+      />
 
       {/* ── Overall Quiz Heads Section ── */}
       <section className="pt-16 px-4 bg-[#0a0000]">
