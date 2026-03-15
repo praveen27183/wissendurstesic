@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-[#b3b3b3] font-body relative overflow-hidden border-t border-white/10 shadow-[0_-10px_30px_rgba(0,0,0,0.8)]">
+    <footer className="bg-[#050505] text-[#cbd5e1] font-body relative overflow-hidden border-t border-[rgba(255,0,60,0.3)] shadow-[0_-10px_30px_rgba(255,0,60,0.15)]">
 
       {/* Grid overlay for laboratory terminal feel */}
       <div className="absolute inset-0 opacity-5 bg-[linear-gradient(rgba(31,81,255,0.3)_1px,_transparent_1px),_linear-gradient(90deg,rgba(31,81,255,0.3)_1px,_transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
@@ -31,7 +31,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
 
           {/* REACH US */}
-          <div className="border border-white/5 bg-[#0a0a0a]/50 p-6 rounded-lg backdrop-blur-sm relative group overflow-hidden">
+          <div className="bg-[rgba(10,10,15,0.85)] border border-[rgba(255,0,60,0.3)] p-6 rounded-lg backdrop-blur-[10px] relative group overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-[1px] bg-white/10 group-hover:bg-st-red transition-colors duration-500"></div>
             <h3 className="text-sm font-black text-white mb-5 uppercase tracking-[0.3em]">
               Reach Us
@@ -44,7 +44,7 @@ const Footer = () => {
           </div>
 
           {/* CONNECT WITH US */}
-          <div className="border border-white/5 bg-[#0a0a0a]/50 p-6 rounded-lg backdrop-blur-sm relative group overflow-hidden">
+          <div className="bg-[rgba(10,10,15,0.85)] border border-[rgba(255,0,60,0.3)] p-6 rounded-lg backdrop-blur-[10px] relative group overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-[1px] bg-white/10 group-hover:bg-st-red transition-colors duration-500"></div>
             <h3 className="text-sm font-black text-white mb-5 uppercase tracking-[0.3em]">
               Connect With Us
@@ -76,27 +76,33 @@ const Footer = () => {
           </div>
 
           {/* FIND US */}
-          <div className="border border-white/5 bg-[#0a0a0a]/50 p-6 rounded-lg backdrop-blur-sm relative group overflow-hidden">
+          <div className="bg-[rgba(10,10,15,0.85)] border border-[rgba(255,0,60,0.3)] p-6 rounded-lg backdrop-blur-[10px] relative group overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-[1px] bg-white/10 group-hover:bg-st-red transition-colors duration-500"></div>
             <h3 className="text-sm font-black text-white mb-5 uppercase tracking-[0.3em]">
               Find Us
             </h3>
-            <div className="rounded overflow-hidden border border-white/10 mt-1 relative mix-blend-luminosity opacity-80 group-hover:opacity-100 transition-opacity">
-              <div className="absolute inset-0 bg-transparent pointer-events-none"></div>
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9516.013939260933!2d80.2053440986854!3d13.02990326972731!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5266df5c54ca61%3A0xa35f36f12b8363ff!2sESIC%20Medical%20College%20%26%20PGIMSR!5e0!3m2!1sen!2sin!4v1772125528458!5m2!1sen!2sin"
-                width="100%"
-                height="150"
-                style={{ border: 0, display: 'block', filter: 'grayscale(100%) invert(100%) contrast(1.2)' }}
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              ></iframe>
-            </div>
+
+           {/* Map Container */}
+  <div className="rounded-lg overflow-hidden border border-white/10">
+    <iframe
+      src="https://www.google.com/maps?q=ESIC%20Medical%20College%20Chennai&output=embed"
+      className="w-full h-[180px] border-0"
+      loading="lazy"
+      allowFullScreen
+      referrerPolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </div>
+
+            {/* Address */}
+            <p className="text-xs text-[#b3b3b3] mt-4 font-mono leading-relaxed">
+              ESIC Medical College & PGIMSR
+              <br />
+              Ashok Pillar Rd, K. K. Nagar, Chennai, Tamil Nadu 600078
+            </p>
           </div>
 
           {/* FOLLOW US & LINKS */}
-          <div className="border border-white/5 bg-[#0a0a0a]/50 p-6 rounded-lg backdrop-blur-sm relative group overflow-hidden flex flex-col justify-between">
+          <div className="bg-[rgba(10,10,15,0.85)] border border-[rgba(255,0,60,0.3)] p-6 rounded-lg backdrop-blur-[10px] relative group overflow-hidden flex flex-col justify-between">
             <div className="absolute top-0 left-0 w-full h-[1px] bg-white/10 group-hover:bg-st-red transition-colors duration-500"></div>
             
             <div>
@@ -105,7 +111,7 @@ const Footer = () => {
               </h3>
               <div className="flex gap-4 mt-3 items-center">
                 <motion.a
-                  whileHover={{ scale: 1.1, boxShadow: "0px 0px 15px rgba(229, 9, 20, 0.4)", borderColor: "#e50914" }}
+                  whileHover={{ scale: 1.1, boxShadow: "0px 0px 15px rgba(255, 0, 60, 0.4)", borderColor: "#ff003c" }}
                   href="https://instagram.com"
                   target="_blank"
                   rel="noreferrer"
@@ -119,7 +125,7 @@ const Footer = () => {
                 </motion.a>
 
                 <motion.a
-                  whileHover={{ scale: 1.1, boxShadow: "0px 0px 15px rgba(229, 9, 20, 0.4)", borderColor: "#e50914" }}
+                  whileHover={{ scale: 1.1, boxShadow: "0px 0px 15px rgba(255, 0, 60, 0.4)", borderColor: "#ff003c" }}
                   href="https://wa.me/919962939599"
                   target="_blank"
                   rel="noreferrer"
@@ -134,14 +140,26 @@ const Footer = () => {
 
             {/* Quick Links */}
             <div className="mt-8">
-              <div className="flex flex-wrap gap-x-4 gap-y-2 text-xs font-mono text-gray-400">
+              <h3 className="text-sm font-black text-white mb-5 uppercase tracking-[0.3em]">
+                Quick Links
+              </h3>
+              <div className="flex flex-wrap gap-x-4 gap-y-2 text-xs font-mono text-[#b3b3b3]">
                 {[
-                  { to: '/events', label: 'EVENTS' },
-                  { to: '/workshops', label: 'WORKSHOPS' },
-                  { to: '/registration', label: 'REGISTER' },
-                  { to: '/aboutus', label: 'ABOUT' },
-                ].map(link => (
-                  <Link key={link.to} to={link.to} className="hover:text-white transition-colors duration-200">
+                  { to: "/Home", label: "HOME" },
+                  { to: "/Registration", label: "REGISTER" },
+                  { to: "/Aboutus", label: "ABOUT" },
+                  { to: "/Workshops", label: "WORKSHOPS" },
+                  { to: "/AcademicEvents", label: "ACADEMIC EVENTS" },
+                  { to: "/Quizzes", label: "QUIZZES" },
+                  { to: "/DebateForum", label: "DEBATE FORUM" },
+                  { to: "/FoodAccomm", label: "FOOD & ACCOMM" },
+                  { to: "/Contactus", label: "CONTACT" }
+                ].map((link) => (
+                  <Link
+                    key={link.to}
+                    to={link.to}
+                    className="hover:text-white transition-colors duration-200"
+                  >
                     [{link.label}]
                   </Link>
                 ))}

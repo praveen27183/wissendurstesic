@@ -73,7 +73,7 @@ const Navbar = () => {
   return (
     <>
       {/* Navbar */}
-      <nav className={`fixed w-full top-0 left-0 z-50 transition-all duration-500 ${scrolled ? 'bg-[#0a0a0a]/90 backdrop-blur-md border-b border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.8)] py-2' : 'bg-transparent py-4'}`}>
+      <nav className={`fixed w-full top-0 left-0 z-50 transition-all duration-500 ${scrolled ? 'bg-[#0f0f14]/90 backdrop-blur-md border-b border-st-red/20 shadow-[0_10px_30px_rgba(255,0,60,0.15)] py-2' : 'bg-transparent py-4'}`}>
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="flex justify-between items-center h-14 md:h-20 w-full gap-8">
 
@@ -98,7 +98,7 @@ const Navbar = () => {
                   WISSENDURST
                 </span>
 
-                <span className="text-[#b3b3b3] group-hover:text-st-red text-[9px] md:text-[10px] tracking-[0.3em] font-bold uppercase mt-1 transition-colors">
+                <span className="text-[#cbd5e1] group-hover:text-st-red text-[9px] md:text-[10px] tracking-[0.3em] font-bold uppercase mt-1 transition-colors">
                   ESIC Medical College
                 </span>
               </div>
@@ -121,10 +121,10 @@ const Navbar = () => {
                 <Link
                   key={link.to}
                   to={link.to}
-                  className={`relative text-[10px] xl:text-xs uppercase font-bold transition whitespace-nowrap group pb-1 ${isActive(link.to) ? 'text-white' : 'text-[#b3b3b3] hover:text-white'}`}
+                  className={`relative text-[10px] xl:text-xs uppercase font-bold transition whitespace-nowrap group pb-1 ${isActive(link.to) ? 'text-white' : 'text-[#cbd5e1] hover:text-white'}`}
                 >
                   {link.label}
-                  <span className={`absolute bottom-0 left-0 w-full h-[2px] bg-st-red shadow-[0_0_8px_rgba(229,9,20,0.8)] transform origin-left transition-transform duration-300 ${isActive(link.to) ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}></span>
+                  <span className={`absolute bottom-0 left-0 w-full h-[2px] bg-st-red shadow-[0_0_8px_rgba(255,0,60,0.8)] transform origin-left transition-transform duration-300 ${isActive(link.to) ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}></span>
                 </Link>
               ))}
             </div>
@@ -152,7 +152,7 @@ const Navbar = () => {
             initial="closed"
             animate="open"
             exit="closed"
-            className="fixed inset-0 z-[100] bg-[#0a0a0a]/95 backdrop-blur-xl text-white flex flex-col justify-start sm:justify-center items-center overflow-y-auto overflow-x-hidden pt-20 pb-12 sm:py-0"
+            className="fixed inset-0 z-[100] bg-[#0f0f14]/95 backdrop-blur-xl text-white flex flex-col justify-start sm:justify-center items-center overflow-y-auto overflow-x-hidden pt-20 pb-12 sm:py-0"
           >
             {/* Close Button */}
             <button
@@ -172,20 +172,21 @@ const Navbar = () => {
               {/* Main Links */}
               <div className="flex flex-col items-start space-y-4 sm:-space-y-4 w-full pl-0 sm:pl-4 overflow-visible py-4">
                 {[
-                  { num: 'I', label: 'HOME', to: '/' },
-                  { num: 'II', label: 'ABOUT', to: '/aboutus' },
-                  { num: 'III', label: 'QUIZZES', to: '/quizzes' },
-                  { num: 'IV', label: 'WORKSHOPS', to: '/workshops' },
-                  { num: 'V', label: 'CONTACT US', to: '/contactus' },
-                  { num: 'VI', label: 'ACADEMIC EVENTS', to: '/academic-events' },
-                  { num: 'VII', label: 'DEBATE AND ORATORY FORUM', to: '/debate-and-oratory-forum' },
-                  { num: 'VIII', label: 'FOOD AND ACCOMMODATION', to: '/food-and-accommodation' }
-                ].map((item, index) => (
+  { num: 'I', label: 'HOME', to: '/' },
+  { num: 'II', label: 'REGISTRATION', to: '/registration' },
+  { num: 'III', label: 'QUIZZES', to: '/quizzes' },
+  { num: 'IV', label: 'WORKSHOPS', to: '/workshops' },
+  { num: 'V', label: 'ACADEMIC EVENTS', to: '/academicevents' },
+  { num: 'VI', label: 'DEBATE FORUM', to: '/debateandoratory' },
+  { num: 'VII', label: 'FOOD & ACCOMMODATION', to: '/foodaccommodation' },
+  { num: 'VIII', label: 'ABOUT US', to: '/aboutus' },
+  { num: 'IX', label: 'CONTACT US', to: '/contact' }
+].map((item, index) => (
                   <motion.div key={item.to} variants={mainLinkVariants} className={`w-full flex ${index % 2 === 0 ? 'ml-0 sm:ml-12' : 'ml-4 sm:ml-24'}`}>
                     <Link to={item.to} onClick={() => setIsOpen(false)} className="flex items-start sm:items-center group w-fit relative">
-                      <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-gray-500 flex items-center justify-center mr-3 sm:mr-4 text-xs sm:text-sm font-serif text-gray-400 group-hover:border-st-red group-hover:text-st-red group-hover:shadow-[0_0_10px_rgba(229,9,20,0.5)] transition-all duration-500 shrink-0 mt-1 sm:mt-0">{item.num}</div>
-                      <span className="text-[2.25rem] min-[375px]:text-[2.5rem] sm:text-[5.5rem] md:text-[7rem] font-title uppercase text-[#eeeeee] group-hover:text-white group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.3)] transition-all duration-500 leading-[1.1] sm:leading-none text-left" style={{ fontFamily: '"DM Serif Display", serif', letterSpacing: '-0.03em' }}>{item.label}</span>
-                      <span className="absolute -bottom-2 sm:bottom-4 left-0 w-full h-[4px] bg-st-red shadow-[0_0_15px_rgba(229,9,20,0.8)] scale-x-0 group-hover:scale-x-100 transform origin-left transition-transform duration-500"></span>
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-gray-500 flex items-center justify-center mr-3 sm:mr-4 text-xs sm:text-sm font-serif text-gray-400 group-hover:border-st-red group-hover:text-st-red group-hover:shadow-[0_0_10px_rgba(255,0,60,0.5)] transition-all duration-500 shrink-0 mt-1 sm:mt-0">{item.num}</div>
+                      <span className="text-[2.25rem] min-[375px]:text-[2.5rem] sm:text-[5.5rem] md:text-[7rem] font-title uppercase text-white group-hover:text-white group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.3)] transition-all duration-500 leading-[1.1] sm:leading-none text-left" style={{ fontFamily: '"DM Serif Display", serif', letterSpacing: '-0.03em' }}>{item.label}</span>
+                      <span className="absolute -bottom-2 sm:bottom-4 left-0 w-full h-[4px] bg-st-red shadow-[0_0_15px_rgba(255,0,60,0.8)] scale-x-0 group-hover:scale-x-100 transform origin-left transition-transform duration-500"></span>
                     </Link>
                   </motion.div>
                 ))}

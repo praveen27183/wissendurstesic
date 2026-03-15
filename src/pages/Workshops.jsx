@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { workshops } from '../data/dummyData';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import HeroSection from '../components/herosection';
+import { motion } from 'framer-motion';
+import Galaxy from '../components/Galaxy.jsx';
 
 const paintingBackgrounds = [
   // Day 1
@@ -101,7 +103,7 @@ const Workshops = () => {
   }
 
   return (
-    <div className="min-h-screen font-milanesa bg-renaissance-dark text-[#FBF1CF] animate-[fadeIn_1s_ease-out]">
+    <div className="min-h-screen font-milanesa bg-[#050505] text-[#ffffff] animate-[fadeIn_1s_ease-out]">
 
       {/* ── Hero / Header ── */}
       {!inDetail && (
@@ -113,21 +115,31 @@ const Workshops = () => {
             image="/asset/hero_sec_for_all/workshop.png"
           />
 
+          {/* Galaxy Background layer */}
+          <div className="fixed inset-0 z-0 pointer-events-none opacity-20">
+            <Galaxy 
+              starSpeed={0.2}
+              density={1.2}
+              hueShift={240}
+              transparent
+            />
+          </div>
+
           {/* ── Workshop Cards Grid ── */}
-          <section className="py-16 px-4 sm:px-8 bg-[#0a0000]">
+          <section className="py-16 px-4 sm:px-8 bg-[#050505]">
 
             {/* Section Header */}
             <div className="flex items-center justify-center max-w-7xl mx-auto mb-10">
-              <div className="h-[1px] bg-[#D4AF37]/50 flex-1 max-w-[150px] mr-4"></div>
-              <h2 className="text-[#D4AF37] font-bold tracking-[0.2em] uppercase text-sm md:text-base">Workshop Sessions</h2>
-              <div className="h-[1px] bg-[#D4AF37]/50 flex-1 max-w-[150px] ml-4"></div>
+              <div className="h-[1px] bg-[#ff003c]/50 flex-1 max-w-[150px] mr-4"></div>
+              <h2 className="text-[#ff003c] font-bold tracking-[0.2em] uppercase text-sm md:text-base">Workshop Sessions</h2>
+              <div className="h-[1px] bg-[#ff003c]/50 flex-1 max-w-[150px] ml-4"></div>
             </div>
 
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
               {workshops.map((workshop, index) => (
                 <div
                   key={workshop.id}
-                  className="group flex flex-col bg-[#1c182d] cursor-pointer hover:-translate-y-1 transition-transform duration-300 border border-renaissance-gold/20 rounded-xl overflow-hidden shadow-lg"
+                  className="group flex flex-col bg-[rgba(10,10,15,0.85)] cursor-pointer hover:-translate-y-1 transition-transform duration-300 border border-st-red/20 rounded-xl overflow-hidden shadow-lg"
                   onClick={() => setDetailIndex(index)}
                 >
                   {/* Image top half */}
@@ -136,16 +148,16 @@ const Workshops = () => {
                       className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
                       style={{ backgroundImage: `url(${paintingBackgrounds[index % paintingBackgrounds.length]})` }}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#1c182d] to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-[rgba(10,10,15,0.85)] to-transparent"></div>
                   </div>
 
                   {/* Text bottom half */}
-                  <div className="flex flex-col p-5 md:p-6 flex-1 border-t-2 border-[#1c182d] bg-[#140c07]">
-                    <span className="text-[#D4AF37] text-[10px] md:text-xs font-black tracking-widest uppercase mb-2 block">
+                  <div className="flex flex-col p-5 md:p-6 flex-1 border-t-2 border-[rgba(10,10,15,0.85)] bg-[#050505]">
+                    <span className="text-[#ff003c] text-[10px] md:text-xs font-black tracking-widest uppercase mb-2 block">
                       Workshop
                     </span>
                     <h3
-                      className="text-white text-lg md:text-xl font-bold uppercase leading-tight mb-4 group-hover:text-[#FBF1CF] transition-colors"
+                      className="text-white text-lg md:text-xl font-bold uppercase leading-tight mb-4 group-hover:text-[#ffffff] transition-colors"
                       style={{ fontFamily: '"DM Serif Display", serif' }}
                     >
                       {workshop.title}
@@ -173,7 +185,7 @@ const Workshops = () => {
             {/* Close button */}
             <button
               onClick={closeDetail}
-              className="absolute top-4 right-4 sm:top-6 sm:right-6 z-30 w-10 h-10 rounded-full bg-renaissance-dark/70 border border-renaissance-gold/50 flex items-center justify-center text-renaissance-gold hover:bg-renaissance-gold hover:text-renaissance-dark transition-all"
+              className="absolute top-4 right-4 sm:top-6 sm:right-6 z-30 w-10 h-10 rounded-full bg-[#050505]/70 border border-st-red/50 flex items-center justify-center text-st-red hover:bg-st-red hover:text-[#050505] transition-all"
             >
               <X className="w-5 h-5" />
             </button>
@@ -181,7 +193,7 @@ const Workshops = () => {
             {/* Left arrow */}
             <button
               onClick={prevDetail}
-              className="absolute left-3 sm:left-8 z-20 w-12 h-12 rounded-full bg-renaissance-dark/60 border border-renaissance-gold/50 flex items-center justify-center text-renaissance-gold hover:bg-renaissance-gold hover:text-renaissance-dark transition-all backdrop-blur-sm"
+              className="absolute left-3 sm:left-8 z-20 w-12 h-12 rounded-full bg-[#050505]/60 border border-st-red/50 flex items-center justify-center text-st-red hover:bg-st-red hover:text-[#050505] transition-all backdrop-blur-sm"
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
@@ -189,27 +201,27 @@ const Workshops = () => {
             {/* Right arrow */}
             <button
               onClick={nextDetail}
-              className="absolute right-3 sm:right-8 z-20 w-12 h-12 rounded-full bg-renaissance-dark/60 border border-renaissance-gold/50 flex items-center justify-center text-renaissance-gold hover:bg-renaissance-gold hover:text-renaissance-dark transition-all backdrop-blur-sm"
+              className="absolute right-3 sm:right-8 z-20 w-12 h-12 rounded-full bg-[#050505]/60 border border-st-red/50 flex items-center justify-center text-st-red hover:bg-st-red hover:text-[#050505] transition-all backdrop-blur-sm"
             >
               <ChevronRight className="w-6 h-6" />
             </button>
 
             {/* Center content */}
             <div className="relative z-10 text-center px-12 sm:px-24 max-w-4xl mx-auto">
-              <p className="text-renaissance-gold text-xs uppercase tracking-[0.3em] mb-3 font-bold">
+              <p className="text-st-red text-xs uppercase tracking-[0.3em] mb-3 font-bold">
                 Details & Booking
               </p>
-              <h1 className="text-3xl sm:text-5xl md:text-7xl font-milanesa font-black text-[#FBF1CF] uppercase tracking-wide drop-shadow-[0_4px_8px_rgba(0,0,0,0.9)] leading-tight">
+              <h1 className="text-3xl sm:text-5xl md:text-7xl font-milanesa font-black text-[#ffffff] uppercase tracking-wide drop-shadow-[0_4px_8px_rgba(0,0,0,0.9)] leading-tight">
                 {detailWorkshop.title}
               </h1>
-              <button className="mt-8 px-8 py-3 bg-renaissance-burgundy text-renaissance-gold border-2 border-renaissance-gold rounded-full font-milanesa font-bold uppercase tracking-widest hover:bg-renaissance-gold hover:text-renaissance-burgundy transition-all duration-300 shadow-[0_0_20px_rgba(212,175,55,0.3)] text-sm">
+              <button className="mt-8 px-10 py-4 bg-st-red text-black rounded-full font-title font-black uppercase tracking-widest hover:scale-105 hover:bg-white transition-all shadow-[0_0_30px_rgba(255,0,60,0.3)] mx-auto">
                 Register Now
               </button>
             </div>
           </section>
 
           {/* Detail content */}
-          <section className="flex-1 bg-renaissance-dark/95 border-t border-renaissance-gold/20 py-12 md:py-16 px-4">
+          <section className="flex-1 bg-[#050505]/95 border-t border-st-red/20 py-12 md:py-16 px-4">
             <div className="max-w-6xl mx-auto">
               {/* Top Row: Description & Image */}
               <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 mb-12">
@@ -218,28 +230,28 @@ const Workshops = () => {
 
                 {/* Main Desc & Highlights */}
                 <div className="md:col-span-7 order-1 md:order-2">
-                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-wide text-[#FBF1CF] leading-tight mb-2">
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-wide text-[#ffffff] leading-tight mb-2">
                     {detailWorkshop.title}
                   </h2>
-                  <p className="text-renaissance-gold text-xs sm:text-sm uppercase tracking-[0.2em] mb-6 border-b border-renaissance-gold/20 pb-4">
+                  <p className="text-st-red text-xs sm:text-sm uppercase tracking-[0.2em] mb-6 border-b border-st-red/20 pb-4">
                     Workshop Session
                   </p>
 
-                  <p className="text-[#FBF1CF]/90 leading-relaxed text-base md:text-lg mb-8 font-light italic">
+                  <p className="text-[#ffffff]/90 leading-relaxed text-base md:text-lg mb-8 font-light italic">
                     "{detailWorkshop.description}"
                   </p>
 
                   {detailWorkshop.highlights && detailWorkshop.highlights.length > 0 && (
                     <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-6 sm:p-8">
-                      <h4 className="text-renaissance-gold font-bold uppercase tracking-widest text-sm mb-6 flex items-center gap-3">
-                        <span className="w-8 h-[1px] bg-renaissance-gold/50"></span>
+                      <h4 className="text-st-red font-bold uppercase tracking-widest text-sm mb-6 flex items-center gap-3">
+                        <span className="w-8 h-[1px] bg-st-red/50"></span>
                         Key Highlights
                       </h4>
                       <ul className="space-y-4">
                         {detailWorkshop.highlights.map((hlt, i) => (
                           <li key={i} className="flex items-start gap-4">
-                            <div className="w-1.5 h-1.5 rounded-full bg-renaissance-gold mt-2 shrink-0"></div>
-                            <span className="text-renaissance-cream/80 text-sm md:text-base leading-relaxed">{hlt}</span>
+                            <div className="w-1.5 h-1.5 rounded-full bg-st-red mt-2 shrink-0"></div>
+                            <span className="text-gray-300/80 text-sm md:text-base leading-relaxed">{hlt}</span>
                           </li>
                         ))}
                       </ul>
@@ -252,93 +264,93 @@ const Workshops = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
                 
                 {/* Schedule & Venue */}
-                <div className="lg:col-span-2 bg-black/40 border border-renaissance-gold/20 p-6 rounded-2xl flex flex-col sm:flex-row gap-6 sm:gap-10">
+                <div className="lg:col-span-2 bg-black/40 border border-st-red/20 p-6 rounded-2xl flex flex-col sm:flex-row gap-6 sm:gap-10">
                   <div className="flex-1">
                     <h5 className="text-white/50 text-[10px] uppercase font-bold tracking-widest mb-1">Date & Time</h5>
-                    <p className="text-[#FBF1CF] font-medium text-lg mb-1">{detailWorkshop.date || "TBD"}</p>
-                    <p className="text-renaissance-gold text-sm">{detailWorkshop.time || "TBD"}</p>
+                    <p className="text-[#ffffff] font-medium text-lg mb-1">{detailWorkshop.date || "TBD"}</p>
+                    <p className="text-st-red text-sm">{detailWorkshop.time || "TBD"}</p>
                   </div>
                   <div className="w-px bg-white/10 hidden sm:block"></div>
                   <div className="flex-1">
                     <h5 className="text-white/50 text-[10px] uppercase font-bold tracking-widest mb-1">Venue</h5>
-                    <p className="text-[#FBF1CF] font-medium text-base mb-1">{detailWorkshop.venue || "TBD"}</p>
-                    <p className="text-renaissance-cream/50 text-xs mt-2">Slots Available: <span className="text-white">{detailWorkshop.slots || "TBD"}</span></p>
+                    <p className="text-[#ffffff] font-medium text-base mb-1">{detailWorkshop.venue || "TBD"}</p>
+                    <p className="text-gray-300/50 text-xs mt-2">Slots Available: <span className="text-white">{detailWorkshop.slots || "TBD"}</span></p>
                   </div>
                 </div>
 
                 {/* Pricing / Fees */}
-                <div className="bg-black/40 border border-renaissance-gold/20 p-6 rounded-2xl flex flex-col justify-center">
+                <div className="bg-black/40 border border-st-red/20 p-6 rounded-2xl flex flex-col justify-center">
                   <h5 className="text-white/50 text-[10px] uppercase font-bold tracking-widest mb-3">Registration Fee</h5>
                   {detailWorkshop.fees ? (
                     <div className="space-y-2">
                       {detailWorkshop.fees.earlyBird && (
                         <div className="flex justify-between items-center text-sm">
-                          <span className="text-renaissance-cream/70">Early Bird</span>
-                          <span className="text-renaissance-gold font-bold">{detailWorkshop.fees.earlyBird}</span>
+                          <span className="text-gray-300/70">Early Bird</span>
+                          <span className="text-st-red font-bold">{detailWorkshop.fees.earlyBird}</span>
                         </div>
                       )}
                       {detailWorkshop.fees.lateBird && (
                         <div className="flex justify-between items-center text-sm">
-                          <span className="text-renaissance-cream/70">Late Registration</span>
-                          <span className="text-[#FBF1CF] font-bold">{detailWorkshop.fees.lateBird}</span>
+                          <span className="text-gray-300/70">Late Registration</span>
+                          <span className="text-[#ffffff] font-bold">{detailWorkshop.fees.lateBird}</span>
                         </div>
                       )}
                       {detailWorkshop.fees.spotPricing && (
                         <div className="flex justify-between items-center text-sm">
-                          <span className="text-renaissance-cream/70">Spot Registration</span>
-                          <span className="text-renaissance-gold font-bold">{detailWorkshop.fees.spotPricing}</span>
+                          <span className="text-gray-300/70">Spot Registration</span>
+                          <span className="text-st-red font-bold">{detailWorkshop.fees.spotPricing}</span>
                         </div>
                       )}
                       {detailWorkshop.fees.regular && (
                          <div className="flex justify-between items-center text-sm">
-                           <span className="text-renaissance-cream/70">Fee</span>
-                           <span className="text-renaissance-gold font-bold">{detailWorkshop.fees.regular}</span>
+                           <span className="text-gray-300/70">Fee</span>
+                           <span className="text-st-red font-bold">{detailWorkshop.fees.regular}</span>
                          </div>
                       )}
                     </div>
                   ) : (
-                    <p className="text-renaissance-gold font-bold">TBD</p>
+                    <p className="text-st-red font-bold">TBD</p>
                   )}
                 </div>
 
                 {/* Contact Incharges */}
-                <div className="bg-black/40 border border-renaissance-gold/20 p-6 rounded-2xl flex flex-col justify-center">
+                <div className="bg-black/40 border border-st-red/20 p-6 rounded-2xl flex flex-col justify-center">
                   <h5 className="text-white/50 text-[10px] uppercase font-bold tracking-widest mb-3">Incharges</h5>
                   {detailWorkshop.incharges && detailWorkshop.incharges.length > 0 ? (
                     <div className="space-y-3">
                       {detailWorkshop.incharges.map((incharge, i) => (
                         <div key={i} className="flex flex-col">
-                           <span className="text-[#FBF1CF] text-sm uppercase font-bold tracking-wider">{incharge.name}</span>
-                           <a href={`tel:+91${incharge.phone.replace(/\s/g, '')}`} className="text-renaissance-gold text-xs mt-0.5 hover:text-white transition-colors">+91 {incharge.phone}</a>
+                           <span className="text-[#ffffff] text-sm uppercase font-bold tracking-wider">{incharge.name}</span>
+                           <a href={`tel:+91${incharge.phone.replace(/\s/g, '')}`} className="text-st-red text-xs mt-0.5 hover:text-white transition-colors">+91 {incharge.phone}</a>
                         </div>
                       ))}
                     </div>
                   ) : (
-                    <p className="text-renaissance-cream/50 text-xs italic">Details coming soon</p>
+                    <p className="text-gray-300/50 text-xs italic">Details coming soon</p>
                   )}
                 </div>
 
               </div>
 
               {/* Prev / Next navigation */}
-              <div className="flex items-center justify-between pt-8 border-t border-renaissance-gold/20 max-w-lg mx-auto">
-                <button onClick={prevDetail} className="group flex items-center gap-3 text-renaissance-gold hover:text-white transition-colors">
-                  <div className="w-10 h-10 rounded-full border border-renaissance-gold/40 flex items-center justify-center group-hover:bg-renaissance-gold group-hover:border-transparent group-hover:text-black transition-all">
+              <div className="flex items-center justify-between pt-8 border-t border-st-red/20 max-w-lg mx-auto">
+                <button onClick={prevDetail} className="group flex items-center gap-3 text-st-red hover:text-white transition-colors">
+                  <div className="w-10 h-10 rounded-full border border-st-red/40 flex items-center justify-center group-hover:bg-st-red group-hover:border-transparent group-hover:text-black transition-all">
                     <ChevronLeft className="w-5 h-5" />
                   </div>
                   <span className="text-xs uppercase tracking-widest hidden sm:block font-bold">Prev</span>
                 </button>
                 <div className="flex flex-col items-center">
-                  <span className="text-[#FBF1CF] font-black tracking-widest text-lg">
+                  <span className="text-[#ffffff] font-black tracking-widest text-lg">
                     {detailIndex + 1}
                   </span>
                   <span className="text-white/30 text-[10px] uppercase tracking-widest">
                     of {workshops.length}
                   </span>
                 </div>
-                <button onClick={nextDetail} className="group flex items-center gap-3 text-renaissance-gold hover:text-white transition-colors">
+                <button onClick={nextDetail} className="group flex items-center gap-3 text-st-red hover:text-white transition-colors">
                   <span className="text-xs uppercase tracking-widest hidden sm:block font-bold">Next</span>
-                  <div className="w-10 h-10 rounded-full border border-renaissance-gold/40 flex items-center justify-center group-hover:bg-renaissance-gold group-hover:border-transparent group-hover:text-black transition-all">
+                  <div className="w-10 h-10 rounded-full border border-st-red/40 flex items-center justify-center group-hover:bg-st-red group-hover:border-transparent group-hover:text-black transition-all">
                     <ChevronRight className="w-5 h-5" />
                   </div>
                 </button>
@@ -348,7 +360,7 @@ const Workshops = () => {
               <div className="text-center mt-12">
                 <button
                   onClick={closeDetail}
-                  className="inline-block text-renaissance-gold/50 hover:text-renaissance-gold text-xs uppercase tracking-[0.3em] transition-colors pb-1 border-b border-renaissance-gold/30 hover:border-renaissance-gold"
+                  className="inline-block text-st-red/50 hover:text-st-red text-xs uppercase tracking-[0.3em] transition-colors pb-1 border-b border-st-red/30 hover:border-st-red"
                 >
                   Back to all workshops
                 </button>

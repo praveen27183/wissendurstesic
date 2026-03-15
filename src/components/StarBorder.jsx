@@ -48,7 +48,7 @@ const StarBorder = ({
           animationDelay: `calc(${speed} / -2)`
         }}
       ></div>
-      <div className="relative z-10 bg-gradient-to-b from-[#111111]/90 to-black border border-gray-800/50 text-white text-center rounded-[20px] w-full h-full flex items-center justify-center backdrop-blur-md transition-all hover:bg-black/50">
+      <div className="relative z-10 bg-gradient-to-b from-[#0f0f14]/90 to-[#050505] border border-gray-800/50 text-white text-center rounded-[20px] w-full h-full flex items-center justify-center backdrop-blur-md transition-all hover:bg-[#0f0f14]/50 hover:shadow-[0_0_15px_rgba(255,0,60,0.3)]">
         {children}
       </div>
     </Component>

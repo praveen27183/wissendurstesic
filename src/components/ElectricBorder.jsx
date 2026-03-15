@@ -18,7 +18,7 @@ function hexToRgba(hex, alpha = 1) {
 
 const ElectricBorder = ({
   children,
-  color = '#5227FF',
+  color = '#ff003c',
   speed = 1,
   chaos = 0.12,
   borderRadius = 24,

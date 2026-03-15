@@ -18,10 +18,11 @@ export default {
           lightGold: '#E5C158',
         },
         st: {
-          dark: '#0b0b0f',
-          red: '#e50914',
-          blue: '#1f51ff',
-          purple: '#1a0b2e',
+          dark: '#050505',
+          darker: '#0a0a0a',
+          secondary: '#0f0f14',
+          red: '#ff003c',
+          blue: '#2563ff',
         }
       },
       animation: {

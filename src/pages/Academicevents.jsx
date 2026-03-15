@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Clock, Calendar, X, ChevronDown, CheckCircle2 } from 'lucide-react';
 import HeroSection from '../components/herosection';
+import Galaxy from '../components/Galaxy.jsx';
 
 const academicEvents = [
     {
@@ -464,7 +465,7 @@ const Academicevents = () => {
     const next = () => setDetailIndex(i => (i + 1) % academicEvents.length);
 
     return (
-        <div className="min-h-screen font-body bg-renaissance-dark text-[#FBF1CF] animate-[fadeIn_1s_ease-out]">
+        <div className="min-h-screen font-body bg-[#050505] text-[#ffffff] animate-[fadeIn_1s_ease-out]">
 
             {/* ── Hero ── */}
             <HeroSection 
@@ -474,21 +475,31 @@ const Academicevents = () => {
                 image="/asset/hero_sec_for_all/acedemic_event.png"
             />
 
+            {/* Galaxy Background layer */}
+            <div className="fixed inset-0 z-0 pointer-events-none opacity-20">
+                <Galaxy 
+                    starSpeed={0.2}
+                    density={1.2}
+                    hueShift={220}
+                    transparent
+                />
+            </div>
+
             {/* ── Event Cards Grid ── */}
-            <section className="py-16 px-4 sm:px-8 bg-[#0a0000]">
+            <section className="py-16 px-4 sm:px-8 bg-[#050505]">
 
                 {/* Section Header */}
                 <div className="flex items-center justify-center max-w-7xl mx-auto mb-10">
-                    <div className="h-[1px] bg-[#D4AF37]/50 flex-1 max-w-[150px] mr-4"></div>
-                    <h2 className="text-[#D4AF37] font-bold tracking-[0.2em] font-title uppercase text-sm md:text-base">Events Lineup</h2>
-                    <div className="h-[1px] bg-[#D4AF37]/50 flex-1 max-w-[150px] ml-4"></div>
+                    <div className="h-[1px] bg-[#ff003c]/50 flex-1 max-w-[150px] mr-4"></div>
+                    <h2 className="text-[#ff003c] font-bold tracking-[0.2em] font-title uppercase text-sm md:text-base">Events Lineup</h2>
+                    <div className="h-[1px] bg-[#ff003c]/50 flex-1 max-w-[150px] ml-4"></div>
                 </div>
 
                 <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                     {academicEvents.map((event, index) => (
                         <div
                             key={event.id}
-                            className="group flex flex-col bg-[#1c182d] border border-renaissance-gold/20 rounded-xl overflow-hidden cursor-pointer hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(212,175,55,0.15)] transition-all duration-300"
+                            className="group flex flex-col bg-[rgba(10,10,15,0.85)] border border-st-red/20 rounded-xl overflow-hidden cursor-pointer hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(255,0,60,0.15)] transition-all duration-300"
                             onClick={() => setDetailIndex(index)}
                         >
                             <div className="relative w-full aspect-video overflow-hidden">
@@ -496,20 +507,30 @@ const Academicevents = () => {
                                     className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
                                     style={{ backgroundImage: `url(${event.image})` }}
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-[#1c182d] to-transparent"></div>
+                                <div className="absolute inset-0 bg-gradient-to-t from-[rgba(10,10,15,0.85)] to-transparent"></div>
+                                <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full border border-st-red/30">
+                                    <span className="text-white text-lg font-bold uppercase tracking-wider font-title flex items-center gap-2">
+                                        {event.date.split(' ')[0]}
+                                    </span>
+                                </div>
                             </div>
 
-                            <div className="flex flex-col p-6 flex-1 bg-[#140c07] border-t border-renaissance-gold/20">
-                                <span className="text-[#D4AF37] text-[10px] md:text-xs font-black tracking-widest uppercase mb-2 block font-title">
+                            <div className="flex flex-col p-6 flex-1 bg-[#050505] border-t border-st-red/20">
+                                <span className="text-[#ff003c] text-[10px] md:text-xs font-black tracking-widest uppercase mb-2 block font-title">
                                     {event.subtitle}
                                 </span>
-                                <h3 className="text-white text-xl md:text-2xl font-black uppercase leading-tight mb-4 group-hover:text-[#FBF1CF] transition-colors font-milanesa">
+                                <h3 className="text-white text-xl md:text-2xl font-black uppercase leading-tight mb-4 group-hover:text-[#ffffff] transition-colors font-milanesa">
                                     {event.title}
                                 </h3>
+                                
+                                <div className="mt-auto pt-4 flex items-end justify-end border-t border-white/5 text-[#9fa0b8] text-[10px] md:text-xs uppercase tracking-widest font-title font-bold">
+                                    <span className="text-st-red/50 flex items-center gap-1 group-hover:text-st-red transition-colors">Details <ChevronRight className="w-3 h-3" /></span>
+                                </div>
 
-                                <div className="mt-auto pt-4 flex items-center justify-between border-t border-white/5 text-[#9fa0b8] text-[10px] md:text-xs uppercase tracking-widest font-title font-bold">
-                                    <span className="flex items-center gap-2"><Calendar className="w-3.5 h-3.5 text-renaissance-gold" /> {event.date.split(' ')[0]}</span>
-                                    <span className="text-renaissance-gold/50 flex items-center gap-1 group-hover:text-renaissance-gold transition-colors">Details <ChevronRight className="w-3 h-3" /></span>
+                                <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full border border-st-red/30">
+                                    <span className="text-white text-lg font-bold uppercase tracking-wider font-title flex items-center gap-2">
+                                        {event.date.split(' ')[0]}
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -522,21 +543,29 @@ const Academicevents = () => {
                 <div className="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl flex flex-col overflow-hidden">
 
                     {/* Mobile top back bar */}
-                    <div className="flex md:hidden items-center justify-between px-4 py-4 bg-[#100c06] border-b border-renaissance-gold/20 shrink-0 z-30">
+                    <div className="flex md:hidden items-center justify-between px-4 py-3 bg-[#0f0f14] border-b border-st-red/20 shrink-0 z-30">
                         <button
                             onClick={() => setDetailIndex(null)}
-                            className="flex items-center gap-2 text-renaissance-gold font-bold uppercase tracking-widest text-sm"
+                            className="flex items-center gap-1 text-st-red font-bold uppercase tracking-widest text-xs"
                         >
                             <ChevronLeft className="w-5 h-5" /> Back
                         </button>
-                        <span className="text-renaissance-cream/50 text-xs font-title">{detailIndex + 1} / {academicEvents.length}</span>
+                        <div className="flex items-center gap-3">
+                            <button onClick={prev} className="flex items-center justify-center w-8 h-8 rounded-full border border-st-red/40 text-st-red hover:bg-st-red hover:text-black transition-all">
+                                <ChevronLeft className="w-4 h-4 -ml-0.5" />
+                            </button>
+                            <span className="text-gray-300/50 text-xs font-title">{detailIndex + 1} / {academicEvents.length}</span>
+                            <button onClick={next} className="flex items-center justify-center w-8 h-8 rounded-full border border-st-red/40 text-st-red hover:bg-st-red hover:text-black transition-all">
+                                <ChevronRight className="w-4 h-4 -mr-0.5" />
+                            </button>
+                        </div>
                     </div>
 
                     {/* Inner split */}
                     <div className="flex flex-col md:flex-row flex-1 overflow-hidden">
 
                         {/* LEFT: Full painting & Controls */}
-                        <div className="relative w-full md:w-2/5 h-[30vh] md:h-full shrink-0 border-r border-renaissance-gold/20">
+                        <div className="relative w-full md:w-2/5 h-[30vh] md:h-full shrink-0 border-r border-st-red/20">
                             <div
                                 className="absolute inset-0 bg-cover bg-center"
                                 style={{ backgroundImage: `url(${detailBg})` }}
@@ -545,16 +574,16 @@ const Academicevents = () => {
 
                             {/* Desktop Details & Controls */}
                             <div className="hidden md:flex absolute inset-0 flex-col justify-end p-10 pb-20">
-                                <span className="text-renaissance-gold text-xs font-black tracking-[0.3em] uppercase mb-4 block">{detailEvent.subtitle}</span>
-                                <h2 className="text-4xl lg:text-5xl font-milanesa font-black uppercase text-[#FBF1CF] leading-tight drop-shadow-xl mb-8">
+                                <span className="text-st-red text-xs font-black tracking-[0.3em] uppercase mb-4 block">{detailEvent.subtitle}</span>
+                                <h2 className="text-4xl lg:text-5xl font-milanesa font-black uppercase text-[#ffffff] leading-tight drop-shadow-xl mb-8">
                                     {detailEvent.title}
                                 </h2>
 
                                 <div className="flex gap-4">
-                                    <button onClick={prev} className="w-12 h-12 rounded-full bg-black/50 border border-renaissance-gold/30 flex items-center justify-center text-renaissance-gold hover:bg-renaissance-gold hover:text-black transition-all group backdrop-blur-sm">
+                                    <button onClick={prev} className="w-12 h-12 rounded-full bg-black/50 border border-st-red/30 flex items-center justify-center text-st-red hover:bg-st-red hover:text-black transition-all group backdrop-blur-sm">
                                         <ChevronLeft className="w-6 h-6 group-hover:-translate-x-1 transition-transform" />
                                     </button>
-                                    <button onClick={next} className="w-12 h-12 rounded-full bg-black/50 border border-renaissance-gold/30 flex items-center justify-center text-renaissance-gold hover:bg-renaissance-gold hover:text-black transition-all group backdrop-blur-sm">
+                                    <button onClick={next} className="w-12 h-12 rounded-full bg-black/50 border border-st-red/30 flex items-center justify-center text-st-red hover:bg-st-red hover:text-black transition-all group backdrop-blur-sm">
                                         <ChevronRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
                                     </button>
                                 </div>
@@ -562,30 +591,30 @@ const Academicevents = () => {
                         </div>
 
                         {/* RIGHT: Detail content & Extensive Sections */}
-                        <div className="flex-1 overflow-y-auto bg-[#0a0604] relative">
+                        <div className="flex-1 overflow-y-auto bg-[#050505] relative">
                             {/* Desktop close button */}
                             <button
                                 onClick={() => setDetailIndex(null)}
-                                className="hidden md:flex fixed top-8 right-8 z-30 w-12 h-12 rounded-full bg-renaissance-dark/80 border border-renaissance-gold/40 items-center justify-center text-renaissance-gold hover:bg-renaissance-gold hover:text-black transition-all shadow-[0_0_15px_rgba(212,175,55,0.2)]"
+                                className="hidden md:flex fixed top-8 right-8 z-30 w-12 h-12 rounded-full bg-[#050505]/80 border border-st-red/40 items-center justify-center text-st-red hover:bg-st-red hover:text-black transition-all shadow-[0_0_15px_rgba(255,0,60,0.2)]"
                             >
                                 <X className="w-5 h-5" />
                             </button>
 
                             <div className="p-6 sm:p-8 md:p-12 lg:p-16 max-w-4xl mx-auto">
-                                <div className="md:hidden mb-6 border-b border-renaissance-gold/20 pb-6">
-                                    <h2 className="text-3xl font-milanesa font-black uppercase tracking-wide text-[#FBF1CF] leading-tight mb-2">
+                                <div className="md:hidden mb-6 border-b border-st-red/20 pb-6">
+                                    <h2 className="text-3xl font-milanesa font-black uppercase tracking-wide text-[#ffffff] leading-tight mb-2">
                                         {detailEvent.title}
                                     </h2>
-                                    <p className="text-renaissance-gold font-bold font-title uppercase tracking-[0.1em] text-xs">
+                                    <p className="text-st-red font-bold font-title uppercase tracking-[0.1em] text-xs">
                                         {detailEvent.subtitle}
                                     </p>
                                 </div>
 
-                                <div className="flex flex-wrap gap-4 mb-8 text-renaissance-gold text-sm font-bold tracking-widest uppercase bg-renaissance-gold/10 inline-flex px-5 py-2.5 rounded-full border border-renaissance-gold/30 shadow-md">
+                                <div className="flex flex-wrap gap-4 mb-8 text-st-red text-sm font-bold tracking-widest uppercase bg-st-red/10 inline-flex px-5 py-2.5 rounded-full border border-st-red/30 shadow-md">
                                     <span className="flex items-center gap-2"><Calendar className="w-4 h-4" /> {detailEvent.date}</span>
                                 </div>
 
-                                <p className="text-renaissance-cream/90 leading-relaxed text-base md:text-lg font-light mb-12 italic border-l-4 border-renaissance-gold pl-6 py-2 bg-gradient-to-r from-white/5 to-transparent">
+                                <p className="text-gray-300/90 leading-relaxed text-base md:text-lg font-light mb-12 italic border-l-4 border-st-red pl-6 py-2 bg-gradient-to-r from-white/5 to-transparent">
                                     {detailEvent.description}
                                 </p>
 
@@ -593,7 +622,7 @@ const Academicevents = () => {
                                 <div className="space-y-8">
                                     {detailEvent.sections.map((section, idx) => (
                                         <div key={idx} className="bg-white/[0.03] border border-white/5 rounded-2xl p-6 md:p-8">
-                                            <h4 className="text-lg font-bold text-renaissance-gold uppercase tracking-[0.15em] mb-6 flex items-center justify-between border-b border-white/10 pb-4">
+                                            <h4 className="text-lg font-bold text-st-red uppercase tracking-[0.15em] mb-6 flex items-center justify-between border-b border-white/10 pb-4">
                                                 {section.title}
                                             </h4>
                                             {section.title === "Subjects" ? (
@@ -601,10 +630,10 @@ const Academicevents = () => {
                                                     {section.items.map((item, itemIdx) => (
                                                         <div 
                                                             key={itemIdx} 
-                                                            className="group relative overflow-hidden bg-[#1c182d]/50 border border-renaissance-gold/20 rounded-xl cursor-default hover:-translate-y-1 hover:shadow-[0_5px_15px_rgba(212,175,55,0.15)] transition-all duration-300 flex items-center justify-center p-6 sm:p-8"
+                                                            className="group relative overflow-hidden bg-[rgba(10,10,15,0.85)]/50 border border-st-red/20 rounded-xl cursor-default hover:-translate-y-1 hover:shadow-[0_5px_15px_rgba(255,0,60,0.15)] transition-all duration-300 flex items-center justify-center p-6 sm:p-8"
                                                         >
                                                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                                                            <h3 className="relative z-10 text-white text-lg font-black uppercase tracking-wider group-hover:text-renaissance-gold transition-colors text-center font-milanesa mt-1">
+                                                            <h3 className="relative z-10 text-white text-lg font-black uppercase tracking-wider group-hover:text-st-red transition-colors text-center font-milanesa mt-1">
                                                                 {item}
                                                             </h3>
                                                         </div>
@@ -613,8 +642,8 @@ const Academicevents = () => {
                                             ) : (
                                                 <ul className="space-y-4">
                                                     {section.items.map((item, itemIdx) => (
-                                                        <li key={itemIdx} className="flex gap-4 items-start text-sm md:text-base text-[#FBF1CF]/80 leading-relaxed">
-                                                            <CheckCircle2 className="w-5 h-5 text-renaissance-gold/50 shrink-0 mt-0.5" />
+                                                        <li key={itemIdx} className="flex gap-4 items-start text-sm md:text-base text-[#ffffff]/80 leading-relaxed">
+                                                            <CheckCircle2 className="w-5 h-5 text-st-red/50 shrink-0 mt-0.5" />
                                                             <span>{item}</span>
                                                         </li>
                                                     ))}
@@ -624,19 +653,9 @@ const Academicevents = () => {
                                     ))}
                                 </div>
 
-                                <div className="mt-12 pt-8 border-t border-renaissance-gold/20 flex justify-center">
-                                    <button className="px-10 py-4 bg-renaissance-gold text-black rounded-full font-title font-black uppercase tracking-widest hover:scale-105 hover:bg-white transition-all shadow-[0_0_30px_rgba(212,175,55,0.3)] flex items-center gap-3">
+                                <div className="mt-12 pt-8 border-t border-st-red/20 flex justify-center pb-8">
+                                    <button className="px-10 py-4 bg-st-red text-black rounded-full font-title font-black uppercase tracking-widest hover:scale-105 hover:bg-white transition-all shadow-[0_0_30px_rgba(255,0,60,0.3)] flex items-center gap-3">
                                         Register For {detailEvent.subtitle.split(' ')[0]}
-                                    </button>
-                                </div>
-
-                                {/* Mobile arrows */}
-                                <div className="flex md:hidden items-center justify-between mt-12 mb-4 bg-black/40 p-4 rounded-2xl border border-white/5">
-                                    <button onClick={prev} className="flex items-center gap-2 px-5 py-2.5 border border-renaissance-gold/40 text-renaissance-gold text-sm font-bold uppercase tracking-widest rounded-full hover:bg-renaissance-gold hover:text-black transition-all">
-                                        <ChevronLeft className="w-4 h-4" /> Prev
-                                    </button>
-                                    <button onClick={next} className="flex items-center gap-2 px-5 py-2.5 border border-renaissance-gold/40 text-renaissance-gold text-sm font-bold uppercase tracking-widest rounded-full hover:bg-renaissance-gold hover:text-black transition-all">
-                                        Next <ChevronRight className="w-4 h-4" />
                                     </button>
                                 </div>
                             </div>

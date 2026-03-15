@@ -40,19 +40,44 @@ const IntroAnimation = ({ onComplete }) => {
             <div className={`absolute inset-0 bg-red-500 mix-blend-screen pointer-events-none transition-opacity duration-[2000ms] z-50 ${stage === 3 ? 'opacity-40' : 'opacity-0'}`}></div>
 
             {/* Main Title - Revealed after dice breaks */}
-            <div className={`absolute z-20 flex flex-col items-center justify-center transition-all duration-[4000ms] ease-out
-                ${stage >= 3 ? 'scale-100 opacity-100' : 'scale-75 opacity-0 pointer-events-none'}
-            `}>
-                <h1
-                    className="text-[#ff3333] font-bold tracking-[0.2em] sm:tracking-[0.4em] text-4xl sm:text-6xl md:text-9xl font-serif text-center"
-                    style={{ textShadow: "0 0 30px #ff0000, 0 0 60px #cc0000, 0 0 90px #aa0000" }}
-                >
-                    WISSENDURST
-                </h1>
-                <p className="text-red-400 font-bold tracking-[0.6em] mt-6 text-lg sm:text-2xl md:text-3xl">
-                    26
-                </p>
-            </div>
+<div className={`absolute z-20 flex flex-col items-center justify-center transition-all duration-[4000ms] ease-out
+  ${stage >= 3 ? 'scale-100 opacity-100' : 'scale-75 opacity-0 pointer-events-none'}
+`}>
+
+  {/* Welcome text */}
+  <h3
+    className="text-[#ff3333] font-bold tracking-[0.25em] 
+    text-lg sm:text-2xl md:text-4xl lg:text-5xl text-center"
+    style={{
+      fontFamily: "'Stranger', serif",
+      textShadow: "0 0 20px #ff0000, 0 0 40px #cc0000"
+    }}
+  >
+    Welcome to
+  </h3>
+
+  {/* Main title */}
+  <h1
+    className="text-[#ff3333] font-bold tracking-[0.15em] 
+    text-5xl sm:text-7xl md:text-[9rem] lg:text-[12rem] text-center"
+    style={{
+      fontFamily: "'Stranger', serif",
+      textShadow: "0 0 30px #ff0000, 0 0 60px #cc0000, 0 0 90px #aa0000"
+    }}
+  >
+    WISSENDURST
+  </h1>
+
+  {/* Year */}
+  <p
+    className="text-red-400 font-bold tracking-[0.6em] mt-6 
+    text-xl sm:text-4xl md:text-5xl"
+    style={{ fontFamily: "'Stranger', serif" }}
+  >
+    2026
+  </p>
+
+</div>
 
             {/* Dice Container */}
             <div
