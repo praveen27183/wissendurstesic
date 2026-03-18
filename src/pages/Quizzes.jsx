@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Clock, Calendar, X, ChevronDown, CheckCircle2 } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Clock, Calendar, X, ChevronDown, CheckCircle2 ,Instagram} from 'lucide-react';
 import HeroSection from '../components/herosection';
 import Galaxy from '../components/Galaxy.jsx';
 
@@ -8,14 +8,11 @@ const quizEvents = [
     id: 1,
     title: "ERYTHRON",
     subtitle: "Hematology Quiz (ONLINE ARENA)",
+    theme: "The ruthless battle of blood",
     date: "08.04.2026",
-    image: "/asset/Quizzes/erythron.jpg",
+    image: "../../public/asset/Quizzes/erythron.jpg",
     description: "From smear patterns to clotting cascades, hematology is far more than numbers on a report. It is the science that flows within us. Let us channel the courage of erythrocytes and the vigilance of leukocytes to sharpen our clinical instincts.",
     sections: [
-      {
-        title: "Theme",
-        items: ["The ruthless battle of blood"]
-      },
       {
         title: "General Instructions",
         items: [
@@ -31,7 +28,8 @@ const quizEvents = [
         title: "Prize & Fees",
         items: [
           "Prize Pool: ₹5000",
-          "Registration Fees: ₹200 per team / ₹100 lone wolf / ₹250 late bird"
+          "Winners get free entry to Minerva.",
+          "Registration Fees: ₹200 per team / ₹100 lone wolf / ₹250 per team for late bird"
         ]
       },
       {
@@ -47,19 +45,16 @@ const quizEvents = [
     id: 2,
     title: "AXIS",
     subtitle: "Endocrine Quiz (ONLINE ARENA)",
+    theme: "The voice of messengers",
     date: "18.04.2026",
-    image: "/asset/Quizzes/endocrine.jpg",
+    image: "../../public/asset/Quizzes/endocrine.jpg",
     description: "Think you can decide the body's hormone axes and feedback loops? Step into the realm of regulation and rhythm, and respond to the whispers of imbalanced systems wreaking havoc. From adrenal surges to sugar crashes, let's face it all at one place.",
     sections: [
-      {
-        title: "Theme",
-        items: ["The voice of messengers"]
-      },
       {
         title: "General Instructions",
         items: [
           "Maximum 2 members per team.",
-          "1st year to CRMI allowed.",
+          "1st year to CRMI allowed (2020 batch).",
           "Max 2 CRMI per team.",
           "Cross college teams allowed.",
           "Lone wolves allowed.",
@@ -70,7 +65,8 @@ const quizEvents = [
         title: "Prize & Fees",
         items: [
           "Prize Pool: ₹5000",
-          "Registration Fees: ₹200 per team / ₹100 lone wolf / ₹250 late bird"
+          "Winners get free entry to Minerva.",
+          "Registration Fees: ₹200 per team / ₹100 lone wolf / ₹250 per team for late bird"
         ]
       },
       {
@@ -86,15 +82,13 @@ const quizEvents = [
     id: 3,
     title: "MINERVA JUNIOR",
     subtitle: "The Junior Quiz (OFFLINE ARENA)",
+    theme: "Where the knowledge heralds",
     date: "28.04.2026",
     time: "Prelims – 8:30 AM | Finals – 12:30 PM",
-    image: "/asset/Quizzes/minerva_junior.jpg",
+    image: "../../public/asset/Quizzes/minerva_junior.jpg",
     description: "Attention Quizzical minds! The strength of a clinician lies in the stability of their foundation. The 5th Edition of Minerva proudly presents The Junior Quiz, to take us to the concepts that shape our minds long before clinics and case sheets do. Are you ready to strengthen your core and step into the roots that anchor our medical minds?",
     sections: [
-      {
-        title: "Theme",
-        items: ["Where the knowledge heralds"]
-      },
+
       {
         title: "Topics",
         items: [
@@ -140,7 +134,7 @@ const quizEvents = [
     subtitle: "The Senior Quiz (OFFLINE ARENA)",
     date: "30.04.2026",
     time: "Prelims – 8:30 AM | Finals – 11:30 AM",
-    image: "/asset/Quizzes/minerva_senior.Jpg",
+    image: "../../public/asset/Quizzes/minerva_senior.Jpg",
     description: "Attention Quizzical minds! Are you ready for your ultimate academic showdown? The 5th Edition of Minerva proudly presents The Senior Quiz to ignite your passion for learning and challenge your intellect. Take this moment to flex your mastery in human medicine and push the boundaries of your cerebral curiosity.",
     sections: [
       {
@@ -260,10 +254,10 @@ const Quizzes = () => {
   const next = () => setDetailIndex(i => (i + 1) % quizEvents.length);
 
   return (
-    <div className="min-h-screen font-body bg-[#050505] text-[#ffffff] animate-[fadeIn_1s_ease-out]">
+    <div className="min-h-screen font-body bg-[#050505] text-[#ffffff] animate-[fadeIn_1s_ease-out] overflow-x-hidden">
 
       {/* ── Hero ── */}
-      <HeroSection 
+      <HeroSection
         title="QUIZZES"
         subtitle="THE INTELLECTUAL UPSIDEDOWN"
         description="Not all battles are visible. Engage in the intellectual upsidedown through our challenging online and offline quiz arenas."
@@ -272,7 +266,7 @@ const Quizzes = () => {
 
       {/* Galaxy Background layer */}
       <div className="fixed inset-0 z-0 pointer-events-none opacity-20">
-        <Galaxy 
+        <Galaxy
           starSpeed={0.2}
           density={1.2}
           hueShift={220}
@@ -280,7 +274,7 @@ const Quizzes = () => {
         />
       </div>
 
-      
+
 
       {/* ── Event Cards Grid ── */}
       <section className="py-16 px-4 sm:px-8 bg-[#050505]">
@@ -311,14 +305,19 @@ const Quizzes = () => {
                   </span>
                 </div>
               </div>
-
+              {event.theme && (
+                <p className="text-gray-400 text-xs italic mb-4">
+                  Theme: <span className="text-white/70">{event.theme}</span>
+                </p>
+              )}
               <div className="flex flex-col p-6 flex-1 bg-[#050505] border-t border-st-red/20">
-                <span className="text-[#ff003c] text-[10px] md:text-xs font-black tracking-widest uppercase mb-2 block font-title">
+                <span className="text-[#ff003c] text-[10px] md:text-xs font-black tracking-widest uppercase mb-1 block font-title">
                   {event.subtitle}
                 </span>
-                <h3 className="text-white text-xl md:text-2xl font-black uppercase leading-tight mb-4 group-hover:text-[#ffffff] transition-colors font-milanesa">
+                <h3 className="text-white text-xl md:text-2xl font-black uppercase leading-tight mb-1 group-hover:text-[#ffffff] transition-colors font-milanesa">
                   {event.title}
                 </h3>
+                
 
                 <div className="mt-auto pt-4 flex items-center justify-between border-t border-white/5 text-[#9fa0b8] text-[10px] md:text-xs uppercase tracking-widest font-title font-bold">
                   <span className="flex items-center gap-2"><Clock className="w-3.5 h-3.5 text-st-red" /> {event.time || "Single Round Battle"}</span>
@@ -329,32 +328,62 @@ const Quizzes = () => {
           ))}
         </div>
       </section>
-      <section className="pt-8 pb-16 px-4 md:px-8 bg-[#050505]">
-        <div className="max-w-4xl mx-auto flex flex-col lg:flex-row items-center justify-between bg-white/[0.02] border border-st-red/20 rounded-2xl p-6 md:p-10 shadow-[0_0_20px_rgba(255,0,60,0.05)] text-center lg:text-left">
-          <div className="mb-8 lg:mb-0 border-b border-st-red/20 lg:border-b-0 lg:border-r pb-6 lg:pb-0 lg:pr-10 w-full lg:w-auto">
-            <h3 className="text-xl sm:text-2xl font-milanesa font-black text-[#ffffff] uppercase tracking-wider mb-3">Overall Quiz Heads</h3>
-            <p className="text-st-red/80 text-[10px] sm:text-xs font-title uppercase tracking-widest flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-1 sm:gap-2">
-              <span>A Beta Catenin Initiative</span>
-              <span className="hidden sm:inline text-xs">&bull;</span>
-              <span>Instagram: @betacatenin_esic</span>
-            </p>
-          </div>
-          <div className="flex flex-col sm:grid sm:grid-cols-2 lg:flex lg:flex-col gap-4 sm:gap-6 lg:gap-3 text-sm md:text-base text-[#ffffff]/80 w-full lg:w-auto lg:pl-6">
-            <div className="flex flex-col md:flex-row items-center justify-between lg:justify-start gap-1 md:gap-4 lg:gap-8 bg-black/40 lg:bg-transparent p-3 sm:p-0 rounded-lg lg:rounded-none border border-white/5 lg:border-transparent">
-              <span className="w-full md:w-40 font-bold uppercase tracking-wider">Manikandan A</span>
-              <span className="text-st-red font-bold text-sm tracking-widest">90434 93961</span>
-            </div>
-            <div className="flex flex-col md:flex-row items-center justify-between lg:justify-start gap-1 md:gap-4 lg:gap-8 bg-black/40 lg:bg-transparent p-3 sm:p-0 rounded-lg lg:rounded-none border border-white/5 lg:border-transparent">
-              <span className="w-full md:w-40 font-bold uppercase tracking-wider">Jane Sarah John</span>
-              <span className="text-st-red font-bold text-sm tracking-widest">78240 34859</span>
-            </div>
-            <div className="flex flex-col md:flex-row items-center justify-between lg:justify-start gap-1 md:gap-4 lg:gap-8 bg-black/40 lg:bg-transparent p-3 sm:p-0 rounded-lg lg:rounded-none border border-white/5 lg:border-transparent sm:col-span-2 lg:col-span-1">
-              <span className="w-full md:w-40 font-bold uppercase tracking-wider">Kalanidhi M</span>
-              <span className="text-st-red font-bold text-sm tracking-widest">95000 78979</span>
-            </div>
-          </div>
+<section className="w-full py-16 px-4 md:px-10 lg:px-20 bg-[#050505] relative overflow-hidden">
+
+  {/* 🔥 GRID BACKGROUND */}
+  <div className="absolute inset-0 opacity-5 bg-[linear-gradient(rgba(31,81,255,0.3)_1px,_transparent_1px),_linear-gradient(90deg,rgba(31,81,255,0.3)_1px,_transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
+
+  {/* MAIN CARD */}
+  <div className="relative max-w-6xl mx-auto bg-white/[0.02] border border-st-red/30 rounded-2xl p-6 md:p-10 shadow-[0_0_30px_rgba(255,0,60,0.08)] backdrop-blur-md flex flex-col lg:flex-row items-center justify-between gap-10">
+
+    {/* 🔥 LEFT SIDE */}
+    <div className="w-full lg:w-1/2 text-center lg:text-left border-b lg:border-b-0 lg:border-r border-st-red/20 pb-6 lg:pb-0 lg:pr-10">
+
+      <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-[0.2em] mb-4">
+        Overall Quiz Heads
+      </h3>
+
+      <p className="text-st-white/60 text-sm md:text-lg uppercase tracking-[0.3em] flex flex-col sm:flex-row i lg:justify-start gap-2">
+
+        <span>A Beta Catenin Initiative</span>
+
+        <span className="flex items-center gap-2 text-white">
+          <Instagram className="w-4 h-4 text-st-red" />
+          @betacatenin_esic
+        </span>
+
+      </p>
+    </div>
+
+    {/* 🔥 RIGHT SIDE */}
+    <div className="w-full lg:w-1/2 flex flex-col gap-4">
+
+      {[
+        { name: "Manikandan A", phone: "+919043493961" },
+        { name: "Jane Sarah John", phone: "+917824034859" },
+        { name: "Kalanidhi M", phone: "+919500078979" },
+      ].map((person) => (
+        <div
+          key={person.name}
+          className="flex flex-col sm:flex-row items-center justify-between gap-2 px-4 py-3 rounded-lg bg-black/40 border border-white/5 hover:border-st-red/40 transition-all duration-300 hover:shadow-[0_0_15px_rgba(255,0,60,0.25)]"
+        >
+          <span className="font-bold text-white uppercase tracking-wider text-sm md:text-base">
+            {person.name}
+          </span>
+
+          <a
+            href={`tel:${person.phone}`}
+            className="text-st-red font-bold tracking-widest text-sm hover:text-white transition"
+          >
+            {person.phone}
+          </a>
         </div>
-      </section>
+      ))}
+
+    </div>
+  </div>
+</section>  
+      
       {/* ── Detail Overlay ── */}
       {inDetail && detailEvent && (
         <div className="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl flex flex-col overflow-hidden">
@@ -437,9 +466,16 @@ const Quizzes = () => {
                   )}
                 </div>
 
-                <p className="text-gray-300/90 leading-relaxed text-base md:text-lg font-light mb-12 italic border-l-4 border-st-red pl-6 py-2 bg-gradient-to-r from-white/5 to-transparent">
+                <p className="text-gray-300/90 leading-relaxed text-base md:text-lg font-light mb-8 italic border-l-4 border-st-red pl-6 py-2 bg-gradient-to-r from-white/5 to-transparent">
                   {detailEvent.description}
                 </p>
+
+                {/* Register Button — TOP */}
+                <div className="flex justify-center mb-10">
+                  <button className="px-10 py-4 bg-st-red text-white rounded-full font-title font-black uppercase tracking-widest hover:scale-105 hover:bg-white hover:text-black transition-all shadow-[0_0_30px_rgba(255,0,60,0.3)] flex items-center gap-3">
+                    Register Now
+                  </button>
+                </div>
 
                 {/* Info Sections Stack */}
                 <div className="space-y-8">
@@ -460,18 +496,14 @@ const Quizzes = () => {
                   ))}
                 </div>
 
-                <div className="mt-12 pt-8 border-t border-st-red/20 flex justify-center pb-8">
-                  <button className="px-10 py-4 bg-st-red text-black rounded-full font-title font-black uppercase tracking-widest hover:scale-105 hover:bg-white transition-all shadow-[0_0_30px_rgba(255,0,60,0.3)] flex items-center gap-3">
-                    Register Now
-                  </button>
-                </div>
-              </div>
-      
 
               </div>
-            </div>  
+
+
             </div>
-        
+          </div>
+        </div>
+
       )}
     </div>
   );

@@ -5,15 +5,20 @@ const IntroAnimation = ({ onComplete }) => {
 
     useEffect(() => {
         const timers = [
-            setTimeout(() => setStage(1), 500),   // Dark scene starts
-            setTimeout(() => setStage(2), 2000),  // Insane shaking and vibrating starts
-            setTimeout(() => setStage(3), 4000),  // SHATTER! Pieces fly
-            setTimeout(() => setStage(4), 8500),  // Fade out
-            setTimeout(() => onComplete(), 10000), // Complete transition
+            setTimeout(() => setStage(1), 300),   // Dark scene starts (was 500)
+            setTimeout(() => setStage(2), 1000),  // Shaking starts (was 2000)
+            setTimeout(() => setStage(3), 2500),  // SHATTER! (was 4000)
+            setTimeout(() => setStage(4), 5500),  // Fade out (was 8500)
+            setTimeout(() => onComplete(), 6500), // Complete (was 10000)
         ];
 
         return () => timers.forEach(clearTimeout);
     }, [onComplete]);
+
+    const handleSkip = (e) => {
+        e.stopPropagation();
+        onComplete();
+    };
 
     // Jagged crack paths for splitting the dice perfectly into 4 quadrants
     const crackPathTL = "polygon(0 0, 48% 0, 45% 25%, 50% 50%, 25% 55%, 0 48%)";
@@ -23,11 +28,12 @@ const IntroAnimation = ({ onComplete }) => {
 
     return (
         <div
-            className={`fixed inset-0 bg-[#0a0000] flex items-center justify-center overflow-hidden z-[100]
+            className={`fixed inset-0 bg-[#0a0000] flex items-center justify-center overflow-hidden z-[100] cursor-pointer
       transition-opacity duration-1000 ${stage >= 4 ? "opacity-0 pointer-events-none" : "opacity-100"}`}
+            onClick={() => onComplete()}
         >
             {/* Background Image - Netflix Style Dark Theme */}
-            <div className={`absolute inset-0 bg-[url('/starnger_thingsbg.jpeg')] bg-cover bg-center transition-all duration-[6000ms] ease-out ${stage >= 3 ? 'opacity-30 scale-105 blur-sm' : 'opacity-20 scale-100 blur-none'}`}></div>
+            <div className={`absolute inset-0 bg-[url('../../public/asset/mainbg/starnger_thingsbg.jpeg')] bg-cover bg-center transition-all duration-[6000ms] ease-out ${stage >= 3 ? 'opacity-30 scale-105 blur-sm' : 'opacity-20 scale-100 blur-none'}`}></div>
 
             {/* Background Red Glow/Fog under the explosion */}
             <div className={`absolute inset-0 bg-red-900/50 blur-[120px] transition-opacity duration-[3000ms] ${stage >= 1 ? 'opacity-100' : 'opacity-0'}`}></div>
@@ -93,7 +99,7 @@ const IntroAnimation = ({ onComplete }) => {
 
                 {/* Top-Left Piece */}
                 <img
-                    src="/wissennobg.png"
+                    src="../../public/asset/logo/wissennobg.png"
                     alt="dice-tl"
                     className={`w-48 md:w-72 absolute transition-all ${stage >= 3 ? '-translate-x-[40vw] md:-translate-x-[25vw] -translate-y-[30vh] md:-translate-y-[20vh] -rotate-[35deg] scale-125 opacity-0 duration-[5000ms] ease-out' : 'duration-0'}`}
                     style={{ clipPath: crackPathTL }}
@@ -101,7 +107,7 @@ const IntroAnimation = ({ onComplete }) => {
 
                 {/* Top-Right Piece */}
                 <img
-                    src="/wissennobg.png"
+                    src="../../public/asset/logo/wissennobg.png"
                     alt="dice-tr"
                     className={`w-48 md:w-72 absolute transition-all ${stage >= 3 ? 'translate-x-[40vw] md:translate-x-[25vw] -translate-y-[30vh] md:-translate-y-[20vh] rotate-[35deg] scale-125 opacity-0 duration-[5000ms] ease-out' : 'duration-0'}`}
                     style={{ clipPath: crackPathTR }}
@@ -109,7 +115,7 @@ const IntroAnimation = ({ onComplete }) => {
 
                 {/* Bottom-Left Piece */}
                 <img
-                    src="/wissennobg.png"
+                    src="../../public/asset/logo/wissennobg.png"
                     alt="dice-bl"
                     className={`w-48 md:w-72 absolute transition-all ${stage >= 3 ? '-translate-x-[40vw] md:-translate-x-[25vw] translate-y-[30vh] md:translate-y-[20vh] -rotate-[35deg] scale-125 opacity-0 duration-[5000ms] ease-out' : 'duration-0'}`}
                     style={{ clipPath: crackPathBL }}
@@ -117,7 +123,7 @@ const IntroAnimation = ({ onComplete }) => {
 
                 {/* Bottom-Right Piece */}
                 <img
-                    src="/wissennobg.png"
+                    src="../../public/asset/logo/wissennobg.png"
                     alt="dice-br"
                     className={`w-48 md:w-72 relative transition-all ${stage >= 3 ? 'translate-x-[40vw] md:translate-x-[25vw] translate-y-[30vh] md:translate-y-[20vh] rotate-[35deg] scale-125 opacity-0 duration-[5000ms] ease-out' : 'duration-0'}`}
                     style={{ clipPath: crackPathBR }}
@@ -139,6 +145,19 @@ const IntroAnimation = ({ onComplete }) => {
                     100% { transform: translate(1px, -2px) rotate(-1deg); }
                 }
             `}</style>
+
+            {/* Skip UI similar to About page */}
+            <div className="absolute bottom-8 sm:bottom-12 w-full flex flex-col items-center gap-4 z-[110] pointer-events-none">
+                <p className="text-white/40 text-[10px] sm:text-xs tracking-[0.4em] font-sans uppercase animate-pulse">
+                    Click anywhere to skip
+                </p>
+                <button
+                    onClick={handleSkip}
+                    className="pointer-events-auto px-6 py-2 bg-red-900/20 hover:bg-red-600/40 border border-red-500/30 rounded-full text-white/60 hover:text-white hover:border-red-500/60 font-bold tracking-widest text-[10px] uppercase transition-all duration-300 backdrop-blur-sm"
+                >
+                    SKIP INTRO
+                </button>
+            </div>
 
         </div>
     );

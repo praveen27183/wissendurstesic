@@ -465,7 +465,7 @@ const Academicevents = () => {
     const next = () => setDetailIndex(i => (i + 1) % academicEvents.length);
 
     return (
-        <div className="min-h-screen font-body bg-[#050505] text-[#ffffff] animate-[fadeIn_1s_ease-out]">
+        <div className="min-h-screen font-body bg-[#050505] text-[#ffffff] animate-[fadeIn_1s_ease-out] overflow-x-hidden">
 
             {/* ── Hero ── */}
             <HeroSection 

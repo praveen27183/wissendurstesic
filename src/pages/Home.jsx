@@ -9,12 +9,12 @@ import Galaxy from '../components/Galaxy.jsx';
 
 const Home = () => {
   return (
-    <div className="min-h-screen font-body bg-[#0a0a0a] text-gray-200 overflow-hidden">
+    <div className="min-h-screen font-body bg-[#0a0a0a] text-gray-200 overflow-x-hidden">
       {/* Hero Section */}
       <section
-        className="relative min-h-[85vh] md:min-h-screen flex items-center justify-center bg-cover bg-center overflow-hidden"
+        className="relative min-h-[65vh] md:min-h-screen flex items-center justify-center bg-cover bg-center overflow-hidden"
         style={{
-          backgroundImage: `url('asset/starnger_thingsbg.jpeg')`
+          backgroundImage: `url('/asset/mainbg/starnger_thingsbg.jpeg')`
         }}
       >
         <div className="absolute inset-0 bg-[#0a0a0a]/80 backdrop-blur-[2px]"></div>
@@ -47,7 +47,7 @@ const Home = () => {
             className="flex items-center justify-center gap-4 mb-16"
           >
             <div className="h-[2px] w-8 md:w-16 bg-st-red shadow-[0_0_10px_rgba(255,0,60,1)]"></div>
-            <p className="text-lg md:text-2xl lg:text-3xl font-title font-bold text-gray-100 tracking-[0.2em] uppercase drop-shadow-[0_0_8px_rgba(37,99,255,0.8)]">
+            <p className="text-lg md:text-3xl lg:text-4xl font-title font-bold text-gray-100 tracking-[0.2em] uppercase drop-shadow-[0_0_8px_rgba(37,99,255,0.8)]">
               APRIL 28 | 29 | 30
             </p>
             <div className="h-[2px] w-8 md:w-16 bg-st-red shadow-[0_0_10px_rgba(255,0,60,1)]"></div>
@@ -62,7 +62,7 @@ const Home = () => {
             <Link to="/registration" className="col-span-1 w-full sm:w-auto">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full">
                 <StarBorder as="div" color="#ff003c" className="w-full h-full sm:w-auto">
-                  <div className="px-2 sm:px-8 py-2 font-title font-bold uppercase tracking-widest text-[18px] sm:text-base leading-snug">
+                  <div className="px-4 sm:px-8 py-2 font-title font-bold uppercase tracking-widest text-[20px] sm:text-base leading-snug">
                     General Registration
                   </div>
                 </StarBorder>
@@ -71,7 +71,7 @@ const Home = () => {
             <Link to="/academicevents" className="col-span-1 w-full sm:w-auto">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full">
                 <StarBorder as="div" color="#ff003c" className="w-full h-full sm:w-auto">
-                  <div className="px-2 sm:px-8 py-2 font-title font-bold uppercase tracking-widest text-[18px] sm:text-base leading-snug">
+                  <div className="px-2 sm:px-8 py-2 font-title font-bold uppercase tracking-widest text-[20px] sm:text-base leading-snug">
                     Event Registration
                   </div>
                 </StarBorder>
@@ -80,7 +80,7 @@ const Home = () => {
             <Link to="/workshops" className="col-span-2 sm:col-span-1 w-full sm:w-auto">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full">
                 <StarBorder as="div" color="#2563ff" className="w-full h-full sm:w-auto">
-                  <div className="px-2 sm:px-8 py-2 font-title font-bold uppercase tracking-widest text-[18px] sm:text-base leading-snug">
+                  <div className="px-2 sm:px-8 py-2 font-title font-bold uppercase tracking-widest text-[20px] sm:text-base leading-snug">
                     View Brochure
                   </div>
                 </StarBorder>
@@ -170,7 +170,7 @@ const Home = () => {
                 WISSENDURST '26 — the annual intercollegiate academic fest hosted by ESIC Medical College, Chennai — has returned this year in all its grandeur!
               </p>
               <p>
-                With 15 immersive workshops and 7 thrilling events, this academic celebration is designed to rekindle every student's passion for the subject we all cherish. Step into a world of wonder as we take you on a cinematic journey into the unknown.
+                With 15 immersive workshops and 12+ thrilling events, this academic celebration is designed to rekindle every student's passion for the subject we all cherish. Step into a world of wonder as we take you on a cinematic journey into the unknown.
               </p>
             </div>
 
@@ -180,7 +180,7 @@ const Home = () => {
                 <div className="text-xs uppercase tracking-[0.2em] text-[#cbd5e1] mt-2 font-bold">Workshops</div>
               </div>
               <div className="relative group text-center">
-                <div className="text-4xl md:text-6xl font-title font-black text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.4)] group-hover:text-st-red group-hover:drop-shadow-[0_0_10px_rgba(255,0,60,0.6)] transition-all">7+</div>
+                <div className="text-4xl md:text-6xl font-title font-black text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.4)] group-hover:text-st-red group-hover:drop-shadow-[0_0_10px_rgba(255,0,60,0.6)] transition-all">12+</div>
                 <div className="text-xs uppercase tracking-[0.2em] text-[#cbd5e1] mt-2 font-bold">Events</div>
               </div>
             </div>
@@ -239,10 +239,23 @@ const Home = () => {
                 We warmly welcome you to our event crafted with passion and dedication. Looking forward to hosting you on APRIL 28 | 29 | 30!
               </p>
               
-              <div className="mt-8 md:mt-12 pt-6 md:pt-8 border-t border-[rgba(255,0,60,0.3)] text-center flex flex-col items-center gap-2 md:gap-3 relative z-10">
-                <p className="text-white text-xl md:text-3xl font-title tracking-wide">The Organizing Committee</p>
-                <p className="text-st-red font-bold tracking-[0.2em] md:tracking-[0.3em] uppercase text-[10px] md:text-xs shadow-[0_0_10px_rgba(255,0,60,0.8)] opacity-90 drop-shadow-md">Wissendurst 2026</p>
-              </div>
+             <div className="relative z-10 mt-12 md:mt-24 pt-8 md:pt-10 border-t border-[rgba(255,0,60,0.25)] flex flex-col items-center text-center gap-3">
+
+  {/* Title */}
+  <p className="text-white text-lg sm:text-2xl md:text-3xl font-title tracking-wide leading-tight">
+    The Organizing Committee
+  </p>
+
+  {/* Subtitle */}
+  <p className="text-st-red font-bold uppercase text-[11px] sm:text-[11px] md:text-xs tracking-[0.25em] md:tracking-[0.4em] opacity-90 
+    drop-shadow-[0_0_8px_rgba(255,0,60,0.7)]">
+    Wissendurst 2026
+  </p>
+
+  {/* 🔥 Decorative Line */}
+  <div className="mt-2 w-16 md:w-24 h-[2px] bg-st-red shadow-[0_0_12px_rgba(255,0,60,0.9)]"></div>
+
+</div>
             </div>
           </motion.div>
         </div>

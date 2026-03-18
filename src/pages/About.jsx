@@ -1,17 +1,17 @@
 import { useState, useEffect, useRef } from 'react';
 import { MapPin, Bus, Train, Plane, ChevronLeft, ChevronRight } from 'lucide-react';
-import esicBuildingImg from '../../asset/ESCIBUILD.png';
+import esicBuildingImg from '../../public/asset/about/ESCIBUILD.png';
 import HeroSection from '../components/herosection.jsx';
 import Galaxy from '../components/Galaxy.jsx';
 
 
 // Ancient French paintings for section backgrounds
 const FRENCH_PAINTINGS = {
-  hero: '/asset/hero_sec_for_all/about_us.png',
-  about: '/asset/hero_sec_for_all/about_us.png',
-  reach: '/asset/hero_sec_for_all/about_us.png',
-  team: '/asset/starnger_thingsbg.jpeg',
-  gallery: '/asset/hero_sec_for_all/about_us.png',
+  hero: '../../public/asset/hero_sec_for_all/about_us.png',
+  about: '../../public/asset/hero_sec_for_all/about_us.png',
+  reach: '../../public/asset/hero_sec_for_all/about_us.png',
+  team: '../../public/asset/starnger_thingsbg.jpeg',
+  gallery: '../../public/asset/hero_sec_for_all/about_us.png',
 };
 
 const SectionBg = ({ src, opacity = 'opacity-20', children, className = '' }) => (
@@ -123,7 +123,7 @@ const About = () => {
   }
 
   return (
-    <div className="min-h-screen font-milanesa bg-[#050505] text-[#ffffff]">
+    <div className="min-h-screen font-milanesa bg-[#050505] text-[#ffffff] overflow-x-hidden">
       {/* ── Hero ── */}
       <HeroSection
         title="About Wissendurst '26"

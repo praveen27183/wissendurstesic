@@ -4,7 +4,7 @@ import GradientText from './GradientText';
 const HeroSection = ({ title, subtitle, description, image }) => {
   return (
    <section
-  className="relative w-full h-[32vh] md:h-[45vh] flex items-center justify-center bg-cover bg-center overflow-hidden"
+  className="relative w-full min-h-[45vh] md:min-h-[60vh] flex items-center justify-center bg-cover bg-center overflow-hidden"
   style={{ backgroundImage: `url(${image})` }}
 >
   {/* Dark Overlay */}

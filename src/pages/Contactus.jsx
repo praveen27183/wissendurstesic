@@ -137,7 +137,7 @@ const Contactus = () => {
      MAIN PAGE
   ================================ */
   return (
-    <div className="bg-[#050505] min-h-screen relative overflow-hidden">
+    <div className="bg-[#050505] min-h-screen relative overflow-x-hidden">
       
       {/* Galaxy Background layer */}
       <div className="absolute inset-0 z-0 pointer-events-none opacity-30">
@@ -157,7 +157,7 @@ const Contactus = () => {
           image="/asset/hero_sec_for_all/contact_us.png"
         />
 
-      <div className="max-w-6xl mx-auto px-4 text-center mt-12 mb-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mt-12 mb-24">
 
         <p className="text-lg text-st-red font-bold mb-16 uppercase tracking-[0.3em]">
           Organising Committee
@@ -210,7 +210,7 @@ const Contactus = () => {
 
                   </div>
                 ))}
-
+                                
               </div>
 
             </div>

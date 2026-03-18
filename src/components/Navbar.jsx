@@ -79,7 +79,7 @@ const Navbar = () => {
 
             {/* Logo */}
             <Link
-              to="/Home.jsx"
+              to="/"
               className="flex items-center space-x-4 group z-20 flex-shrink-0"
             >
               <div className="relative">
@@ -121,6 +121,7 @@ const Navbar = () => {
                 <Link
                   key={link.to}
                   to={link.to}
+                  onClick={() => window.scrollTo({ top: 0, behavior: 'instant' })}
                   className={`relative text-[10px] xl:text-xs uppercase font-bold transition whitespace-nowrap group pb-1 ${isActive(link.to) ? 'text-white' : 'text-[#cbd5e1] hover:text-white'}`}
                 >
                   {link.label}
@@ -183,10 +184,10 @@ const Navbar = () => {
   { num: 'IX', label: 'CONTACT US', to: '/contact' }
 ].map((item, index) => (
                   <motion.div key={item.to} variants={mainLinkVariants} className={`w-full flex ${index % 2 === 0 ? 'ml-0 sm:ml-12' : 'ml-4 sm:ml-24'}`}>
-                    <Link to={item.to} onClick={() => setIsOpen(false)} className="flex items-start sm:items-center group w-fit relative">
-                      <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-gray-500 flex items-center justify-center mr-3 sm:mr-4 text-xs sm:text-sm font-serif text-gray-400 group-hover:border-st-red group-hover:text-st-red group-hover:shadow-[0_0_10px_rgba(255,0,60,0.5)] transition-all duration-500 shrink-0 mt-1 sm:mt-0">{item.num}</div>
-                      <span className="text-[2.25rem] min-[375px]:text-[2.5rem] sm:text-[5.5rem] md:text-[7rem] font-title uppercase text-white group-hover:text-white group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.3)] transition-all duration-500 leading-[1.1] sm:leading-none text-left" style={{ fontFamily: '"DM Serif Display", serif', letterSpacing: '-0.03em' }}>{item.label}</span>
-                      <span className="absolute -bottom-2 sm:bottom-4 left-0 w-full h-[4px] bg-st-red shadow-[0_0_15px_rgba(255,0,60,0.8)] scale-x-0 group-hover:scale-x-100 transform origin-left transition-transform duration-500"></span>
+                    <Link to={item.to} onClick={() => { setIsOpen(false); window.scrollTo({ top: 0, behavior: 'instant' }); }} className="flex items-start sm:items-center group w-fit relative">
+                      <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full border flex items-center justify-center mr-3 sm:mr-4 text-xs sm:text-sm font-serif transition-all duration-500 shrink-0 mt-1 sm:mt-0 ${isActive(item.to) ? 'border-st-red text-st-red shadow-[0_0_10px_rgba(255,0,60,0.5)]' : 'border-gray-500 text-gray-400 group-hover:border-st-red group-hover:text-st-red group-hover:shadow-[0_0_10px_rgba(255,0,60,0.5)]'}`}>{item.num}</div>
+                      <span className={`text-[2.25rem] min-[375px]:text-[2.5rem] sm:text-[5.5rem] md:text-[7rem] font-title uppercase transition-all duration-500 leading-[1.1] sm:leading-none text-left ${isActive(item.to) ? 'text-st-red drop-shadow-[0_0_20px_rgba(255,0,60,0.6)]' : 'text-white group-hover:text-white group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]'}`} style={{ fontFamily: '"DM Serif Display", serif', letterSpacing: '-0.03em' }}>{item.label}</span>
+                      <span className={`absolute -bottom-2 sm:bottom-4 left-0 w-full h-[4px] bg-st-red shadow-[0_0_15px_rgba(255,0,60,0.8)] transform origin-left transition-transform duration-500 ${isActive(item.to) ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}></span>
                     </Link>
                   </motion.div>
                 ))}

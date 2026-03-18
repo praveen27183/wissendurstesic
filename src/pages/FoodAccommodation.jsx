@@ -81,7 +81,7 @@ const FoodAccommodation = () => {
   /* ================= PAGE ================= */
 
   return (
-    <div className="min-h-screen bg-[#0b0b0b] text-white">
+    <div className="min-h-screen bg-[#0b0b0b] text-white overflow-x-hidden">
 
       {/* HERO */}
       <HeroSection
@@ -102,9 +102,9 @@ const FoodAccommodation = () => {
         />
       </div>
 
-      <section className="py-16 md:py-24 px-5 relative z-10">
+      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 relative z-10">
 
-        <div className="max-w-6xl mx-auto space-y-20">
+        <div className="max-w-7xl mx-auto space-y-20">
 
           {/* ================= FOOD ================= */}
 

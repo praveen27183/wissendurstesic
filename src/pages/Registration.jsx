@@ -4,7 +4,7 @@ import {
   IndianRupee, ExternalLink, Info, CheckCircle2, ShieldAlert,
   MapPin, FileText, Upload, CreditCard, Sparkles, UserPlus, Mail, Contact
 } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';  
 import { motion } from 'framer-motion';
 import StarBorder from '../components/StarBorder';
 import GradientText from '../components/GradientText';
@@ -37,7 +37,7 @@ const Registration = () => {
           {Icon && <Icon className="w-5 h-5 text-st-red" />}
           {title}
         </h4>
-        <p className="text-gray-300/70 text-sm md:text-base leading-relaxed max-w-lg">{desc}</p>
+        <p className="text-gray-300/70 text-lg md:text-xl leading-relaxed max-w-lg">{desc}</p>
       </div>
     </div>
   );
@@ -95,14 +95,14 @@ const Registration = () => {
   }
 
   return (
-    <div className="min-h-screen font-body bg-[#050505] relative overflow-hidden">
+    <div className="min-h-screen font-body bg-[#050505] relative overflow-x-hidden">
 
       {/* ── 1. HERO SECTION ── */}
-      <div className="relative min-h-[75vh] md:min-h-[85vh] flex items-center justify-center overflow-hidden">
+      <div className="relative min-h-[52vh] md:min-h-[85vh] flex items-center justify-center overflow-hidden">
         {/* Registration Image Background with Dark Gradient Overlay */}
-        <div  
-          className="absolute inset-0 z-0 bg-cover bg-center opacity-60 transform scale-105"
-          style={{ backgroundImage: `url('/asset/hero_sec_for_all/registration.png')`, backgroundAttachment: 'fixed' }}
+        <div
+          className="absolute inset-0 z-0 bg-cover bg-center opacity-90 transform scale-105"
+          style={{ backgroundImage: `url('../../public/asset/hero_sec_for_all/registration.png')`, backgroundAttachment: 'fixed' }}
         ></div>
         <div className="absolute inset-0 z-0 bg-gradient-to-t from-[#050505] via-[#050505]/80 to-transparent"></div>
         <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/80 via-transparent to-transparent"></div>
@@ -116,7 +116,7 @@ const Registration = () => {
             <GradientText
               colors={['#ffffff', '#ff003c', '#ffffff']}
               animationSpeed={6}
-              className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-milanesa font-black tracking-widest sm:tracking-[0.1em] uppercase mb-2 md:mb-4 drop-shadow-[0_4px_10px_rgba(255,0,60,0.3)]"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-milanesa font-black tracking-widest sm:tracking-[0.1em] uppercase mb-2 md:mb-4 drop-shadow-[0_4px_10px_rgba(255,0,60,0.3)]"
             >
               REGISTRATION
             </GradientText>
@@ -125,31 +125,102 @@ const Registration = () => {
             <div className="absolute -bottom-2 md:-bottom-4 left-1/2 -translate-x-1/2 w-1/2 h-[8px] blur-md bg-st-red/60 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
           </div>
 
-          <p className="mt-6 md:mt-8 text-sm sm:text-base md:text-lg text-gray-300/80 max-w-3xl mx-auto font-light tracking-wide mb-8 md:mb-12">
+          <p className="mt-6 md:mt-8 text-lg sm:text-xl md:text-xl text-gray-300/80 max-w-3xl mx-auto font-light tracking-wide mb-8 md:mb-12">
             Secure your presence at Wissendurst 2026. Experience elevated academic discourse, premium workshops, and peerless medical events.
           </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.5 }}
-            className="flex justify-center items-center w-full max-w-3xl px-2 sm:px-0"
-          >
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
-              <StarBorder as="button" color="#ff003c" className="w-full h-full sm:w-auto">
-                <div className="px-6 sm:px-10 py-3 font-title font-bold uppercase tracking-[0.2em] text-[16px] sm:text-[18px] flex items-center gap-3">
-                  Proceed to Register
-                  <ArrowDown className="w-5 h-5" />
-                </div>
-              </StarBorder>
+          <div className="w-full max-w-4xl mx-auto px-2 sm:px-0 
+  flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
+
+            {/* GENERAL */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.5 }}
+              className="w-full sm:w-auto"
+            >
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <StarBorder
+                  as="button"
+                  color="#ff003c"
+                  className="w-full sm:w-auto"
+                  onClick={() =>
+                    document.getElementById("section-general")?.scrollIntoView({
+                      behavior: "smooth",
+                      block: "start",
+                    })
+                  }
+                >
+                  <div className="px-6 sm:px-8 py-3 font-title font-bold uppercase tracking-[0.2em] text-[14px] sm:text-[16px] flex items-center justify-center gap-2">
+                    General Registration
+                    <ArrowDown className="w-7 h-7 sm:w-7 sm:h-7" />
+                  </div>
+                </StarBorder>
+              </motion.div>
             </motion.div>
-          </motion.div>
+
+
+
+            {/* EVENTS */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 0.5 }}
+              className="w-full sm:w-auto"
+            >
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <StarBorder
+                  as="button"
+                  color="#2563ff"
+                  className="w-full sm:w-auto"
+                  onClick={() =>
+                    document.getElementById("section-workshop")?.scrollIntoView({
+                      behavior: "smooth",
+                      block: "start",
+                    })
+                  }
+                >
+                  <div className="px-6 sm:px-8 py-3 font-title font-bold uppercase tracking-[0.2em] text-[14px] sm:text-[16px] flex items-center justify-center gap-2">
+                    Workshop Registration
+                    <ArrowDown className="w-7 h-7 sm:w-7 sm:h-7" />
+                  </div>
+                </StarBorder>
+              </motion.div>
+            </motion.div>
+            {/* WORKSHOP */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.5 }}
+              className="w-full sm:w-auto"
+            >
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <StarBorder
+                  as="button"
+                  color="#ff003c"
+                  className="w-full sm:w-auto"
+                  onClick={() =>
+                    document.getElementById("section-event")?.scrollIntoView({
+                      behavior: "smooth",
+                      block: "start",
+                    })
+                  }
+                >
+                  <div className="px-6 sm:px-8 py-3 font-title font-bold uppercase tracking-[0.2em] text-[14px] sm:text-[16px] flex items-center justify-center gap-2">
+                    Events Registration
+                    <ArrowDown className="w-7 h-7 sm:w-7 sm:h-7" />
+                  </div>
+                </StarBorder>
+              </motion.div>
+            </motion.div>
+
+          </div>
         </div>
       </div>
 
       {/* Galaxy Background layer */}
       <div className="fixed inset-0 z-0 pointer-events-none opacity-20">
-        <Galaxy 
+        <Galaxy
           starSpeed={0.2}
           density={1.2}
           hueShift={220}
@@ -157,7 +228,7 @@ const Registration = () => {
         />
       </div>
 
-      <div className="relative z-10 max-w-1xl mx-auto px-4 lg:px-8  pb-32">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-32">
 
         {/* ── 2. INFORMATION CARDS ── */}
         <div className="grid lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 mb-16 md:mb-32">
@@ -167,7 +238,7 @@ const Registration = () => {
             <h2 className="text-xl sm:text-2xl md:text-3xl font-milanesa font-bold text-transparent bg-clip-text bg-gradient-to-r from-st-red to-[#ffffff] mb-4 sm:mb-8 uppercase tracking-widest flex items-center gap-3 sm:gap-4 leading-tight">
               <Sparkles className="w-6 h-6 sm:w-8 sm:h-8 text-st-red shrink-0" /> About Wissendurst
             </h2>
-            <div className="text-gray-300/80 text-sm sm:text-base md:text-lg leading-relaxed space-y-4 sm:space-y-6 font-light">
+            <div className="text-gray-300/80 text-lg sm:text-xl md:text-xl leading-relaxed space-y-4 sm:space-y-6 font-light">
               <p>
                 <span className="font-bold text-[#ffffff] uppercase tracking-wider">Wissendurst ’26</span>, the annual intercollegiate academic fest hosted by ESIC Medical College, Chennai, returns this year in greater splendour, promising an experience more captivating and memorable than ever before.
               </p>
@@ -183,29 +254,25 @@ const Registration = () => {
             <h2 className="text-xl sm:text-2xl md:text-3xl font-milanesa font-bold text-transparent bg-clip-text bg-gradient-to-r from-st-red to-[#ffffff] mb-4 sm:mb-8 uppercase tracking-widest flex items-center gap-3 sm:gap-4 leading-tight">
               <AlertCircle className="w-6 h-6 sm:w-8 sm:h-8 text-st-red shrink-0" /> Committee Note
             </h2>
-            <div className="text-gray-300/80 text-sm sm:text-base md:text-lg leading-relaxed space-y-4 sm:space-y-6 font-light">
+            <div className="text-gray-300/80 text-lg sm:text-xl md:text-xl leading-relaxed space-y-4 sm:space-y-6 font-light">
               <p>
                 <span className="font-bold text-[#ffffff]">WISSENDURST 2026</span> returns with a broader vision: refined workshops, diverse case and poster presentations, and the introduction of protocol presentations.
               </p>
               <p>
                 <span className="font-bold text-[#ffffff]">MINERVA</span> expands with online editions, while Tamil events debut as a vibrant platform for expression. We also bring forth a new event for dental and AHS students: <span className="text-st-red font-medium italic">Face and Body Painting</span>.
-              </p>
-              <div className="p-4 sm:p-5 mt-4 sm:mt-6 border-l-4 border-st-red bg-st-red/5 rounded-r-xl">
-                <p className="font-medium text-st-white text-xs sm:text-sm">
-                  Join us on April 28–30 at ESIC Medical College & Hospital, KK Nagar, Chennai.
-                </p>
-              </div>
+                Join us on April 28–30 at ESIC Medical College & Hospital, KK Nagar, Chennai.   </p>
+
             </div>
           </div>
         </div>
 
         <div className="mb-20 md:mb-32 relative">
           <div className="text-center mb-8 sm:mb-12 md:mb-16 px-4 relative z-10">
-            
+
             <h2 className="text-2xl sm:text-3xl md:text-5xl font-milanesa font-black text-transparent bg-clip-text bg-gradient-to-r from-[#ffffff] via-st-red to-[#ffffff] uppercase tracking-wide drop-shadow-sm mb-4 sm:mb-6">
               Registration Rules
             </h2>
-            <p className="text-gray-300/80 max-w-2xl mx-auto text-sm sm:text-base md:text-lg font-light leading-relaxed">
+            <p className="text-gray-300/80 max-w-2xl mx-auto text-lg sm:text-xl md:text-xl font-light leading-relaxed">
               Open to all bonafide students of medical colleges and universities. Please read carefully to ensure a seamless registration process.
             </p>
           </div>
@@ -221,7 +288,7 @@ const Registration = () => {
                   <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-green-500/10 flex items-center justify-center shrink-0">
                     <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
                   </div>
-                  <span className="text-[#ffffff] font-bold tracking-wide text-sm sm:text-base">General Registration</span>
+                  <span className="text-[#ffffff] font-bold tracking-wide text-sm sm:text-base">General Registration + Event Registration</span>
                 </div>
                 <div className="bg-white/5 border border-white/5 p-3 sm:p-4 rounded-xl flex items-center gap-3 sm:gap-4">
                   <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-green-500/10 flex items-center justify-center shrink-0">
@@ -230,7 +297,7 @@ const Registration = () => {
                   <span className="text-[#ffffff] font-bold tracking-wide text-sm sm:text-base">Workshop Registration</span>
                 </div>
               </div>
-              <p className="text-xs sm:text-sm text-gray-300/70 leading-relaxed p-3 sm:p-4 bg-st-red/10 rounded-xl border border-st-red/20">
+              <p className="text-base sm:text-lg text-gray-300/70 leading-relaxed p-3 sm:p-4 bg-st-red/10 rounded-xl border border-st-red/20">
                 <span className="font-bold text-st-red block mb-1">NOTE:</span>
                 For <strong className="text-white">Events</strong>, General Registration is not required. You may directly access Event Registration.
               </p>
@@ -246,6 +313,7 @@ const Registration = () => {
                 {[
                   { title: "Quizzes", desc: "Online Quiz (Erythron and Axis) and Offline Quiz (Minerva Junior and Senior)" },
                   { title: "Presentations", desc: "Pathology Poster, Pharmacology Poster, Case Presentation, Symposium, Protocol Presentation" },
+                  { title: "research poster presentation", desc: "Showcase innovative research through detailed poster presentations" },
                   { title: "Speaker's Collective", desc: "English Debate, MUN" },
                   { title: "Tamil Mandram", desc: "Tamil Debate, Elocution" },
                   { title: "Other Events", desc: "Face and Body Painting, Health Care Detectives" }
@@ -253,8 +321,8 @@ const Registration = () => {
                   <div key={idx} className="group flex gap-3 sm:gap-4 p-3 sm:p-0 bg-white/5 sm:bg-transparent rounded-xl sm:rounded-none">
                     <div className="w-1.5 min-h-[30px] sm:min-h-[40px] bg-st-red/20 rounded-full group-hover:bg-st-red transition-colors duration-300"></div>
                     <div>
-                      <h4 className="font-bold text-[#ffffff] text-sm sm:text-base uppercase tracking-wider mb-1 sm:mb-2 group-hover:text-st-red transition-colors">{item.title}</h4>
-                      <p className="text-xs sm:text-sm text-gray-300/60 leading-relaxed">{item.desc}</p>
+                      <h4 className="font-bold text-[#ffffff] text-lg sm:text-xl uppercase tracking-wider mb-1 sm:mb-2 group-hover:text-st-red transition-colors">{item.title}</h4>
+                      <p className="text-base sm:text-lg text-gray-300/60 leading-relaxed">{item.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -267,7 +335,7 @@ const Registration = () => {
         <div className="space-y-12 sm:space-y-16 mb-20 md:mb-32">
 
           {/* General Registration Track */}
-          <div className="bg-[#0f0f14] border border-st-red/20 rounded-3xl sm:rounded-[2rem] p-5 sm:p-8 md:p-12 lg:p-16 shadow-2xl relative overflow-hidden group">
+          <div id="section-general" className="bg-[#0f0f14] border border-st-red/20 rounded-3xl sm:rounded-[2rem] p-5 sm:p-8 md:p-12 lg:p-16 shadow-2xl relative overflow-hidden group scroll-mt-28">
             <div className="absolute top-0 right-0 w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-st-red/5 rounded-full blur-[80px] md:blur-[100px] pointer-events-none transform translate-x-1/3 -translate-y-1/3 group-hover:bg-st-red/10 transition-colors duration-700"></div>
 
             <div className="grid lg:grid-cols-[1fr_1.5fr] gap-6 sm:gap-8 lg:gap-12 relative z-10">
@@ -286,40 +354,92 @@ const Registration = () => {
                   </div>
                 </div>
 
-                <p className="text-gray-300/80 text-sm sm:text-base md:text-lg leading-relaxed font-light">
+                <p className="text-gray-300/80 text-lg sm:text-xl md:text-xl leading-relaxed font-light">
                   Mandatory for all participants attending <strong className="text-white">Workshops, MedTalks</strong>, and other programs (except Events).
                 </p>
-                <p className="text-[10px] sm:text-xs text-red-300 bg-red-950/30 p-3 sm:p-4 border-l-2 border-red-500 rounded-r-lg">
+                <p className="text-lg sm:text-xl text-red-300 bg-red-950/30 p-3 sm:p-4 border-l-2 border-red-500 rounded-r-lg">
                   * General registration once completed cannot be cancelled or refunded.
                 </p>
               </div>
 
-              <div className="bg-black/40 p-5 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl border border-white/5">
-                <h3 className="text-base sm:text-lg md:text-xl font-title font-bold text-st-red mb-6 sm:mb-10 uppercase tracking-widest">
+              <div className="bg-black/50 backdrop-blur-md p-5 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl border border-white/10 shadow-[0_0_30px_rgba(255,0,60,0.1)]">
+
+                {/* Heading */}
+                <h3 className="text-base sm:text-xl md:text-2xl font-title font-bold text-st-red mb-6 sm:mb-10 uppercase tracking-[0.25em] text-center sm:text-left">
                   Registration Process
                 </h3>
-                <div className="flex flex-col">
-                  <TimelineStep num="1" title="Fill Online Form" desc="Navigate to the candidate registration form on our portal." icon={FileText} />
-                  <TimelineStep num="2" title="Submit Details" desc="Provide Delegate Name, Year of Study, College Name, and Contact mapping." icon={UserPlus} />
-                  <TimelineStep num="3" title="Upload Documents" desc="Scan and upload a clear photograph of your official College ID card." icon={Upload} />
-                  <TimelineStep num="4" title="Execute Payment" desc="Upload the screenshot of your successful UPI QR Code payment transaction ID." icon={CreditCard} isLast={true} />
+
+                {/* Timeline */}
+                <div className="flex flex-col gap-5 sm:gap-6">
+
+                  <TimelineStep
+                    num="1"
+                    title="Fill Online Form"
+                    desc="Navigate to the candidate registration form on our portal."
+                    icon={FileText}
+                  />
+
+                  <TimelineStep
+                    num="2"
+                    title="Submit Details"
+                    desc="Provide delegate name, year, college, and contact details."
+                    icon={UserPlus}
+                  />
+
+                  <TimelineStep
+                    num="3"
+                    title="Upload Documents"
+                    desc="Upload a clear photo of your college ID card."
+                    icon={Upload}
+                  />
+
+                  <TimelineStep
+                    num="4"
+                    title="Execute Payment"
+                    desc="Upload screenshot of successful UPI transaction."
+                    icon={CreditCard}
+                    isLast={true}
+                  />
+                  <TimelineStep
+                    num="5"
+                    title="Successful Payment"
+                    desc="Upload screenshot of your successful UPI payment with transaction ID"
+                    icon={CreditCard}
+                    isLast={true}
+                  />
+
                 </div>
 
-                <div className="mt-6 sm:mt-8 bg-st-red/10 border border-st-red/30 p-4 sm:p-6 rounded-2xl flex items-start gap-3 sm:gap-4">
-                  <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-st-red shrink-0 mt-0.5" />
+                {/* Bottom Info Card */}
+                <div className="mt-6 sm:mt-10 bg-gradient-to-r from-st-red/20 to-transparent border border-st-red/30 p-4 sm:p-6 rounded-xl sm:rounded-2xl flex items-start gap-3 sm:gap-4">
+
+                  <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-st-red shrink-0 mt-1" />
+
                   <div>
-                    <h4 className="text-[#ffffff] font-bold text-base sm:text-lg mb-1 sm:mb-2">Receive Unique ID</h4>
-                    <p className="text-xs sm:text-sm text-gray-300/80 leading-relaxed font-light">
-                      Upon completion, receive a tracking <strong className="text-st-red">Unique ID + QR code</strong> within 24-48 hours via email. This ID is mandatory for accessing all workshop registrations.
+                    <h4 className="text-white font-semibold text-lg sm:text-lg md:text-lg mb-1">
+                      Receive Unique ID
+                    </h4>
+
+                    <p className="text-base sm:text-lg text-gray-300 leading-relaxed">
+                      After registration, you will receive a
+                      <span className="text-st-red font-semibold"> Unique ID </span>
+                      within 24–48 hours via email. This ID is required for all workshop registrations.
+
+                      <br className="hidden sm:block" />
+
+                      Please check both your <span className="text-st-red/90">inbox</span> and
+                      <span className="text-st-red/90"> spam folder</span> for the confirmation email.
                     </p>
                   </div>
+
                 </div>
+
               </div>
             </div>
           </div>
 
           {/* Workshop Registration Track */}
-          <div className="bg-[#0f0f14] border border-st-red/20 rounded-3xl sm:rounded-[2rem] p-5 sm:p-8 md:p-12 lg:p-16 shadow-2xl relative overflow-hidden group">
+          <div id="section-workshop" className="bg-[#0f0f14] border border-st-red/20 rounded-3xl sm:rounded-[2rem] p-5 sm:p-8 md:p-12 lg:p-16 shadow-2xl relative overflow-hidden group scroll-mt-28">
             <div className="absolute top-0 left-0 w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-st-red/5 rounded-full blur-[80px] md:blur-[100px] pointer-events-none transform -translate-x-1/3 -translate-y-1/3 group-hover:bg-st-red/10 transition-colors duration-700"></div>
 
             <div className="grid lg:grid-cols-[1.5fr_1fr] gap-6 sm:gap-8 lg:gap-20 relative z-10">
@@ -330,12 +450,12 @@ const Registration = () => {
                 </h3>
                 <div className="flex flex-col">
                   <TimelineStep num="1" title="Pre-requisite ID" desc="Ensure you have received your Unique ID from General Registration first." icon={ShieldAlert} />
-                  <TimelineStep num="2" title="Select Workshop" desc="Choose your preferred workshop slot. Subject to first-come, first-serve basis." icon={FileText} />
+                  <TimelineStep num="2" title="Select Workshop" desc="Each workshop has a separate form – please fill out the forms for the workshops you’re interested in" icon={FileText} />
                   <TimelineStep num="3" title="Submit Details" desc="Provide Delegate ID, Unique ID number, and College ID proof." icon={Upload} />
                   <TimelineStep num="4" title="Payment Details" desc="Upload screenshot of UPI transaction ID specifically for the workshop." icon={CreditCard} isLast={true} />
                 </div>
-                <div className="mt-6 sm:mt-8 p-3 sm:p-4 bg-white/5 rounded-xl border border-white/10 text-[10px] sm:text-xs text-gray-300/60 italic leading-relaxed text-center">
-                  * Registrations are typically non-refundable unless cancelled due to unavoidable circumstances (15-day refund).
+                <div className="mt-6 sm:mt-8 p-3 sm:p-4 bg-white/5 rounded-xl border border-white/10 text-base sm:text-lg text-gray-300/60 italic leading-relaxed text-center">
+                  <strong className="text-st-red">Note: </strong>Registrations are non-refundable. However, if a workshop is cancelled due to unavoidable circumstances, a refund will be processed within 15 business days.
                 </div>
               </div>
 
@@ -344,22 +464,27 @@ const Registration = () => {
                   WORKSHOP<br />REGISTRATION
                 </h2>
 
-                <p className="text-gray-300/80 text-sm sm:text-base md:text-lg leading-relaxed font-light pb-6 sm:pb-8 border-b border-white/10">
-                  Select from <strong className="text-st-red">15 premium workshops</strong> across 3 days. Limited slots apply per venue.
+                <p className="text-gray-300/80 text-lg sm:text-xl md:text-xl leading-relaxed font-light pb-6 sm:pb-8 border-b border-white/10 sm:text-left">
+                  Explore a curated <strong className="text-st-red font-semibold">selection of premium</strong> workshops across 3 days.
+
+                  Slots are limited and will be allotted on a
+                  <strong className="text-st-red font-semibold"> first-come, first-served basis</strong>.
                 </p>
 
                 <div>
-                  <h4 className="text-xs sm:text-sm font-bold text-st-red tracking-[0.2em] mb-3 sm:mb-4 uppercase">Available Workshops</h4>
+
+                  <h4 className="text-base sm:text-lg font-bold text-white tracking-[0.2em] mb-3 sm:mb-4 uppercase">Available Workshops</h4>
                   <div className="flex flex-wrap gap-1.5 sm:gap-2">
                     {workshopsList.map((w, i) => (
                       <span
-  key={i}
-  className="text-xs uppercase font-semibold text-black bg-gradient-to-r from-red-600 via-red-400 to-red-800 px-3 py-1.5 rounded-md flex items-center shadow-md"
->
-  {w}
-</span>
+                        key={i}
+                        className="text-base uppercase font-semibold text-white/80 bg-gradient-to-r from-red-800 via-red-600 to-red-800 px-3 py-1.5 rounded-md flex items-center shadow-md"
+                      >
+                        {w}
+                      </span>
                     ))}
                   </div>
+                  <div className="mt-6 sm:mt-8 p-3 sm:p-4 bg-white/5 rounded-xl border border-white/10 text-base sm:text-lg text-gray-300/60 italic leading-relaxed text-center"><p className="text-gray-300/80 text-base sm:text-lg leading-relaxed font-light sm:text-left">Note: FM Autopsy Workshop: On-spot registration only</p></div>
                 </div>
               </div>
 
@@ -367,22 +492,22 @@ const Registration = () => {
           </div>
 
           {/* Event Registration Track */}
-          <div className="bg-[#0f0f14] border border-st-red/20 rounded-3xl sm:rounded-[2rem] p-5 sm:p-8 md:p-12 lg:p-16 shadow-2xl relative overflow-hidden group">
+          <div id="section-event" className="bg-[#0f0f14] border border-st-red/20 rounded-3xl sm:rounded-[2rem] p-5 sm:p-8 md:p-12 lg:p-16 shadow-2xl relative overflow-hidden group scroll-mt-28">
             <div className="absolute top-0 right-0 w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-white/5 rounded-full blur-[80px] md:blur-[100px] pointer-events-none transform translate-x-1/3 -translate-y-1/3 group-hover:bg-white/10 transition-colors duration-700"></div>
 
             <div className="grid lg:grid-cols-[1fr_1.5fr] gap-6 sm:gap-8 lg:gap-12 relative z-10">
               <div className="space-y-6 sm:space-y-8">
-                <h2 className="text-2xl sm:text-3xl md:text-5xl font-milanesa font-black text-[#ffffff] tracking-wide leading-tight mt-2 sm:mt-0">
+                <h2 className="text-2xl sm:text-3xl md:text-5xl font-milanesa font-black text-st-red tracking-wide leading-tight mt-2 sm:mt-0">
                   EVENT<br className="hidden sm:block" /> REGISTRATION
                 </h2>
 
                 <p className="text-gray-300/80 text-sm sm:text-base md:text-lg leading-relaxed font-light pb-6 sm:pb-8 border-b border-white/10">
-                  Participate in up to 15 events. <strong className="text-white border-b border-dashed border-white">General Registration is NOT required.</strong>
+                  Choose your preferred events and register individually, as each event has a dedicated form. <strong className="text-white border-b border-dashed border-white">General registration is not required.</strong>
                 </p>
 
                 <div className="bg-white/5 border border-white/10 p-4 sm:p-6 rounded-2xl">
-                  <p className="text-xs sm:text-sm text-gray-300/70 leading-relaxed">
-                    There is no upper limit to the number of events. For team events, only one registration per team is required. Review the schedule to avoid timing overlaps.
+                  <p className="text-base sm:text-lg text-gray-300/70 leading-relaxed">
+                    Participants may register for any number of events. For team events, only one registration per team is required. Participants are advised to review the schedule to prevent timing conflicts.
                   </p>
                 </div>
               </div>
@@ -392,9 +517,12 @@ const Registration = () => {
                   Registration Process
                 </h3>
                 <div className="flex flex-col">
-                  <TimelineStep num="1" title="Submit Details" desc="Provide details for all participants in the team (Name, Year, College, Contact)." icon={UserPlus} />
-                  <TimelineStep num="2" title="Verify Identity" desc="Upload College ID card photographs for ALL team members combined." icon={Upload} />
-                  <TimelineStep num="3" title="Fee Payment" desc="Upload screenshot of UPI transaction ID specifically covering the event team fee." icon={CreditCard} isLast={true} />
+                  <TimelineStep num="1" title="Submit Details" desc="Provide details of the participant (individual) or all team members (Name, Year, College, Contact)." icon={UserPlus} />
+                  <TimelineStep num="2" title="Verify Identity" desc="Upload college ID card photograph(s) for the participant or all team members." icon={Upload} />
+                  <TimelineStep num="3" title="Fee Payment" desc="Upload a screenshot of the UPI transaction ID for the event fee, applicable to individual or team registration." icon={CreditCard} isLast={true} />
+                </div>
+                <div className="mt-6 sm:mt-8 p-3 sm:p-4 bg-white/5 rounded-xl border border-white/10 text-base sm:text-lg text-gray-300/60 italic leading-relaxed text-center">
+                  <strong className="text-st-red">Note: </strong>Registrations are non-refundable. However, if an event is cancelled due to unavoidable circumstances, a refund will be processed within 15 business days.
                 </div>
               </div>
             </div>
@@ -422,7 +550,7 @@ const Registration = () => {
                   <item.icon className="w-6 h-6 sm:w-8 sm:h-8 text-st-red group-hover:text-black transition-colors" />
                 </div>
                 <h3 className="font-title font-bold text-[#ffffff] text-base sm:text-lg uppercase tracking-wider mb-2 sm:mb-3 group-hover:text-st-red transition-colors">{item.title}</h3>
-                <p className="text-xs sm:text-sm text-gray-300/60 font-light px-2 sm:px-0 leading-relaxed">{item.desc}</p>
+                <p className="text-base sm:text-lg text-gray-300/60 font-light px-2 sm:px-0 leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -436,12 +564,12 @@ const Registration = () => {
 
             {/* Contact Grid */}
             <div>
-              <h4 className="font-milanesa font-black mb-6 sm:mb-10 uppercase text-[#ffffff] tracking-[0.1em] sm:tracking-[0.2em] text-lg sm:text-2xl flex items-center gap-3 sm:gap-4 justify-center lg:justify-start">
+              <h4 className="font-milanesa font-black mb-6 sm:mb-10 uppercase text-[#ffffff] tracking-[0.1em] sm:tracking-[0.2em] text-2xl sm:text-3xl flex items-center gap-3 sm:gap-4 justify-center lg:justify-start">
                 <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-st-red" /> Query Contacts
               </h4>
               <div className="grid grid-cols-2 gap-4 sm:gap-6">
                 {[
-                  { name: "LEKHA", phone: "97897 03487", role: "Registration Head" },
+                  { name: "LEKHA SHRUTHY R J", phone: "97897 03487", role: "Registration Head" },
                   { name: "SHALINI R", phone: "94442 62579", role: "Registration Head" },
                   { name: "KARTHIKEYAN", phone: "94895 32419", role: "Registration Head" },
                   { name: "MEIMOZHI", phone: "63828 66554", role: "Registration Head" }
@@ -451,11 +579,27 @@ const Registration = () => {
                     href={`tel:+91${contact.phone.replace(/\s+/g, '')}`}
                     className="flex flex-col items-center justify-center text-center p-4 sm:p-6 lg:p-8 rounded-xl sm:rounded-2xl bg-black/40 border border-st-red/20 hover:border-st-red hover:bg-st-red/10 transition-all duration-300 group shadow-lg drop-shadow-sm hover:-translate-y-1"
                   >
-                    
-                    <div className="space-y-1 sm:space-y-2">
-                      <span className="block text-[#ffffff] font-black tracking-wider sm:tracking-widest text-sm sm:text-base md:text-lg uppercase group-hover:text-st-red transition-colors">{contact.name}</span>
-                      <span className="block text-xs sm:text-sm text-gray-300/50">{contact.role}</span>
-                      <span className="block text-st-red font-bold text-xs sm:text-sm tracking-wider sm:tracking-widest">+91 {contact.phone}</span>
+
+                    <div className="flex flex-col gap-1.5 sm:gap-2">
+
+                      {/* Name */}
+                      <span className="text-white font-bold text-sm sm:text-base md:text-lg uppercase tracking-wide sm:tracking-wider group-hover:text-st-red transition-colors duration-300">
+                        {contact.name}
+                      </span>
+
+                      {/* Role (WHITE 90%) */}
+                      <span className="text-white/90 text-base sm:text-base md:text-lg font-medium tracking-wide">
+                        {contact.role}
+                      </span>
+
+                      {/* Phone */}
+                      <a
+                        href={`tel:+91${contact.phone}`}
+                        className="text-st-red font-semibold text-base sm:text-lg tracking-wide sm:tracking-wider hover:underline"
+                      >
+                        +91 {contact.phone}
+                      </a>
+
                     </div>
                   </a>
                 ))}
@@ -463,26 +607,60 @@ const Registration = () => {
             </div>
 
             {/* Styled Map / Address Card */}
-            <div className="bg-white/[0.02] border border-st-red/20 p-6 sm:p-8 rounded-2xl sm:rounded-3xl relative overflow-hidden group hover:border-st-red/50 transition-all duration-500 min-h-[300px] flex flex-col justify-end">
-              {/* Subtle background map image pattern */}
-              <div className="absolute inset-0 bg-[url('https://maps.googleapis.com/maps/api/staticmap?center=ESIC+Medical+College,Chennai&zoom=14&size=600x300&maptype=roadmap&style=feature:all|element:labels.text.fill|color:0x8ec3b9&style=feature:all|element:labels.text.stroke|color:0x1a3646&style=feature:landscape|element:geometry|color:0x1b120c&style=feature:poi|element:geometry|color:0x283d6a&style=feature:road|element:geometry.fill|color:0x342921&style=feature:water|element:geometry|color:0x0e1626')] bg-cover bg-center opacity-20 filter grayscale group-hover:opacity-40 transition-opacity duration-700"></div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
+<div className="bg-white/[0.02] border border-st-red/20 p-5 sm:p-7 md:p-8 rounded-2xl sm:rounded-3xl relative overflow-hidden group hover:border-st-red/50 transition-all duration-500 flex flex-col gap-6">
 
-              <div className="relative z-10">
-                <div className="w-14 h-14 bg-st-red/20 backdrop-blur-md border border-st-red/50 rounded-full flex items-center justify-center mb-6">
-                  <MapPin className="w-6 h-6 text-st-red animate-bounce" />
-                </div>
-                <h3 className="text-2xl font-milanesa font-black text-[#ffffff] uppercase tracking-widest mb-3">Venue</h3>
-                <p className="text-gray-300/80 text-sm leading-relaxed max-w-sm">
-                  <strong className="text-st-red block mb-1">ESIC Medical College & PGIMSR</strong>
-                  Ashok Pillar Road, K.K. Nagar,<br />
-                  Chennai, Tamil Nadu 600078
-                </p>
-                <a href="https://maps.google.com/?q=ESIC+Medical+College+KK+Nagar+Chennai" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 mt-6 text-xs font-bold text-st-red uppercase tracking-[0.2em] hover:text-[#ffffff] transition-colors border-b border-st-red/30 pb-1">
-                  Open in Maps <ExternalLink className="w-3 h-3" />
-                </a>
-              </div>
-            </div>
+  {/* Background Pattern */}
+  <div className="absolute inset-0 bg-[url('https://maps.googleapis.com/maps/api/staticmap?center=ESIC+Medical+College,Chennai&zoom=14&size=600x300')] bg-cover bg-center opacity-20 grayscale group-hover:opacity-40 transition duration-700"></div>
+
+  {/* Gradient Overlay */}
+  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
+
+  {/* 📍 CONTENT */}
+  <div className="relative z-10 flex flex-col gap-4">
+
+    {/* Icon */}
+    <div className="w-12 h-12 sm:w-14 sm:h-14 bg-st-red/20 backdrop-blur-md border border-st-red/50 rounded-full flex items-center justify-center">
+      <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-st-red animate-bounce" />
+    </div>
+
+    {/* Title */}
+    <h3 className="text-lg sm:text-xl md:text-2xl font-milanesa font-black text-white uppercase tracking-widest">
+      Venue
+    </h3>
+
+    {/* Address */}
+    <p className="text-gray-300/80 text-base sm:text-lg leading-relaxed max-w-md">
+      <span className="text-st-red font-semibold block mb-1">
+        ESIC Medical College & PGIMSR
+      </span>
+      Ashok Pillar Road, K.K. Nagar,<br />
+      Chennai, Tamil Nadu 600078
+    </p>
+
+    {/* Link */}
+    <a
+      href="https://maps.google.com/?q=ESIC+Medical+College+KK+Nagar+Chennai"
+      target="_blank"
+      rel="noreferrer"
+      className="inline-flex items-center gap-2 text-xs font-bold text-st-red uppercase tracking-[0.2em] hover:text-white transition-colors w-fit border-b border-st-red/30 pb-1"
+    >
+      Open in Maps <ExternalLink className="w-3 h-3" />
+    </a>
+
+  </div>
+
+  {/* 🗺️ MAP (separate block for proper alignment) */}
+  <div className="relative z-10 rounded-xl overflow-hidden border border-white/10">
+    <iframe
+      src="https://www.google.com/maps?q=ESIC%20Medical%20College%20Chennai&output=embed"
+      className="w-full h-[200px] sm:h-[250px] md:h-[300px] border-0"
+      loading="lazy"
+      allowFullScreen
+      referrerPolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </div>
+
+</div>
 
           </div>
         </div>

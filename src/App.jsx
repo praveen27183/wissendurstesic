@@ -44,7 +44,7 @@ function App() {
       ) : (
         <div className="min-h-screen bg-renaissance-dark flex flex-col animate-fade-in transition-opacity duration-1000">
           <Navbar />
-          <main className="flex-grow pt-16 md:pt-20 lg:pt-24">
+          <main className="flex-grow pt-20 md:pt-24">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/academicevents" element={<Academicevents />} />
