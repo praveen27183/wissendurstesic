@@ -7,11 +7,7 @@ import Galaxy from '../components/Galaxy.jsx';
 
 // Ancient French paintings for section backgrounds
 const FRENCH_PAINTINGS = {
-  hero: '../../public/asset/hero_sec_for_all/about_us.png',
-  about: '../../public/asset/hero_sec_for_all/about_us.png',
-  reach: '../../public/asset/hero_sec_for_all/about_us.png',
-  team: '../../public/asset/starnger_thingsbg.jpeg',
-  gallery: '../../public/asset/hero_sec_for_all/about_us.png',
+  team: '../../public/asset/starnger_thingsbg.jpeg'
 };
 
 const SectionBg = ({ src, opacity = 'opacity-20', children, className = '' }) => (
@@ -129,7 +125,7 @@ const About = () => {
         title="About Wissendurst '26"
         subtitle="The Annual Intercollegiate Medical Conference"
         description="Ignite your thirst for knowledge! Join us for the sixth edition featuring engaging workshops, stimulating debates, and a grand intercollegiate quiz."
-        image="/asset/hero_sec_for_all/about.png"
+        image="../../public/asset/hero_sec_for_all/about.png"
       />
 
       {/* Global Galaxy Background */}
@@ -169,15 +165,15 @@ const About = () => {
               </h2>
 
               <div className="space-y-6 text-base md:text-lg leading-relaxed text-white font-medium">
-                <p className="border-l-2 border-st-red/5 pl-6 italic text-white drop-shadow-sm">
+                <p className="drop-shadow-sm">
                   Riding on the success of our previous edition, ESIC Medical College and Hospital, KK Nagar, Chennai proudly brings forth Wissendurst 2026, the annual intercollegiate medical conference for inquisitive undergraduate medical students.
                 </p>
                 <p className="drop-shadow-sm">
                   True to the spirit of its name, we present to you the sixth edition of this event, all ready to ignite your thirst for knowledge. Featuring engaging workshops, stimulating debates, thought provoking presentations, inspiring guest lectures and the grand intercollegiate quiz, the conference promises an enriching experience that will leave you eager for more.
                 </p>
-                <div className="bg-st-red/10 p-4 rounded-xl border border-st-red/20 text-white font-semibold shadow-inner">
+                <p className="drop-shadow-sm">
                   Gear up, because this edition, we unveil new additions to tap into your creativity and expand your horizons.
-                </div>
+                </p>
                 <p className="drop-shadow-sm">
                   If you believe you have already seen it all, think again- don't miss what could be one of the most rewarding ways to spend your time. So why wait? Fasten your seatbelts and get ready to embark on a remarkable journey of knowledge, discovery and excitement!
                 </p>
@@ -218,9 +214,6 @@ const About = () => {
           <div className="group relative h-full flex flex-col">
             <div className="absolute inset-0 bg-gradient-to-b from-st-red/5 to-transparent rounded-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none" />
             <div className="relative h-full bg-[#1a0f0a]/60 backdrop-blur-xl border border-st-red/15 shadow-xl rounded-3xl p-8 md:p-10 transition-all duration-500 hover:border-st-red/40 hover:-translate-y-2 flex flex-col">
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-st-red/20 to-transparent border border-st-red/30 flex items-center justify-center mb-8 shadow-inner">
-                <div className="w-4 h-4 rounded-full bg-st-red shadow-[0_0_15px_rgba(255,0,60,0.8)]" />
-              </div>
               <h2 className="text-2xl md:text-3xl font-milanesa font-black mb-6 text-st-red uppercase tracking-wide drop-shadow-sm">
                 Note from the Committee
               </h2>
@@ -234,14 +227,9 @@ const About = () => {
                 <p>
                   <strong className="text-st-red font-bold tracking-wider">MINERVA</strong>, the fabled quiz segment of WISSENDURST, returns with its signature energy while expanding beyond conventional boundaries through the inclusion of the online quizzes. Tamil events also make their debut this year, offering a vibrant and empowering platform for an energetic and expressive communication.
                 </p>
-
-                {/* Pull Quote Highlight */}
-                <div className="mt-8 p-5 rounded-xl bg-st-red/10 border border-st-red/20 flex gap-4 shadow-inner">
-                  <span className="text-st-red font-black text-4xl leading-none">"</span>
-                  <p className="italic text-[#ffffff] mt-1 text-sm md:text-base">
-                    We are deeply grateful for the continued support which inspired us to design every event with our participants at the heart of it. Join us on <span className="text-st-red font-bold border-b border-st-red/50 mx-1">April 28th, 29th, and 30th</span> to explore and experience a new dimension of learning.
-                  </p>
-                </div>
+                <p>
+                  We are deeply grateful for the continued support which inspired us to design every event with our participants at the heart of it. Join us on <span className="text-st-red font-bold border-b border-st-red/50 mx-1">April 28th, 29th, and 30th</span> to explore and experience a new dimension of learning.
+                </p>
               </div>
             </div>
           </div>
@@ -250,9 +238,6 @@ const About = () => {
           <div className="group relative h-full flex flex-col">
             <div className="absolute inset-0 bg-gradient-to-b from-st-red/5 to-transparent rounded-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none" />
             <div className="relative h-full bg-[#1a0f0a]/60 backdrop-blur-xl border border-st-red/15 shadow-xl rounded-3xl p-8 md:p-10 transition-all duration-500 hover:border-st-red/40 hover:-translate-y-2 flex flex-col">
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-st-red/20 to-transparent border border-st-red/30 flex items-center justify-center mb-8 shadow-inner">
-                <div className="w-4 h-4 rounded-sm rotate-45 border-[3px] border-st-red shadow-[0_0_15px_rgba(255,0,60,0.8)]" />
-              </div>
               <h2 className="text-2xl md:text-3xl font-milanesa font-black mb-6 text-st-red uppercase tracking-wide drop-shadow-sm">
                 About ESIC MCH, Chennai
               </h2>
@@ -275,8 +260,8 @@ const About = () => {
 
                 <p>
                   The Medical College boasts state-of-the-art facilities, ensuring comprehensive training for undergraduates and postgraduates to become skilled, and future-ready doctors. With over 15 super-speciality departments, the college provides extensive exposure to the students.
-                </p>
-                <p className="border-l-2 border-st-red/40 pl-4 italic text-sm mt-4 text-white">
+            
+          
                   Apart from an extensive clinical exposure, the college also boasts vibrant extra-curricular clubs including the dance, music, debate, literary clubs and more. With the support of our dedicated faculty, the students are regularly exposed to the latest updates in the medical field through various seminars, quizzes, CMEs, national level conferences- helping the students have the right balance between academics and co-curriculars.
                 </p>
               </div>

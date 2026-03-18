@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-
 const IntroAnimation = ({ onComplete }) => {
     const [stage, setStage] = useState(0);
 
@@ -33,7 +32,10 @@ const IntroAnimation = ({ onComplete }) => {
             onClick={() => onComplete()}
         >
             {/* Background Image - Netflix Style Dark Theme */}
-            <div className={`absolute inset-0 bg-[url('../../public/asset/mainbg/starnger_thingsbg.jpeg')] bg-cover bg-center transition-all duration-[6000ms] ease-out ${stage >= 3 ? 'opacity-30 scale-105 blur-sm' : 'opacity-20 scale-100 blur-none'}`}></div>
+            <div
+                className={`absolute inset-0 bg-cover bg-center transition-all duration-[6000ms] ease-out ${stage >= 3 ? 'opacity-30 scale-105 blur-sm' : 'opacity-20 scale-100 blur-none'}`}
+                style={{ backgroundImage: `url('/asset/mainbg/starnger_thingsbg.jpeg')` }}
+            ></div>
 
             {/* Background Red Glow/Fog under the explosion */}
             <div className={`absolute inset-0 bg-red-900/50 blur-[120px] transition-opacity duration-[3000ms] ${stage >= 1 ? 'opacity-100' : 'opacity-0'}`}></div>
@@ -99,7 +101,7 @@ const IntroAnimation = ({ onComplete }) => {
 
                 {/* Top-Left Piece */}
                 <img
-                    src="../../public/asset/logo/wissennobg.png"
+                    src="/asset/logo/wissennobg.png"
                     alt="dice-tl"
                     className={`w-48 md:w-72 absolute transition-all ${stage >= 3 ? '-translate-x-[40vw] md:-translate-x-[25vw] -translate-y-[30vh] md:-translate-y-[20vh] -rotate-[35deg] scale-125 opacity-0 duration-[5000ms] ease-out' : 'duration-0'}`}
                     style={{ clipPath: crackPathTL }}
@@ -107,7 +109,7 @@ const IntroAnimation = ({ onComplete }) => {
 
                 {/* Top-Right Piece */}
                 <img
-                    src="../../public/asset/logo/wissennobg.png"
+                    src="/asset/logo/wissennobg.png"
                     alt="dice-tr"
                     className={`w-48 md:w-72 absolute transition-all ${stage >= 3 ? 'translate-x-[40vw] md:translate-x-[25vw] -translate-y-[30vh] md:-translate-y-[20vh] rotate-[35deg] scale-125 opacity-0 duration-[5000ms] ease-out' : 'duration-0'}`}
                     style={{ clipPath: crackPathTR }}
@@ -115,7 +117,7 @@ const IntroAnimation = ({ onComplete }) => {
 
                 {/* Bottom-Left Piece */}
                 <img
-                    src="../../public/asset/logo/wissennobg.png"
+                    src="/asset/logo/wissennobg.png"
                     alt="dice-bl"
                     className={`w-48 md:w-72 absolute transition-all ${stage >= 3 ? '-translate-x-[40vw] md:-translate-x-[25vw] translate-y-[30vh] md:translate-y-[20vh] -rotate-[35deg] scale-125 opacity-0 duration-[5000ms] ease-out' : 'duration-0'}`}
                     style={{ clipPath: crackPathBL }}
@@ -123,7 +125,7 @@ const IntroAnimation = ({ onComplete }) => {
 
                 {/* Bottom-Right Piece */}
                 <img
-                    src="../../public/asset/logo/wissennobg.png"
+                    src="/asset/logo/wissennobg.png"
                     alt="dice-br"
                     className={`w-48 md:w-72 relative transition-all ${stage >= 3 ? 'translate-x-[40vw] md:translate-x-[25vw] translate-y-[30vh] md:translate-y-[20vh] rotate-[35deg] scale-125 opacity-0 duration-[5000ms] ease-out' : 'duration-0'}`}
                     style={{ clipPath: crackPathBR }}

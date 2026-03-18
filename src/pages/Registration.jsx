@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import StarBorder from '../components/StarBorder';
 import GradientText from '../components/GradientText';
+import registration from "/asset/hero_sec_for_all/registration.png";
 import Galaxy from '../components/Galaxy.jsx';
 
 const Registration = () => {
@@ -102,7 +103,7 @@ const Registration = () => {
         {/* Registration Image Background with Dark Gradient Overlay */}
         <div
           className="absolute inset-0 z-0 bg-cover bg-center opacity-90 transform scale-105"
-          style={{ backgroundImage: `url('../../public/asset/hero_sec_for_all/registration.png')`, backgroundAttachment: 'fixed' }}
+          style={{ backgroundImage: `url('/asset/hero_sec_for_all/registration.png')`, backgroundAttachment: 'fixed' }}
         ></div>
         <div className="absolute inset-0 z-0 bg-gradient-to-t from-[#050505] via-[#050505]/80 to-transparent"></div>
         <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/80 via-transparent to-transparent"></div>

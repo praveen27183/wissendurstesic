@@ -64,21 +64,28 @@ const debateEvents = [
     {
         id: 3,
         title: "Tamil Debate / பட்டிமன்றம்",
-        subtitle: "Tamil Mandram",
+        subtitle: "அறிவரங்கம் 26'",
         date: "TBA",
         image: "/asset/Debate_and_oratory_form/Tamil_debate_.jpg",
-        description: "A battle of wits and words exclusively in Tamil. Step onto the stage to prove the strength of your arguments in our classic Pattimandram.",
+        description: "சிந்தனைகள் சந்திக்கும் விவாத மேடை — அமுத தமிழின் நயமும், மருத்துவ அறிவின் ஆழமும், விவாதத்தின் வலிமையும் இணையும் சிறப்பு விவாதப் போட்டி.",
         sections: [
             {
-                title: "Subject Details",
-                items: ["Language proficiency, humor, impact, and logical flow will be key judging criteria."]
+                title: "போட்டி அமைப்பு",
+                items: [
+                    "முதல் சுற்று: அனைத்து அணிகளும் பங்கேற்கும். இச்சுற்றில் தேர்வு செய்யப்பட்ட அணிகள் மட்டுமே அடுத்த சுற்றுக்குத் தகுதி பெறுவர்.",
+                    "இரண்டாம் சுற்று (இறுதிப் போட்டி): மதிப்பெண்களின் அடிப்படையில் இறுதி வெற்றியாளர்கள் அறிவிக்கப்படுவர்."
+                ]
             },
             {
-                title: "General Instructions",
+                title: "விதிமுறைகள்",
                 items: [
-                    "Guidelines for the Tamil debate will be updated soon.",
-                    "Eligibility: All students.",
-                    "Cross College participation allowed."
+                    "ஒவ்வொரு அணியிலும் நான்கு (4) பேச்சாளர்கள் இருக்க வேண்டும்.",
+                    "ஒவ்வொரு பேச்சாளருக்கும் பேச 3–4 நிமிட காலவரையறை வழங்கப்படும்.",
+                    "பிறகு, கேள்வி–பதில் (Rebuttal) சுற்று நடைபெறும். இதில் 2 நிமிட காலவரையறை வழங்கப்படும்.",
+                    "போட்டியின் தலைப்பு, போட்டி நடைபெறும் தேதிக்கு 1–2 நாட்களுக்கு முன்பு அறிவிக்கப்படும்.",
+                    "போட்டி முழுவதும் தமிழில் நடைபெறும்.",
+                    "நடுவர்களின் தீர்ப்பே இறுதியானது.",
+                    "மற்ற விவரங்கள் பின்னர் தெரிவிக்கப்படும்."
                 ]
             },
             {
@@ -92,21 +99,21 @@ const debateEvents = [
     {
         id: 4,
         title: "Tamil Elocution / பேச்சுப்போட்டி",
-        subtitle: "Tamil Mandram",
+        subtitle: "சொற்புனல் 26'",
         date: "TBA",
         image: "/asset/Debate_and_oratory_form/Tamil_elocution_.jpg",
-        description: "A profound platform for passionate orators. Deliver a powerful solo speech on compelling topics utilizing the richness of the Tamil language.",
+        description: "செந்தமிழும் மருத்துவமும் இணையும் விழா — மருத்துவ மாணவர்களின் பேச்சுத் திறன், கூர்த்தறிவு மற்றும் மேடை ஆளுமையை வெளிப்படுத்தும் சிறப்புச் சொற்பொழிவுப் போட்டி.",
         sections: [
             {
-                title: "Subject Details",
-                items: ["Clarity, body language, emotional delivery, and content richness will be evaluated."]
-            },
-            {
-                title: "General Instructions",
+                title: "விதிமுறைகள்",
                 items: [
-                    "Topic list and time constraints to be announced.",
-                    "Eligibility: All students.",
-                    "Cross College participation allowed."
+                    "பங்கேற்பு: தனிநபர்.",
+                    "ஒவ்வொரு போட்டியாளரும் பேசுவதற்கு 3–5 நிமிட காலவரையறை வழங்கப்படும்.",
+                    "போட்டி முழுவதும் தமிழில் நடைபெறும்.",
+                    "தலைப்பு முன்கூட்டியே அறிவிக்கப்படும்.",
+                    "நேரக்கட்டுப்பாட்டைக் கடைப்பிடிக்க வேண்டும்.",
+                    "நடுவர்களின் தீர்ப்பே இறுதியானது.",
+                    "மற்ற விவரங்கள் பின்னர் தெரிவிக்கப்படும்."
                 ]
             },
             {

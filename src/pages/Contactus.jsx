@@ -8,14 +8,14 @@ import Galaxy from "../components/Galaxy.jsx";
 ================================ */
 const Contacts = [
   {
-    role: "Academic Secretaries",
+    role: "Academic Secretary",
     names: [
       { name: "RISHALINI U", phone: "90429 52723" },
       { name: "VEDANT SOMA", phone: "63069 06398" },
     ],
   },
   {
-    role: "Organising Secretaries",
+    role: "Organising Secretary",
     names: [
       { name: "FARHATHUL AFRAA", phone: "82484 37615" },
       { name: "JESWIN ANTONY", phone: "98471 76022" },
@@ -24,41 +24,111 @@ const Contacts = [
   },
   {
     role: "Treasurer",
-    names: [{ name: "AHMED SHAMEER", phone: "96336 69164" }],
+    names: [
+      { name: "AHMED SHAMEER", phone: "96336 69164" },
+    ],
   },
   {
-    role: "Overall Registration Heads",
+    role: "Social Media",
     names: [
-      { name: "LEKHA", phone: "97897 03487" },
+      { name: "HARINI G", phone: "63790 04049" },
+    ],
+  },
+  {
+    role: "Designing",
+    names: [
+      { name: "LUCKSHANYA", phone: "89393 11539" },
+      { name: "DHEEKSHI S", phone: "97897 29409" },
+      { name: "LAKSHA S P", phone: "96000 55784" },
+      { name: "HARINI G", phone: "63790 04049" },
+    ],
+  },
+  {
+    role: "Editing",
+    names: [
+      { name: "ESHITHA SHREE", phone: "88380 29901" },
+      { name: "PRAGNYA PRADEEP KUMAR", phone: "73051 16987" },
+      { name: "DIYA VINOD", phone: "87781 25205" },
+      { name: "ILLAKIYA", phone: "78459 12604" },
+      { name: "ASHYA ASHOK", phone: "97899 66052" },
+      { name: "JANITHA", phone: "95352 18887" },
+    ],
+  },
+  {
+    role: "Banners & Decorations",
+    names: [
+      { name: "DIVYA D", phone: "98401 69188" },
+    ],
+  },
+  {
+    role: "Public Relations",
+    names: [
+      { name: "RASHMIKA T", phone: "73586 65375" },
+      { name: "KRISHNASUDHAN", phone: "70107 47288" },
+    ],
+  },
+  {
+    role: "Food",
+    names: [
+      { name: "ADHARSH S", phone: "85907 65094" },
+      { name: "PRATHYUSH", phone: "89030 88587" },
+    ],
+  },
+  {
+    role: "Accommodation",
+    names: [
+      { name: "ARAVINDH B", phone: "94895 44801" },
+      { name: "AFLAHA T", phone: "82817 57052" },
+    ],
+  },
+  {
+    role: "Registration Committee",
+    names: [
+      { name: "MEIMOZHI", phone: "63828 66554" },
+      { name: "LEKHA SHRUTHY V K", phone: "97897 03487" },
       { name: "SHALINI R", phone: "94442 62579" },
       { name: "KARTHIKEYAN", phone: "94895 32419" },
-      { name: "MEIMOZHI PARI", phone: "63828 66554" },
     ],
   },
   {
     role: "Overall Workshop Heads",
     names: [
-      { name: "SUNIL KUMAR CM", phone: "63810 83905" },
-      { name: "SAINITHI B", phone: "88386 45832" },
-      { name: "NEHA SUNIL", phone: "93604 87652" },
-      { name: "SRI DHARNISH", phone: "99626 54504" },
-      { name: "NIVETHA D", phone: "76038 72548" },
       { name: "ASHWIN KUMAR S", phone: "98406 31290" },
+      { name: "NIVETHA D", phone: "76038 72548" },
+      { name: "NEHA SUNIL", phone: "93604 87652" },
+      { name: "SAINITHI B", phone: "88386 45832" },
+      { name: "SRI DHARNISH", phone: "99626 54504" },
+      { name: "SUNIL KUMAR C M", phone: "63810 83905" },
     ],
   },
   {
-    role: "Overall Quiz Heads",
+    role: "Quiz Committee",
     names: [
-      { name: "MANIKANDAN A", phone: "90434 93961" },
       { name: "JANE SARAH JOHN", phone: "78240 34859" },
       { name: "KALANIDHI M", phone: "95000 78979" },
+      { name: "MANIKANDAN A", phone: "90434 93961" },
     ],
   },
   {
-    role: "Overall Heads of Presentations",
+    role: "Speakers Collective",
+    names: [
+      { name: "KALANIDHI M", phone: "95000 78979" },
+      { name: "JANE SARAH JOHN", phone: "78240 34859" },
+      { name: "JANITHA", phone: "95352 18887" },
+    ],
+  },
+  {
+    role: "Presentations",
     names: [
       { name: "DIYA VINOD", phone: "87781 25205" },
-      { name: "ESHITA SUDHAKAR", phone: "88380 29901" },
+      { name: "ESHITHA SHREE", phone: "88380 29901" },
+    ],
+  },
+  {
+    role: "Tamil Mandram",
+    names: [
+      { name: "SADHURTHIKA", phone: "95669 00929" },
+      { name: "SRI DHARANISH", phone: "99626 54504" },
     ],
   },
 ];
@@ -159,7 +229,7 @@ const Contactus = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mt-12 mb-24">
 
-        <p className="text-lg text-st-red font-bold mb-16 uppercase tracking-[0.3em]">
+        <p className="text-3xl sm:text-4xl text-st-red font-bold mb-16 uppercase tracking-[0.3em]">
           Organising Committee
         </p>
 
@@ -181,7 +251,7 @@ const Contactus = () => {
             >
 
               {/* ROLE */}
-              <p className="text-red-500 text-sm uppercase tracking-[0.25em] font-bold mb-8 border-b border-red-800/40 pb-3 text-center">
+              <p className="text-red-500 text-base sm:text-lg uppercase tracking-[0.25em] font-bold mb-8 border-b border-red-800/40 pb-3 text-center">
                 {col.role}
               </p>
 
@@ -191,7 +261,7 @@ const Contactus = () => {
                 {col.names.map((n, ni) => (
                   <div key={ni} className="flex flex-col items-center text-center">
 
-                    <h4 className="text-lg sm:text-xl font-bold text-white tracking-wide mb-3 group-hover:text-red-400 transition-colors">
+                    <h4 className="text-xl sm:text-2xl font-bold text-white tracking-wide mb-3 group-hover:text-red-400 transition-colors">
                       {n.name}
                     </h4>
 
@@ -203,7 +273,7 @@ const Contactus = () => {
                     >
                       <Phone className="w-5 h-5 text-red-500" />
 
-                      <span className="text-sm sm:text-base font-semibold text-white tracking-wide">
+                      <span className="text-base sm:text-lg font-semibold text-white tracking-wide">
                         +91 {n.phone}
                       </span>
                     </a>

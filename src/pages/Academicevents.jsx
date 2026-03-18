@@ -9,11 +9,11 @@ const academicEvents = [
         title: "Pathology Poster Presentation",
         subtitle: "Bloodlines: The Hematology Showcase",
         date: "28.04.2026 (Tuesday)",
-        image: "https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&q=80&w=1280",
-        description: "Coursing through the vascular system is a dynamic and intricate stream of countless entities... Participants are formally invited to present rare, unusual, and diagnostically challenging hematological cases.",
+        image: "/asset/Academic_Events/Poster_presentation/Pathology_poster/Pathology_Brenners_blueprint_Needles_and_Nodes.jpg",
+        description: "Countless cells silently yet decisively govern the balance between life and death. Participants are formally invited to present rare, unusual, and diagnostically challenging hematological cases.",
         sections: [
             {
-                title: "Subject Details",
+                title: "Judging Criteria",
                 items: ["Diagnostic reasoning, clarity, and pathological correlation will be key judging criteria."]
             },
             {
@@ -33,6 +33,7 @@ const academicEvents = [
                     "Must include: History, Salient Examination Finding, Differential Diagnosis, Investigations (special emphasis on gross & microscopic features), Final/Provisional diagnosis, Management, Case relevance.",
                     "Must not include personal details of patient and participant in the abstract.",
                     "Ensure that the cases are original and treated at your institution.",
+                    "Must submit the attestation form, duly signed by the Head of the Department in the given format. Link: https://docs.google.com/document/d/1SrowN33hnHr7rgT5Ir58jyFfRbuNs165QHI3qv1XoB4/edit?tab=t.0",
                     "Abstract file must be named: Pathology Poster_Title in WORD (.docx) format (max 10MB).",
                     "Plagiarism or malpractice of any form is strictly prohibited and will lead to direct disqualification.",
                     "Last date for submission: 23.03.2026"
@@ -43,7 +44,7 @@ const academicEvents = [
                 items: [
                     "Date: 28.04.2026 (Tuesday)",
                     "Top 10 abstracts will be selected for finals",
-                    "Mode of Presentation: Poster (3x4 ft, Landscape or portrait)",
+                    "Mode of Presentation: Poster (2x3 ft, Landscape or portrait)",
                     "Time for Presentation: 5 minutes presentation and 3 minutes discussion.",
                     "Judging Criteria will be announced 3 days before Finals."
                 ]
@@ -51,8 +52,8 @@ const academicEvents = [
             {
                 title: "Incharges",
                 items: [
-                    "Eshita Sudhakar - 88380 29901",
-                    "Diya Vinod- +91 87781 25205"
+                    "Eshita Sudhakar: +91 88380 29901",
+                    "Diya Vinod: +91 87781 25205"
                 ]
             }
         ]
@@ -62,8 +63,8 @@ const academicEvents = [
         title: "Pharmacology Poster Presentation",
         subtitle: "Into the Pharmaverse",
         date: "28.04.2026 (Tuesday)",
-        image: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&q=80&w=1280",
-        description: "Participants are invited to present posters that distill and simplify key concepts, offering clarity and insight into the evolving landscape of contemporary neo-pharmacology.",
+        image: "/asset/Academic_Events/Poster_presentation/Pharmacology_poster/pharm_poster_presentation.jpeg",
+        description: "Participants are invited to present posters among the given topics that distill and simplify key concepts, offering clarity and insight into the evolving landscape of contemporary neo-pharmacology.",
         sections: [
             {
                 title: "Topics",
@@ -80,25 +81,30 @@ const academicEvents = [
                 items: [
                     "Maximum 2 per team, individual participation allowed.",
                     "Eligibility: All MBBS students excluding CRMI.",
-                    "Team members must belong to the same college."
+                    "Team members must belong to the same college.",
+                    "Only one submission per team.",
+                    "The same participant should not be associated with multiple teams."
                 ]
             },
             {
                 title: "Poster Instructions",
                 items: [
-                    "No preliminary round. All participants can present (if >15, top 10 shortlisted).",
-                    "Poster size: 3x4 ft, Landscape or portrait.",
+                    "No preliminary round. All participants can present (if >20, top 10 will be shortlisted and asked to present).",
+                    "Poster size: 2x3 ft, Landscape or portrait.",
+                    "No restriction on font colour or font type. However, the images and the wordings must be clear.",
                     "References must be added.",
+                    "You may include your name and college name in the poster.",
                     "Time for Presentation: 4 minutes presentation and 3 minutes discussion.",
-                    "File size must be submitted in PDF format, file named: Pharmacology Poster_Title.",
-                    "Late date of submission: 01.04.2026"
+                    "File must be submitted in PDF format, file named: Pharmacology Poster_Title.",
+                    "Last date of submission: 01.04.2026",
+                    "Judging Criteria will be announced 3 days before Finals."
                 ]
             },
             {
                 title: "Incharges",
                 items: [
-                    "Eshita Sudhakar - 88380 29901",
-                    "Diya Vinod- +91 87781 25205"
+                    "Eshita Sudhakar: +91 88380 29901",
+                    "Diya Vinod: +91 87781 25205"
                 ]
             }
         ]
@@ -108,14 +114,14 @@ const academicEvents = [
         title: "Case Presentation",
         subtitle: "Classified: Casefiles of 1983",
         date: "30.04.2026 (Thursday)",
-        image: "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&q=80&w=1280",
+        image: "/asset/Academic_Events/Case_presentation/case_presentation.jpeg",
         description: "When textbook rarities come alive in the wards through uncommon presentations, they become lessons beyond the pages. Participants are encouraged to present rare and noteworthy clinical cases.",
         sections: [
             {
                 title: "Subjects",
                 items: [
-                    "General Medicine", 
-                    "General Surgery", 
+                    "General Medicine",
+                    "General Surgery",
                     "Obstetrics and Gynaecology",
                     "Pediatrics"
                 ]
@@ -135,6 +141,9 @@ const academicEvents = [
                 items: [
                     "Word limit: 700 words (excluding References and Title).",
                     "Must include: History, Salient Examination Findings, Differential Diagnosis, Investigations, Final/Provisional diagnosis, Management, Case relevance.",
+                    "Must not include personal details of participants & patient in the abstract.",
+                    "Ensure that the cases are original and treated at your institution.",
+                    "Must submit the attestation form, duly signed by the Head of the Department in the given format. Link: https://docs.google.com/document/d/1SrowN33hnHr7rgT5Ir58jyFfRbuNs165QHI3qv1XoB4/edit?tab=t.0",
                     "Abstract file must be named: Subject_Title in WORD (.docx).",
                     "Last date for submission: 23-03-2026 (Monday)"
                 ]
@@ -144,17 +153,19 @@ const academicEvents = [
                 items: [
                     "Date: 30.04.2026 (Thursday)",
                     "Top 10 abstracts will be selected for finals.",
+                    "The competition will be held separately for the 4 subjects — General Medicine, General Surgery, Obstetrics and Gynaecology, and Pediatrics — on the same day.",
                     "Method of presentation: Oral (Total 10 minutes: 7 min presentation, 3-5 min discussion).",
-                    "Presentation limited to 20 slides."
+                    "Presentation limited to 20 slides.",
+                    "Judging Criteria will be announced 3 days before Finals."
                 ]
             },
             {
                 title: "Incharges",
                 items: [
-                    "Surgery: Dhanyaa Sai A - 9790743116",
-                    "Medicine: Diya Vinod - 87781 25205",
-                    "Paeds: Kavya DK- 6369185992",
-                    "OBG: Niranjana Natesan- 9445244014"
+                    "Surgery: Dhanyaa Sai A: +91 97907 43116",
+                    "Medicine: Diya Vinod: +91 87781 25205",
+                    "Paediatrics: Kavya DK: +91 63691 85992",
+                    "OBG: Niranjana Natesan: +91 94452 44014"
                 ]
             }
         ]
@@ -164,7 +175,7 @@ const academicEvents = [
         title: "The Scientific Symposium",
         subtitle: "Signals in the Static",
         date: "29.04.2026 (Wednesday)",
-        image: "https://images.unsplash.com/photo-1540317580384-e5d43616b9aa?auto=format&fit=crop&q=80&w=1280",
+        image: "/asset/Academic_Events/Symposium/Symposium.jpg",
         description: "In a profession where rote memorization holds little value, true understanding lies in conceptual clarity. We invite participants to bring challenging medical topics to life through innovative teaching methods.",
         sections: [
             {
@@ -179,7 +190,9 @@ const academicEvents = [
                 items: [
                     "Eligibility: All MBBS students including CRMI.",
                     "Number of participants: 3 to 6 per team. (Only 1 CRMI per team allowed).",
-                    "Cross College teams are not allowed."
+                    "Cross College teams are not allowed.",
+                    "Multiple entries in the same subject are not allowed, however, a team may submit abstracts for more than 1 subject.",
+                    "The same participant should not be associated with multiple teams in the same subject."
                 ]
             },
             {
@@ -187,6 +200,10 @@ const academicEvents = [
                 items: [
                     "Summary word limit: 750 words.",
                     "Must include: Subject, Title, Objective, List of subtopics covered, Summary, Teaching AIDS used, References.",
+                    "May include images, flowcharts and other pictorial items relevant to the topic. However, appropriate references must be added.",
+                    "Do not include personal details in the abstract.",
+                    "Abstract must be named: Symposium_GS_Title (for General Surgery) and Symposium_GM_Title (for General Medicine).",
+                    "Abstract must be submitted in WORD (.docx) form, file must not be more than 10MB.",
                     "Last date for submission: 23-03-2026 (Monday)"
                 ]
             },
@@ -196,14 +213,15 @@ const academicEvents = [
                     "Date: 29-04-2026 (Wednesday)",
                     "Top 6 selected teams must present their symposium.",
                     "Mode of Presentation: Oral (Each team given 15 mins for presentation and 5-7 mins discussion).",
+                    "No bar on number of slides.",
                     "Evaluation based on: Choice of Topic, Novelty of Teaching Method, Clarity on Topic, Answer during Discussion."
                 ]
             },
             {
                 title: "Incharges",
                 items: [
-                    "Surgery symposium: Eshita Sudhakar- 88380 29901",
-                    "Medicine Symposium: Diya Vinod-+91 87781 25205"
+                    "Surgery Symposium: Eshita Sudhakar: +91 88380 29901",
+                    "Medicine Symposium: Diya Vinod: +91 87781 25205"
                 ]
             }
         ]
@@ -213,7 +231,7 @@ const academicEvents = [
         title: "Research Protocol Presentation",
         subtitle: "The Hawkins Hypothesis",
         date: "29.04.2026 (Wednesday)",
-        image: "https://images.unsplash.com/photo-1532187863486-abf9db0c20a5?auto=format&fit=crop&q=80&w=1280",
+        image: "/asset/Academic_Events/Protocol_presentation/protocol_presentation.jpeg",
         description: "An idea holds potential, but a protocol gives it direction. It challenges minds to transform concepts into clear, structured plans where precision, feasibility, and vision shape the foundation of impactful research.",
         sections: [
             {
@@ -222,7 +240,9 @@ const academicEvents = [
                     "Maximum 2 per team, individual participation allowed.",
                     "Eligibility: 1st year to CRMI.",
                     "Cross College teams are allowed.",
-                    "The participant should NOT have commenced work on the project yet."
+                    "The participant should NOT have commenced work on the project yet.",
+                    "Only one submission per team.",
+                    "The same participant should not be associated with multiple teams."
                 ]
             },
             {
@@ -230,8 +250,12 @@ const academicEvents = [
                 items: [
                     "Word limit: 350 words (excluding References and Title).",
                     "Must include: Title, Background & Objectives, Methodology, Implications, References (5 to 7).",
-                    "Must submit the attestation form signed by HOD and faculty guide.",
-                    "Last Date for submission : 23-04-2026"
+                    "Must not include any personal details in the abstract. The institution where the study was conducted should also be anonymous.",
+                    "Must submit the attestation form, duly signed by the Head of the Department in the given format. Link: https://docs.google.com/document/d/1SrowN33hnHr7rgT5Ir58jyFfRbuNs165QHI3qv1XoB4/edit?tab=t.0",
+                    "Abstract file must be named: Protocol_Title.",
+                    "Abstract must be submitted in WORD (.docx) form, file must not be more than 10MB.",
+                    "Please refrain from adding images.",
+                    "Last Date for submission: 23-04-2026"
                 ]
             },
             {
@@ -241,14 +265,15 @@ const academicEvents = [
                     "Top 10 abstracts selected for finals.",
                     "Method of presentation: Oral (PowerPoint slideshow).",
                     "Total 10 minutes: 7 minutes presentation and 3-5 minutes discussion.",
-                    "Presentation limited to 20 slides."
+                    "Presentation limited to 20 slides.",
+                    "Judging criteria will be announced 3 days prior."
                 ]
             },
             {
                 title: "Incharges",
                 items: [
-                    "Safika Roselin R - +91 7708396669",
-                    "Dhanyaa Sai A - 9790743116"
+                    "Safika Roselin R: +91 77083 96669",
+                    "Dhanyaa Sai A: +91 97907 43116"
                 ]
             }
         ]
@@ -258,7 +283,7 @@ const academicEvents = [
         title: "Research Poster Presentation",
         subtitle: "The Null Zone",
         date: "29.04.2026 (Tuesday)",
-        image: "https://images.unsplash.com/photo-1555421689-d68471e189f2?auto=format&fit=crop&q=80&w=1280",
+        image: "/asset/Academic_Events/Research_poster/research_poster.jpeg",
         description: "An idea sparks innovation, but research gives it power. Research celebrates curiosity, critical thinking, and evidence where questions evolve into discoveries and ideas stand strong on data.",
         sections: [
             {
@@ -267,7 +292,9 @@ const academicEvents = [
                     "Maximum 2 per team, individual participation allowed.",
                     "Eligibility: 1st year to CRMI.",
                     "Cross College teams are allowed.",
-                    "Participants are allowed to submit only completed original research projects and systematic review & meta-analysis projects."
+                    "Participants are allowed to submit only completed original research projects and systematic review & meta-analysis projects.",
+                    "Individual participants are allowed to submit only one abstract. In case of team participation, ONLY 2 abstracts are allowed where the authorship is different (e.g. Participant A is 1st author in Abstract 1, Participant B is 1st author in Abstract 2).",
+                    "The same participant should not be associated with multiple teams."
                 ]
             },
             {
@@ -275,8 +302,12 @@ const academicEvents = [
                 items: [
                     "Word limit: 350 words max.",
                     "Must include: Title, Background & Objectives, Methodology, Results, Conclusion, References (5 to 7).",
-                    "It is mandatory to attach the IEC approval along with the Attestation form at the time of submission.",
-                    "Last Date for submission : 23-04-2026"
+                    "Must not include any personal details in the abstract. The institution where the study was conducted should also be anonymous.",
+                    "Must submit the attestation form, duly signed by the Head of the Department and the faculty guide in the given format. Link: https://docs.google.com/document/d/1SrowN33hnHr7rgT5Ir58jyFfRbuNs165QHI3qv1XoB4/edit?tab=t.0",
+                    "It is mandatory to attach the IEC approval along with the attestation form at the time of submission.",
+                    "Abstract file must be named: Research Poster_Title.",
+                    "Abstract must be submitted in WORD (.docx) form, file must not be more than 10MB.",
+                    "Last Date for submission: 23-04-2026"
                 ]
             },
             {
@@ -284,15 +315,18 @@ const academicEvents = [
                 items: [
                     "Date: 29.04.2026 (Tuesday)",
                     "Top 10 abstracts selected for finals.",
-                    "Mode of Presentation: Poster (3x4 ft, Landscape or portrait).",
-                    "Time for Presentation: 6 minutes presentation and 3 minutes discussion."
+                    "Mode of Presentation: Poster (2x3 ft, Landscape or portrait).",
+                    "No restriction on font colour or font type. However, the images and the wordings must be clear.",
+                    "Only one participant of the team can present. However, both may answer during the viva session.",
+                    "Time for Presentation: 6 minutes presentation and 3 minutes discussion.",
+                    "Judging Criteria will be announced 3 days before Finals."
                 ]
             },
             {
                 title: "Incharges",
                 items: [
-                    "Diya Vinod - 87781 25205",
-                    "Rashmika T - 7358665375"
+                    "Diya Vinod: +91 87781 25205",
+                    "Rashmika T: +91 73586 65375"
                 ]
             }
         ]
@@ -302,7 +336,7 @@ const academicEvents = [
         title: "Public Health Quests",
         subtitle: "Hellfire Club: The Health Detectives",
         date: "TBD",
-        image: "https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&q=80&w=1280",
+        image: "/asset/Academic_Events/Public_health_quests/public_health_quests_health_detectives.jpeg",
         description: "Public health is medicine beyond hospital walls. For medical students, it means looking beyond individual patients to the health of entire communities through prevention, epidemiology, and health programs, becoming true health detectives. Sharp minds and keen eyes will reveal the answers. Let the challenge begin.",
         sections: [
             {
@@ -339,8 +373,8 @@ const academicEvents = [
             {
                 title: "Incharges",
                 items: [
-                    "Haripriya D V (99415 37867)",
-                    "Ashya A (97899 66052)"
+                    "Haripriya D V: +91 99415 37867",
+                    "Ashya A: +91 97899 66052"
                 ]
             }
         ]
@@ -350,7 +384,7 @@ const academicEvents = [
         title: "Face and Body Painting",
         subtitle: "Henry’s Disguise",
         date: "TBD",
-        image: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&q=80&w=1280",
+        image: "/asset/Academic_Events/Face_and_body_painting/Face_and_body_painting_henry_s_disguise.jpeg",
         description: "Anatomy unveiled through scalpel and skin beyond the pages of textbooks. We invite you to bring anatomy to life in an engaging and artistic face-painting competition. Explore the depths of muscle, nerve, vessel and transform knowledge into visual expression.",
         sections: [
             {
@@ -378,16 +412,16 @@ const academicEvents = [
             {
                 title: "Registration Fee",
                 items: [
-                    "Early bird: ₹300 per team",
-                    "Late bird: ₹400 per team",
+                    "Early bird: ₹200 per team",
+                    "Late bird: ₹300 per team",
                     "Early Bird Registration Deadline: 1st April, 2026"
                 ]
             },
             {
                 title: "Incharges",
                 items: [
-                    "Haripriya D V (99415 37867)",
-                    "Luckshanya V K (89393 11539)"
+                    "Haripriya D V: +91 99415 37867",
+                    "Luckshanya V K: +91 89393 11539"
                 ]
             }
         ]
@@ -527,11 +561,6 @@ const Academicevents = () => {
                                     <span className="text-st-red/50 flex items-center gap-1 group-hover:text-st-red transition-colors">Details <ChevronRight className="w-3 h-3" /></span>
                                 </div>
 
-                                <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full border border-st-red/30">
-                                    <span className="text-white text-lg font-bold uppercase tracking-wider font-title flex items-center gap-2">
-                                        {event.date.split(' ')[0]}
-                                    </span>
-                                </div>
                             </div>
                         </div>
                     ))}
@@ -618,6 +647,13 @@ const Academicevents = () => {
                                     {detailEvent.description}
                                 </p>
 
+                                {/* Register Button - TOP */}
+                                <div className="mb-8 flex justify-center">
+                                    <button className="px-10 py-4 bg-st-red text-white rounded-full font-title font-black uppercase tracking-widest hover:scale-105 hover:bg-white hover:text-black transition-all shadow-[0_0_30px_rgba(255,0,60,0.3)] flex items-center gap-3">
+                                        Register Now
+                                    </button>
+                                </div>
+
                                 {/* Info Sections Stack */}
                                 <div className="space-y-8">
                                     {detailEvent.sections.map((section, idx) => (
@@ -651,12 +687,6 @@ const Academicevents = () => {
                                             )}
                                         </div>
                                     ))}
-                                </div>
-
-                                <div className="mt-12 pt-8 border-t border-st-red/20 flex justify-center pb-8">
-                                    <button className="px-10 py-4 bg-st-red text-black rounded-full font-title font-black uppercase tracking-widest hover:scale-105 hover:bg-white transition-all shadow-[0_0_30px_rgba(255,0,60,0.3)] flex items-center gap-3">
-                                        Register For {detailEvent.subtitle.split(' ')[0]}
-                                    </button>
                                 </div>
                             </div>
                         </div>

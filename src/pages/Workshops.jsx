@@ -7,27 +7,27 @@ import Galaxy from '../components/Galaxy.jsx';
 
 const paintingBackgrounds = [
   // Day 1
-  "/asset/Workshops/Anatomy_Kali_s.jpg",
-  "/asset/Workshops/Biochemistry_Exposing_the_Hawkins_lab.jpg",
-  "/asset/Workshops/Pathology_Brenners_blueprint_Needles_and_Nodes.jpg",
-    "/asset/Workshops/Microbiology_Spores_of_the_Upside_Down.jpg",
-  "/asset/Workshops/FM_Autopsy_Code_Black_The_Hopper_Case_File.jpg",
-  //need to add
-  "/asset/Workshops/FM_Crime_Scene_Code_Hawkins_The_Hopper_Case_File.jpg",
+      "/asset/Workshops/Anatomy_Kali_s.jpg",
+      "/asset/Workshops/Biochemistry_Exposing_the_Hawkins_lab.jpg",
+      "/asset/Workshops/Pathology_Brenners_blueprint_Needles_and_Nodes.jpg",
+        "/asset/Workshops/Microbiology_Spores_of_the_Upside_Down.jpg",
+      "/asset/Workshops/FM_Autopsy_Code_Black_The_Hopper_Case_File.jpg",
+      //need to add
+      "/asset/Workshops/FM_Crime_Scene_Code_Hawkins_The_Hopper_Case_File.jpg",
 
-  // Day 2
-  "/asset/Workshops/ENT_Running_Up_the_Decibel.jpg",
-  "/asset/Workshops/Ophthalmology_Els_Vision.jpg",
-  "/asset/Workshops/General_Medicine_Echoes_from_Camazotz.jpg",
-  "/asset/Workshops/General_Surgery_Papas_Gloves.jpg",
-  "/asset/Workshops/Obstetrics_and_Gynaecology_Project_Karen.jpg",
-  "/asset/Workshops/Paediatrics_Vecnas_Vessels.jpg",
+      // Day 2
+      "/asset/Workshops/ENT_Running_Up_the_Decibel.jpg",
+      "/asset/Workshops/Ophthalmology_Els_Vision.jpg",
+      "/asset/Workshops/General_Medicine_Echoes_from_Camazotz.jpg",
+      "/asset/Workshops/General_Surgery_Papas_Gloves.jpg",
+      "/asset/Workshops/Obstetrics_and_Gynaecology_Project_Karen.jpg",
+      "/asset/Workshops/Paediatrics_Vecnas_Vessels.jpg",
 
-  // Day 3
-  "/asset/Workshops/Psychiatry_The_Hive_Mind.jpg",
-  //need to add
-  "/asset/Workshops/EM_and_Anaesthesia_Turnbows_in_the_Barn.jpg",
-  "/asset/Workshops/Orthopaedics_Walkmans_Canals.jpg",
+      // Day 3
+      "/asset/Workshops/Psychiatry_The_Hive_Mind.jpg",
+      //need to add
+      "/asset/Workshops/EM_and_Anaesthesia_Turnbows_in_the_Barn.jpg",
+      "/asset/Workshops/Orthopaedics_Walkmans_Canals.jpg",
 ];
 
 const Workshops = () => {
