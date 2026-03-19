@@ -294,9 +294,12 @@ const Quizzes = () => {
               onClick={() => setDetailIndex(index)}
             >
               <div className="relative w-full aspect-video overflow-hidden">
-                <div
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                  style={{ backgroundImage: `url(${event.image})` }}
+                <img
+                  src={event.image}
+                  alt={event.title}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[rgba(10,10,15,0.85)] to-transparent"></div>
                 <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full border border-st-red/30">
@@ -412,9 +415,12 @@ const Quizzes = () => {
 
             {/* LEFT: Full painting & Controls */}
             <div className="relative w-full md:w-2/5 h-[30vh] md:h-full shrink-0 border-r border-st-red/20">
-              <div
-                className="absolute inset-0 bg-cover bg-center"
-                style={{ backgroundImage: `url(${detailBg})` }}
+              <img
+                src={detailBg}
+                alt=""
+                className="absolute inset-0 w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
               />
               <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-black via-black/40 to-transparent" />
 

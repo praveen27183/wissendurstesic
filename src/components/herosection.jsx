@@ -3,12 +3,16 @@ import GradientText from './GradientText';
 
 const HeroSection = ({ title, subtitle, description, image }) => {
   return (
-   <section
-  className="relative w-full min-h-[45vh] md:min-h-[60vh] flex items-center justify-center bg-cover bg-center overflow-hidden"
-  style={{ backgroundImage: `url(${image})` }}
->
-  {/* Dark Overlay */}
-  <div className="absolute inset-0 bg-black/65 backdrop-blur-[1px]" />
+    <section className="relative w-full min-h-[45vh] md:min-h-[60vh] flex items-center justify-center overflow-hidden">
+      <img
+        src={image}
+        alt=""
+        className="absolute inset-0 w-full h-full object-cover"
+        fetchpriority="high"
+        decoding="sync"
+      />
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black/65 backdrop-blur-[1px] z-[1]" />
 
   {/* Content */}
   <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">

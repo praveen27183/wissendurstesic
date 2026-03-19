@@ -4,11 +4,15 @@ import Button from './Button';
 const EventCard = ({ event, onSeeMore }) => {
   return (
     <div className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
-      <div
-        className="h-80 bg-cover bg-center relative"
-        style={{ backgroundImage: `url(${event.image})` }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-90 group-hover:opacity-95 transition-opacity duration-300"></div>
+      <div className="h-80 relative overflow-hidden">
+        <img
+          src={event.image}
+          alt={event.title}
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          loading="lazy"
+          decoding="async"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-90 group-hover:opacity-95 transition-opacity duration-300 z-[1]"></div>
 
         <div className="absolute inset-0 flex flex-col justify-end p-6">
           <h3 className="text-2xl md:text-3xl font-bold text-white mb-1 uppercase tracking-wide">

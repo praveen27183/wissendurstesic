@@ -100,11 +100,13 @@ const Registration = () => {
 
       {/* ── 1. HERO SECTION ── */}
       <div className="relative min-h-[52vh] md:min-h-[85vh] flex items-center justify-center overflow-hidden">
-        {/* Registration Image Background with Dark Gradient Overlay */}
-        <div
-          className="absolute inset-0 z-0 bg-cover bg-center opacity-90 transform scale-105"
-          style={{ backgroundImage: `url('/asset/hero_sec_for_all/registration.png')`, backgroundAttachment: 'fixed' }}
-        ></div>
+        <img
+          src="/asset/hero_sec_for_all/registration.png"
+          alt="Registration Hero"
+          className="absolute inset-0 w-full h-full object-cover"
+          fetchpriority="high"
+          decoding="sync"
+        />
         <div className="absolute inset-0 z-0 bg-gradient-to-t from-[#050505] via-[#050505]/80 to-transparent"></div>
         <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/80 via-transparent to-transparent"></div>
 

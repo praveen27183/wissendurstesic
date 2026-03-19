@@ -11,13 +11,15 @@ const Home = () => {
   return (
     <div className="min-h-screen font-body bg-[#0a0a0a] text-gray-200 overflow-x-hidden">
       {/* Hero Section */}
-      <section
-        className="relative min-h-[65vh] md:min-h-screen flex items-center justify-center bg-cover bg-center overflow-hidden"
-        style={{
-          backgroundImage: `url('/asset/mainbg/starnger_thingsbg.jpeg')`
-        }}
-      >
-        <div className="absolute inset-0 bg-[#0a0a0a]/80 backdrop-blur-[2px]"></div>
+      <section className="relative min-h-[65vh] md:min-h-screen flex items-center justify-center overflow-hidden">
+        <img
+          src="/asset/mainbg/starnger_thingsbg.jpeg"
+          alt="Wissendurst Hero"
+          className="absolute inset-0 w-full h-full object-cover"
+          fetchpriority="high"
+          decoding="sync"
+        />
+        <div className="absolute inset-0 bg-[#0a0a0a]/80 backdrop-blur-[2px] z-[1]"></div>
 
         <div className="absolute inset-0 z-0 pointer-events-none opacity-40">
           <Galaxy 
@@ -198,6 +200,8 @@ const Home = () => {
               src="/asset/logo/wissennobg.png"
               alt="Wissendurst Logo"
               className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 object-contain drop-shadow-[0_0_20px_rgba(255,0,60,0.2)] animate-float relative z-10 hover:drop-shadow-[0_0_30px_rgba(255,0,60,0.6)] transition-all duration-500"
+              loading="lazy"
+              decoding="async"
             />
           </motion.div>
         </div>

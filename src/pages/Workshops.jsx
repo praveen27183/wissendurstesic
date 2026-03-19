@@ -144,9 +144,12 @@ const Workshops = () => {
                 >
                   {/* Image top half */}
                   <div className="relative w-full aspect-video overflow-hidden">
-                    <div
-                      className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                      style={{ backgroundImage: `url(${paintingBackgrounds[index % paintingBackgrounds.length]})` }}
+                    <img
+                      src={paintingBackgrounds[index % paintingBackgrounds.length]}
+                      alt={workshop.title}
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      loading="lazy"
+                      decoding="async"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[rgba(10,10,15,0.85)] to-transparent"></div>
                     
@@ -183,10 +186,13 @@ const Workshops = () => {
 
           {/* Hero with painting background */}
           <section className="relative h-[60vh] md:h-[70vh] flex items-center justify-center overflow-hidden">
-            <div
-              className="absolute inset-0 bg-cover bg-center transition-all duration-700"
-              style={{ backgroundImage: `url(${detailBg})` }}
-            ></div>
+            <img
+              src={detailBg}
+              alt=""
+              className="absolute inset-0 w-full h-full object-cover transition-all duration-700"
+              loading="lazy"
+              decoding="async"
+            />
             <div className="absolute inset-0 bg-black/60"></div>
 
             {/* Close button */}

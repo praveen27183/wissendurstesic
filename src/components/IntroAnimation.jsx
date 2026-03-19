@@ -32,10 +32,12 @@ const IntroAnimation = ({ onComplete }) => {
             onClick={() => onComplete()}
         >
             {/* Background Image - Netflix Style Dark Theme */}
-            <div
-                className={`absolute inset-0 bg-cover bg-center transition-all duration-[6000ms] ease-out ${stage >= 3 ? 'opacity-30 scale-105 blur-sm' : 'opacity-20 scale-100 blur-none'}`}
-                style={{ backgroundImage: `url('/asset/mainbg/starnger_thingsbg.jpeg')` }}
-            ></div>
+            <img
+                src="/asset/mainbg/starnger_thingsbg.jpeg"
+                alt=""
+                className={`absolute inset-0 w-full h-full object-cover transition-all duration-[6000ms] ease-out ${stage >= 3 ? 'opacity-30 scale-105 blur-sm' : 'opacity-20 scale-100 blur-none'}`}
+                decoding="async"
+            />
 
             {/* Background Red Glow/Fog under the explosion */}
             <div className={`absolute inset-0 bg-red-900/50 blur-[120px] transition-opacity duration-[3000ms] ${stage >= 1 ? 'opacity-100' : 'opacity-0'}`}></div>
