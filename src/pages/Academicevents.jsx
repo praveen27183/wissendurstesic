@@ -9,8 +9,9 @@ const academicEvents = [
         title: "Pathology Poster Presentation",
         subtitle: "Bloodlines: The Hematology Showcase",
         date: "28.04.2026 (Tuesday)",
-        image: "/asset/Academic_Events/Poster_presentation/Pathology_poster/Pathology_Brenners_blueprint_Needles_and_Nodes.jpg",
+        image: "../../public/asset/Academic_Events/Poster_presentation/Pathology_poster/Pathology_Brenners_blueprint_Needles_and_Nodes.jpg",
         description: "Countless cells silently yet decisively govern the balance between life and death. Participants are formally invited to present rare, unusual, and diagnostically challenging hematological cases.",
+        regLink: "https://forms.gle/waHatkYd6LFg2kkQA",
         sections: [
             {
                 title: "Judging Criteria",
@@ -63,8 +64,9 @@ const academicEvents = [
         title: "Pharmacology Poster Presentation",
         subtitle: "Into the Pharmaverse",
         date: "28.04.2026 (Tuesday)",
-        image: "/asset/Academic_Events/Poster_presentation/Pharmacology_poster/pharm_poster_presentation.jpeg",
+        image: "../../public/asset/Academic_Events/Poster_presentation/Pharmacology_poster/pharm_poster_presentation.jpeg",
         description: "Participants are invited to present posters among the given topics that distill and simplify key concepts, offering clarity and insight into the evolving landscape of contemporary neo-pharmacology.",
+        regLink: "https://forms.gle/98Fdy7PnmHzrHcPR7",
         sections: [
             {
                 title: "Topics",
@@ -114,8 +116,14 @@ const academicEvents = [
         title: "Case Presentation",
         subtitle: "Classified: Casefiles of 1983",
         date: "30.04.2026 (Thursday)",
-        image: "/asset/Academic_Events/Case_presentation/case_presentation.jpeg",
+        image: "../../public/asset/Academic_Events/Case_presentation/case_presentation.jpeg",
         description: "When textbook rarities come alive in the wards through uncommon presentations, they become lessons beyond the pages. Participants are encouraged to present rare and noteworthy clinical cases.",
+        multiLinks: [
+            { name: "General Medicine", url: "https://forms.gle/xNuCsw7xensYdAUw5" },
+            { name: "General Surgery", url: "https://forms.gle/3jfxjgf4psbXCzN39" },
+            { name: "OBG", url: "https://forms.gle/smFYn9r5e5Ktc6KSA" },
+            { name: "Paediatrics", url: "https://forms.gle/DgLtvSFcHVTz4Nwk6" }
+        ],
         sections: [
             {
                 title: "Subjects",
@@ -123,7 +131,7 @@ const academicEvents = [
                     "General Medicine",
                     "General Surgery",
                     "Obstetrics and Gynaecology",
-                    "Pediatrics"
+                    "Paediatrics"
                 ]
             },
             {
@@ -175,8 +183,9 @@ const academicEvents = [
         title: "The Scientific Symposium",
         subtitle: "Signals in the Static",
         date: "29.04.2026 (Wednesday)",
-        image: "/asset/Academic_Events/Symposium/Symposium.jpg",
+        image: "../../public/asset/Academic_Events/Symposium/Symposium.jpg",
         description: "In a profession where rote memorization holds little value, true understanding lies in conceptual clarity. We invite participants to bring challenging medical topics to life through innovative teaching methods.",
+        regLink: "https://forms.gle/zGYV4LrG4cEQVWUf6",
         sections: [
             {
                 title: "Subjects",
@@ -231,8 +240,9 @@ const academicEvents = [
         title: "Research Protocol Presentation",
         subtitle: "The Hawkins Hypothesis",
         date: "29.04.2026 (Wednesday)",
-        image: "/asset/Academic_Events/Protocol_presentation/protocol_presentation.jpeg",
+        image: "../../public/asset/Academic_Events/Protocol_presentation/protocol_presentation.jpeg",
         description: "An idea holds potential, but a protocol gives it direction. It challenges minds to transform concepts into clear, structured plans where precision, feasibility, and vision shape the foundation of impactful research.",
+        regLink: "https://forms.gle/yeTPPK392sDiuL5D8",
         sections: [
             {
                 title: "General Instructions",
@@ -283,8 +293,9 @@ const academicEvents = [
         title: "Research Poster Presentation",
         subtitle: "The Null Zone",
         date: "29.04.2026 (Tuesday)",
-        image: "/asset/Academic_Events/Research_poster/research_poster.jpeg",
+        image: "../../public/asset/Academic_Events/Research_presentation/research_presentation.jpeg",
         description: "An idea sparks innovation, but research gives it power. Research celebrates curiosity, critical thinking, and evidence where questions evolve into discoveries and ideas stand strong on data.",
+        regLink: "https://forms.gle/9G3tqJcSMCymwN3m7",
         sections: [
             {
                 title: "General Instructions",
@@ -335,9 +346,10 @@ const academicEvents = [
         id: 7,
         title: "Public Health Quests",
         subtitle: "Hellfire Club: The Health Detectives",
-        date: "TBD",
-        image: "/asset/Academic_Events/Public_health_quests/public_health_quests_health_detectives.jpeg",
+        date: "28.04.2026",
+        image: "../../public/asset/Academic_Events/Public_health_quests/public_health_quests_health_detectives.jpeg",
         description: "Public health is medicine beyond hospital walls. For medical students, it means looking beyond individual patients to the health of entire communities through prevention, epidemiology, and health programs, becoming true health detectives. Sharp minds and keen eyes will reveal the answers. Let the challenge begin.",
+        regLink: "https://forms.gle/pzoL4fdDyC9YJRgm9",
         sections: [
             {
                 title: "General Instructions",
@@ -365,8 +377,8 @@ const academicEvents = [
             {
                 title: "Registration Fee",
                 items: [
-                    "Early bird: ₹300 per team",
-                    "Late bird: ₹400 per team",
+                    "Early bird: ₹200 per team",
+                    "Late bird: ₹300 per team",
                     "Early Bird Registration Deadline: 1st April, 2026"
                 ]
             },
@@ -383,9 +395,10 @@ const academicEvents = [
         id: 8,
         title: "Face and Body Painting",
         subtitle: "Henry’s Disguise",
-        date: "TBD",
-        image: "/asset/Academic_Events/Face_and_body_painting/Face_and_body_painting_henry_s_disguise.jpeg",
+        date: "29.04.2026",
+        image: "../../public/asset/Academic_Events/Face_and_body_painting/Face_and-body_painting_henry_s_disguise.jpeg",
         description: "Anatomy unveiled through scalpel and skin beyond the pages of textbooks. We invite you to bring anatomy to life in an engaging and artistic face-painting competition. Explore the depths of muscle, nerve, vessel and transform knowledge into visual expression.",
+        regLink: "https://forms.gle/Uq4CrJg1xyn1hdUo8",
         sections: [
             {
                 title: "General Instructions",
@@ -648,10 +661,36 @@ const Academicevents = () => {
                                 </p>
 
                                 {/* Register Button - TOP */}
-                                <div className="mb-8 flex justify-center">
-                                    <button className="px-10 py-4 bg-st-red text-white rounded-full font-title font-black uppercase tracking-widest hover:scale-105 hover:bg-white hover:text-black transition-all shadow-[0_0_30px_rgba(255,0,60,0.3)] flex items-center gap-3">
-                                        Register Now
-                                    </button>
+                                <div className="mb-8">
+                                    {detailEvent.multiLinks ? (
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                            {detailEvent.multiLinks.map((link, lIdx) => (
+                                                <a 
+                                                    key={lIdx}
+                                                    href={link.url}
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                    className="w-full"
+                                                >
+                                                    <button className="w-full px-6 py-4 bg-st-red text-white rounded-xl font-title font-black uppercase tracking-widest hover:scale-[1.02] hover:bg-white hover:text-black transition-all shadow-lg flex items-center justify-center gap-3 text-xs">
+                                                        Register: {link.name}
+                                                    </button>
+                                                </a>
+                                            ))}
+                                        </div>
+                                    ) : (
+                                        <div className="flex justify-center">
+                                            <a 
+                                                href={detailEvent.regLink}
+                                                target="_blank"
+                                                rel="noreferrer"
+                                            >
+                                                <button className="px-10 py-4 bg-st-red text-white rounded-full font-title font-black uppercase tracking-widest hover:scale-105 hover:bg-white hover:text-black transition-all shadow-[0_0_30px_rgba(255,0,60,0.3)] flex items-center gap-3">
+                                                    Register LINK
+                                                </button>
+                                            </a>
+                                        </div>
+                                    )}
                                 </div>
 
                                 {/* Info Sections Stack */}

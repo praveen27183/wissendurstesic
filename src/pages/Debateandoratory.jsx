@@ -6,68 +6,13 @@ import HeroSection from '../components/herosection';
 
 const debateEvents = [
     {
-        id: 1,
-        title: "Trials of Themis",
-        subtitle: "Model United Nations",
-        date: "TBA",
-        image: "/asset/Debate_and_oratory_form/MUN_.jpg",
-        description: "The Model United Nations returns under the banner of the Speaker's collective, promising sharper debate, stronger diplomacy, and a truly competitive arena of ideas. Delegates step into a world whose alliances flicker like lights in the dark; strategies twist in unexpected ways and every resolution could open doors to uncharted dimensions. Welcoming to a time and reserved MUN like no other.",
-        sections: [
-            {
-                title: "Subject Details",
-                items: ["Delegates will be evaluated on diplomacy, public speaking, negotiation, and adherence to parliamentary procedure."]
-            },
-            {
-                title: "General Instructions",
-                items: [
-                    "Individual participation allowed.",
-                    "Eligibility: All students.",
-                    "Cross College participation allowed."
-                ]
-            },
-            {
-                title: "Incharges",
-                items: [
-                    "Contact details to be announced"
-                ]
-            }
-        ]
-    },
-    {
-        id: 2,
-        title: "The Sinclair Spectre",
-        subtitle: "English Debate",
-        date: "30.04.2026",
-        image: "/asset/Debate_and_oratory_form/Debate_.jpg",
-        description: "Argue your case under the spotlight in The Sinclair Spectre English Debate. A forum for logical reasoning, quick thinking, and impeccable oratory skills.",
-        sections: [
-            {
-                title: "Subject Details",
-                items: ["Arguments, rebuttals, and delivery will be the core judging criteria."]
-            },
-            {
-                title: "General Instructions",
-                items: [
-                    "Team sizes and format details will be released shortly.",
-                    "Eligibility: All students.",
-                    "Cross College participation allowed."
-                ]
-            },
-            {
-                title: "Incharges",
-                items: [
-                    "Contact details to be announced"
-                ]
-            }
-        ]
-    },
-    {
         id: 3,
         title: "Tamil Debate / பட்டிமன்றம்",
         subtitle: "அறிவரங்கம் 26'",
-        date: "TBA",
+        date: "28.04.2026",
         image: "/asset/Debate_and_oratory_form/Tamil_debate_.jpg",
         description: "சிந்தனைகள் சந்திக்கும் விவாத மேடை — அமுத தமிழின் நயமும், மருத்துவ அறிவின் ஆழமும், விவாதத்தின் வலிமையும் இணையும் சிறப்பு விவாதப் போட்டி.",
+        regLink: "https://docs.google.com/forms/d/e/1FAIpQLSc6GJAUA7xtT1dlwcoinplgsor_QgChyTNLrcm9X_dTZTSWNQ/viewform",
         sections: [
             {
                 title: "போட்டி அமைப்பு",
@@ -91,7 +36,87 @@ const debateEvents = [
             {
                 title: "Incharges",
                 items: [
-                    "Contact details to be announced"
+                    "Sadhurthika N: +91 95669 00929",
+                    "Sri Dharnish: +91 99626 54504"
+                ]
+            }
+        ]
+    },
+    {
+        id: 1,
+        title: "Trials of Themis",
+        subtitle: "Model United Nations | A Speakers Collective Initiative",
+        date: "29.04.2026",
+        image: "/asset/Debate_and_oratory_form/MUN_.jpg",
+        description: "Enter a dynamic UNHRC committee where the digital world becomes both a tool and a threat. Delegates must address emerging digital threats such as online harassment, privacy violations, surveillance and data misuse. Balancing human rights with technological advancement, the committee aims to push for innovative, ethical and enforceable solutions to conquer the modern dilemma.",
+        multiLinks: [
+            { name: "Delegate Registration", url: "https://forms.gle/v9sFWX5ntxeGFtww8" },
+            { name: "Chair/Candidate Registration", url: "https://forms.gle/rpWhUuw22fSvx3ya6" }
+        ],
+        sections: [
+            {
+                title: "Committee Info",
+                items: [
+                    "Committee: UNHRC",
+                    "Agenda: Addressing Technology-facilitated Gender-based Violence and Cyber Crime"
+                ]
+            },
+            {
+                title: "General Instructions",
+                items: [
+                    "The conference will follow standard MUN format.",
+                    "This is a single-day conference.",
+                    "Participation is individual-based - team entries are not permitted.",
+                    "Country allotments will be made based on preferences submitted during registration, however, allocation is subject to availability and cannot be guaranteed.",
+                    "A detailed Background Guide will be shared with participants prior to the conference to aid preparation.",
+                    "An Introductory MUN Webinar will be conducted one week before the conference to familiarize participants with procedures and expectations."
+                ]
+            },
+            {
+                title: "Incharges",
+                items: [
+                    "Jane Sarah John (78240 34859)",
+                    "Pragnya Pradeepkumar (7305116987)"
+                ]
+            }
+        ]
+    },
+    {
+        id: 2,
+        title: "The Sinclair Spectre",
+        subtitle: "English Debate",
+        date: "30.04.2026",
+        image: "/asset/Debate_and_oratory_form/Debate_.jpg",
+        description: "Argue your case under the spotlight in The Sinclair Spectre English Debate. A forum for logical reasoning, quick thinking, and impeccable oratory skills.",
+        regLink: "https://forms.gle/cB5Sjn94XcK9C82P7",
+        sections: [
+            {
+                title: "Judging Criteria",
+                items: ["Judging will be based on clarity of arguments, analytical reasoning, persuasive delivery, rebuttal effectiveness, stage presence, and team coordination."]
+            },
+            {
+                title: "General Instructions",
+                items: [
+                    "Each participating college may register one team of two members.",
+                    "Cross-college teams are permitted.",
+                    "Exceeding allotted time will lead to deduction of marks (Time-warning system will be followed).",
+                    "Judges’ decision will be final.",
+                    "Round-specific rules and regulations will be shared after registration."
+                ]
+            },
+            {
+                title: "Competition Format",
+                items: [
+                    "Preliminary Round: Opening Speech (2 min) | Rebuttal (1.5 min) | Conclusion (1 min) | Judge’s Questions. (Topics released 2 days prior; Top 4 teams qualify).",
+                    "Semi-Final Round: Opening Speech (2 min) | Rebuttal (2 min) | Conclusion (1 min) | Judges’ Questions (2 min). (Topics on the spot; Top 2 teams qualify).",
+                    "Final Round: Opening Speech (3 min) | Rebuttal (2 min) | Conclusion (1 min) | Judge’s Questions. (Topics on the spot)."
+                ]
+            },
+            {
+                title: "Incharges",
+                items: [
+                    "Kalanidhi M- +91 95000 78979",
+                    "Janitha Prabhakaran- +91 9535218887"
                 ]
             }
         ]
@@ -100,9 +125,10 @@ const debateEvents = [
         id: 4,
         title: "Tamil Elocution / பேச்சுப்போட்டி",
         subtitle: "சொற்புனல் 26'",
-        date: "TBA",
+        date: "30.04.2026",
         image: "/asset/Debate_and_oratory_form/Tamil_elocution_.jpg",
         description: "செந்தமிழும் மருத்துவமும் இணையும் விழா — மருத்துவ மாணவர்களின் பேச்சுத் திறன், கூர்த்தறிவு மற்றும் மேடை ஆளுமையை வெளிப்படுத்தும் சிறப்புச் சொற்பொழிவுப் போட்டி.",
+        regLink: "https://docs.google.com/forms/d/e/1FAIpQLScqEwcPndWMKYFgwUe3praq-e0HahRO1c5hFWpF92MH0zZgMw/viewform",
         sections: [
             {
                 title: "விதிமுறைகள்",
@@ -119,7 +145,8 @@ const debateEvents = [
             {
                 title: "Incharges",
                 items: [
-                    "Contact details to be announced"
+                    "Sadhurthika N: +91 95669 00929",
+                    "Sri Dharnish: +91 99626 54504"
                 ]
             }
         ]
@@ -375,10 +402,36 @@ const Debateandoratory = () => {
                                     ))}
                                 </div>
 
-                                <div className="mt-12 pt-8 border-t border-st-red/20 flex justify-center pb-8">
-                                    <button className="px-10 py-4 bg-st-red text-black rounded-full font-title font-black uppercase tracking-widest hover:scale-105 hover:bg-white transition-all shadow-[0_0_30px_rgba(255,0,60,0.3)] flex items-center gap-3">
-                                        Register For Current Event
-                                    </button>
+                                <div className="mt-8 mb-6">
+                                    {detailEvent.multiLinks ? (
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                            {detailEvent.multiLinks.map((link, lIdx) => (
+                                                <a 
+                                                    key={lIdx}
+                                                    href={link.url}
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                    className="w-full"
+                                                >
+                                                    <button className="w-full px-6 py-4 bg-st-red text-black rounded-xl font-title font-black uppercase tracking-widest hover:scale-[1.02] hover:bg-white transition-all shadow-lg flex items-center justify-center gap-3 text-xs">
+                                                        {link.name}
+                                                    </button>
+                                                </a>
+                                            ))}
+                                        </div>
+                                    ) : (
+                                        <div className="flex justify-center">
+                                            <a 
+                                                href={detailEvent.regLink}
+                                                target="_blank"
+                                                rel="noreferrer"
+                                            >
+                                                <button className="px-10 py-4 bg-st-red text-black rounded-full font-title font-black uppercase tracking-widest hover:scale-105 hover:bg-white transition-all shadow-[0_0_30px_rgba(255,0,60,0.3)] flex items-center gap-3">
+                                                    Register For Current Event
+                                                </button>
+                                            </a>
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         </div>

@@ -10,9 +10,10 @@ const quizEvents = [
     subtitle: "Hematology Quiz (ONLINE ARENA)",
     theme: "The ruthless battle of blood",
     date: "08.04.2026",
-    image: "/asset/Quizzes/erythron.jpg",
+    image: "../../public/asset/Quizzes/erythron.jpg",
     description: "From smear patterns to clotting cascades, hematology is far more than numbers on a report. It is the science that flows within us. Let us channel the courage of erythrocytes and the vigilance of leukocytes to sharpen our clinical instincts.",
-    sections: [
+        regLink: "https://forms.gle/dsVuLJbzByB3upke8",
+        sections: [
       {
         title: "General Instructions",
         items: [
@@ -47,9 +48,10 @@ const quizEvents = [
     subtitle: "Endocrine Quiz (ONLINE ARENA)",
     theme: "The voice of messengers",
     date: "18.04.2026",
-    image: "/asset/Quizzes/endocrine.jpg",
+    image: "../../public/asset/Quizzes/endocrine.jpg",
     description: "Think you can decide the body's hormone axes and feedback loops? Step into the realm of regulation and rhythm, and respond to the whispers of imbalanced systems wreaking havoc. From adrenal surges to sugar crashes, let's face it all at one place.",
-    sections: [
+        regLink: "https://forms.gle/hqUoG1yaGfTyjRYD8",
+        sections: [
       {
         title: "General Instructions",
         items: [
@@ -85,9 +87,10 @@ const quizEvents = [
     theme: "Where the knowledge heralds",
     date: "28.04.2026",
     time: "Prelims – 8:30 AM | Finals – 12:30 PM",
-    image: "/asset/Quizzes/minerva_junior.jpg",
+    image: "../../public/asset/Quizzes/minerva_junior.jpg",
     description: "Attention Quizzical minds! The strength of a clinician lies in the stability of their foundation. The 5th Edition of Minerva proudly presents The Junior Quiz, to take us to the concepts that shape our minds long before clinics and case sheets do. Are you ready to strengthen your core and step into the roots that anchor our medical minds?",
-    sections: [
+        regLink: "https://forms.gle/g3DDy7DFYRuaBYx4A",
+        sections: [
 
       {
         title: "Topics",
@@ -134,13 +137,10 @@ const quizEvents = [
     subtitle: "The Senior Quiz (OFFLINE ARENA)",
     date: "30.04.2026",
     time: "Prelims – 8:30 AM | Finals – 11:30 AM",
-    image: "/asset/Quizzes/minerva_senior.Jpg",
+    image: "../../public/asset/Quizzes/minerva_senior.Jpg",
     description: "Attention Quizzical minds! Are you ready for your ultimate academic showdown? The 5th Edition of Minerva proudly presents The Senior Quiz to ignite your passion for learning and challenge your intellect. Take this moment to flex your mastery in human medicine and push the boundaries of your cerebral curiosity.",
-    sections: [
-      {
-        title: "Theme",
-        items: ["At the Summit of Wisdom"]
-      },
+        regLink: "https://forms.gle/MH4wrczhNtfdnQts6",
+        sections: [
       {
         title: "Topics",
         items: [
@@ -472,9 +472,15 @@ const Quizzes = () => {
 
                 {/* Register Button — TOP */}
                 <div className="flex justify-center mb-10">
-                  <button className="px-10 py-4 bg-st-red text-white rounded-full font-title font-black uppercase tracking-widest hover:scale-105 hover:bg-white hover:text-black transition-all shadow-[0_0_30px_rgba(255,0,60,0.3)] flex items-center gap-3">
-                    Register Now
-                  </button>
+                  <a 
+                    href={detailEvent.regLink}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <button className="px-10 py-4 bg-st-red text-white rounded-full font-title font-black uppercase tracking-widest hover:scale-105 hover:bg-white hover:text-black transition-all shadow-[0_0_30px_rgba(255,0,60,0.3)] flex items-center gap-3">
+                      Register LINK
+                    </button>
+                  </a>
                 </div>
 
                 {/* Info Sections Stack */}

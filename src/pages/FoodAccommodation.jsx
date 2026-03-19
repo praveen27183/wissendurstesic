@@ -93,7 +93,7 @@ const FoodAccommodation = () => {
 
       {/* Galaxy Background layer */}
       <div className="fixed inset-0 z-0 pointer-events-none opacity-20">
-        <Galaxy 
+        <Galaxy
           starSpeed={0.2}
           density={1.2}
           hueShift={140}
@@ -234,6 +234,42 @@ const FoodAccommodation = () => {
                 </div>
 
               </div>
+
+            </div> {/* CONTACT */}
+
+            <div className="mt-12 flex flex-col md:flex-row gap-8 md:items-center md:justify-between">
+
+              <div>
+
+                <p className="text-xs uppercase tracking-widest text-st-red mb-4">
+                  Food Heads
+                </p>
+
+                <div className="flex gap-6">
+
+                  <a
+                    href="tel:8590765094"
+                    className="text-white hover:text-st-red transition"
+                  >
+                  
+ADHARSH S: 590765094
+
+                  </a>
+
+                  <a
+                    href="tel:8903088587"
+                    className="text-white hover:text-st-red transition"
+                  >
+                    PRATHYUSH : 8903088587 
+                  </a>
+
+                </div>
+
+              </div>
+
+              <button className="px-8 py-4 border-2 border-st-red text-st-red font-bold uppercase text-sm tracking-widest rounded-full hover:bg-st-red hover:text-black transition-all">
+                Request Assistance
+              </button>
 
             </div>
 

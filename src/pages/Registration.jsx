@@ -289,13 +289,13 @@ const Registration = () => {
                   <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-green-500/10 flex items-center justify-center shrink-0">
                     <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
                   </div>
-                  <span className="text-[#ffffff] font-bold tracking-wide text-sm sm:text-base">General Registration + Event Registration</span>
+                  <span className="text-[#ffffff] font-bold tracking-wide text-sm sm:text-base">General Registration + Workshop Registration</span>
                 </div>
                 <div className="bg-white/5 border border-white/5 p-3 sm:p-4 rounded-xl flex items-center gap-3 sm:gap-4">
                   <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-green-500/10 flex items-center justify-center shrink-0">
                     <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
                   </div>
-                  <span className="text-[#ffffff] font-bold tracking-wide text-sm sm:text-base">Workshop Registration</span>
+                  <span className="text-[#ffffff] font-bold tracking-wide text-sm sm:text-base">Event Registration</span>
                 </div>
               </div>
               <p className="text-base sm:text-lg text-gray-300/70 leading-relaxed p-3 sm:p-4 bg-st-red/10 rounded-xl border border-st-red/20">
@@ -361,6 +361,18 @@ const Registration = () => {
                 <p className="text-lg sm:text-xl text-red-300 bg-red-950/30 p-3 sm:p-4 border-l-2 border-red-500 rounded-r-lg">
                   * General registration once completed cannot be cancelled or refunded.
                 </p>
+                <div className="pt-4 flex justify-center lg:justify-start">
+                  <a 
+                    href="https://forms.gle/rpWhUuw22fSvx3ya6"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-full sm:w-auto"
+                  >
+                    <button className="w-full sm:w-auto px-10 py-5 bg-st-red text-white rounded-full font-title font-black uppercase tracking-widest hover:scale-105 hover:bg-white hover:text-black transition-all shadow-[0_0_30px_rgba(255,0,60,0.4)] flex items-center justify-center gap-3">
+                      Register Now <ExternalLink className="w-5 h-5" />
+                    </button>
+                  </a>
+                </div>
               </div>
 
               <div className="bg-black/50 backdrop-blur-md p-5 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl border border-white/10 shadow-[0_0_30px_rgba(255,0,60,0.1)]">
@@ -485,7 +497,16 @@ const Registration = () => {
                       </span>
                     ))}
                   </div>
-                  <div className="mt-6 sm:mt-8 p-3 sm:p-4 bg-white/5 rounded-xl border border-white/10 text-base sm:text-lg text-gray-300/60 italic leading-relaxed text-center"><p className="text-gray-300/80 text-base sm:text-lg leading-relaxed font-light sm:text-left">Note: FM Autopsy Workshop: On-spot registration only</p></div>
+                  <div className="mt-6 sm:mt-8 p-3 sm:p-4 bg-white/5 rounded-xl border border-white/10 text-base sm:text-lg text-gray-300/60 italic leading-relaxed text-center">
+                    <p className="text-gray-300/80 text-base sm:text-lg leading-relaxed font-light sm:text-left">Note: FM Autopsy Workshop: On-spot registration only</p>
+                  </div>
+                  <div className="mt-8 flex justify-center lg:justify-start">
+                    <Link to="/workshops" className="w-full sm:w-auto">
+                      <button className="w-full sm:w-auto px-8 py-4 border border-st-red text-st-red rounded-full font-title font-bold uppercase tracking-widest hover:bg-st-red hover:text-white transition-all flex items-center justify-center gap-3">
+                        View Workshops & Register <ChevronRight className="w-5 h-5" />
+                      </button>
+                    </Link>
+                  </div>
                 </div>
               </div>
 
@@ -524,6 +545,23 @@ const Registration = () => {
                 </div>
                 <div className="mt-6 sm:mt-8 p-3 sm:p-4 bg-white/5 rounded-xl border border-white/10 text-base sm:text-lg text-gray-300/60 italic leading-relaxed text-center">
                   <strong className="text-st-red">Note: </strong>Registrations are non-refundable. However, if an event is cancelled due to unavoidable circumstances, a refund will be processed within 15 business days.
+                </div>
+                <div className="mt-8 flex flex-wrap justify-center lg:justify-start gap-4">
+                  <Link to="/academicevents" className="w-full sm:w-auto">
+                    <button className="w-full sm:w-auto px-6 py-4 border border-st-red/50 text-white rounded-xl font-title font-bold uppercase tracking-widest hover:bg-st-red transition-all text-xs">
+                      Academic Events
+                    </button>
+                  </Link>
+                  <Link to="/quizzes" className="w-full sm:w-auto">
+                    <button className="w-full sm:w-auto px-6 py-4 border border-st-blue/50 text-white rounded-xl font-title font-bold uppercase tracking-widest hover:bg-st-blue transition-all text-xs">
+                       Quizzes
+                    </button>
+                  </Link>
+                  <Link to="/debateandoratory" className="w-full sm:w-auto">
+                    <button className="w-full sm:w-auto px-6 py-4 border border-white/20 text-white rounded-xl font-title font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all text-xs">
+                      Debate & Oratory
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -568,7 +606,7 @@ const Registration = () => {
               <h4 className="font-milanesa font-black mb-6 sm:mb-10 uppercase text-[#ffffff] tracking-[0.1em] sm:tracking-[0.2em] text-2xl sm:text-3xl flex items-center gap-3 sm:gap-4 justify-center lg:justify-start">
                 <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-st-red" /> Query Contacts
               </h4>
-              <div className="grid grid-cols-2 gap-4 sm:gap-6">
+              <div className="grid grid-cols-2 gap-4 sm:gap-6 mb-6">
                 {[
                   { name: "LEKHA SHRUTHY R J", phone: "97897 03487", role: "Registration Head" },
                   { name: "SHALINI R", phone: "94442 62579", role: "Registration Head" },
@@ -594,17 +632,25 @@ const Registration = () => {
                       </span>
 
                       {/* Phone */}
-                      <a
-                        href={`tel:+91${contact.phone}`}
-                        className="text-st-red font-semibold text-base sm:text-lg tracking-wide sm:tracking-wider hover:underline"
-                      >
+                      <span className="text-st-red font-semibold text-base sm:text-lg tracking-wide sm:tracking-wider hover:underline">
                         +91 {contact.phone}
-                      </a>
+                      </span>
 
                     </div>
                   </a>
                 ))}
               </div>
+
+              {/* Email Contact */}
+              <a
+                href="mailto:Wissendurst26@gmail.com"
+                className="flex items-center justify-center gap-3 p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-black/40 border border-st-red/20 hover:border-st-red hover:bg-st-red/10 transition-all duration-300 group shadow-lg drop-shadow-sm hover:-translate-y-1"
+              >
+                <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-st-red group-hover:scale-110 transition-transform" />
+                <span className="text-white font-bold text-base sm:text-lg md:text-xl tracking-wide group-hover:text-st-red transition-colors">
+                  Wissendurst26@gmail.com
+                </span>
+              </a>
             </div>
 
             {/* Styled Map / Address Card */}

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import HeroSection from "../components/herosection";
-import { Phone } from "lucide-react";
+import { Phone, Mail } from "lucide-react";
 import Galaxy from "../components/Galaxy.jsx";
 
 /* ===============================
@@ -8,14 +8,14 @@ import Galaxy from "../components/Galaxy.jsx";
 ================================ */
 const Contacts = [
   {
-    role: "Academic Secretary",
+    role: "Academic Secretaries",
     names: [
       { name: "RISHALINI U", phone: "90429 52723" },
       { name: "VEDANT SOMA", phone: "63069 06398" },
     ],
   },
   {
-    role: "Organising Secretary",
+    role: "Organising Secretaries",
     names: [
       { name: "FARHATHUL AFRAA", phone: "82484 37615" },
       { name: "JESWIN ANTONY", phone: "98471 76022" },
@@ -29,29 +29,52 @@ const Contacts = [
     ],
   },
   {
+    role: "Overall Registration Heads",
+    names: [
+      { name: "LEKHA SHRUTHY R J", phone: "97897 03487" },
+      { name: "SHALINI R", phone: "94442 62579" },
+      { name: "KARTHIKEYAN", phone: "94895 32419" },
+      { name: "MEIMOZHI PARI", phone: "63828 66554" },
+    ],
+  },
+  {
+    role: "Overall Workshop Heads",
+    names: [
+      { name: "SUNIL KUMAR C M", phone: "63810 83905" },
+      { name: "SAINITHI B", phone: "88386 45832" },
+      { name: "NEHA SUNIL", phone: "93604 87652" },
+      { name: "SRI DHARNISH", phone: "99626 54504" },
+      { name: "NIVETHA D", phone: "76038 72548" },
+      { name: "ASHWIN KUMAR S", phone: "98406 31290" },
+    ],
+  },
+  {
+    role: "Overall Quiz Heads",
+    names: [
+      { name: "MANIKANDAN A", phone: "90434 93961" },
+      { name: "JANE SARAH JOHN", phone: "78240 34859" },
+      { name: "KALANIDHI M", phone: "95000 78979" },
+    ],
+  },
+  {
+    role: "Overall Heads of Presentations",
+    names: [
+      { name: "DIYA VINOD", phone: "87781 25205" },
+      { name: "ESHITA SUDHAKAR", phone: "88380 29901" },
+    ],
+  },
+  {
     role: "Social Media",
     names: [
       { name: "HARINI G", phone: "63790 04049" },
-    ],
-  },
-  {
-    role: "Designing",
-    names: [
-      { name: "LUCKSHANYA", phone: "89393 11539" },
-      { name: "DHEEKSHI S", phone: "97897 29409" },
-      { name: "LAKSHA S P", phone: "96000 55784" },
-      { name: "HARINI G", phone: "63790 04049" },
-    ],
-  },
-  {
-    role: "Editing",
-    names: [
-      { name: "ESHITHA SHREE", phone: "88380 29901" },
-      { name: "PRAGNYA PRADEEP KUMAR", phone: "73051 16987" },
-      { name: "DIYA VINOD", phone: "87781 25205" },
-      { name: "ILLAKIYA", phone: "78459 12604" },
-      { name: "ASHYA ASHOK", phone: "97899 66052" },
-      { name: "JANITHA", phone: "95352 18887" },
+      { name: "AISHWARYA K", phone: "86670 56850" },
+      { name: "DEVARAM PRASANNA P", phone: "63794 97166" },
+      { name: "KARTHIKEYAN", phone: "94895 32419" },
+      { name: "KAVYA D K", phone: "63691 85992" },
+      { name: "LAKSHA", phone: "96000 55784" },
+      { name: "NEHA A", phone: "93844 44513" },
+      { name: "NIRANJANA", phone: "94452 44014" },
+      { name: "SWATHIE SRIVIDHYA", phone: "95000 16593" },
     ],
   },
   {
@@ -79,49 +102,6 @@ const Contacts = [
     names: [
       { name: "ARAVINDH B", phone: "94895 44801" },
       { name: "AFLAHA T", phone: "82817 57052" },
-    ],
-  },
-  {
-    role: "Registration Committee",
-    names: [
-      { name: "MEIMOZHI", phone: "63828 66554" },
-      { name: "LEKHA SHRUTHY V K", phone: "97897 03487" },
-      { name: "SHALINI R", phone: "94442 62579" },
-      { name: "KARTHIKEYAN", phone: "94895 32419" },
-    ],
-  },
-  {
-    role: "Overall Workshop Heads",
-    names: [
-      { name: "ASHWIN KUMAR S", phone: "98406 31290" },
-      { name: "NIVETHA D", phone: "76038 72548" },
-      { name: "NEHA SUNIL", phone: "93604 87652" },
-      { name: "SAINITHI B", phone: "88386 45832" },
-      { name: "SRI DHARNISH", phone: "99626 54504" },
-      { name: "SUNIL KUMAR C M", phone: "63810 83905" },
-    ],
-  },
-  {
-    role: "Quiz Committee",
-    names: [
-      { name: "JANE SARAH JOHN", phone: "78240 34859" },
-      { name: "KALANIDHI M", phone: "95000 78979" },
-      { name: "MANIKANDAN A", phone: "90434 93961" },
-    ],
-  },
-  {
-    role: "Speakers Collective",
-    names: [
-      { name: "KALANIDHI M", phone: "95000 78979" },
-      { name: "JANE SARAH JOHN", phone: "78240 34859" },
-      { name: "JANITHA", phone: "95352 18887" },
-    ],
-  },
-  {
-    role: "Presentations",
-    names: [
-      { name: "DIYA VINOD", phone: "87781 25205" },
-      { name: "ESHITHA SHREE", phone: "88380 29901" },
     ],
   },
   {
@@ -265,18 +245,20 @@ const Contactus = () => {
                       {n.name}
                     </h4>
 
-                    <a
-                      href={`tel:+91${n.phone.replace(/\s+/g, "")}`}
-                      className="flex items-center gap-3 bg-black/60 px-5 py-2.5 rounded-full
-                      border border-red-800/40 hover:border-red-500
-                      hover:bg-red-500/10 transition-all duration-300"
-                    >
-                      <Phone className="w-5 h-5 text-red-500" />
+                    {n.phone && (
+                      <a
+                        href={`tel:+91${n.phone.replace(/\s+/g, "")}`}
+                        className="flex items-center gap-3 bg-black/60 px-5 py-2.5 rounded-full
+                        border border-red-800/40 hover:border-red-500
+                        hover:bg-red-500/10 transition-all duration-300"
+                      >
+                        <Phone className="w-5 h-5 text-red-500" />
 
-                      <span className="text-base sm:text-lg font-semibold text-white tracking-wide">
-                        +91 {n.phone}
-                      </span>
-                    </a>
+                        <span className="text-base sm:text-lg font-semibold text-white tracking-wide">
+                          +91 {n.phone}
+                        </span>
+                      </a>
+                    )}
 
                   </div>
                 ))}
@@ -285,6 +267,37 @@ const Contactus = () => {
 
             </div>
           ))}
+
+        </div>
+
+        <div className="flex flex-col items-center gap-12 mt-24 mb-32">
+          
+          <p className="text-3xl sm:text-4xl text-st-red font-bold uppercase tracking-[0.3em]">
+            Official Email
+          </p>
+
+          <a
+            href="mailto:Wissendurst26@gmail.com"
+            className="group relative bg-[#0f0f14]/80 backdrop-blur-md
+            border border-red-900/30 rounded-2xl p-6 sm:p-10
+            hover:border-red-500/60
+            hover:shadow-[0_0_35px_rgba(255,0,60,0.2)]
+            transition-all duration-500
+            flex flex-col sm:flex-row items-center gap-6"
+          >
+            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-red-500/10 flex items-center justify-center group-hover:bg-red-500/20 transition-colors">
+              <Mail className="w-8 h-8 sm:w-10 sm:h-10 text-red-500" />
+            </div>
+            
+            <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
+              <span className="text-white font-black text-2xl sm:text-3xl lg:text-4xl tracking-widest group-hover:text-red-400 transition-colors">
+                Wissendurst26@gmail.com
+              </span>
+              <span className="text-red-500/60 font-bold uppercase tracking-[0.2em] mt-2 group-hover:text-red-500 transition-colors">
+                Get in touch with us
+              </span>
+            </div>
+          </a>
 
         </div>
         </div>

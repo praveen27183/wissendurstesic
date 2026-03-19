@@ -64,10 +64,10 @@ const Footer = () => {
               ))}
               <div className="pt-2 mt-2">
                 <a
-                  href="mailto:orgwissendurst26@gmail.com"
+                  href="mailto:Wissendurst26@gmail.com"
                   className="text-gray-400 hover:text-white transition-colors tracking-wide underline underline-offset-4 decoration-white/20 font-sans"
                 >
-                  orgwissendurst26@gmail.com
+                  Wissendurst26@gmail.com
                 </a>
               </div>
             </div>

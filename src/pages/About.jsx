@@ -1,14 +1,12 @@
 import { useState, useEffect, useRef } from 'react';
 import { MapPin, Bus, Train, Plane, ChevronLeft, ChevronRight } from 'lucide-react';
 import esicBuildingImg from '../../public/asset/about/ESCIBUILD.png';
+import aboutImg from '../../public/asset/hero_sec_for_all/about.png';
+import teamImg from '../../public/asset/mainbg/starnger_thingsbg.jpeg';
 import HeroSection from '../components/herosection.jsx';
 import Galaxy from '../components/Galaxy.jsx';
 
 
-// Ancient French paintings for section backgrounds
-const FRENCH_PAINTINGS = {
-  team: '../../public/asset/starnger_thingsbg.jpeg'
-};
 
 const SectionBg = ({ src, opacity = 'opacity-20', children, className = '' }) => (
   <div className={`relative overflow-hidden ${className}`}>
@@ -125,7 +123,7 @@ const About = () => {
         title="About Wissendurst '26"
         subtitle="The Annual Intercollegiate Medical Conference"
         description="Ignite your thirst for knowledge! Join us for the sixth edition featuring engaging workshops, stimulating debates, and a grand intercollegiate quiz."
-        image="../../public/asset/hero_sec_for_all/about.png"
+        image={aboutImg}
       />
 
       {/* Global Galaxy Background */}
@@ -274,7 +272,7 @@ const About = () => {
 
 
       {/* ── How to Reach Us & Explore Around Us Split Section ── */}
-      <SectionBg src={FRENCH_PAINTINGS.reach} opacity="opacity-20" className="py-24 md:py-32 relative border-t border-st-red/20 overflow-hidden">
+      <SectionBg src={teamImg} opacity="opacity-70" className="py-24 md:py-32 relative border-t border-st-red/20 overflow-hidden">
         {/* Glow behind title */}
         <div className="absolute top-20 left-1/2 w-[600px] h-[150px] -translate-x-1/2 bg-st-red/10 blur-[100px] rounded-[100%] pointer-events-none" />
 
@@ -399,20 +397,23 @@ const About = () => {
 
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4 relative z-10 mt-auto">
                 {[
-                  { name: 'KK Nagar Sivan Park', img: 'https://th-i.thgim.com/public/incoming/t53og8/article68090920.ece/alternates/FREE_1200/DSC_2508.jpg' },
-                  { name: 'Ashok Pillar Food Court', img: 'https://th-i.thgim.com/public/incoming/aa3fdc/article67762914.ece/alternates/LANDSCAPE_1200/Grace_International_Food_Court_15.jpg' },
-                  { name: 'Vadapalani Murugan Temple', img: 'https://www.southindiatoursandtravels.com/SittPhotos/Tamilnadu/Vadapalani_murugan_temple_tank.jpg' },
-                  { name: 'Nexus Vijaya Mall', img: 'https://www.nexusselecttrust.com/resources/assets/images/nexus-vijaya/vijya-banner2.jpg' },
-                  { name: 'Anna Centenary Library', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRO1KSUlYxx_ZqB1Tpb3NuTOtubTJcTgXcsvw&s' },
-                  { name: 'Guindy National Park', img: 'https://time2digital.com/wp-content/uploads/2023/08/2019-12-21.jpg' },
-                  { name: 'Kathipara (Urban Sq)', img: 'https://media.assettype.com/dt-next/import/h-upload/2025/08/11/871097-jpg-2025-08-11t082832700.jpg?w=1200&h=675&auto=format%2Ccompress&fit=max&enlarge=true' },
-                  { name: 'Semmozhi Botanical Gdn', img: 'https://media.assettype.com/outlooktraveller%2F2024-06%2F4a99cdcd-8ea2-4122-b304-edf5e59f96b5%2FSemmozhi%20Poonga%20.jpg?w=640&auto=format%2Ccompress' },
-                  { name: 'Panagal Park T Nagar', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwOObjPBm7aadRwOORTDeJh1xNJZ80W6rDgA&s' },
-                  { name: 'Chandra Metro Mall', img: 'https://5.imimg.com/data5/VM/YD/GLADMIN-56170617/chandra-metro-mall.png' }
+                  { name: 'KK Nagar Sivan Park', img: 'https://th-i.thgim.com/public/incoming/t53og8/article68090920.ece/alternates/FREE_1200/DSC_2508.jpg', link: 'https://maps.app.goo.gl/YpL83Uu91kHgnkBu5' },
+                  { name: 'Ashok Pillar Food Court', img: 'https://th-i.thgim.com/public/incoming/aa3fdc/article67762914.ece/alternates/LANDSCAPE_1200/Grace_International_Food_Court_15.jpg', link: 'https://maps.app.goo.gl/d4qqBY1dx2VNR7Vm9' },
+                  { name: 'Vadapalani Murugan Temple', img: 'https://www.southindiatoursandtravels.com/SittPhotos/Tamilnadu/Vadapalani_murugan_temple_tank.jpg', link: 'https://maps.app.goo.gl/31SdgyVtM4yqsNJf8' },
+                  { name: 'Nexus Vijaya Mall', img: 'https://www.nexusselecttrust.com/resources/assets/images/nexus-vijaya/vijya-banner2.jpg', link: 'https://maps.app.goo.gl/55k7ZMm7PnCcVZdA9' },
+                  { name: 'Anna Centenary Library', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRO1KSUlYxx_ZqB1Tpb3NuTOtubTJcTgXcsvw&s', link: 'https://maps.app.goo.gl/pVFmQnUZCukvCwuZ8' },
+                  { name: 'Guindy National Park', img: 'https://time2digital.com/wp-content/uploads/2023/08/2019-12-21.jpg', link: 'https://maps.app.goo.gl/b5MZkEYmp3Bps2y16' },
+                  { name: 'Kathipara (Urban Sq)', img: 'https://media.assettype.com/dt-next/import/h-upload/2025/08/11/871097-jpg-2025-08-11t082832700.jpg?w=1200&h=675&auto=format%2Ccompress&fit=max&enlarge=true', link: 'https://maps.app.goo.gl/5vDGgKbo9Y2JKXjUA' },
+                  { name: 'Semmozhi Botanical Gdn', img: 'https://media.assettype.com/outlooktraveller%2F2024-06%2F4a99cdcd-8ea2-4122-b304-edf5e59f96b5%2FSemmozhi%20Poonga%20.jpg?w=640&auto=format%2Ccompress', link: 'https://www.google.com/maps/search/Semmozhi+Poonga' },
+                  { name: 'Panagal Park T Nagar', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwOObjPBm7aadRwOORTDeJh1xNJZ80W6rDgA&s', link: 'https://www.google.com/maps/search/Panagal+Park+T+Nagar' },
+                  { name: 'Chandra Metro Mall', img: 'https://5.imimg.com/data5/VM/YD/GLADMIN-56170617/chandra-metro-mall.png', link: 'https://www.google.com/maps/search/Chandra+Metro+Mall' }
                 ].map((place, i) => (
 
-                  <div
+                  <a
                     key={i}
+                    href={place.link}
+                    target="_blank"
+                    rel="noreferrer"
                     className={`relative overflow-hidden rounded-2xl group cursor-pointer shadow-xl ${i === 0 ? 'row-span-2 col-span-2 sm:col-span-1 h-full' :
                       i === 4 ? 'row-span-2 h-full' : 'aspect-square'
                       }`}
@@ -430,7 +431,7 @@ const About = () => {
                         <span className="w-1.5 h-1.5 rounded-full bg-st-red shrink-0" /> {place.name}
                       </p>
                     </div>
-                  </div>
+                  </a>
                 ))}
               </div>
             </div>
@@ -440,8 +441,8 @@ const About = () => {
       </SectionBg>
 {/* ── Gallery Section ── */}
 <SectionBg
-  src={FRENCH_PAINTINGS.gallery}
-  opacity="opacity-15"
+  src={teamImg}
+  opacity="opacity-60"
   className="py-24 md:py-32 border-t border-st-red/15 relative overflow-hidden"
 >
   <div className="absolute top-20 left-1/2 w-[600px] h-[150px] -translate-x-1/2 bg-st-red/10 blur-[120px] rounded-[100%] pointer-events-none" />
@@ -504,7 +505,7 @@ const About = () => {
 
 
       {/* ── Team Section ── */}
-      <SectionBg src={FRENCH_PAINTINGS.team} opacity="opacity-10" className="py-24 md:py-32 border-t border-st-red/15 relative overflow-hidden">
+      <SectionBg src={teamImg} opacity="opacity-70" className="py-24 md:py-32 border-t border-st-red/15 relative overflow-hidden">
         {/* Glow behind section title */}
         <div className="absolute top-20 left-1/2 w-[600px] h-[150px] -translate-x-1/2 bg-st-red/10 blur-[120px] rounded-[100%] pointer-events-none" />
 
@@ -533,7 +534,7 @@ const About = () => {
               <p className="text-sm md:text-base text-st-red font-bold mb-10 uppercase tracking-[0.3em]">Vice Patrons</p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 lg:gap-12 w-full max-w-5xl mx-auto">
                 {[
-                  { name: 'DR. PUSHPALATHA K', role: 'Medical Superintendent' },
+                  { name: 'DR. V MADHUBALA', role: 'Medical Superintendent' },
                   { name: 'DR. K V SARALA DEVI', role: 'Registrar' },
                   { name: 'DR. VIJAYANATH V', role: 'Vice Principal' },
                 ].map((p, i) => (
@@ -575,22 +576,29 @@ const About = () => {
                   {
                     items: [
                       { role: 'Academic Secretaries', names: ['RISHALINI U', 'VEDANT SOMA'] },
-                      { role: 'Presentations', names: ['DIYA VINOD', 'ESHITA SUDHAKAR'] },
-                      { role: 'Editorial Team', names: ['ESHITA SUDHAKAR', 'PRAGNYA PRADEEPKUMAR', 'DIYA VINOD', 'ASHYA ASHOK', 'ILAKKIYA G E', 'JANITHA PRABHAKARAN'] },
-                    ]
-                  },
-                  {
-                    items: [
                       { role: 'Organising Secretaries', names: ['FARHATHUL AFRAA', 'JESWIN ANTONY', 'NANDANA SREEKUMAR'] },
-                      { role: 'Quiz', names: ['JANE SARAH JOHN', 'KALANIDHI M', 'MANIKANDAN A'] },
-                      { role: 'Designing Team', names: ['LUCKSHANYA V K', 'LAKSHA S P', 'DHEEKSHI S', 'HARINI G', 'JANE SARAH JOHN'] },
+                      { role: 'Treasurer', names: ['AHMED SHAMEER'] },
+                      { role: 'Presentations', names: ['DIYA VINOD', 'ESHITHA SHREE'] },
+                      { role: 'Editorial Team', names: ['ESHITHA SHREE', 'PRAGNYA PRADEEP KUMAR', 'DIYA VINOD', 'ILLAKIYA', 'ASHYA ASHOK', 'JANITHA'] },
                     ]
                   },
                   {
                     items: [
-                      { role: 'Treasurer', names: ['AHMED SHAMEER (96336 69164)'] },
-                      { role: 'Speakers Collective', names: ['JANE SARAH JOHN', 'JANITHA PRABHAKARAN', 'KALANIDHI M'] },
-                      { role: 'Social Media Team', names: ['TO BE ANNOUNCED'] },
+                      { role: 'Quiz Committee', names: ['JANE SARAH JOHN', 'KALANIDHI M', 'MANIKANDAN A'] },
+                      { role: 'Speakers Collective', names: ['KALANIDHI M', 'JANE SARAH JOHN', 'JANITHA'] },
+                      { role: 'Tamil Mandram', names: ['SADHURTHIKA', 'SRIDHARANISH'] },
+                      { role: 'Overall Workshop Heads', names: ['ASHWIN KUMAR S', 'NIVETHA D', 'NEHA SUNIL', 'SAINITHI B', 'SRI DHARNISH', 'SUNIL KUMAR C M'] },
+                      { role: 'Social Media', names: ['HARINI G'] },
+                    ]
+                  },
+                  {
+                    items: [
+                      { role: 'Registration Committee', names: ['MEIMOZHI', 'LEKHA SHRUTHY R J', 'SHALINI R', 'KARTHIKEYAN'] },
+                      { role: 'Food', names: ['ADHARSH S', 'PRATHYUSH'] },
+                      { role: 'Accommodation', names: ['ARAVINDH B', 'AFLAHA T'] },
+                      { role: 'Public Relations', names: ['RASHMIKA T', 'KRISHNASUDHAN'] },
+                      { role: 'Banners and Decorations', names: ['DIVYA D'] },
+                      { role: 'Designing', names: ['LUCKSHANYA', 'DHEEKSHI S', 'LAKSHA S P', 'HARINI G'] },
                     ]
                   },
                 ].map((col, ci) => (

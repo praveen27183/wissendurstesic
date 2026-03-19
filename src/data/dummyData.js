@@ -4,6 +4,7 @@ export const workshops = [
     id: 1,
     title: "Anatomy - Kali's Prowess",
     description: "Not every gate leads to the Upside Down. Sometimes the real mystery lies much closer; inside the human eye. Step into the lab, peel back the layers of the eye, and uncover the hidden world behind vision.",
+    regLink: "https://forms.gle/Tqnt9FKX7vQsCztQ9",
     highlights: [
       "Eye ball dissection using bull's eyeballs",
       "Anatomical overview on layers of eye ball",
@@ -25,6 +26,7 @@ export const workshops = [
     id: 2,
     title: "Biochemistry - Exposing the Hawkins lab",
     description: "Papa isn't the only one who can clone superhumans. Here, we expose the secrets of The Hawkins Lab, and show you the steps of DNA extraction. Extract your genetic blueprint, flaunt it in your locket and force pressure on Dr. Brenner.",
+    regLink: "https://forms.gle/bQKqso7ikLmvZXAM9",
     highlights: [
        "Hands on DNA extraction from your own blood sample.",
        "Preservation of DNA in resin mold.",
@@ -45,6 +47,7 @@ export const workshops = [
     id: 3,
     title: "Pathology - Brenner's Blueprint: Needles and Nodes",
     description: "In Hawkins, they say the ordinary world is only half the story; that just beneath its quiet surface lies another realm: strange, unseen, waiting patiently to be revealed.",
+    regLink: "https://forms.gle/irKjD6jiZ52zB698A",
     highlights: [
       "FNAC techniques",
       "Grossing techniques",
@@ -65,6 +68,7 @@ export const workshops = [
     id: 4,
     title: "Microbiology - Spores of the Upside Down",
     description: "Descend into the Upside Down of Microbiology, where we unravel the secrets behind the spores. From streaked art to exploring hidden infections, we have it all.",
+    regLink: "https://docs.google.com/forms/d/1CfIpHMcOPZVG9Tm6fq8S573HMI-Wsgy_RgDE5sLTv44/edit",
     highlights: [
        "Culture Media preparation and streaking techniques",
        "Microbial Art (using principles of microbial growth and streaking techniques)",
@@ -107,6 +111,7 @@ export const workshops = [
     id: 6,
     title: "FM Crime scene - Code Hawkins: Ashes Beyond The Veil",
     description: "Some crimes speak loudly. Others leave only whispers for those who know how to listen - beneath smoke-stained walls, spent shell casings, and the fragile traces left behind by those who believed fire could erase their secrets.",
+    regLink: "https://forms.gle/iHz8L3m4i6JMUT529",
     highlights: [
        "Get hands-on experience on solving a mystery and step into the role of investigators. Was this truly an accident?",
        "Was the fire meant to conceal something? Or is there someone else involved?",
@@ -126,12 +131,14 @@ export const workshops = [
   {
     id: 7,
     title: "ENT - Running Up the Decibel",
-    description: "Running Up the Decibel."
+    description: "Running Up the Decibel.",
+    regLink: "https://forms.gle/ssgygUYVrTuBX9Kz9",
   },
   {
     id: 8,
     title: "Ophthalmology - El's Vision",
     description: "Just as Eleven uses her extraordinary vision to uncover hidden truths, this workshop invites you to sharpen your own clinical vision. Here, you get a chance to step into El's vision, to explore the science of sight and learn to see what others might miss.",
+    regLink: "https://forms.gle/o5wN4CaEUo1H7RAY6",
     highlights: [
       "Hands on training for lid suturing techniques.",
       "Fundus Fluorescein Angiography (FFA) live and video demonstration.",
@@ -140,7 +147,7 @@ export const workshops = [
     date: "29th April, Wednesday",
     time: "9am - 4pm",
     venue: "CAL Lab, College Building",
-    fees: { earlyBird: "₹1300", lateBird: "₹1450" },
+    fees: { earlyBird: "₹750", lateBird: "₹800" },
     slots: "30-35",
     incharges: [
       { name: "Sadhurthika", phone: "95669 00929" },
@@ -151,6 +158,7 @@ export const workshops = [
     id: 9,
     title: "General medicine - Echoes from Camazotz",
     description: "The Mind Flayer doesn't announce itself, it creeps through every labored breath, every silent effusion, every missed inhaler dose. Here, in the Echoes of Camazotz, we arm you with what the shadows don't want you to know. Learn to listen, tap and strike back before the hive mind wins.",
+    regLink: "https://forms.gle/m2JM3kmMPQTHzTWDA",
     highlights: [
       "Auscultation of normal and abnormal lung sounds using clinical simulators.",
       "Pleural fluid tapping techniques using procedural models.",
@@ -169,12 +177,14 @@ export const workshops = [
   {
     id: 10,
     title: "General surgery - Papa's gloves",
-    description: "Papa's gloves."
+    description: "Papa's gloves.",
+    regLink: "https://forms.gle/1pf8tKtMijxLmz7V6",
   },
   {
     id: 11,
     title: "OBG - Project Karen",
     description: "Not every battle is fought in the open. Sometimes it unfolds in moments where calm minds, steady hands, and precise decisions change everything. Step into an experience where essential clinical skills are revealed and the unseen challenges of maternal care are brought to light.",
+    regLink: "https://forms.gle/URU4mUpBfCUAzKoJ8",
     highlights: [
       "B-Lynch suturing",
       "Balloon tamponade",
@@ -200,6 +210,7 @@ export const workshops = [
     id: 12,
     title: "Paediatrics - Vecna's vessels",
     description: "When the usual rhythm of life falters and the world seems to tilt into the Upside Down, skill and calm bring it back into balance. Let's learn the art of restoring breath, rhythm, and resilience in the littlest lives.",
+    regLink: "https://forms.gle/sqKr6Mfu4S9pHGvPA",
     highlights: [
       "Cardiopulmonary Resuscitation",
       "Nasogastric Tube Insertion",
@@ -223,6 +234,7 @@ export const workshops = [
     id: 13,
     title: "Psychiatry - The Hive Mind",
     description: "When the mind drifts beyond, science steps in to secure it. Step into the world of neuronal whispers and try to understand the most fascinating facts about the human mind.",
+    regLink: "https://forms.gle/QYANUexU11rjfSHr8",
     highlights: [
        "Live demonstration of Electroconvulsive Therapy (ECT)",
        "Transcranial Direct Current Stimulation (tDCS) demonstration",
@@ -242,6 +254,7 @@ export const workshops = [
     id: 14,
     title: "EM & Anaesthesia - Turnbows in the barn",
     description: "\"CODE RED! I REPEAT, CODE RED!\" Join the Party in their latest quest to battle the chaos, stabilise the fallen, and save lives before the Upside Down claims another victim.",
+    regLink: "https://forms.gle/4U1FFJGdELDdeEgx8",
     highlights: [
        "Basic Life Support",
        "Advanced Cardiovascular Life Support",
@@ -269,6 +282,7 @@ export const workshops = [
     id: 15,
     title: "Orthopaedics - Walkman's canal",
     description: "Every clash with the Upside Down leaves a trail of shattered strength. Rise to the challenge of restoring alignment, stability, and resilience",
+    regLink: "https://forms.gle/Xb8KxzZozNsXTGgN8",
     highlights: [
        "Orthopaedic emergency simulation",
        "Management of fracture and dislocation",

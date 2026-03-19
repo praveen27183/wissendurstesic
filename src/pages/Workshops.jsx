@@ -149,6 +149,13 @@ const Workshops = () => {
                       style={{ backgroundImage: `url(${paintingBackgrounds[index % paintingBackgrounds.length]})` }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[rgba(10,10,15,0.85)] to-transparent"></div>
+                    
+                    {/* Date Badge */}
+                    <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full border border-st-red/30 z-10 transition-transform group-hover:scale-105">
+                        <span className="text-white text-[12px] font-bold uppercase tracking-wider font-title flex items-center gap-2">
+                            {workshop.date ? workshop.date.split(',')[0] : "TBD"}
+                        </span>
+                    </div>
                   </div>
 
                   {/* Text bottom half */}
@@ -214,9 +221,22 @@ const Workshops = () => {
               <h1 className="text-3xl sm:text-5xl md:text-7xl font-milanesa font-black text-[#ffffff] uppercase tracking-wide drop-shadow-[0_4px_8px_rgba(0,0,0,0.9)] leading-tight">
                 {detailWorkshop.title}
               </h1>
-              <button className="mt-8 px-10 py-4 bg-st-red text-black rounded-full font-title font-black uppercase tracking-widest hover:scale-105 hover:bg-white transition-all shadow-[0_0_30px_rgba(255,0,60,0.3)] mx-auto">
-                Register Now
-              </button>
+              {detailWorkshop.regLink ? (
+                <a 
+                  href={detailWorkshop.regLink} 
+                  target="_blank" 
+                  rel="noreferrer"
+                  className="mt-8 block"
+                >
+                  <button className="px-10 py-4 bg-st-red text-WHITE rounded-full font-title font-black uppercase tracking-widest hover:scale-105 hover:bg-white hover:text-black transition-all shadow-[0_0_30px_rgba(255,0,60,0.3)] mx-auto">
+                    Register LINK
+                  </button>
+                </a>
+              ) : (
+                <button className="mt-8 px-10 py-4 bg-white/10 text-white/40 rounded-full font-title font-black uppercase tracking-widest cursor-not-allowed mx-auto border border-white/5">
+                  Registration Opening Soon
+                </button>
+              )}
             </div>
           </section>
 
