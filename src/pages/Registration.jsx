@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import StarBorder from '../components/StarBorder';
 import GradientText from '../components/GradientText';
-import registration from "/asset/hero_sec_for_all/registration.png";
+
 import Galaxy from '../components/Galaxy.jsx';
 
 const Registration = () => {

@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { MapPin, Bus, Train, Plane, ChevronLeft, ChevronRight } from 'lucide-react';
-import esicBuildingImg from '../../public/asset/about/ESCIBUILD.png';
-import aboutImg from '../../public/asset/hero_sec_for_all/about.png';
-import teamImg from '../../public/asset/mainbg/starnger_thingsbg.jpeg';
+const esicBuildingImg = "/asset/about/ESCIBUILD.png";
+const aboutImg = "/asset/hero_sec_for_all/about.png";
+const teamImg = "/asset/mainbg/starnger_thingsbg.jpeg";
 import HeroSection from '../components/herosection.jsx';
 import Galaxy from '../components/Galaxy.jsx';
 

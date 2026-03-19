@@ -10,7 +10,7 @@ const quizEvents = [
     subtitle: "Hematology Quiz (ONLINE ARENA)",
     theme: "The ruthless battle of blood",
     date: "08.04.2026",
-    image: "../../public/asset/Quizzes/erythron.jpg",
+    image: "/asset/Quizzes/erythron.jpg",
     description: "From smear patterns to clotting cascades, hematology is far more than numbers on a report. It is the science that flows within us. Let us channel the courage of erythrocytes and the vigilance of leukocytes to sharpen our clinical instincts.",
         regLink: "https://forms.gle/dsVuLJbzByB3upke8",
         sections: [
@@ -48,7 +48,7 @@ const quizEvents = [
     subtitle: "Endocrine Quiz (ONLINE ARENA)",
     theme: "The voice of messengers",
     date: "18.04.2026",
-    image: "../../public/asset/Quizzes/endocrine.jpg",
+    image: "/asset/Quizzes/endocrine.jpg",
     description: "Think you can decide the body's hormone axes and feedback loops? Step into the realm of regulation and rhythm, and respond to the whispers of imbalanced systems wreaking havoc. From adrenal surges to sugar crashes, let's face it all at one place.",
         regLink: "https://forms.gle/hqUoG1yaGfTyjRYD8",
         sections: [
@@ -87,7 +87,7 @@ const quizEvents = [
     theme: "Where the knowledge heralds",
     date: "28.04.2026",
     time: "Prelims – 8:30 AM | Finals – 12:30 PM",
-    image: "../../public/asset/Quizzes/minerva_junior.jpg",
+    image: "/asset/Quizzes/minerva_junior.JPG",
     description: "Attention Quizzical minds! The strength of a clinician lies in the stability of their foundation. The 5th Edition of Minerva proudly presents The Junior Quiz, to take us to the concepts that shape our minds long before clinics and case sheets do. Are you ready to strengthen your core and step into the roots that anchor our medical minds?",
         regLink: "https://forms.gle/g3DDy7DFYRuaBYx4A",
         sections: [
@@ -137,7 +137,7 @@ const quizEvents = [
     subtitle: "The Senior Quiz (OFFLINE ARENA)",
     date: "30.04.2026",
     time: "Prelims – 8:30 AM | Finals – 11:30 AM",
-    image: "../../public/asset/Quizzes/minerva_senior.Jpg",
+    image: "/asset/Quizzes/minerva_senior.Jpg",
     description: "Attention Quizzical minds! Are you ready for your ultimate academic showdown? The 5th Edition of Minerva proudly presents The Senior Quiz to ignite your passion for learning and challenge your intellect. Take this moment to flex your mastery in human medicine and push the boundaries of your cerebral curiosity.",
         regLink: "https://forms.gle/MH4wrczhNtfdnQts6",
         sections: [

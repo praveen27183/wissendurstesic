@@ -426,8 +426,8 @@ const Debateandoratory = () => {
                                                 target="_blank"
                                                 rel="noreferrer"
                                             >
-                                                <button className="px-10 py-4 bg-st-red text-black rounded-full font-title font-black uppercase tracking-widest hover:scale-105 hover:bg-white transition-all shadow-[0_0_30px_rgba(255,0,60,0.3)] flex items-center gap-3">
-                                                    Register For Current Event
+                                                <button className="px-10 py-4 bg-st-red text-white rounded-full font-title font-black uppercase tracking-widest hover:scale-105 hover:bg-white transition-all shadow-[0_0_30px_rgba(255,0,60,0.3)] flex items-center gap-3">
+                                                    Register link
                                                 </button>
                                             </a>
                                         </div>
