@@ -38,6 +38,15 @@ const Contacts = [
     ],
   },
   {
+    role: "REGISTRATION COMMITTEE",
+    names: [
+      { name: "MEIMOZHI", phone: "6382866554" },
+      { name: "LEKHA SHRUTHY V K", phone: "9789703487" },
+      { name: "SHALINI R", phone: "9444262579" },
+      { name: "KARTHIKEYAN", phone: "9489532419" },
+    ],
+  },
+  {
     role: "Overall Workshop Heads",
     names: [
       { name: "SUNIL KUMAR C M", phone: "63810 83905" },
@@ -61,6 +70,14 @@ const Contacts = [
     names: [
       { name: "DIYA VINOD", phone: "87781 25205" },
       { name: "ESHITA SUDHAKAR", phone: "88380 29901" },
+    ],
+  },
+  {
+    role: "SPEAKERS COLLECTIVE",
+    names: [
+      { name: "KALANIDHI M", phone: "9500078979" },
+      { name: "JANE SARAH JOHN", phone: "7824034859" },
+      { name: "JANITHA", phone: "9535218887" },
     ],
   },
   {
@@ -109,6 +126,33 @@ const Contacts = [
     names: [
       { name: "SADHURTHIKA", phone: "95669 00929" },
       { name: "SRI DHARANISH", phone: "99626 54504" },
+    ],
+  },
+  {
+    role: "DESIGNING  ",
+    names: [
+      { name: "LUCKSHANYA", phone: "8939311539" },
+      { name: "DHEEKSHI S", phone: "9789729409" },
+      { name: "LAKSHA S P", phone: "9600055784" },
+      { name: "HARINI G", phone: "6379004049" },
+    ],
+  },
+  {
+    role: "EDITING   ",
+    names: [
+      { name: "ESHITHA SHREE", phone: "8838029901" },
+      { name: "PRAGNYA PRADEEP KUMAR", phone: "7305116987" },
+      { name: "DIYA VINOD", phone: "8778125205" },
+      { name: "ILLAKIYA", phone: "7845912604" },
+      { name: "ASHYA ASHOK", phone: "9789966052" },
+      { name: "JANITHA", phone: "9535218887" },
+    ],
+  },
+  {
+    role: "PRESENTATIONS ",
+    names: [
+      { name: "DIYA VINOD", phone: "8778125205" },
+      { name: "ESHITHA SHREE", phone: "8838029901" }
     ],
   },
 ];

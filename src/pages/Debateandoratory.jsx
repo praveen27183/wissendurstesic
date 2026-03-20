@@ -50,8 +50,7 @@ const debateEvents = [
         image: "/asset/Debate_and_oratory_form/MUN_.jpg",
         description: "Enter a dynamic UNHRC committee where the digital world becomes both a tool and a threat. Delegates must address emerging digital threats such as online harassment, privacy violations, surveillance and data misuse. Balancing human rights with technological advancement, the committee aims to push for innovative, ethical and enforceable solutions to conquer the modern dilemma.",
         multiLinks: [
-            { name: "Delegate Registration", url: "https://forms.gle/v9sFWX5ntxeGFtww8" },
-            { name: "Chair/Candidate Registration", url: "https://forms.gle/rpWhUuw22fSvx3ya6" }
+            { name: "Registration", url: "https://forms.gle/v9sFWX5ntxeGFtww8" }
         ],
         sections: [
             {
@@ -75,19 +74,19 @@ const debateEvents = [
             {
                 title: "Incharges",
                 items: [
-                    "Jane Sarah John (78240 34859)",
-                    "Pragnya Pradeepkumar (7305116987)"
+                    "Jane Sarah John: +91 78240 34859",
+                    "Pragnya Pradeepkumar: +91 73051 16987"
                 ]
             }
         ]
     },
     {
         id: 2,
-        title: "The Sinclair Spectre",
+        title: "The Sinclair spectrum",
         subtitle: "English Debate",
         date: "30.04.2026",
         image: "/asset/Debate_and_oratory_form/Debate_.jpg",
-        description: "Argue your case under the spotlight in The Sinclair Spectre English Debate. A forum for logical reasoning, quick thinking, and impeccable oratory skills.",
+        description: "Argue your case under the spotlight in The Sinclair spectrum English Debate. A forum for logical reasoning, quick thinking, and impeccable oratory skills.",
         regLink: "https://forms.gle/cB5Sjn94XcK9C82P7",
         sections: [
             {
@@ -115,8 +114,8 @@ const debateEvents = [
             {
                 title: "Incharges",
                 items: [
-                    "Kalanidhi M- +91 95000 78979",
-                    "Janitha Prabhakaran- +91 9535218887"
+                    "Kalanidhi M: +91 95000 78979",
+                    "Janitha Prabhakaran: +91 95352 18887"
                 ]
             }
         ]
@@ -162,6 +161,13 @@ const Debateandoratory = () => {
         const timer = setTimeout(() => setShowIntro(false), 8000);
         return () => clearTimeout(timer);
     }, []);
+
+    useEffect(() => {
+        // Scroll to top when detail view changes
+        if (detailIndex !== null) {
+            window.scrollTo(0, 0);
+        }
+    }, [detailIndex]);
 
     if (showIntro) {
         return (
@@ -252,7 +258,7 @@ const Debateandoratory = () => {
 
             {/* Galaxy Background layer */}
             <div className="fixed inset-0 z-0 pointer-events-none opacity-20">
-                <Galaxy 
+                <Galaxy
                     starSpeed={0.2}
                     density={1.2}
                     hueShift={220}
@@ -385,8 +391,40 @@ const Debateandoratory = () => {
                                     </p>
                                 </div>
 
-                                <div className="flex flex-wrap gap-4 mb-8 text-st-red text-sm font-bold tracking-widest uppercase bg-st-red/10 inline-flex px-5 py-2.5 rounded-full border border-st-red/30 shadow-md">
+                                <div className="flex flex-wrap gap-4 mb-4 text-st-red text-sm font-bold tracking-widest uppercase bg-st-red/10 inline-flex px-5 py-2.5 rounded-full border border-st-red/30 shadow-md">
                                     <span className="flex items-center gap-2"><Calendar className="w-4 h-4" /> {detailEvent.date}</span>
+                                </div>
+
+                                <div className="mt-4 mb-10">
+                                    {detailEvent.multiLinks ? (
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                            {detailEvent.multiLinks.map((link, lIdx) => (
+                                                <a
+                                                    key={lIdx}
+                                                    href={link.url}
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                    className="w-full"
+                                                >
+                                                    <button className="w-full px-6 py-4 bg-st-red text-black rounded-xl font-title font-black uppercase tracking-widest hover:scale-[1.02] hover:bg-white transition-all shadow-lg flex items-center justify-center gap-3 text-xs">
+                                                        {link.name}
+                                                    </button>
+                                                </a>
+                                            ))}
+                                        </div>
+                                    ) : (
+                                        <div className="flex justify-center">
+                                            <a
+                                                href={detailEvent.regLink}
+                                                target="_blank"
+                                                rel="noreferrer"
+                                            >
+                                                <button className="px-10 py-4 bg-st-red text-white rounded-full font-title font-black uppercase tracking-widest hover:scale-105 hover:bg-white transition-all shadow-[0_0_30px_rgba(255,0,60,0.3)] flex items-center gap-3">
+                                                    Register link
+                                                </button>
+                                            </a>
+                                        </div>
+                                    )}
                                 </div>
 
                                 <p className="text-gray-300/90 leading-relaxed text-base md:text-lg font-light mb-12 italic border-l-4 border-st-red pl-6 py-2 bg-gradient-to-r from-white/5 to-transparent">
@@ -410,38 +448,6 @@ const Debateandoratory = () => {
                                             </ul>
                                         </div>
                                     ))}
-                                </div>
-
-                                <div className="mt-8 mb-6">
-                                    {detailEvent.multiLinks ? (
-                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                            {detailEvent.multiLinks.map((link, lIdx) => (
-                                                <a 
-                                                    key={lIdx}
-                                                    href={link.url}
-                                                    target="_blank"
-                                                    rel="noreferrer"
-                                                    className="w-full"
-                                                >
-                                                    <button className="w-full px-6 py-4 bg-st-red text-black rounded-xl font-title font-black uppercase tracking-widest hover:scale-[1.02] hover:bg-white transition-all shadow-lg flex items-center justify-center gap-3 text-xs">
-                                                        {link.name}
-                                                    </button>
-                                                </a>
-                                            ))}
-                                        </div>
-                                    ) : (
-                                        <div className="flex justify-center">
-                                            <a 
-                                                href={detailEvent.regLink}
-                                                target="_blank"
-                                                rel="noreferrer"
-                                            >
-                                                <button className="px-10 py-4 bg-st-red text-white rounded-full font-title font-black uppercase tracking-widest hover:scale-105 hover:bg-white transition-all shadow-[0_0_30px_rgba(255,0,60,0.3)] flex items-center gap-3">
-                                                    Register link
-                                                </button>
-                                            </a>
-                                        </div>
-                                    )}
                                 </div>
                             </div>
                         </div>

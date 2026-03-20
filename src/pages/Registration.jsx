@@ -353,7 +353,7 @@ const Registration = () => {
                   </div>
                   <div>
                     <span className="block text-2xl sm:text-3xl font-black text-st-red">300</span>
-                    <span className="text-xs sm:text-sm font-light text-gray-300/60 uppercase tracking-widest">Per Candidate</span>
+                    <span className="text-xs sm:text-sm font-light text-gray-300/60 uppercase tracking-widest">Per Person</span>
                   </div>
                 </div>
 
@@ -390,7 +390,7 @@ const Registration = () => {
                   <TimelineStep
                     num="1"
                     title="Fill Online Form"
-                    desc="Navigate to the candidate registration form on our portal."
+                    desc="Navigate to the general registration form on our portal."
                     icon={FileText}
                   />
 
@@ -423,6 +423,20 @@ const Registration = () => {
                     isLast={true}
                   />
 
+                </div>
+
+                {/* Register Button in side div */}
+                <div className="mt-8 pt-6 border-t border-white/10 flex justify-center">
+                  <a 
+                    href="https://forms.gle/rpWhUuw22fSvx3ya6"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-full"
+                  >
+                    <button className="w-full px-8 py-4 bg-st-red text-white rounded-xl font-title font-black uppercase tracking-widest hover:scale-[1.02] hover:bg-white hover:text-black transition-all shadow-lg flex items-center justify-center gap-3">
+                       General Registration <ExternalLink className="w-5 h-5" />
+                    </button>
+                  </a>
                 </div>
 
                 {/* Bottom Info Card */}

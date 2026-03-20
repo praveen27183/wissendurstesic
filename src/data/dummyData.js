@@ -130,9 +130,27 @@ export const workshops = [
   },
   {
     id: 7,
-    title: "ENT - Running Up the Decibel",
-    description: "Running Up the Decibel.",
+    title: "ENT - RUNNING UP THE DECIBEL",
+    description: "Strange signals. Unheard frequencies. Hidden worlds of sound. Step beyond the silence and into the fascinating realm of ENT. Discover the science behind hearing, voice, and balance as we push the limits of sound and amplify medical knowledge.",
     regLink: "https://forms.gle/ssgygUYVrTuBX9Kz9",
+    highlights: [
+      "Techniques in Otoscopy and Video Laryngoscopy",
+      "Septoplasty Demonstration on Sheep Head (subject to availability of sheep head)",
+      "Diagnostic Nasal Endoscopy",
+      "Foreign Body Removal",
+      "Anterior Nasal Packing for epistaxis",
+      "Otoscopy on volunteers"
+    ],
+    date: "30th April, Thursday",
+    time: "9am - 12pm",
+    venue: "Anatomy Dissection Hall, College Building",
+    fees: { earlyBird: "₹1300", lateBird: "₹1450" },
+    slots: "25",
+    incharges: [
+      { name: "Adithya A", phone: "99628 92164" },
+      { name: "Husaan Nooh", phone: "98848 81111" },
+      { name: "Dheekshi S", phone: "9789729409" }
+    ]
   },
   {
     id: 8,
@@ -156,7 +174,7 @@ export const workshops = [
   },
   {
     id: 9,
-    title: "General medicine - Echoes from Camazotz",
+    title: "General medicine - ECHOES FROM CAMAZOTZ",
     description: "The Mind Flayer doesn't announce itself, it creeps through every labored breath, every silent effusion, every missed inhaler dose. Here, in the Echoes of Camazotz, we arm you with what the shadows don't want you to know. Learn to listen, tap and strike back before the hive mind wins.",
     regLink: "https://forms.gle/m2JM3kmMPQTHzTWDA",
     highlights: [
@@ -167,7 +185,7 @@ export const workshops = [
     date: "28th April, Tuesday",
     time: "1 - 4pm",
     venue: "Medicine Seminar Hall, Hospital Building Block A",
-    fees: { earlyBird: "TBD", lateBird: "TBD" },
+    fees: { earlyBird: "900", lateBird: "1000" },
     slots: "30",
     incharges: [
       { name: "Vishalini", phone: "96771 25671" },
@@ -176,9 +194,29 @@ export const workshops = [
   },
   {
     id: 10,
-    title: "General surgery - Papa's gloves",
-    description: "Papa's gloves.",
+    title: "General surgery - PAPA'S GLOVE",
+    description: "In Hawkins, curiosity opens gates. In medicine, it opens possibilities. Enter the world of General Surgery, where precision and skill reveal what lies beneath.",
     regLink: "https://forms.gle/1pf8tKtMijxLmz7V6",
+    highlights: [
+      "Step into the role of a surgeon and train your hands to work with precision.",
+      "Surgical Knotting Techniques",
+      "Basic Suturing Skills",
+      "Bowel Anastomosis",
+      "Laparoscopic Simulation Training",
+      "Hands-on Practice on Surgical models",
+      "Each participant will receive a take-home surgical suture kit worth ₹1500, allowing you to continue practicing and refining your skills even after the workshop ends."
+    ],
+    date: "29th April, Wednesday",
+    time: "9am - 12pm",
+    venue: "Panchdeep Auditorium, College Building",
+    fees: { earlyBird: "₹1600", lateBird: "₹1700" },
+    slots: "50",
+    incharges: [
+      { name: "Shreya Singh", phone: "73553 61336" },
+      { name: "Kanishika GS", phone: "80720 05388" },
+      { name: "Arpita Ashok", phone: "70420 87739" },
+      { name: "Saksham Wason", phone: "98104 95842" }
+    ]
   },
   {
     id: 11,

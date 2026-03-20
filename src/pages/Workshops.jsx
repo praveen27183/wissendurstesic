@@ -45,6 +45,13 @@ const Workshops = () => {
   const nextDetail = () => setDetailIndex(i => (i + 1) % workshops.length);
   const closeDetail = () => setDetailIndex(null);
   useEffect(() => {
+    // Scroll to top when detail view changes
+    if (detailIndex !== null) {
+      window.scrollTo(0, 0);
+    }
+  }, [detailIndex]);
+
+  useEffect(() => {
     // Automatically hide intro after 8 seconds
     const timer = setTimeout(() => setShowIntro(false), 8000);
     return () => clearTimeout(timer);

@@ -170,10 +170,10 @@ const academicEvents = [
             {
                 title: "Incharges",
                 items: [
-                    "Surgery: Dhanyaa Sai A: +91 97907 43116",
-                    "Medicine: Diya Vinod: +91 87781 25205",
-                    "Paediatrics: Kavya DK: +91 63691 85992",
-                    "OBG: Niranjana Natesan: +91 94452 44014"
+                    "Dhanyaa Sai A (Surgery): +91 97907 43116",
+                    "Diya Vinod (Medicine): +91 87781 25205",
+                    "Kavya DK (Paediatrics): +91 63691 85992",
+                    "Niranjana Natesan (OBG): +91 94452 44014"
                 ]
             }
         ]
@@ -229,8 +229,8 @@ const academicEvents = [
             {
                 title: "Incharges",
                 items: [
-                    "Surgery Symposium: Eshita Sudhakar: +91 88380 29901",
-                    "Medicine Symposium: Diya Vinod: +91 87781 25205"
+                    "Eshita Sudhakar (Surgery Symposium): +91 88380 29901",
+                    "Diya Vinod (Medicine Symposium): +91 87781 25205"
                 ]
             }
         ]
@@ -450,6 +450,13 @@ const Academicevents = () => {
         const timer = setTimeout(() => setShowIntro(false), 8000);
         return () => clearTimeout(timer);
     }, []);
+
+    useEffect(() => {
+        // Scroll to top when detail view changes
+        if (detailIndex !== null) {
+            window.scrollTo(0, 0);
+        }
+    }, [detailIndex]);
 
     if (showIntro) {
         return (

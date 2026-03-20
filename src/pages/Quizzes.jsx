@@ -36,8 +36,8 @@ const quizEvents = [
       {
         title: "Incharges",
         items: [
-          "Kalanidhi M – 95000 78979",
-          "Aditya Khanna – 96772 47582"
+          "Kalanidhi M: +91 95000 78979",
+          "Aditya Khanna: +91 96772 47582"
         ]
       }
     ]
@@ -74,8 +74,8 @@ const quizEvents = [
       {
         title: "Incharges",
         items: [
-          "Ashwin Kumar S – 98406 31290",
-          "Sanjay Praveen – 97898 12821"
+          "Ashwin Kumar S: +91 98406 31290",
+          "Sanjay Praveen: +91 97898 12821"
         ]
       }
     ]
@@ -124,9 +124,9 @@ const quizEvents = [
       {
         title: "Incharges",
         items: [
-          "Manikandan A – 90434 93961",
-          "Jane Sarah John – 78240 34859",
-          "Kalanidhi M – 95000 78979"
+          "Manikandan A: +91 90434 93961",
+          "Jane Sarah John: +91 78240 34859",
+          "Kalanidhi M: +91 95000 78979"
         ]
       }
     ]
@@ -173,9 +173,9 @@ const quizEvents = [
       {
         title: "Incharges",
         items: [
-          "Manikandan A – 90434 93961",
-          "Jane Sarah John – 78240 34859",
-          "Yugaendhar S – 72007 23250"
+          "Manikandan A: +91 90434 93961",
+          "Jane Sarah John: +91 78240 34859",
+          "Yugaendhar S: +91 72007 23250"
         ]
       }
     ]
@@ -191,6 +191,13 @@ const Quizzes = () => {
     const timer = setTimeout(() => setShowIntro(false), 8000);
     return () => clearTimeout(timer);
   }, []);
+
+  useEffect(() => {
+    // Scroll to top when detail view changes
+    if (detailIndex !== null) {
+      window.scrollTo(0, 0);
+    }
+  }, [detailIndex]);
 
   if (showIntro) {
     return (
@@ -362,9 +369,9 @@ const Quizzes = () => {
     <div className="w-full lg:w-1/2 flex flex-col gap-4">
 
       {[
-        { name: "Manikandan A", phone: "+919043493961" },
-        { name: "Jane Sarah John", phone: "+917824034859" },
-        { name: "Kalanidhi M", phone: "+919500078979" },
+        { name: "Manikandan A", phone: "+91 90434 93961" },
+        { name: "Jane Sarah John", phone: "+91 78240 34859" },
+        { name: "Kalanidhi M", phone: "+91 95000 78979" },
       ].map((person) => (
         <div
           key={person.name}
@@ -375,7 +382,7 @@ const Quizzes = () => {
           </span>
 
           <a
-            href={`tel:${person.phone}`}
+            href={`tel:${person.phone.replace(/\s+/g, '')}`}
             className="text-st-red font-bold tracking-widest text-sm hover:text-white transition"
           >
             {person.phone}
