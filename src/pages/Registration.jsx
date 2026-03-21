@@ -19,6 +19,18 @@ const Registration = () => {
     const timer = setTimeout(() => setShowIntro(false), 8000);
     return () => clearTimeout(timer);
   }, []);
+
+  useEffect(() => {
+    if (!showIntro && window.location.hash) {
+      const id = window.location.hash.substring(1);
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 100);
+      }
+    }
+  }, [showIntro]);
   const workshopsList = [
     "Anatomy", "Biochemistry", "Pathology", "Microbiology", "FM Autopsy", "FM Crime scene",
     "ENT", "Ophthalmology", "General medicine", "General surgery", "OBG",

@@ -61,33 +61,38 @@ const Home = () => {
             transition={{ delay: 1.0, duration: 0.2 }}
             className="grid grid-cols-2 sm:flex sm:flex-row gap-3 sm:gap-6 justify-center items-center w-full max-w-3xl px-2 sm:px-0"
           >
-            <Link to="/registration" className="col-span-1 w-full sm:w-auto">
+            <Link to="/registration#section-general" className="col-span-1 w-full sm:w-auto">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full">
                 <StarBorder as="div" color="#ff003c" className="w-full h-full sm:w-auto">
-                  <div className="px-4 sm:px-8 py-2 font-title font-bold uppercase tracking-widest text-[20px] sm:text-base leading-snug">
+                  <div className="px-4 sm:px-8 py-2 font-title font-bold uppercase tracking-widest text-[20px] sm:text-base leading-snug text-center">
                     General Registration
                   </div>
                 </StarBorder>
               </motion.div>
             </Link>
-            <Link to="/academicevents" className="col-span-1 w-full sm:w-auto">
+            <Link to="/registration#section-event" className="col-span-1 w-full sm:w-auto">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full">
                 <StarBorder as="div" color="#ff003c" className="w-full h-full sm:w-auto">
-                  <div className="px-2 sm:px-8 py-2 font-title font-bold uppercase tracking-widest text-[20px] sm:text-base leading-snug">
+                  <div className="px-2 sm:px-8 py-2 font-title font-bold uppercase tracking-widest text-[20px] sm:text-base leading-snug text-center">
                     Event Registration
                   </div>
                 </StarBorder>
               </motion.div>
             </Link>
-            <Link to="/workshops" className="col-span-2 sm:col-span-1 w-full sm:w-auto">
+            <a 
+              href="https://drive.google.com/file/d/1RPLAc9NQObbfb3Cz_5VuYbagoFcm2ERD/view?usp=drivesdk" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="col-span-2 sm:col-span-1 w-full sm:w-auto"
+            >
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full">
                 <StarBorder as="div" color="#2563ff" className="w-full h-full sm:w-auto">
-                  <div className="px-2 sm:px-8 py-2 font-title font-bold uppercase tracking-widest text-[20px] sm:text-base leading-snug">
+                  <div className="px-2 sm:px-8 py-2 font-title font-bold uppercase tracking-widest text-[20px] sm:text-base leading-snug text-center">
                     View Brochure
                   </div>
                 </StarBorder>
               </motion.div>
-            </Link>
+            </a>
           </motion.div>
         </div>
       </section>
@@ -110,46 +115,77 @@ const Home = () => {
             >
               Registrations Open
             </GradientText>
+           
           </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
+          <div className="flex items-center justify-center gap-4 mb-16">
+ <GradientText
+              colors={['#ffffff', '#ff003c', '#ffffff']}
+              animationSpeed={6}
+              className="text-4xl sm:text-2xl md:text-3xl font-milanesa font-black uppercase drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]"
+            >
+              Explore 
+            </GradientText>
+            </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto">
+            {/* Explore Quizzes */}
             <ElectricBorder color="#ff003c" speed={1} chaos={0.12} borderRadius={16} className="h-full">
-            <Link to="/academicevents">
-              <motion.div 
-                whileHover={{ scale: 1.02, y: -5 }}
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                className="group relative bg-[#050505]/60 border border-st-red/30 rounded-2xl p-6 md:p-10 overflow-hidden backdrop-blur-sm transition-all shadow-[0_0_20px_rgba(255,0,60,0.05)] hover:shadow-[0_0_30px_rgba(255,0,60,0.3)] hover:border-st-red"
-              >
-                <div className="absolute inset-0 bg-st-red/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                
-                <h3 className="text-2xl md:text-3xl font-title font-bold text-white uppercase tracking-widest group-hover:text-st-red transition-colors flex items-center justify-center gap-2">
-                  Explore
-                    <span className="text-st-red">Events</span> <ChevronRight className="w-6 h-6 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300" />
-                </h3>
-              </motion.div>
-            </Link>
-          </ElectricBorder><ElectricBorder color="#2563ff" speed={1} chaos={0.12} borderRadius={16} className="h-full">
-            <Link to="/workshops">
-              <motion.div 
-                whileHover={{ scale: 1.02, y: -5 }}
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                className="group relative bg-[#050505]/60 border border-st-blue/30 rounded-2xl p-6 md:p-10 overflow-hidden backdrop-blur-sm transition-all shadow-[0_0_20px_rgba(37,99,255,0.05)] hover:shadow-[0_0_30px_rgba(37,99,255,0.3)] hover:border-st-blue"
-              >
-                <div className="absolute inset-0 bg-st-blue/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                
-                <h3 className="text-2xl md:text-3xl font-title font-bold text-white uppercase tracking-widest group-hover:text-st-blue transition-colors flex items-center justify-center gap-2">
-                  Explore
-                    <span className="text-st-blue">Workshops</span> <ChevronRight className="w-6 h-6 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300" />
-                </h3>
-              </motion.div>
-            </Link>
-          </ElectricBorder>
+              <Link to="/quizzes">
+                <motion.div 
+                  whileHover={{ scale: 1.02, y: -5 }}
+                  className="group relative bg-[#050505]/60 border border-st-red/30 rounded-2xl p-6 md:p-8 overflow-hidden backdrop-blur-sm transition-all shadow-[0_0_20px_rgba(255,0,60,0.05)] hover:shadow-[0_0_30px_rgba(255,0,60,0.3)] hover:border-st-red h-full flex flex-col justify-center"
+                >
+                  <div className="absolute inset-0 bg-st-red/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <h3 className="text-xl md:text-2xl font-title font-bold text-white uppercase tracking-widest group-hover:text-st-red transition-colors flex items-center justify-center gap-2 text-center">
+                     <span className="text-st-red">Quizzes</span>
+                  </h3>
+                </motion.div>
+              </Link>
+            </ElectricBorder>
 
-          
+            {/* Explore Academic Events */}
+            <ElectricBorder color="#ff003c" speed={1} chaos={0.12} borderRadius={16} className="h-full">
+              <Link to="/academicevents">
+                <motion.div 
+                  whileHover={{ scale: 1.02, y: -5 }}
+                  className="group relative bg-[#050505]/60 border border-st-red/30 rounded-2xl p-6 md:p-8 overflow-hidden backdrop-blur-sm transition-all shadow-[0_0_20px_rgba(255,0,60,0.05)] hover:shadow-[0_0_30px_rgba(255,0,60,0.3)] hover:border-st-red h-full flex flex-col justify-center"
+                >
+                  <div className="absolute inset-0 bg-st-red/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <h3 className="text-xl md:text-2xl font-title font-bold text-white uppercase tracking-widest group-hover:text-st-red transition-colors flex items-center justify-center gap-2 text-center">
+                    Academic <span className="text-st-red">Events</span>
+                  </h3>
+                </motion.div>
+              </Link>
+            </ElectricBorder>
+
+            {/* Explore Debate Forum */}
+            <ElectricBorder color="#2563ff" speed={1} chaos={0.12} borderRadius={16} className="h-full">
+              <Link to="/debateandoratory">
+                <motion.div 
+                  whileHover={{ scale: 1.02, y: -5 }}
+                  className="group relative bg-[#050505]/60 border border-st-blue/30 rounded-2xl p-6 md:p-8 overflow-hidden backdrop-blur-sm transition-all shadow-[0_0_20px_rgba(37,99,255,0.05)] hover:shadow-[0_0_30px_rgba(37,99,255,0.3)] hover:border-st-blue h-full flex flex-col justify-center"
+                >
+                  <div className="absolute inset-0 bg-st-blue/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <h3 className="text-xl md:text-2xl font-title font-bold text-white uppercase tracking-widest group-hover:text-st-blue transition-colors flex items-center justify-center gap-2 text-center">
+                    Debate <span className="text-st-blue">Forum</span>
+                  </h3>
+                </motion.div>
+              </Link>
+            </ElectricBorder>
+
+            {/* Explore Workshops */}
+            <ElectricBorder color="#2563ff" speed={1} chaos={0.12} borderRadius={16} className="h-full">
+              <Link to="/workshops">
+                <motion.div 
+                  whileHover={{ scale: 1.02, y: -5 }}
+                  className="group relative bg-[#050505]/60 border border-st-blue/30 rounded-2xl p-6 md:p-8 overflow-hidden backdrop-blur-sm transition-all shadow-[0_0_20px_rgba(37,99,255,0.05)] hover:shadow-[0_0_30px_rgba(37,99,255,0.3)] hover:border-st-blue h-full flex flex-col justify-center"
+                >
+                  <div className="absolute inset-0 bg-st-blue/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <h3 className="text-xl md:text-2xl font-title font-bold text-white uppercase tracking-widest group-hover:text-st-blue transition-colors flex items-center justify-center gap-2 text-center">
+                     <span className="text-st-blue">Workshops</span>
+                  </h3>
+                </motion.div>
+              </Link>
+            </ElectricBorder>
           </div>
         </div>
       </section>

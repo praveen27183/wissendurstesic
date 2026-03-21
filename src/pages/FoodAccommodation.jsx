@@ -251,25 +251,30 @@ const FoodAccommodation = () => {
                     href="tel:8590765094"
                     className="text-white hover:text-st-red transition"
                   >
-                  
-ADHARSH S: 590765094
+
+                    Adarsh S: 8590765094
 
                   </a>
 
                   <a
                     href="tel:8903088587"
                     className="text-white hover:text-st-red transition"
-                  >
-                    PRATHYUSH : 8903088587 
+                  >Pratyush S
+                    Pratyush S : 8903088587
                   </a>
 
                 </div>
 
               </div>
 
-              <button className="px-8 py-4 border-2 border-st-red text-st-red font-bold uppercase text-sm tracking-widest rounded-full hover:bg-st-red hover:text-black transition-all">
+              <a
+                href="https://forms.gle/8shvZTMuVXdxPhfq9"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-4 border-2 border-st-red text-st-red font-bold uppercase text-sm tracking-widest rounded-full hover:bg-st-red hover:text-black transition-all inline-block text-center"
+              >
                 Request Assistance
-              </button>
+              </a>
 
             </div>
 
@@ -329,16 +334,21 @@ ADHARSH S: 590765094
                     href="tel:9489544801"
                     className="text-white hover:text-st-red transition"
                   >
-                    ARAVIND C : 94895 44801
+                    Aravindh B : 94895 44801
                   </a>
 
                 </div>
 
               </div>
 
-              <button className="px-8 py-4 border-2 border-st-red text-st-red font-bold uppercase text-sm tracking-widest rounded-full hover:bg-st-red hover:text-black transition-all">
+              <a
+                href="https://forms.gle/YPpZFinSHwpcCjuZ8"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-4 border-2 border-st-red text-st-red font-bold uppercase text-sm tracking-widest rounded-full hover:bg-st-red hover:text-black transition-all inline-block text-center"
+              >
                 Request Assistance
-              </button>
+              </a>
 
             </div>
 

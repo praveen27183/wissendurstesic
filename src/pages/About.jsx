@@ -59,7 +59,7 @@ const About = () => {
   useEffect(() => {
     // Automatically hide intro after 8 seconds
     const timer = setTimeout(() => setShowIntro(false), 8000);
-    
+
     // Auto-scroll gallery every 3 seconds
     const autoScroll = setInterval(() => {
       scrollRight();
@@ -264,8 +264,8 @@ const About = () => {
 
                 <p>
                   The Medical College boasts state-of-the-art facilities, ensuring comprehensive training for undergraduates and postgraduates to become skilled, and future-ready doctors. With over 15 super-speciality departments, the college provides extensive exposure to the students.
-            
-          
+
+
                   Apart from an extensive clinical exposure, the college also boasts vibrant extra-curricular clubs including the dance, music, debate, literary clubs and more. With the support of our dedicated faculty, the students are regularly exposed to the latest updates in the medical field through various seminars, quizzes, CMEs, national level conferences- helping the students have the right balance between academics and co-curriculars.
                 </p>
               </div>
@@ -427,10 +427,10 @@ const About = () => {
                     {/* Glowing border effect */}
                     <div className="absolute inset-0 border border-st-red/20 rounded-2xl z-20 transition-all duration-500 group-hover:border-st-red/80" />
                     {/* image */}
-                    <img 
-                      src={place.img} 
-                      alt={place.name} 
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                    <img
+                      src={place.img}
+                      alt={place.name}
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                       loading="lazy"
                       decoding="async"
                     />
@@ -451,69 +451,69 @@ const About = () => {
           </div>
         </div>
       </SectionBg>
-{/* ── Gallery Section ── */}
-<SectionBg
-  src={teamImg}
-  opacity="opacity-60"
-  className="py-24 md:py-32 border-t border-st-red/15 relative overflow-hidden"
->
-  <div className="absolute top-20 left-1/2 w-[600px] h-[150px] -translate-x-1/2 bg-st-red/10 blur-[120px] rounded-[100%] pointer-events-none" />
-
-  <div className="max-w-7xl mx-auto px-4 text-center relative z-10 w-full overflow-hidden">
-    <h2 className="text-4xl sm:text-5xl md:text-6xl font-milanesa font-black mb-16 text-transparent bg-clip-text bg-gradient-to-r from-[#ffffff] via-st-red to-[#ffffff] uppercase tracking-wide drop-shadow-sm">
-      Gallery
-    </h2>
-
-    <div className="relative group">
-      <button
-        onClick={scrollLeft}
-        className="absolute left-2 top-1/2 -translate-y-1/2 z-30 bg-black/50 hover:bg-st-red text-white p-3 rounded-full backdrop-blur-md transition-all lg:opacity-0 lg:group-hover:opacity-100"
+      {/* ── Gallery Section ── */}
+      <SectionBg
+        src={teamImg}
+        opacity="opacity-60"
+        className="py-24 md:py-32 border-t border-st-red/15 relative overflow-hidden"
       >
-        <ChevronLeft className="w-6 h-6" />
-      </button>
+        <div className="absolute top-20 left-1/2 w-[600px] h-[150px] -translate-x-1/2 bg-st-red/10 blur-[120px] rounded-[100%] pointer-events-none" />
 
-      <div
-        ref={scrollContainerRef}
-        className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
-      >
-        {[
-          { src: "/asset/gallery/1 (1).jpg", alt: "Gallery 1" },
-          { src: "/asset/gallery/1 (2).jpg", alt: "Gallery 2" },
-          { src: "/asset/gallery/1 (3).jpg", alt: "Gallery 3" },
-          { src: "/asset/gallery/1 (4).jpg", alt: "Gallery 4" },
-          { src: "/asset/gallery/1 (5).jpg", alt: "Gallery 5" },
-          { src: "/asset/gallery/1 (6).jpg", alt: "Gallery 6" },
-          { src: "/asset/gallery/1 (7).jpg", alt: "Gallery 7" },
-          { src: "/asset/gallery/1 (8).jpg", alt: "Gallery 8" }
-        ].map((img, i) => (
-          <div
-            key={i}
-            className="shrink-0 w-[85vw] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] snap-center group relative aspect-video overflow-hidden rounded-2xl border border-st-red/20 shadow-xl cursor-default"
-          >
-            <div className="absolute inset-0 bg-[#050505]/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
+        <div className="max-w-7xl mx-auto px-4 text-center relative z-10 w-full overflow-hidden">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-milanesa font-black mb-16 text-transparent bg-clip-text bg-gradient-to-r from-[#ffffff] via-st-red to-[#ffffff] uppercase tracking-wide drop-shadow-sm">
+            Gallery
+          </h2>
 
-            <img
-              src={img.src}
-              alt={img.alt}
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-            />
+          <div className="relative group">
+            <button
+              onClick={scrollLeft}
+              className="absolute left-2 top-1/2 -translate-y-1/2 z-30 bg-black/50 hover:bg-st-red text-white p-3 rounded-full backdrop-blur-md transition-all lg:opacity-0 lg:group-hover:opacity-100"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
 
-            <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-[#050505] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20">
-              
+            <div
+              ref={scrollContainerRef}
+              className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+            >
+              {[
+                { src: "/asset/gallery/1 (1).jpg", alt: "Gallery 1" },
+                { src: "/asset/gallery/1 (2).jpg", alt: "Gallery 2" },
+                { src: "/asset/gallery/1 (3).jpg", alt: "Gallery 3" },
+                { src: "/asset/gallery/1 (4).jpg", alt: "Gallery 4" },
+                { src: "/asset/gallery/1 (5).jpg", alt: "Gallery 5" },
+                { src: "/asset/gallery/1 (6).jpg", alt: "Gallery 6" },
+                { src: "/asset/gallery/1 (7).jpg", alt: "Gallery 7" },
+                { src: "/asset/gallery/1 (8).jpg", alt: "Gallery 8" }
+              ].map((img, i) => (
+                <div
+                  key={i}
+                  className="shrink-0 w-[85vw] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] snap-center group relative aspect-video overflow-hidden rounded-2xl border border-st-red/20 shadow-xl cursor-default"
+                >
+                  <div className="absolute inset-0 bg-[#050505]/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
+
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+
+                  <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-[#050505] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20">
+
+                  </div>
+                </div>
+              ))}
             </div>
-          </div>
-        ))}
-      </div>
 
-      <button
-        onClick={scrollRight}
-        className="absolute right-2 top-1/2 -translate-y-1/2 z-30 bg-black/50 hover:bg-st-red text-white p-3 rounded-full backdrop-blur-md transition-all lg:opacity-0 lg:group-hover:opacity-100"
-      >
-        <ChevronRight className="w-6 h-6" />
-      </button>
-    </div>
-  </div>
-</SectionBg>
+            <button
+              onClick={scrollRight}
+              className="absolute right-2 top-1/2 -translate-y-1/2 z-30 bg-black/50 hover:bg-st-red text-white p-3 rounded-full backdrop-blur-md transition-all lg:opacity-0 lg:group-hover:opacity-100"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+          </div>
+        </div>
+      </SectionBg>
 
 
       {/* ── Team Section ── */}
@@ -590,8 +590,10 @@ const About = () => {
                       { role: 'Academic Secretaries', names: ['RISHALINI U', 'VEDANT SOMA'] },
                       { role: 'Organising Secretaries', names: ['FARHATHUL AFRAA', 'JESWIN ANTONY', 'NANDANA SREEKUMAR'] },
                       { role: 'Treasurer', names: ['AHMED SHAMEER'] },
+                      { role: 'Designing', names: ['LUCKSHANYA', 'DHEEKSHI S', 'LAKSHA S P', 'HARINI G'] },
+                      { role: 'Editing', names: ['ESHITHA SHREE', 'PRAGNYA PRADEEP KUMAR', 'DIYA VINOD', 'Ilakkiya', 'ASHYA ASHOK', 'JANITHA'] },
+                      { role: 'Social Media', names: ['HARINI G'] },
                       { role: 'Presentations', names: ['DIYA VINOD', 'ESHITHA SHREE'] },
-                      { role: 'Editorial Team', names: ['ESHITHA SHREE', 'PRAGNYA PRADEEP KUMAR', 'DIYA VINOD', 'ILLAKIYA', 'ASHYA ASHOK', 'JANITHA'] },
                     ]
                   },
                   {
@@ -599,18 +601,15 @@ const About = () => {
                       { role: 'Quiz Committee', names: ['JANE SARAH JOHN', 'KALANIDHI M', 'MANIKANDAN A'] },
                       { role: 'Speakers Collective', names: ['KALANIDHI M', 'JANE SARAH JOHN', 'JANITHA'] },
                       { role: 'Tamil Mandram', names: ['SADHURTHIKA', 'SRIDHARANISH'] },
-                      { role: 'Overall Workshop Heads', names: ['ASHWIN KUMAR S', 'NIVETHA D', 'NEHA SUNIL', 'SAINITHI B', 'SRI DHARNISH', 'SUNIL KUMAR C M'] },
-                      { role: 'Social Media', names: ['HARINI G'] },
+                      { role: 'Overall Workshop Heads', names: ['ASHWIN KUMAR S', 'NIVETHA D', 'NEHA SUNIL', 'SAINITHI B', 'Sri Dharnish', 'SUNIL KUMAR C M'] },
                     ]
                   },
                   {
                     items: [
-                      { role: 'Registration Committee', names: ['MEIMOZHI', 'LEKHA SHRUTHY R J', 'SHALINI R', 'KARTHIKEYAN'] },
-                      { role: 'Food', names: ['ADHARSH S', 'PRATHYUSH'] },
+                      { role: 'Food', names: ['Adarsh S', 'Pratyush S'] },
                       { role: 'Accommodation', names: ['ARAVINDH B', 'AFLAHA T'] },
                       { role: 'Public Relations', names: ['RASHMIKA T', 'KRISHNASUDHAN'] },
                       { role: 'Banners and Decorations', names: ['DIVYA D'] },
-                      { role: 'Designing', names: ['LUCKSHANYA', 'DHEEKSHI S', 'LAKSHA S P', 'HARINI G'] },
                     ]
                   },
                 ].map((col, ci) => (

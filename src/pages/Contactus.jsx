@@ -22,12 +22,7 @@ const Contacts = [
       { name: "NANDANA SREEKUMAR", phone: "90485 42822" },
     ],
   },
-  {
-    role: "Treasurer",
-    names: [
-      { name: "AHMED SHAMEER", phone: "96336 69164" },
-    ],
-  },
+
   {
     role: "Overall Registration Heads",
     names: [
@@ -38,21 +33,12 @@ const Contacts = [
     ],
   },
   {
-    role: "REGISTRATION COMMITTEE",
-    names: [
-      { name: "MEIMOZHI", phone: "6382866554" },
-      { name: "LEKHA SHRUTHY V K", phone: "9789703487" },
-      { name: "SHALINI R", phone: "9444262579" },
-      { name: "KARTHIKEYAN", phone: "9489532419" },
-    ],
-  },
-  {
     role: "Overall Workshop Heads",
     names: [
       { name: "SUNIL KUMAR C M", phone: "63810 83905" },
       { name: "SAINITHI B", phone: "88386 45832" },
       { name: "NEHA SUNIL", phone: "93604 87652" },
-      { name: "SRI DHARNISH", phone: "99626 54504" },
+      { name: "Sri Dharnish", phone: "99626 54504" },
       { name: "NIVETHA D", phone: "76038 72548" },
       { name: "ASHWIN KUMAR S", phone: "98406 31290" },
     ],
@@ -71,12 +57,29 @@ const Contacts = [
       { name: "DIYA VINOD", phone: "87781 25205" },
       { name: "ESHITA SUDHAKAR", phone: "88380 29901" },
     ],
+  },{
+    role: "Treasurer",
+    names: [
+      { name: "AHMED SHAMEER", phone: "96336 69164" },
+    ],
   },
   {
-    role: "SPEAKERS COLLECTIVE",
+    role: "DESIGNING",
     names: [
-      { name: "KALANIDHI M", phone: "9500078979" },
-      { name: "JANE SARAH JOHN", phone: "7824034859" },
+      { name: "LUCKSHANYA", phone: "8939311539" },
+      { name: "DHEEKSHI S", phone: "9789729409" },
+      { name: "LAKSHA S P", phone: "9600055784" },
+      { name: "HARINI G", phone: "6379004049" },
+    ],
+  },
+  {
+    role: "EDITING",
+    names: [
+      { name: "ESHITHA SHREE", phone: "8838029901" },
+      { name: "PRAGNYA PRADEEP KUMAR", phone: "7305116987" },
+      { name: "DIYA VINOD", phone: "8778125205" },
+      { name: "Ilakkiya", phone: "7845912604" },
+      { name: "ASHYA ASHOK", phone: "9789966052" },
       { name: "JANITHA", phone: "9535218887" },
     ],
   },
@@ -95,6 +98,14 @@ const Contacts = [
     ],
   },
   {
+    role: "SPEAKERS COLLECTIVE",
+    names: [
+      { name: "KALANIDHI M", phone: "9500078979" },
+      { name: "JANE SARAH JOHN", phone: "7824034859" },
+      { name: "JANITHA", phone: "9535218887" },
+    ],
+  },
+  {
     role: "Banners & Decorations",
     names: [
       { name: "DIVYA D", phone: "98401 69188" },
@@ -110,8 +121,8 @@ const Contacts = [
   {
     role: "Food",
     names: [
-      { name: "ADHARSH S", phone: "85907 65094" },
-      { name: "PRATHYUSH", phone: "89030 88587" },
+      { name: "Adarsh S", phone: "85907 65094" },
+      { name: "Pratyush S", phone: "89030 88587" },
     ],
   },
   {
@@ -125,27 +136,7 @@ const Contacts = [
     role: "Tamil Mandram",
     names: [
       { name: "SADHURTHIKA", phone: "95669 00929" },
-      { name: "SRI DHARANISH", phone: "99626 54504" },
-    ],
-  },
-  {
-    role: "DESIGNING  ",
-    names: [
-      { name: "LUCKSHANYA", phone: "8939311539" },
-      { name: "DHEEKSHI S", phone: "9789729409" },
-      { name: "LAKSHA S P", phone: "9600055784" },
-      { name: "HARINI G", phone: "6379004049" },
-    ],
-  },
-  {
-    role: "EDITING   ",
-    names: [
-      { name: "ESHITHA SHREE", phone: "8838029901" },
-      { name: "PRAGNYA PRADEEP KUMAR", phone: "7305116987" },
-      { name: "DIYA VINOD", phone: "8778125205" },
-      { name: "ILLAKIYA", phone: "7845912604" },
-      { name: "ASHYA ASHOK", phone: "9789966052" },
-      { name: "JANITHA", phone: "9535218887" },
+      { name: "Sri DHARANISH", phone: "99626 54504" },
     ],
   },
   {
@@ -232,10 +223,10 @@ const Contactus = () => {
   ================================ */
   return (
     <div className="bg-[#050505] min-h-screen relative overflow-x-hidden">
-      
+
       {/* Galaxy Background layer */}
       <div className="absolute inset-0 z-0 pointer-events-none opacity-30">
-        <Galaxy 
+        <Galaxy
           starSpeed={0.3}
           density={1.5}
           hueShift={220}
@@ -251,99 +242,99 @@ const Contactus = () => {
           image="/asset/hero_sec_for_all/contact_us.png"
         />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mt-12 mb-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mt-12 mb-24">
 
-        <p className="text-3xl sm:text-4xl text-st-red font-bold mb-16 uppercase tracking-[0.3em]">
-          Organising Committee
-        </p>
+          <p className="text-3xl sm:text-4xl text-st-red font-bold mb-16 uppercase tracking-[0.3em]">
+            Organising Committee
+          </p>
 
-        {/* ===============================
+          {/* ===============================
             COMMITTEE GRID
         ================================ */}
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
 
-          {Contacts.map((col, ci) => (
-            <div
-              key={ci}
-              className="group bg-gradient-to-b from-[#0a0a0f]/80 to-[#050505]/90 backdrop-blur-md
+            {Contacts.map((col, ci) => (
+              <div
+                key={ci}
+                className="group bg-gradient-to-b from-[#0a0a0f]/80 to-[#050505]/90 backdrop-blur-md
               border border-red-900/30 rounded-2xl p-8
               hover:border-red-500/60
               hover:shadow-[0_0_25px_rgba(255,0,60,0.25)]
               transition-all duration-500
               hover:-translate-y-2"
-            >
+              >
 
-              {/* ROLE */}
-              <p className="text-red-500 text-base sm:text-lg uppercase tracking-[0.25em] font-bold mb-8 border-b border-red-800/40 pb-3 text-center">
-                {col.role}
-              </p>
+                {/* ROLE */}
+                <p className="text-red-500 text-base sm:text-lg uppercase tracking-[0.25em] font-bold mb-8 border-b border-red-800/40 pb-3 text-center">
+                  {col.role}
+                </p>
 
-              {/* MEMBERS */}
-              <div className="flex flex-col gap-7">
+                {/* MEMBERS */}
+                <div className="flex flex-col gap-7">
 
-                {col.names.map((n, ni) => (
-                  <div key={ni} className="flex flex-col items-center text-center">
+                  {col.names.map((n, ni) => (
+                    <div key={ni} className="flex flex-col items-center text-center">
 
-                    <h4 className="text-xl sm:text-2xl font-bold text-white tracking-wide mb-3 group-hover:text-red-400 transition-colors">
-                      {n.name}
-                    </h4>
+                      <h4 className="text-xl sm:text-2xl font-bold text-white tracking-wide mb-3 group-hover:text-red-400 transition-colors">
+                        {n.name}
+                      </h4>
 
-                    {n.phone && (
-                      <a
-                        href={`tel:+91${n.phone.replace(/\s+/g, "")}`}
-                        className="flex items-center gap-3 bg-black/60 px-5 py-2.5 rounded-full
+                      {n.phone && (
+                        <a
+                          href={`tel:+91${n.phone.replace(/\s+/g, "")}`}
+                          className="flex items-center gap-3 bg-black/60 px-5 py-2.5 rounded-full
                         border border-red-800/40 hover:border-red-500
                         hover:bg-red-500/10 transition-all duration-300"
-                      >
-                        <Phone className="w-5 h-5 text-red-500" />
+                        >
+                          <Phone className="w-5 h-5 text-red-500" />
 
-                        <span className="text-base sm:text-lg font-semibold text-white tracking-wide">
-                          +91 {n.phone}
-                        </span>
-                      </a>
-                    )}
+                          <span className="text-base sm:text-lg font-semibold text-white tracking-wide">
+                            +91 {n.phone}
+                          </span>
+                        </a>
+                      )}
 
-                  </div>
-                ))}
-                                
+                    </div>
+                  ))}
+
+                </div>
+
               </div>
+            ))}
 
-            </div>
-          ))}
+          </div>
 
-        </div>
+          <div className="flex flex-col items-center gap-12 mt-24 mb-32">
 
-        <div className="flex flex-col items-center gap-12 mt-24 mb-32">
-          
-          <p className="text-3xl sm:text-4xl text-st-red font-bold uppercase tracking-[0.3em]">
-            Official Email
-          </p>
+            <p className="text-3xl sm:text-4xl text-st-red font-bold uppercase tracking-[0.3em]">
+              Official Email
+            </p>
 
-          <a
-            href="mailto:Wissendurst26@gmail.com"
-            className="group relative bg-[#0f0f14]/80 backdrop-blur-md
+            <a
+              href="mailto:Wissendurst26@gmail.com"
+              className="group relative bg-[#0f0f14]/80 backdrop-blur-md
             border border-red-900/30 rounded-2xl p-6 sm:p-10
             hover:border-red-500/60
             hover:shadow-[0_0_35px_rgba(255,0,60,0.2)]
             transition-all duration-500
             flex flex-col sm:flex-row items-center gap-6"
-          >
-            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-red-500/10 flex items-center justify-center group-hover:bg-red-500/20 transition-colors">
-              <Mail className="w-8 h-8 sm:w-10 sm:h-10 text-red-500" />
-            </div>
-            
-            <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
-              <span className="text-white font-black text-2xl sm:text-3xl lg:text-4xl tracking-widest group-hover:text-red-400 transition-colors">
-                Wissendurst26@gmail.com
-              </span>
-              <span className="text-red-500/60 font-bold uppercase tracking-[0.2em] mt-2 group-hover:text-red-500 transition-colors">
-                Get in touch with us
-              </span>
-            </div>
-          </a>
+            >
+              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-red-500/10 flex items-center justify-center group-hover:bg-red-500/20 transition-colors">
+                <Mail className="w-8 h-8 sm:w-10 sm:h-10 text-red-500" />
+              </div>
 
-        </div>
+              <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
+                <span className="text-white font-black text-2xl sm:text-3xl lg:text-4xl tracking-widest group-hover:text-red-400 transition-colors">
+                  Wissendurst26@gmail.com
+                </span>
+                <span className="text-red-500/60 font-bold uppercase tracking-[0.2em] mt-2 group-hover:text-red-500 transition-colors">
+                  Get in touch with us
+                </span>
+              </div>
+            </a>
+
+          </div>
         </div>
       </div>
     </div>

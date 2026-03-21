@@ -50,7 +50,7 @@ const debateEvents = [
         image: "/asset/Debate_and_oratory_form/MUN_.jpg",
         description: "Enter a dynamic UNHRC committee where the digital world becomes both a tool and a threat. Delegates must address emerging digital threats such as online harassment, privacy violations, surveillance and data misuse. Balancing human rights with technological advancement, the committee aims to push for innovative, ethical and enforceable solutions to conquer the modern dilemma.",
         multiLinks: [
-            { name: "Registration", url: "https://forms.gle/v9sFWX5ntxeGFtww8" }
+            { name: "Register link", url: "https://forms.gle/v9sFWX5ntxeGFtww8" }
         ],
         sections: [
             {
@@ -406,7 +406,7 @@ const Debateandoratory = () => {
                                                     rel="noreferrer"
                                                     className="w-full"
                                                 >
-                                                    <button className="w-full px-6 py-4 bg-st-red text-black rounded-xl font-title font-black uppercase tracking-widest hover:scale-[1.02] hover:bg-white transition-all shadow-lg flex items-center justify-center gap-3 text-xs">
+                                                    <button className="w-full px-6 py-4 bg-st-red text-white rounded-xl font-title font-black uppercase tracking-widest hover:scale-[1.02] hover:bg-white transition-all shadow-lg flex items-center justify-center gap-3 text-xs">
                                                         {link.name}
                                                     </button>
                                                 </a>

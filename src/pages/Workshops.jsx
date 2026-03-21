@@ -247,7 +247,7 @@ const Workshops = () => {
                 </a>
               ) : (
                 <button className="mt-8 px-10 py-4 bg-white/10 text-white/40 rounded-full font-title font-black uppercase tracking-widest cursor-not-allowed mx-auto border border-white/5">
-                  Registration Opening Soon
+                  Only On-Spot Registration
                 </button>
               )}
             </div>
