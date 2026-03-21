@@ -2,99 +2,80 @@ import React, { useState, useEffect } from "react";
 import HeroSection from "../components/herosection";
 import { Phone, Mail } from "lucide-react";
 import Galaxy from "../components/Galaxy.jsx";
+import { usePerformance } from "../context/PerformanceContext";
 
 /* ===============================
    Organizing Committee Contacts
 ================================ */
 const Contacts = [
   {
-    role: "Academic Secretaries",
+    role: "ACADEMIC SECRETARIES",
     names: [
-      { name: "RISHALINI U", phone: "90429 52723" },
-      { name: "VEDANT SOMA", phone: "63069 06398" },
+      { name: "RISHALINI U", phone: "9042952723" },
+      { name: "VEDANT SOMA", phone: "6306906398" },
     ],
   },
   {
-    role: "Organising Secretaries",
+    role: "ORGANISING SECRETARIES",
     names: [
-      { name: "FARHATHUL AFRAA", phone: "82484 37615" },
-      { name: "JESWIN ANTONY", phone: "98471 76022" },
-      { name: "NANDANA SREEKUMAR", phone: "90485 42822" },
-    ],
-  },
-
-  {
-    role: "Overall Registration Heads",
-    names: [
-      { name: "LEKHA SHRUTHY R J", phone: "97897 03487" },
-      { name: "SHALINI R", phone: "94442 62579" },
-      { name: "KARTHIKEYAN", phone: "94895 32419" },
-      { name: "MEIMOZHI PARI", phone: "63828 66554" },
+      { name: "FARHATHUL AFRAA", phone: "8248437615" },
+      { name: "JESWIN ANTONY", phone: "9847176022" },
+      { name: "NANDANA SREEKUMAR", phone: "9048542822" },
     ],
   },
   {
-    role: "Overall Workshop Heads",
-    names: [
-      { name: "SUNIL KUMAR C M", phone: "63810 83905" },
-      { name: "SAINITHI B", phone: "88386 45832" },
-      { name: "NEHA SUNIL", phone: "93604 87652" },
-      { name: "Sri Dharnish", phone: "99626 54504" },
-      { name: "NIVETHA D", phone: "76038 72548" },
-      { name: "ASHWIN KUMAR S", phone: "98406 31290" },
-    ],
-  },
-  {
-    role: "Overall Quiz Heads",
-    names: [
-      { name: "MANIKANDAN A", phone: "90434 93961" },
-      { name: "JANE SARAH JOHN", phone: "78240 34859" },
-      { name: "KALANIDHI M", phone: "95000 78979" },
-    ],
-  },
-  {
-    role: "Overall Heads of Presentations",
-    names: [
-      { name: "DIYA VINOD", phone: "87781 25205" },
-      { name: "ESHITA SUDHAKAR", phone: "88380 29901" },
-    ],
-  },{
-    role: "Treasurer",
-    names: [
-      { name: "AHMED SHAMEER", phone: "96336 69164" },
-    ],
+    role: "TREASURER",
+    names: [{ name: "AHMED SHAMEER", phone: "9633669164" }],
   },
   {
     role: "DESIGNING",
-    names: [
-      { name: "LUCKSHANYA", phone: "8939311539" },
-      { name: "DHEEKSHI S", phone: "9789729409" },
-      { name: "LAKSHA S P", phone: "9600055784" },
-      { name: "HARINI G", phone: "6379004049" },
-    ],
+    names: [{ name: "LUCKSHANYA", phone: "8939311539" }],
   },
   {
     role: "EDITING",
     names: [
-      { name: "ESHITHA SHREE", phone: "8838029901" },
-      { name: "PRAGNYA PRADEEP KUMAR", phone: "7305116987" },
+      { name: "ESHITA SUDHAKAR", phone: "8838029901" },
+      { name: "PRAGNYA PRADEEPKUMAR", phone: "7305116987" },
       { name: "DIYA VINOD", phone: "8778125205" },
-      { name: "Ilakkiya", phone: "7845912604" },
-      { name: "ASHYA ASHOK", phone: "9789966052" },
-      { name: "JANITHA", phone: "9535218887" },
     ],
   },
   {
-    role: "Social Media",
+    role: "SOCIAL MEDIA",
+    names: [{ name: "HARINI G", phone: "6379004049" }],
+  },
+  {
+    role: "PUBLIC RELATIONS",
     names: [
-      { name: "HARINI G", phone: "63790 04049" },
-      { name: "AISHWARYA K", phone: "86670 56850" },
-      { name: "DEVARAM PRASANNA P", phone: "63794 97166" },
-      { name: "KARTHIKEYAN", phone: "94895 32419" },
-      { name: "KAVYA D K", phone: "63691 85992" },
-      { name: "LAKSHA", phone: "96000 55784" },
-      { name: "NEHA A", phone: "93844 44513" },
-      { name: "NIRANJANA", phone: "94452 44014" },
-      { name: "SWATHIE SRIVIDHYA", phone: "95000 16593" },
+      { name: "KRISHNASUDHAN", phone: "7010747288" },
+      { name: "RASHMIKA T", phone: "7358665375" },
+    ],
+  },
+  {
+    role: "OVERALL REGISTRATION HEADS",
+    names: [
+      { name: "KARTHIKEYAN", phone: "9489532419" },
+      { name: "LEKHA SHRUTHY R J", phone: "9789703487" },
+      { name: "MEIMOZHI PARI", phone: "6382866554" },
+      { name: "SHALINI R", phone: "9444262579" },
+    ],
+  },
+  {
+    role: "OVERALL WORKSHOP HEADS",
+    names: [
+      { name: "ASHWIN KUMAR S", phone: "9840631290" },
+      { name: "NIVETHA D", phone: "7603872548" },
+      { name: "NEHA SUNIL", phone: "9360487652" },
+      { name: "SAINITHI B", phone: "8838645832" },
+      { name: "SRI DHARNISH", phone: "9962654504" },
+      { name: "SUNIL KUMAR C M", phone: "6381083905" },
+    ],
+  },
+  {
+    role: "OVERALL QUIZ HEADS",
+    names: [
+      { name: "JANE SARAH JOHN", phone: "7824034859" },
+      { name: "KALANIDHI M", phone: "9500078979" },
+      { name: "MANIKANDAN A", phone: "9043493961" },
     ],
   },
   {
@@ -106,49 +87,41 @@ const Contacts = [
     ],
   },
   {
-    role: "Banners & Decorations",
-    names: [
-      { name: "DIVYA D", phone: "98401 69188" },
-    ],
-  },
-  {
-    role: "Public Relations",
-    names: [
-      { name: "RASHMIKA T", phone: "73586 65375" },
-      { name: "KRISHNASUDHAN", phone: "70107 47288" },
-    ],
-  },
-  {
-    role: "Food",
-    names: [
-      { name: "Adarsh S", phone: "85907 65094" },
-      { name: "Pratyush S", phone: "89030 88587" },
-    ],
-  },
-  {
-    role: "Accommodation",
-    names: [
-      { name: "ARAVINDH B", phone: "94895 44801" },
-      { name: "AFLAHA T", phone: "82817 57052" },
-    ],
-  },
-  {
-    role: "Tamil Mandram",
-    names: [
-      { name: "SADHURTHIKA", phone: "95669 00929" },
-      { name: "Sri DHARANISH", phone: "99626 54504" },
-    ],
-  },
-  {
-    role: "PRESENTATIONS ",
+    role: "OVERALL HEADS OF PRESENTATIONS",
     names: [
       { name: "DIYA VINOD", phone: "8778125205" },
-      { name: "ESHITHA SHREE", phone: "8838029901" }
+      { name: "ESHITA SUDHAKAR", phone: "8838029901" },
+    ],
+  },
+  {
+    role: "TAMIL MANDRAM",
+    names: [
+      { name: "SADHURTHIKA", phone: "9566900929" },
+      { name: "SRI DHARNISH", phone: "9962654504" },
+    ],
+  },
+  {
+    role: "BANNERS AND DECORATIONS",
+    names: [{ name: "DIVYA D", phone: "9840169188" }],
+  },
+  {
+    role: "FOOD",
+    names: [
+      { name: "ADARSH S", phone: "8590765094" },
+      { name: "PRATYUSH S", phone: "8903088587" },
+    ],
+  },
+  {
+    role: "ACCOMMODATION",
+    names: [
+      { name: "AFLAHA T", phone: "8281757052" },
+      { name: "ARAVINDH B", phone: "9489544801" },
     ],
   },
 ];
 
 const Contactus = () => {
+  const { isLowPerf } = usePerformance();
   const [showIntro, setShowIntro] = useState(true);
 
   useEffect(() => {
@@ -257,12 +230,9 @@ const Contactus = () => {
             {Contacts.map((col, ci) => (
               <div
                 key={ci}
-                className="group bg-gradient-to-b from-[#0a0a0f]/80 to-[#050505]/90 backdrop-blur-md
-              border border-red-900/30 rounded-2xl p-8
-              hover:border-red-500/60
-              hover:shadow-[0_0_25px_rgba(255,0,60,0.25)]
-              transition-all duration-500
-              hover:-translate-y-2"
+                className={`group ${isLowPerf ? 'bg-[#0f0f14] border-white/10 shadow-sm' : 'bg-gradient-to-b from-[#0a0a0f]/80 to-[#050505]/90 backdrop-blur-md border-red-900/30 hover:border-red-500/60 hover:shadow-[0_0_25px_rgba(255,0,60,0.25)] hover:-translate-y-2'} 
+              border rounded-2xl p-8
+              transition-all duration-500`}
               >
 
                 {/* ROLE */}
@@ -313,12 +283,10 @@ const Contactus = () => {
 
             <a
               href="mailto:Wissendurst26@gmail.com"
-              className="group relative bg-[#0f0f14]/80 backdrop-blur-md
-            border border-red-900/30 rounded-2xl p-6 sm:p-10
-            hover:border-red-500/60
-            hover:shadow-[0_0_35px_rgba(255,0,60,0.2)]
+              className={`group relative ${isLowPerf ? 'bg-[#0f0f14] border-white/10 shadow-sm' : 'bg-[#0f0f14]/80 backdrop-blur-md border-red-900/30 hover:border-red-500/60 hover:shadow-[0_0_35px_rgba(255,0,60,0.2)]'} 
+            border rounded-2xl p-6 sm:p-10
             transition-all duration-500
-            flex flex-col sm:flex-row items-center gap-6"
+            flex flex-col sm:flex-row items-center gap-6`}
             >
               <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-red-500/10 flex items-center justify-center group-hover:bg-red-500/20 transition-colors">
                 <Mail className="w-8 h-8 sm:w-10 sm:h-10 text-red-500" />

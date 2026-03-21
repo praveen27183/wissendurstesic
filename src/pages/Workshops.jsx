@@ -33,9 +33,9 @@ const paintingBackgrounds = [
       "/asset/Workshops/Orthopaedics_Walkmans_Canals.jpg",
 ];
 
-const WorkshopCard = memo(({ workshop, index, bg, onClick }) => (
+const WorkshopCard = memo(({ workshop, index, bg, onClick, isLowPerf }) => (
   <div
-    className="group flex flex-col bg-[rgba(10,10,15,0.85)] cursor-pointer hover:-translate-y-1 transition-transform duration-300 border border-st-red/20 rounded-xl overflow-hidden shadow-lg"
+    className={`group flex flex-col ${isLowPerf ? 'bg-[#0f0f14] border-white/10 shadow-sm' : 'bg-[rgba(10,10,15,0.85)] border-st-red/20 hover:-translate-y-1 shadow-lg'} cursor-pointer transition-transform duration-300 border rounded-xl overflow-hidden`}
     onClick={() => onClick(index)}
   >
     <div className="relative w-full aspect-video overflow-hidden">
@@ -46,7 +46,7 @@ const WorkshopCard = memo(({ workshop, index, bg, onClick }) => (
       />
       <div className="absolute inset-0 bg-gradient-to-t from-[rgba(10,10,15,0.85)] to-transparent"></div>
       
-      <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full border border-st-red/30 z-10 transition-transform group-hover:scale-105">
+      <div className={`absolute top-4 right-4 ${isLowPerf ? 'bg-black border-white/20' : 'bg-black/60 backdrop-blur-md border-st-red/30'} px-3 py-1.5 rounded-full border z-10 transition-transform group-hover:scale-105`}>
           <span className="text-white text-[12px] font-bold uppercase tracking-wider font-title flex items-center gap-2">
               {workshop.date ? workshop.date.split(',')[0] : "TBD"}
           </span>
@@ -200,6 +200,7 @@ const Workshops = () => {
                   index={index}
                   bg={paintingBackgrounds[index % paintingBackgrounds.length]}
                   onClick={setDetailIndex}
+                  isLowPerf={isLowPerf}
                 />
               ))}
             </div>
@@ -218,7 +219,7 @@ const Workshops = () => {
               alt=""
               className="absolute inset-0 w-full h-full object-cover transition-all duration-700"
             />
-            <div className="absolute inset-0 bg-black/60"></div>
+            <div className={`absolute inset-0 ${isLowPerf ? 'bg-black/80' : 'bg-black/60'}`}></div>
 
             {/* Close button */}
             <button

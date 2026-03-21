@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { usePerformance } from '../context/PerformanceContext';
 
 const OptimizedImage = ({ 
   src, 
@@ -9,22 +10,35 @@ const OptimizedImage = ({
   height,
   ...props 
 }) => {
-  // Assuming ViteImageOptimizer handles WebP conversion, 
-  // we can potentially append .webp or use <picture> if we have multiple versions.
-  // For now, let's focus on the essential performance tags.
+  const { isLowPerf } = usePerformance();
+  const [error, setError] = useState(false);
+
+  // For low-performance, we ensure strictly lazy loading and no fancy decoding
+  const loadingStrategy = isLowPerf ? "lazy" : (priority ? "eager" : "lazy");
+  const decodingStrategy = isLowPerf ? "async" : (priority ? "sync" : "async");
+
+  if (error) {
+    return (
+      <div 
+        className={`${className} bg-st-dark/50 flex items-center justify-center border border-white/10`}
+        style={{ width, height }}
+      >
+        <span className="text-[10px] text-white/40 uppercase tracking-widest">Image Unavailable</span>
+      </div>
+    );
+  }
 
   return (
     <picture>
-      {/* If we have specific webp sources we could add them here */}
       <img
         src={src}
         alt={alt}
-        className={className}
+        className={`${className} ${isLowPerf ? '' : 'transition-opacity duration-500'}`}
         width={width}
         height={height}
-        loading={priority ? "eager" : "lazy"}
-        decoding={priority ? "sync" : "async"}
-        fetchpriority={priority ? "high" : "auto"}
+        loading={loadingStrategy}
+        decoding={decodingStrategy}
+        onError={() => setError(true)}
         {...props}
       />
     </picture>

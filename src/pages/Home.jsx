@@ -35,10 +35,10 @@ const Home = () => {
 
         <div className="relative z-10 text-center px-4 max-w-6xl mx-auto flex flex-col items-center mt-20 md:mt-0 pb-10 md:pb-0">
           <motion.div 
-            initial={{ opacity: 0, scale: 0.9, filter: 'blur(10px)' }}
+            initial={isLowPerf ? { opacity: 0 } : { opacity: 0, scale: 0.9, filter: 'blur(10px)' }}
             animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
-            className="mb-6 drop-shadow-[0_0_20px_rgba(255,0,60,0.8)] tracking-tight"
+            transition={{ duration: isLowPerf ? 0.5 : 1.2, ease: "easeOut" }}
+            className={`mb-6 ${isLowPerf ? '' : 'drop-shadow-[0_0_20px_rgba(255,0,60,0.8)]'} tracking-tight`}
           >
             <GlitchText className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-title font-black text-white">
               WISSENDURST '26
@@ -238,7 +238,7 @@ const Home = () => {
             <img
               src="/asset/logo/wissennobg.png"
               alt="Wissendurst Logo"
-              className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 object-contain drop-shadow-[0_0_20px_rgba(255,0,60,0.2)] animate-float relative z-10 hover:drop-shadow-[0_0_30px_rgba(255,0,60,0.6)] transition-all duration-500"
+              className={`w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 object-contain ${isLowPerf ? 'drop-shadow-sm' : 'drop-shadow-[0_0_20px_rgba(255,0,60,0.2)] animate-float hover:drop-shadow-[0_0_30px_rgba(255,0,60,0.6)]'} relative z-10 transition-all duration-500`}
               loading="lazy"
               decoding="async"
             />
@@ -270,7 +270,7 @@ const Home = () => {
             transition={{ delay: 0.2 }}
             className="relative p-[1px] bg-gradient-to-b from-[#2563ff]/20 to-transparent rounded-2xl group hover:from-[#ff003c]/40 transition-all duration-700"
           >
-            <div className="bg-[rgba(10,10,15,0.85)] p-6 sm:p-8 md:p-14 rounded-2xl backdrop-blur-xl space-y-4 md:space-y-6 text-[#cbd5e1] text-sm sm:text-base md:text-xl leading-relaxed font-body text-justify shadow-[0_0_30px_rgba(255,0,60,0.1)] relative overflow-hidden">
+            <div className={`${isLowPerf ? 'bg-black border border-white/10' : 'bg-[rgba(10,10,15,0.85)] border border-[rgba(255,0,60,0.25)] backdrop-blur-xl shadow-[0_0_30px_rgba(255,0,60,0.1)]'} p-6 sm:p-8 md:p-14 rounded-2xl space-y-4 md:space-y-6 text-[#cbd5e1] text-sm sm:text-base md:text-xl leading-relaxed font-body text-justify relative overflow-hidden`}>
                 <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-[0.03] pointer-events-none"></div>
               <p className="relative z-10">
                 <span className="text-4xl md:text-5xl text-white group-hover:text-st-red transition-colors font-title font-black float-left mr-2 md:mr-3 mt-1 leading-none drop-shadow-[0_0_10px_rgba(255,255,255,0.4)]">W</span>e, the Organising Committee of WISSENDURST '26, take immense pleasure in welcoming you to this year's academic festival, hosted by ESIC Medical College, Chennai.

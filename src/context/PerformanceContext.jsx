@@ -23,8 +23,7 @@ export const PerformanceProvider = ({ children }) => {
     };
 
     checkPerformance();
-    window.addEventListener('resize', checkPerformance);
-    return () => window.removeEventListener('resize', checkPerformance);
+    return () => {};
   }, []);
 
   return (

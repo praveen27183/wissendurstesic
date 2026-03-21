@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { useState, useEffect, lazy, Suspense } from 'react';
 import { PerformanceProvider } from './context/PerformanceContext';
+import { Analytics } from '@vercel/analytics/react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import IntroAnimation from './components/IntroAnimation';
@@ -46,6 +47,7 @@ function App() {
   return (
     <PerformanceProvider>
       <Router>
+        <Analytics />
         <SplashCursor />
         <ScrollToTop />
         {showIntro ? (

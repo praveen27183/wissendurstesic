@@ -3,29 +3,31 @@ export const isLowPerformanceDevice = () => {
 
   const ua = navigator.userAgent;
   const isAndroid = /Android/i.test(ua);
+  const isIos = /iPhone|iPad|iPod/i.test(ua);
+  const isDesktop = !/Mobi|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua);
   
   // Basic hardware checks
   const mem = navigator.deviceMemory || 8; // GB
   const cpu = navigator.hardwareConcurrency || 8; // cores
   
-  // Screen width check
-  const isMobile = window.innerWidth <= 768;
-
-  // Conditions for low performance mode:
-  // 1. Android devices that are not "high-end" (less than 4GB RAM or 4 cores)
-  // 2. Any mobile device with very low RAM (less than 2GB)
-  // 3. Optional: manual override via URL param ?perf=low
-  
+  // Manual override via URL param ?perf=low
   const urlParams = new URLSearchParams(window.location.search);
   if (urlParams.get('perf') === 'low') return true;
+  if (urlParams.get('perf') === 'high') return false;
 
-  if (isAndroid) {
-    // Android is often more sensitive to heavy effects even on mid-range hardware
-    return mem < 4 || cpu < 4 || isMobile;
+  // Requirements:
+  // - On iOS and Desktop (PC): Use FULL UI
+  // - On low-end Android devices (RAM <= 4GB): Use LIGHTWEIGHT UI
+  
+  if (isIos || isDesktop) {
+    return false;
   }
 
-  // Non-Android but very low end
-  if (mem <= 2 || cpu <= 2) return true;
+  if (isAndroid) {
+    // Android + low RAM (<= 4GB) → fallback mode
+    return mem <= 4;
+  }
 
-  return false;
+  // Fallback for other mobile devices
+  return mem < 4 || cpu < 4;
 };

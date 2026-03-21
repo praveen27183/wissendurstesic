@@ -10,7 +10,7 @@ import { usePerformance } from '../context/PerformanceContext';
 const debateEvents = [
     {
         id: 3,
-        title: "Tamil Debate / பட்டிமன்றம்",
+        title: "Tamil Debate / விவாத மேடை",
         subtitle: "அறிவரங்கம் 26'",
         date: "28.04.2026",
         image: "/asset/Debate_and_oratory_form/Tamil_debate_.jpg",

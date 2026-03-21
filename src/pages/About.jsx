@@ -24,6 +24,7 @@ const SectionBg = ({ src, opacity = 'opacity-20', children, className = '' }) =>
 );
 
 const About = () => {
+  const { isLowPerf } = usePerformance();
   const [showIntro, setShowIntro] = useState(true);
   const scrollContainerRef = useRef(null);
 
@@ -152,7 +153,9 @@ const About = () => {
 
 
       {/* Subtle Ambient Glow Effect inside Background */}
-      <div className="absolute top-0 left-1/2 w-full max-w-4xl h-[30vh] -translate-x-1/2 bg-st-red/10 blur-[120px] rounded-[100%] pointer-events-none" />
+      {!isLowPerf && (
+        <div className="absolute top-0 left-1/2 w-full max-w-4xl h-[30vh] -translate-x-1/2 bg-st-red/10 blur-[120px] rounded-[100%] pointer-events-none" />
+      )}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col gap-24">
 
@@ -161,8 +164,10 @@ const About = () => {
 
           {/* Wissendurst Context Card */}
           <div className="relative group">
-            <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-white/0 rounded-3xl blur-md transition-all duration-700 group-hover:bg-white/10" />
-            <div className="relative bg-[#1a0f0a]/60 backdrop-blur-xl border border-st-red/20 shadow-2xl rounded-3xl p-8 md:p-12 transition-all duration-500 hover:border-st-red/40 hover:shadow-[0_0_40px_rgba(255,0,60,0.1)]">
+            {!isLowPerf && (
+              <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-white/0 rounded-3xl blur-md transition-all duration-700 group-hover:bg-white/10" />
+            )}
+            <div className={`relative ${isLowPerf ? 'bg-[#0f0f14] border border-white/10 shadow-sm' : 'bg-[#1a0f0a]/60 backdrop-blur-xl border border-st-red/20 shadow-2xl'} rounded-3xl p-8 md:p-12 transition-all duration-500 hover:border-st-red/40 hover:shadow-[0_0_40px_rgba(255,0,60,0.1)]`}>
 
               <h2 className="text-4xl md:text-5xl lg:text-5xl font-milanesa font-black mb-8 text-transparent bg-clip-text bg-gradient-to-r from-[#ffffff] via-st-red to-[#ffffff] uppercase tracking-wide drop-shadow-sm">
                 Wissendurst 2026
@@ -216,8 +221,10 @@ const About = () => {
 
           {/* Note From Committee Glass Card */}
           <div className="group relative h-full flex flex-col">
-            <div className="absolute inset-0 bg-gradient-to-b from-st-red/5 to-transparent rounded-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none" />
-            <div className="relative h-full bg-[#1a0f0a]/60 backdrop-blur-xl border border-st-red/15 shadow-xl rounded-3xl p-8 md:p-10 transition-all duration-500 hover:border-st-red/40 hover:-translate-y-2 flex flex-col">
+            {!isLowPerf && (
+              <div className="absolute inset-0 bg-gradient-to-b from-st-red/5 to-transparent rounded-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none" />
+            )}
+            <div className={`relative h-full ${isLowPerf ? 'bg-[#0f0f14] border border-white/10 shadow-sm' : 'bg-[#1a0f0a]/60 backdrop-blur-xl border border-st-red/15 shadow-xl'} rounded-3xl p-8 md:p-10 transition-all duration-500 hover:border-st-red/40 hover:-translate-y-2 flex flex-col`}>
               <h2 className="text-2xl md:text-3xl font-milanesa font-black mb-6 text-st-red uppercase tracking-wide drop-shadow-sm">
                 Note from the Committee
               </h2>
@@ -240,8 +247,10 @@ const About = () => {
 
           {/* About ESIC MCH Glass Card */}
           <div className="group relative h-full flex flex-col">
-            <div className="absolute inset-0 bg-gradient-to-b from-st-red/5 to-transparent rounded-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none" />
-            <div className="relative h-full bg-[#1a0f0a]/60 backdrop-blur-xl border border-st-red/15 shadow-xl rounded-3xl p-8 md:p-10 transition-all duration-500 hover:border-st-red/40 hover:-translate-y-2 flex flex-col">
+            {!isLowPerf && (
+              <div className="absolute inset-0 bg-gradient-to-b from-st-red/5 to-transparent rounded-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none" />
+            )}
+            <div className={`relative h-full ${isLowPerf ? 'bg-[#0f0f14] border border-white/10 shadow-sm' : 'bg-[#1a0f0a]/60 backdrop-blur-xl border border-st-red/15 shadow-xl'} rounded-3xl p-8 md:p-10 transition-all duration-500 hover:border-st-red/40 hover:-translate-y-2 flex flex-col`}>
               <h2 className="text-2xl md:text-3xl font-milanesa font-black mb-6 text-st-red uppercase tracking-wide drop-shadow-sm">
                 About ESIC MCH, Chennai
               </h2>
@@ -583,54 +592,60 @@ const About = () => {
               </p>
 
               {/* Committee Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16 max-w-6xl mx-auto text-center md:text-left">
-                {[
-                  {
-                    items: [
-                      { role: 'Academic Secretaries', names: ['RISHALINI U', 'VEDANT SOMA'] },
-                      { role: 'Organising Secretaries', names: ['FARHATHUL AFRAA', 'JESWIN ANTONY', 'NANDANA SREEKUMAR'] },
-                      { role: 'Treasurer', names: ['AHMED SHAMEER'] },
-                      { role: 'Designing', names: ['LUCKSHANYA', 'DHEEKSHI S', 'LAKSHA S P', 'HARINI G'] },
-                      { role: 'Editing', names: ['ESHITHA SHREE', 'PRAGNYA PRADEEP KUMAR', 'DIYA VINOD', 'Ilakkiya', 'ASHYA ASHOK', 'JANITHA'] },
-                      { role: 'Social Media', names: ['HARINI G'] },
-                      { role: 'Presentations', names: ['DIYA VINOD', 'ESHITHA SHREE'] },
-                    ]
-                  },
-                  {
-                    items: [
-                      { role: 'Quiz Committee', names: ['JANE SARAH JOHN', 'KALANIDHI M', 'MANIKANDAN A'] },
-                      { role: 'Speakers Collective', names: ['KALANIDHI M', 'JANE SARAH JOHN', 'JANITHA'] },
-                      { role: 'Tamil Mandram', names: ['SADHURTHIKA', 'SRIDHARANISH'] },
-                      { role: 'Overall Workshop Heads', names: ['ASHWIN KUMAR S', 'NIVETHA D', 'NEHA SUNIL', 'SAINITHI B', 'Sri Dharnish', 'SUNIL KUMAR C M'] },
-                    ]
-                  },
-                  {
-                    items: [
-                      { role: 'Food', names: ['Adarsh S', 'Pratyush S'] },
-                      { role: 'Accommodation', names: ['ARAVINDH B', 'AFLAHA T'] },
-                      { role: 'Public Relations', names: ['RASHMIKA T', 'KRISHNASUDHAN'] },
-                      { role: 'Banners and Decorations', names: ['DIVYA D'] },
-                    ]
-                  },
-                ].map((col, ci) => (
-                  <div key={ci} className="flex flex-col gap-12">
-                    {col.items.map((item, ii) => (
-                      <div key={ii} className="flex flex-col pb-4">
-                        <p className="text-sm border-b border-st-red/30 pb-2 inline-block md:w-full w-3/4 mx-auto md:mx-0 text-st-red uppercase tracking-[0.2em] font-bold mb-4">
-                          {item.role}
-                        </p>
-                        <div className="flex flex-col gap-2">
-                          {item.names.map((n, ni) => (
-                            <h4 key={ni} className="text-lg sm:text-xl lg:text-2xl font-black uppercase text-[#ffffff]">
-                              {n}
-                            </h4>
-                          ))}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                ))}
-              </div>
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16 max-w-6xl mx-auto text-center">
+
+  {[
+    // Row 1
+    { role: "Academic Secretaries", names: ["RISHALINI U", "VEDANT SOMA"] },
+    { role: "Organising Secretaries", names: ["FARHATHUL AFRAA", "JESWIN ANTONY", "NANDANA SREEKUMAR"] },
+    { role: "Treasurer", names: ["AHMED SHAMEER"] },
+
+    // Row 2
+    { role: "Designing", names: ["LUCKSHANYA", "DHEEKSHI S", "LAKSHA S P", "HARINI G"] },
+    { role: "Editing", names: ["ESHITA SUDHAKAR", "PRAGNYA PRADEEP KUMAR", "DIYA VINOD", "ASHYA ASHOK", "ILAKKIYA", "JANITHA P"] },
+    { role: "Social Media", names: ["HARINI G", "AISHWARYA K", "DEVARAM PRASANNA P", "KARTHIKEYAN", "KAVYA D K", "LAKSHA S P", "NEHA A", "NIRANJANA", "SWATHIE SRIVIDHYA"] },
+
+    // Row 3
+    { role: "Public Relations", names: ["KRISHNASUDHAN", "RASHMIKA T"] },
+    { role: "Overall Registration Heads", names: ["KARTHIKEYAN", "LEKHA SHRUTHY R J", "MEIMOZHI PARI", "SHALINI R"] },
+    { role: "Overall Workshop Heads", names: ["ASHWIN KUMAR S", "NIVETHA D", "NEHA SUNIL", "SAINITHI B", "SRI DHARNISH", "SUNIL KUMAR C M"] },
+
+    // Row 4
+    { role: "Overall Quiz Heads", names: ["JANE SARAH JOHN", "KALANIDHI M", "MANIKANDAN A"] },
+    { role: "Speakers Collective", names: ["KALANIDHI M", "JANE SARAH JOHN", "JANITHA"] },
+    { role: "Overall Heads of Presentations", names: ["DIYA VINOD", "ESHITA SUDHAKAR"] },
+
+    // Row 5
+    { role: "Tamil Mandram", names: ["SADHURTHIKA", "SRI DHARNISH"] },
+    { role: "Banners and Decorations", names: ["DIVYA D"] },
+    { role: "Food", names: ["ADARSH S", "PRATYUSH S"] },
+
+    // Row 6
+    { role: "Accommodation", names: ["ARAVINDH B", "AFLAHA T"] },
+
+  ].map((item, ii) => (
+    <div key={ii} className={`flex flex-col p-6 rounded-2xl ${isLowPerf ? 'bg-[#0f0f14] border border-white/10' : ''}`}>
+      
+      {/* Role */}
+      <p className="text-sm border-b border-st-red/30 pb-2 text-st-red uppercase tracking-[0.2em] font-bold mb-4">
+        {item.role}
+      </p>
+
+      {/* Names */}
+      <div className="flex flex-col gap-2">
+        {item.names.map((n, ni) => (
+          <h4
+            key={ni}
+            className="text-lg sm:text-xl lg:text-2xl font-black uppercase text-[#ffffff]"
+          >
+            {n}
+          </h4>
+        ))}
+      </div>
+
+    </div>
+  ))}
+</div>
             </div>
 
           </div>

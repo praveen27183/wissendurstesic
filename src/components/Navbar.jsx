@@ -3,12 +3,14 @@ import { useState, useEffect } from "react";
 import { X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { navDropdownData } from "../data/navData";
+import { usePerformance } from "../context/PerformanceContext";
 
 const Navbar = () => {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const { isLowPerf } = usePerformance();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -75,7 +77,12 @@ const Navbar = () => {
   return (
     <>
       {/* Navbar */}
-      <nav className={`fixed w-full top-0 left-0 z-50 transition-all duration-500 ${scrolled ? 'bg-[#0f0f14]/90 backdrop-blur-md border-b border-st-red/20 shadow-[0_10px_30px_rgba(255,0,60,0.15)] py-2' : 'bg-transparent py-4'}`}>
+      <nav className={`fixed w-full top-0 left-0 z-50 transition-all duration-500 ${
+        scrolled 
+          ? (isLowPerf 
+              ? 'bg-black/95 border-b border-white/10 shadow-sm py-2' 
+              : 'bg-[#0f0f14]/90 backdrop-blur-md border-b border-st-red/20 shadow-[0_10px_30px_rgba(255,0,60,0.15)] py-2') 
+          : 'bg-transparent py-4'}`}>
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="flex justify-between items-center h-14 md:h-20 w-full gap-8">
 
@@ -132,7 +139,7 @@ const Navbar = () => {
                        window.scrollTo({ top: 0, behavior: 'instant' });
                        setActiveDropdown(null);
                     }}
-                    className={`relative text-[10px] xl:text-[11px] uppercase font-bold transition whitespace-nowrap px-2 xl:px-3 py-1 group rounded-md flex items-center gap-1 ${isActive(link.to) ? 'text-white bg-st-red/10' : 'text-[#cbd5e1] hover:text-white hover:bg-white/5'}`}
+                    className={`relative text-[13px] xl:text-[14px] uppercase font-bold transition whitespace-nowrap px-2 xl:px-3 py-1 group rounded-md flex items-center gap-1 ${isActive(link.to) ? 'text-white bg-st-red/10' : 'text-[#cbd5e1] hover:text-white hover:bg-white/5'}`}
                   >
                     {link.label}
                     {link.dropdownKey && (
@@ -161,7 +168,7 @@ const Navbar = () => {
                                   window.scrollTo({ top: 0, behavior: 'instant' });
                                   setActiveDropdown(null);
                                 }}
-                                className="block px-6 py-3 text-[11px] text-gray-300 hover:text-white hover:bg-st-red/10 border-b border-white/5 last:border-0 transition-colors uppercase tracking-wider font-bold"
+                                className="block px-6 py-3 text-[13px] text-gray-300 hover:text-white hover:bg-st-red/10 border-b border-white/5 last:border-0 transition-colors uppercase tracking-wider font-bold"
                               >
                                 {item.title}
                               </Link>
