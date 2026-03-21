@@ -77,12 +77,7 @@ const Navbar = () => {
   return (
     <>
       {/* Navbar */}
-      <nav className={`fixed w-full top-0 left-0 z-50 transition-all duration-500 ${
-        scrolled 
-          ? (isLowPerf 
-              ? 'bg-black/95 border-b border-white/10 shadow-sm py-2' 
-              : 'bg-[#0f0f14]/90 backdrop-blur-md border-b border-st-red/20 shadow-[0_10px_30px_rgba(255,0,60,0.15)] py-2') 
-          : 'bg-transparent py-4'}`}>
+      <nav className={`fixed w-full top-0 left-0 z-50 transition-all duration-500 bg-[#0f0f14]/90 backdrop-blur-md border-b border-st-red/20 shadow-[0_10px_30px_rgba(255,0,60,0.15)] py-2`}>
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="flex justify-between items-center h-14 md:h-20 w-full gap-8">
 

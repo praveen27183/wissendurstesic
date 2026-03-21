@@ -14,7 +14,7 @@ export const PerformanceProvider = ({ children }) => {
     const checkPerformance = () => {
       const lowPerf = isLowPerformanceDevice();
       setIsLowPerf(lowPerf);
-      
+
       if (lowPerf) {
         document.documentElement.classList.add('is-low-perf');
       } else {
