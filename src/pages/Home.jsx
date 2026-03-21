@@ -11,7 +11,7 @@ import { usePerformance } from '../context/PerformanceContext';
 
 const Home = () => {
   const { isLowPerf } = usePerformance();
-  
+
   return (
     <div className="min-h-screen font-body bg-[#0a0a0a] text-gray-200 overflow-x-hidden">
       {/* Hero Section */}
@@ -25,7 +25,7 @@ const Home = () => {
         <div className={`absolute inset-0 z-[1] ${isLowPerf ? 'bg-[#0a0a0a]/90' : 'bg-[#0a0a0a]/80 backdrop-blur-[2px]'}`}></div>
 
         <div className="absolute inset-0 z-0 pointer-events-none opacity-40">
-          <Galaxy 
+          <Galaxy
             starSpeed={0.2}
             density={1.1}
             hueShift={200}
@@ -34,7 +34,7 @@ const Home = () => {
         </div>
 
         <div className="relative z-10 text-center px-4 max-w-6xl mx-auto flex flex-col items-center mt-20 md:mt-0 pb-10 md:pb-0">
-          <motion.div 
+          <motion.div
             initial={isLowPerf ? { opacity: 0 } : { opacity: 0, scale: 0.9, filter: 'blur(10px)' }}
             animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
             transition={{ duration: isLowPerf ? 0.5 : 1.2, ease: "easeOut" }}
@@ -45,7 +45,7 @@ const Home = () => {
             </GlitchText>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8, duration: 1 }}
@@ -58,7 +58,7 @@ const Home = () => {
             <div className="h-[2px] w-8 md:w-16 bg-st-red shadow-[0_0_10px_rgba(255,0,60,1)]"></div>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.0, duration: 0.2 }}
@@ -82,10 +82,10 @@ const Home = () => {
                 </StarBorder>
               </motion.div>
             </Link>
-            <a 
-              href="https://drive.google.com/file/d/1RPLAc9NQObbfb3Cz_5VuYbagoFcm2ERD/view?usp=drivesdk" 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              href="https://drive.google.com/file/d/1RPLAc9NQObbfb3Cz_5VuYbagoFcm2ERD/view?usp=drivesdk"
+              target="_blank"
+              rel="noopener noreferrer"
               className="col-span-2 sm:col-span-1 w-full sm:w-auto"
             >
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full">
@@ -103,9 +103,9 @@ const Home = () => {
       {/* Registrations Section */}
       <section className="py-12 md:py-32 relative bg-st-secondary border-y border-st-blue/20 shadow-[0_0_40px_rgba(37,99,255,0.1)] z-10">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#050505]/40 via-st-secondary to-[#050505]"></div>
-        
+
         <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10 text-center">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -118,28 +118,28 @@ const Home = () => {
             >
               Registrations Open
             </GradientText>
-           
+
           </motion.div>
           <div className="flex items-center justify-center gap-4 mb-16">
- <GradientText
+            <GradientText
               colors={['#ffffff', '#ff003c', '#ffffff']}
               animationSpeed={6}
               className="text-4xl sm:text-2xl md:text-3xl font-milanesa font-black uppercase drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]"
             >
-              Explore 
+              Explore
             </GradientText>
-            </div>
+          </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto">
             {/* Explore Quizzes */}
             <ElectricBorder color="#ff003c" speed={1} chaos={0.12} borderRadius={16} className="h-full">
               <Link to="/quizzes">
-                <motion.div 
+                <motion.div
                   whileHover={{ scale: 1.02, y: -5 }}
                   className="group relative bg-[#050505]/60 border border-st-red/30 rounded-2xl p-6 md:p-8 overflow-hidden backdrop-blur-sm transition-all shadow-[0_0_20px_rgba(255,0,60,0.05)] hover:shadow-[0_0_30px_rgba(255,0,60,0.3)] hover:border-st-red h-full flex flex-col justify-center"
                 >
                   <div className="absolute inset-0 bg-st-red/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <h3 className="text-xl md:text-2xl font-title font-bold text-white uppercase tracking-widest group-hover:text-st-red transition-colors flex items-center justify-center gap-2 text-center">
-                     <span className="text-st-red">Quizzes</span>
+                    <span className="text-st-red">Quizzes</span>
                   </h3>
                 </motion.div>
               </Link>
@@ -148,7 +148,7 @@ const Home = () => {
             {/* Explore Academic Events */}
             <ElectricBorder color="#ff003c" speed={1} chaos={0.12} borderRadius={16} className="h-full">
               <Link to="/academicevents">
-                <motion.div 
+                <motion.div
                   whileHover={{ scale: 1.02, y: -5 }}
                   className="group relative bg-[#050505]/60 border border-st-red/30 rounded-2xl p-6 md:p-8 overflow-hidden backdrop-blur-sm transition-all shadow-[0_0_20px_rgba(255,0,60,0.05)] hover:shadow-[0_0_30px_rgba(255,0,60,0.3)] hover:border-st-red h-full flex flex-col justify-center"
                 >
@@ -163,7 +163,7 @@ const Home = () => {
             {/* Explore Debate Forum */}
             <ElectricBorder color="#2563ff" speed={1} chaos={0.12} borderRadius={16} className="h-full">
               <Link to="/debateandoratory">
-                <motion.div 
+                <motion.div
                   whileHover={{ scale: 1.02, y: -5 }}
                   className="group relative bg-[#050505]/60 border border-st-blue/30 rounded-2xl p-6 md:p-8 overflow-hidden backdrop-blur-sm transition-all shadow-[0_0_20px_rgba(37,99,255,0.05)] hover:shadow-[0_0_30px_rgba(37,99,255,0.3)] hover:border-st-blue h-full flex flex-col justify-center"
                 >
@@ -178,13 +178,13 @@ const Home = () => {
             {/* Explore Workshops */}
             <ElectricBorder color="#2563ff" speed={1} chaos={0.12} borderRadius={16} className="h-full">
               <Link to="/workshops">
-                <motion.div 
+                <motion.div
                   whileHover={{ scale: 1.02, y: -5 }}
                   className="group relative bg-[#050505]/60 border border-st-blue/30 rounded-2xl p-6 md:p-8 overflow-hidden backdrop-blur-sm transition-all shadow-[0_0_20px_rgba(37,99,255,0.05)] hover:shadow-[0_0_30px_rgba(37,99,255,0.3)] hover:border-st-blue h-full flex flex-col justify-center"
                 >
                   <div className="absolute inset-0 bg-st-blue/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <h3 className="text-xl md:text-2xl font-title font-bold text-white uppercase tracking-widest group-hover:text-st-blue transition-colors flex items-center justify-center gap-2 text-center">
-                     <span className="text-st-blue">Workshops</span>
+                    <span className="text-st-blue">Workshops</span>
                   </h3>
                 </motion.div>
               </Link>
@@ -227,7 +227,7 @@ const Home = () => {
             </div>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -249,9 +249,9 @@ const Home = () => {
       {/* Message Section */}
       <section className="py-16 md:py-32 relative overflow-hidden bg-[#0f0f14] border-t border-[rgba(255,0,60,0.3)]">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-st-red/10 via-[#0f0f14] to-[#050505]"></div>
-        
+
         <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -263,7 +263,7 @@ const Home = () => {
             <div className="w-12 md:w-16 h-1 bg-gradient-to-r from-[#ff003c] to-[#2563ff] mx-auto shadow-[0_0_15px_rgba(255,0,60,0.8)] rounded-full"></div>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -271,7 +271,7 @@ const Home = () => {
             className="relative p-[1px] bg-gradient-to-b from-[#2563ff]/20 to-transparent rounded-2xl group hover:from-[#ff003c]/40 transition-all duration-700"
           >
             <div className={`${isLowPerf ? 'bg-black border border-white/10' : 'bg-[rgba(10,10,15,0.85)] border border-[rgba(255,0,60,0.25)] backdrop-blur-xl shadow-[0_0_30px_rgba(255,0,60,0.1)]'} p-6 sm:p-8 md:p-14 rounded-2xl space-y-4 md:space-y-6 text-[#cbd5e1] text-sm sm:text-base md:text-xl leading-relaxed font-body text-justify relative overflow-hidden`}>
-                <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-[0.03] pointer-events-none"></div>
+              <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-[0.03] pointer-events-none"></div>
               <p className="relative z-10">
                 <span className="text-4xl md:text-5xl text-white group-hover:text-st-red transition-colors font-title font-black float-left mr-2 md:mr-3 mt-1 leading-none drop-shadow-[0_0_10px_rgba(255,255,255,0.4)]">W</span>e, the Organising Committee of WISSENDURST '26, take immense pleasure in welcoming you to this year's academic festival, hosted by ESIC Medical College, Chennai.
               </p>
@@ -281,24 +281,24 @@ const Home = () => {
               <p className="pb-2 md:pb-4 relative z-10">
                 We warmly welcome you to our event crafted with passion and dedication. Looking forward to hosting you on APRIL 28 | 29 | 30!
               </p>
-              
-             <div className="relative z-10 mt-12 md:mt-24 pt-8 md:pt-10 border-t border-[rgba(255,0,60,0.25)] flex flex-col items-center text-center gap-3">
 
-  {/* Title */}
-  <p className="text-white text-lg sm:text-2xl md:text-3xl font-title tracking-wide leading-tight">
-    The Organizing Committee
-  </p>
+              <div className="relative z-10 mt-12 md:mt-24 pt-8 md:pt-10 border-t border-[rgba(255,0,60,0.25)] flex flex-col items-center text-center gap-3">
 
-  {/* Subtitle */}
-  <p className="text-st-red font-bold uppercase text-[11px] sm:text-[11px] md:text-xs tracking-[0.25em] md:tracking-[0.4em] opacity-90 
+                {/* Title */}
+                <p className="text-white text-lg sm:text-2xl md:text-3xl font-title tracking-wide leading-tight">
+                  The Organizing Committee
+                </p>
+
+                {/* Subtitle */}
+                <p className="text-st-red font-bold uppercase text-[11px] sm:text-[11px] md:text-xs tracking-[0.25em] md:tracking-[0.4em] opacity-90 
     drop-shadow-[0_0_8px_rgba(255,0,60,0.7)]">
-    Wissendurst 2026
-  </p>
+                  Wissendurst 2026
+                </p>
 
-  {/* 🔥 Decorative Line */}
-  <div className="mt-2 w-16 md:w-24 h-[2px] bg-st-red shadow-[0_0_12px_rgba(255,0,60,0.9)]"></div>
+                {/* 🔥 Decorative Line */}
+                <div className="mt-2 w-16 md:w-24 h-[2px] bg-st-red shadow-[0_0_12px_rgba(255,0,60,0.9)]"></div>
 
-</div>
+              </div>
             </div>
           </motion.div>
         </div>

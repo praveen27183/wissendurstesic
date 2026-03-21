@@ -1,6 +1,6 @@
 import { useState, useEffect, memo } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { ChevronLeft, ChevronRight, Clock, Calendar, X, ChevronDown, CheckCircle2 ,Instagram} from 'lucide-react';
+import { ChevronLeft, ChevronRight, Clock, Calendar, X, ChevronDown, CheckCircle2, Instagram } from 'lucide-react';
 import HeroSection from '../components/herosection';
 import Galaxy from '../components/Galaxy.jsx';
 import OptimizedImage from '../components/OptimizedImage';
@@ -15,8 +15,8 @@ const quizEvents = [
     date: "08.04.2026",
     image: "/asset/Quizzes/erythron.jpg",
     description: "From smear patterns to clotting cascades, hematology is far more than numbers on a report. It is the science that flows within us. Let us channel the courage of erythrocytes and the vigilance of leukocytes to sharpen our clinical instincts.",
-        regLink: "https://forms.gle/dsVuLJbzByB3upke8",
-        sections: [
+    regLink: "https://forms.gle/dsVuLJbzByB3upke8",
+    sections: [
       {
         title: "General Instructions",
         items: [
@@ -53,8 +53,8 @@ const quizEvents = [
     date: "18.04.2026",
     image: "/asset/Quizzes/endocrine.jpg",
     description: "Think you can decide the body's hormone axes and feedback loops? Step into the realm of regulation and rhythm, and respond to the whispers of imbalanced systems wreaking havoc. From adrenal surges to sugar crashes, let's face it all at one place.",
-        regLink: "https://forms.gle/hqUoG1yaGfTyjRYD8",
-        sections: [
+    regLink: "https://forms.gle/hqUoG1yaGfTyjRYD8",
+    sections: [
       {
         title: "General Instructions",
         items: [
@@ -92,8 +92,8 @@ const quizEvents = [
     time: "Prelims – 8:30 AM | Finals – 12:30 PM",
     image: "/asset/Quizzes/minerva_junior.JPG",
     description: "Attention Quizzical minds! The strength of a clinician lies in the stability of their foundation. The 5th Edition of Minerva proudly presents The Junior Quiz, to take us to the concepts that shape our minds long before clinics and case sheets do. Are you ready to strengthen your core and step into the roots that anchor our medical minds?",
-        regLink: "https://forms.gle/g3DDy7DFYRuaBYx4A",
-        sections: [
+    regLink: "https://forms.gle/g3DDy7DFYRuaBYx4A",
+    sections: [
 
       {
         title: "Topics",
@@ -142,8 +142,8 @@ const quizEvents = [
     time: "Prelims – 8:30 AM | Finals – 11:30 AM",
     image: "/asset/Quizzes/minerva_senior.Jpg",
     description: "Attention Quizzical minds! Are you ready for your ultimate academic showdown? The 5th Edition of Minerva proudly presents The Senior Quiz to ignite your passion for learning and challenge your intellect. Take this moment to flex your mastery in human medicine and push the boundaries of your cerebral curiosity.",
-        regLink: "https://forms.gle/MH4wrczhNtfdnQts6",
-        sections: [
+    regLink: "https://forms.gle/MH4wrczhNtfdnQts6",
+    sections: [
       {
         title: "Topics",
         items: [
@@ -186,49 +186,49 @@ const quizEvents = [
 ];
 
 const QuizCard = memo(({ event, index, onClick }) => (
-    <div
-      className="group flex flex-col bg-[rgba(10,10,15,0.85)] border border-st-red/20 rounded-xl overflow-hidden cursor-pointer hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(255,0,60,0.15)] transition-all duration-300"
-      onClick={() => onClick(index)}
-    >
-      <div className="relative w-full aspect-video overflow-hidden">
-        <OptimizedImage
-          src={event.image}
-          alt={event.title}
-          className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-[rgba(10,10,15,0.85)] to-transparent"></div>
-        <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full border border-st-red/30">
-          <span className="text-white text-lg font-bold uppercase tracking-wider font-title flex items-center gap-2">
-            {event.date}
-          </span>
-        </div>
-      </div>
-      {event.theme && (
-        <div className="px-6 pt-4">
-          <p className="text-gray-400 text-xs italic">
-            Theme: <span className="text-white/70">{event.theme}</span>
-          </p>
-        </div>
-      )}
-      <div className="flex flex-col p-6 flex-1 bg-[#050505] border-t border-st-red/20">
-        <span className="text-[#ff003c] text-[10px] md:text-xs font-black tracking-widest uppercase mb-1 block font-title">
-          {event.subtitle}
+  <div
+    className="group flex flex-col bg-[rgba(10,10,15,0.85)] border border-st-red/20 rounded-xl overflow-hidden cursor-pointer hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(255,0,60,0.15)] transition-all duration-300"
+    onClick={() => onClick(index)}
+  >
+    <div className="relative w-full aspect-video overflow-hidden">
+      <OptimizedImage
+        src={event.image}
+        alt={event.title}
+        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-[rgba(10,10,15,0.85)] to-transparent"></div>
+      <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full border border-st-red/30">
+        <span className="text-white text-lg font-bold uppercase tracking-wider font-title flex items-center gap-2">
+          {event.date}
         </span>
-        <h3 className="text-white text-xl md:text-2xl font-black uppercase leading-tight mb-1 group-hover:text-[#ffffff] transition-colors font-milanesa">
-          {event.title}
-        </h3>
-        
-        <div className="mt-auto pt-4 flex items-center justify-between border-t border-white/5 text-[#9fa0b8] text-[10px] md:text-xs uppercase tracking-widest font-title font-bold">
-          <span className="flex items-center gap-2"><Clock className="w-3.5 h-3.5 text-st-red" /> {event.time || "Single Round Battle"}</span>
-          <span className="text-st-red/50 flex items-center gap-1 group-hover:text-st-red transition-colors">Details <ChevronRight className="w-3 h-3" /></span>
-        </div>
       </div>
     </div>
+    {event.theme && (
+      <div className="px-6 pt-4">
+        <p className="text-gray-400 text-xs italic">
+          Theme: <span className="text-white/70">{event.theme}</span>
+        </p>
+      </div>
+    )}
+    <div className="flex flex-col p-6 flex-1 bg-[#050505] border-t border-st-red/20">
+      <span className="text-[#ff003c] text-[10px] md:text-xs font-black tracking-widest uppercase mb-1 block font-title">
+        {event.subtitle}
+      </span>
+      <h3 className="text-white text-xl md:text-2xl font-black uppercase leading-tight mb-1 group-hover:text-[#ffffff] transition-colors font-milanesa">
+        {event.title}
+      </h3>
+
+      <div className="mt-auto pt-4 flex items-center justify-between border-t border-white/5 text-[#9fa0b8] text-[10px] md:text-xs uppercase tracking-widest font-title font-bold">
+        <span className="flex items-center gap-2"><Clock className="w-3.5 h-3.5 text-st-red" /> {event.time || "Single Round Battle"}</span>
+        <span className="text-st-red/50 flex items-center gap-1 group-hover:text-st-red transition-colors">Details <ChevronRight className="w-3 h-3" /></span>
+      </div>
+    </div>
+  </div>
 ));
 
 const Quizzes = () => {
-    const { isLowPerf } = usePerformance();
-    const [showIntro, setShowIntro] = useState(true);
+  const { isLowPerf } = usePerformance();
+  const [showIntro, setShowIntro] = useState(true);
   const [searchParams] = useSearchParams();
   const [detailIndex, setDetailIndex] = useState(null);
 
@@ -351,71 +351,71 @@ const Quizzes = () => {
 
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:px-12">
           {quizEvents.map((event, index) => (
-            <QuizCard 
-                key={event.id} 
-                event={event} 
-                index={index} 
-                onClick={setDetailIndex} 
+            <QuizCard
+              key={event.id}
+              event={event}
+              index={index}
+              onClick={setDetailIndex}
             />
           ))}
         </div>
       </section>
-<section className="w-full py-16 px-4 md:px-10 lg:px-20 bg-[#050505] relative overflow-hidden">
+      <section className="w-full py-16 px-4 md:px-10 lg:px-20 bg-[#050505] relative overflow-hidden">
 
-  {/* 🔥 GRID BACKGROUND */}
-  <div className="absolute inset-0 opacity-5 bg-[linear-gradient(rgba(31,81,255,0.3)_1px,_transparent_1px),_linear-gradient(90deg,rgba(31,81,255,0.3)_1px,_transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
+        {/* 🔥 GRID BACKGROUND */}
+        <div className="absolute inset-0 opacity-5 bg-[linear-gradient(rgba(31,81,255,0.3)_1px,_transparent_1px),_linear-gradient(90deg,rgba(31,81,255,0.3)_1px,_transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
 
-  {/* MAIN CARD */}
-  <div className="relative max-w-6xl mx-auto bg-white/[0.02] border border-st-red/30 rounded-2xl p-6 md:p-10 shadow-[0_0_30px_rgba(255,0,60,0.08)] backdrop-blur-md flex flex-col lg:flex-row items-center justify-between gap-10">
+        {/* MAIN CARD */}
+        <div className="relative max-w-6xl mx-auto bg-white/[0.02] border border-st-red/30 rounded-2xl p-6 md:p-10 shadow-[0_0_30px_rgba(255,0,60,0.08)] backdrop-blur-md flex flex-col lg:flex-row items-center justify-between gap-10">
 
-    {/* 🔥 LEFT SIDE */}
-    <div className="w-full lg:w-1/2 text-center lg:text-left border-b lg:border-b-0 lg:border-r border-st-red/20 pb-6 lg:pb-0 lg:pr-10">
+          {/* 🔥 LEFT SIDE */}
+          <div className="w-full lg:w-1/2 text-center lg:text-left border-b lg:border-b-0 lg:border-r border-st-red/20 pb-6 lg:pb-0 lg:pr-10">
 
-      <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-[0.2em] mb-4">
-        Overall Quiz Heads
-      </h3>
+            <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-[0.2em] mb-4">
+              Overall Quiz Heads
+            </h3>
 
-      <p className="text-st-white/60 text-sm md:text-lg uppercase tracking-[0.3em] flex flex-col sm:flex-row i lg:justify-start gap-2">
+            <p className="text-st-white/60 text-sm md:text-lg uppercase tracking-[0.3em] flex flex-col sm:flex-row i lg:justify-start gap-2">
 
-        <span>A Beta Catenin Initiative</span>
+              <span>A Beta Catenin Initiative</span>
 
-        <span className="flex items-center gap-2 text-white">
-          <Instagram className="w-4 h-4 text-st-red" />
-          @betacatenin_esic
-        </span>
+              <span className="flex items-center gap-2 text-white">
+                <Instagram className="w-4 h-4 text-st-red" />
+                @betacatenin_esic
+              </span>
 
-      </p>
-    </div>
+            </p>
+          </div>
 
-    {/* 🔥 RIGHT SIDE */}
-    <div className="w-full lg:w-1/2 flex flex-col gap-4">
+          {/* 🔥 RIGHT SIDE */}
+          <div className="w-full lg:w-1/2 flex flex-col gap-4">
 
-      {[
-        { name: "Manikandan A", phone: "+91 90434 93961" },
-        { name: "Jane Sarah John", phone: "+91 78240 34859" },
-        { name: "Kalanidhi M", phone: "+91 95000 78979" },
-      ].map((person) => (
-        <div
-          key={person.name}
-          className="flex flex-col sm:flex-row items-center justify-between gap-2 px-4 py-3 rounded-lg bg-black/40 border border-white/5 hover:border-st-red/40 transition-all duration-300 hover:shadow-[0_0_15px_rgba(255,0,60,0.25)]"
-        >
-          <span className="font-bold text-white uppercase tracking-wider text-sm md:text-base">
-            {person.name}
-          </span>
+            {[
+              { name: "Manikandan A", phone: "+91 90434 93961" },
+              { name: "Jane Sarah John", phone: "+91 78240 34859" },
+              { name: "Kalanidhi M", phone: "+91 95000 78979" },
+            ].map((person) => (
+              <div
+                key={person.name}
+                className="flex flex-col sm:flex-row items-center justify-between gap-2 px-4 py-3 rounded-lg bg-black/40 border border-white/5 hover:border-st-red/40 transition-all duration-300 hover:shadow-[0_0_15px_rgba(255,0,60,0.25)]"
+              >
+                <span className="font-bold text-white uppercase tracking-wider text-sm md:text-base">
+                  {person.name}
+                </span>
 
-          <a
-            href={`tel:${person.phone.replace(/\s+/g, '')}`}
-            className="text-st-red font-bold tracking-widest text-sm hover:text-white transition"
-          >
-            {person.phone}
-          </a>
+                <a
+                  href={`tel:${person.phone.replace(/\s+/g, '')}`}
+                  className="text-st-red font-bold tracking-widest text-sm hover:text-white transition"
+                >
+                  {person.phone}
+                </a>
+              </div>
+            ))}
+
+          </div>
         </div>
-      ))}
+      </section>
 
-    </div>
-  </div>
-</section>  
-      
       {/* ── Detail Overlay ── */}
       {inDetail && detailEvent && (
         <div className="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl flex flex-col overflow-hidden">
@@ -505,7 +505,7 @@ const Quizzes = () => {
 
                 {/* Register Button — TOP */}
                 <div className="flex justify-center mb-10">
-                  <a 
+                  <a
                     href={detailEvent.regLink}
                     target="_blank"
                     rel="noreferrer"

@@ -592,60 +592,60 @@ const About = () => {
               </p>
 
               {/* Committee Grid */}
-<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16 max-w-6xl mx-auto text-center">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16 max-w-6xl mx-auto text-center">
 
-  {[
-    // Row 1
-    { role: "Academic Secretaries", names: ["RISHALINI U", "VEDANT SOMA"] },
-    { role: "Organising Secretaries", names: ["FARHATHUL AFRAA", "JESWIN ANTONY", "NANDANA SREEKUMAR"] },
-    { role: "Treasurer", names: ["AHMED SHAMEER"] },
+                {[
+                  // Row 1
+                  { role: "Academic Secretaries", names: ["RISHALINI U", "VEDANT SOMA"] },
+                  { role: "Organising Secretaries", names: ["FARHATHUL AFRAA", "JESWIN ANTONY", "NANDANA SREEKUMAR"] },
+                  { role: "Treasurer", names: ["AHMED SHAMEER"] },
 
-    // Row 2
-    { role: "Designing", names: ["LUCKSHANYA", "DHEEKSHI S", "LAKSHA S P", "HARINI G"] },
-    { role: "Editing", names: ["ESHITA SUDHAKAR", "PRAGNYA PRADEEP KUMAR", "DIYA VINOD", "ASHYA ASHOK", "ILAKKIYA", "JANITHA P"] },
-    { role: "Social Media", names: ["HARINI G", "AISHWARYA K", "DEVARAM PRASANNA P", "KARTHIKEYAN", "KAVYA D K", "LAKSHA S P", "NEHA A", "NIRANJANA", "SWATHIE SRIVIDHYA"] },
+                  // Row 2
+                  { role: "Designing", names: ["LUCKSHANYA", "DHEEKSHI S", "LAKSHA S P", "HARINI G"] },
+                  { role: "Editing", names: ["ESHITA SUDHAKAR", "PRAGNYA PRADEEP KUMAR", "DIYA VINOD", "ASHYA ASHOK", "ILAKKIYA", "JANITHA P"] },
+                  { role: "Social Media", names: ["HARINI G", "AISHWARYA K", "DEVARAM PRASANNA P", "KARTHIKEYAN", "KAVYA D K", "LAKSHA S P", "NEHA A", "NIRANJANA", "SWATHIE SRIVIDHYA"] },
 
-    // Row 3
-    { role: "Public Relations", names: ["KRISHNASUDHAN", "RASHMIKA T"] },
-    { role: "Overall Registration Heads", names: ["KARTHIKEYAN", "LEKHA SHRUTHY R J", "MEIMOZHI PARI", "SHALINI R"] },
-    { role: "Overall Workshop Heads", names: ["ASHWIN KUMAR S", "NIVETHA D", "NEHA SUNIL", "SAINITHI B", "SRI DHARNISH", "SUNIL KUMAR C M"] },
+                  // Row 3
+                  { role: "Public Relations", names: ["KRISHNASUDHAN", "RASHMIKA T"] },
+                  { role: "Overall Registration Heads", names: ["KARTHIKEYAN", "LEKHA SHRUTHY R J", "MEIMOZHI PARI", "SHALINI R"] },
+                  { role: "Overall Workshop Heads", names: ["ASHWIN KUMAR S", "NIVETHA D", "NEHA SUNIL", "SAINITHI B", "SRI DHARNISH", "SUNIL KUMAR C M"] },
 
-    // Row 4
-    { role: "Overall Quiz Heads", names: ["JANE SARAH JOHN", "KALANIDHI M", "MANIKANDAN A"] },
-    { role: "Speakers Collective", names: ["KALANIDHI M", "JANE SARAH JOHN", "JANITHA"] },
-    { role: "Overall Heads of Presentations", names: ["DIYA VINOD", "ESHITA SUDHAKAR"] },
+                  // Row 4
+                  { role: "Overall Quiz Heads", names: ["JANE SARAH JOHN", "KALANIDHI M", "MANIKANDAN A"] },
+                  { role: "Speakers Collective", names: ["KALANIDHI M", "JANE SARAH JOHN", "JANITHA"] },
+                  { role: "Overall Heads of Presentations", names: ["DIYA VINOD", "ESHITA SUDHAKAR"] },
 
-    // Row 5
-    { role: "Tamil Mandram", names: ["SADHURTHIKA", "SRI DHARNISH"] },
-    { role: "Banners and Decorations", names: ["DIVYA D"] },
-    { role: "Food", names: ["ADARSH S", "PRATYUSH S"] },
+                  // Row 5
+                  { role: "Tamil Mandram", names: ["SADHURTHIKA", "SRI DHARNISH"] },
+                  { role: "Banners and Decorations", names: ["DIVYA D"] },
+                  { role: "Food", names: ["ADARSH S", "PRATYUSH S"] },
 
-    // Row 6
-    { role: "Accommodation", names: ["ARAVINDH B", "AFLAHA T"] },
+                  // Row 6
+                  { role: "Accommodation", names: ["ARAVINDH B", "AFLAHA T"] },
 
-  ].map((item, ii) => (
-    <div key={ii} className={`flex flex-col p-6 rounded-2xl ${isLowPerf ? 'bg-[#0f0f14] border border-white/10' : ''}`}>
-      
-      {/* Role */}
-      <p className="text-sm border-b border-st-red/30 pb-2 text-st-red uppercase tracking-[0.2em] font-bold mb-4">
-        {item.role}
-      </p>
+                ].map((item, ii) => (
+                  <div key={ii} className={`flex flex-col p-6 rounded-2xl ${isLowPerf ? 'bg-[#0f0f14] border border-white/10' : ''}`}>
 
-      {/* Names */}
-      <div className="flex flex-col gap-2">
-        {item.names.map((n, ni) => (
-          <h4
-            key={ni}
-            className="text-lg sm:text-xl lg:text-2xl font-black uppercase text-[#ffffff]"
-          >
-            {n}
-          </h4>
-        ))}
-      </div>
+                    {/* Role */}
+                    <p className="text-sm border-b border-st-red/30 pb-2 text-st-red uppercase tracking-[0.2em] font-bold mb-4">
+                      {item.role}
+                    </p>
 
-    </div>
-  ))}
-</div>
+                    {/* Names */}
+                    <div className="flex flex-col gap-2">
+                      {item.names.map((n, ni) => (
+                        <h4
+                          key={ni}
+                          className="text-lg sm:text-xl lg:text-2xl font-black uppercase text-[#ffffff]"
+                        >
+                          {n}
+                        </h4>
+                      ))}
+                    </div>
+
+                  </div>
+                ))}
+              </div>
             </div>
 
           </div>

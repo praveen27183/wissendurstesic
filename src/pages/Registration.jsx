@@ -4,7 +4,7 @@ import {
   IndianRupee, ExternalLink, Info, CheckCircle2, ShieldAlert,
   MapPin, FileText, Upload, CreditCard, Sparkles, UserPlus, Mail, Contact
 } from 'lucide-react';
-import { Link } from 'react-router-dom';  
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import StarBorder from '../components/StarBorder';
 import GradientText from '../components/GradientText';
@@ -379,7 +379,7 @@ const Registration = () => {
                   * General registration once completed cannot be cancelled or refunded.
                 </p>
                 <div className="pt-4 flex justify-center lg:justify-start">
-                  <a 
+                  <a
                     href="https://forms.gle/rpWhUuw22fSvx3ya6"
                     target="_blank"
                     rel="noreferrer"
@@ -442,14 +442,14 @@ const Registration = () => {
 
                 {/* Register Button in side div */}
                 <div className="mt-8 pt-6 border-t border-white/10 flex justify-center">
-                  <a 
+                  <a
                     href="https://forms.gle/rpWhUuw22fSvx3ya6"
                     target="_blank"
                     rel="noreferrer"
                     className="w-full"
                   >
                     <button className="w-full px-8 py-4 bg-st-red text-white rounded-xl font-title font-black uppercase tracking-widest hover:scale-[1.02] hover:bg-white hover:text-black transition-all shadow-lg flex items-center justify-center gap-3">
-                       General Registration <ExternalLink className="w-5 h-5" />
+                      General Registration <ExternalLink className="w-5 h-5" />
                     </button>
                   </a>
                 </div>
@@ -585,7 +585,7 @@ const Registration = () => {
                   </Link>
                   <Link to="/quizzes" className="w-full sm:w-auto">
                     <button className="w-full sm:w-auto px-6 py-4 border border-st-blue/50 text-white rounded-xl font-title font-bold uppercase tracking-widest hover:bg-st-blue transition-all text-xs">
-                       Quizzes
+                      Quizzes
                     </button>
                   </Link>
                   <Link to="/debateandoratory" className="w-full sm:w-auto">
@@ -685,60 +685,60 @@ const Registration = () => {
             </div>
 
             {/* Styled Map / Address Card */}
-<div className="bg-white/[0.02] border border-st-red/20 p-5 sm:p-7 md:p-8 rounded-2xl sm:rounded-3xl relative overflow-hidden group hover:border-st-red/50 transition-all duration-500 flex flex-col gap-6">
+            <div className="bg-white/[0.02] border border-st-red/20 p-5 sm:p-7 md:p-8 rounded-2xl sm:rounded-3xl relative overflow-hidden group hover:border-st-red/50 transition-all duration-500 flex flex-col gap-6">
 
-  {/* Background Pattern */}
-  <div className="absolute inset-0 bg-[url('https://maps.googleapis.com/maps/api/staticmap?center=ESIC+Medical+College,Chennai&zoom=14&size=600x300')] bg-cover bg-center opacity-20 grayscale group-hover:opacity-40 transition duration-700"></div>
+              {/* Background Pattern */}
+              <div className="absolute inset-0 bg-[url('https://maps.googleapis.com/maps/api/staticmap?center=ESIC+Medical+College,Chennai&zoom=14&size=600x300')] bg-cover bg-center opacity-20 grayscale group-hover:opacity-40 transition duration-700"></div>
 
-  {/* Gradient Overlay */}
-  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
+              {/* Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
 
-  {/* 📍 CONTENT */}
-  <div className="relative z-10 flex flex-col gap-4">
+              {/* 📍 CONTENT */}
+              <div className="relative z-10 flex flex-col gap-4">
 
-    {/* Icon */}
-    <div className="w-12 h-12 sm:w-14 sm:h-14 bg-st-red/20 backdrop-blur-md border border-st-red/50 rounded-full flex items-center justify-center">
-      <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-st-red animate-bounce" />
-    </div>
+                {/* Icon */}
+                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-st-red/20 backdrop-blur-md border border-st-red/50 rounded-full flex items-center justify-center">
+                  <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-st-red animate-bounce" />
+                </div>
 
-    {/* Title */}
-    <h3 className="text-lg sm:text-xl md:text-2xl font-milanesa font-black text-white uppercase tracking-widest">
-      Venue
-    </h3>
+                {/* Title */}
+                <h3 className="text-lg sm:text-xl md:text-2xl font-milanesa font-black text-white uppercase tracking-widest">
+                  Venue
+                </h3>
 
-    {/* Address */}
-    <p className="text-gray-300/80 text-base sm:text-lg leading-relaxed max-w-md">
-      <span className="text-st-red font-semibold block mb-1">
-        ESIC Medical College & PGIMSR
-      </span>
-      Ashok Pillar Road, K.K. Nagar,<br />
-      Chennai, Tamil Nadu 600078
-    </p>
+                {/* Address */}
+                <p className="text-gray-300/80 text-base sm:text-lg leading-relaxed max-w-md">
+                  <span className="text-st-red font-semibold block mb-1">
+                    ESIC Medical College & PGIMSR
+                  </span>
+                  Ashok Pillar Road, K.K. Nagar,<br />
+                  Chennai, Tamil Nadu 600078
+                </p>
 
-    {/* Link */}
-    <a
-      href="https://maps.google.com/?q=ESIC+Medical+College+KK+Nagar+Chennai"
-      target="_blank"
-      rel="noreferrer"
-      className="inline-flex items-center gap-2 text-xs font-bold text-st-red uppercase tracking-[0.2em] hover:text-white transition-colors w-fit border-b border-st-red/30 pb-1"
-    >
-      Open in Maps <ExternalLink className="w-3 h-3" />
-    </a>
+                {/* Link */}
+                <a
+                  href="https://maps.google.com/?q=ESIC+Medical+College+KK+Nagar+Chennai"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 text-xs font-bold text-st-red uppercase tracking-[0.2em] hover:text-white transition-colors w-fit border-b border-st-red/30 pb-1"
+                >
+                  Open in Maps <ExternalLink className="w-3 h-3" />
+                </a>
 
-  </div>
+              </div>
 
-  {/* 🗺️ MAP (separate block for proper alignment) */}
-  <div className="relative z-10 rounded-xl overflow-hidden border border-white/10">
-    <iframe
-      src="https://www.google.com/maps?q=ESIC%20Medical%20College%20Chennai&output=embed"
-      className="w-full h-[200px] sm:h-[250px] md:h-[300px] border-0"
-      loading="lazy"
-      allowFullScreen
-      referrerPolicy="no-referrer-when-downgrade"
-    ></iframe>
-  </div>
+              {/* 🗺️ MAP (separate block for proper alignment) */}
+              <div className="relative z-10 rounded-xl overflow-hidden border border-white/10">
+                <iframe
+                  src="https://www.google.com/maps?q=ESIC%20Medical%20College%20Chennai&output=embed"
+                  className="w-full h-[200px] sm:h-[250px] md:h-[300px] border-0"
+                  loading="lazy"
+                  allowFullScreen
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
 
-</div>
+            </div>
 
           </div>
         </div>

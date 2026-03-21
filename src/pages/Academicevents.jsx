@@ -470,7 +470,7 @@ const EventCard = memo(({ event, index, onClick, isLowPerf }) => (
             <h3 className="text-white text-xl md:text-2xl font-black uppercase leading-tight mb-4 group-hover:text-[#ffffff] transition-colors font-milanesa">
                 {event.title}
             </h3>
-            
+
             <div className="mt-auto pt-4 flex items-end justify-end border-t border-white/5 text-[#9fa0b8] text-[10px] md:text-xs uppercase tracking-widest font-title font-bold">
                 <span className="text-st-red/50 flex items-center gap-1 group-hover:text-st-red transition-colors">Details <ChevronRight className="w-3 h-3" /></span>
             </div>
@@ -572,7 +572,7 @@ const Academicevents = () => {
         <div className="min-h-screen font-body bg-[#050505] text-[#ffffff] animate-[fadeIn_1s_ease-out] overflow-x-hidden">
 
             {/* ── Hero ── */}
-            <HeroSection 
+            <HeroSection
                 title="ACADEMIC EVENTS"
                 subtitle="PRESENTATION EVENTS"
                 description="Academic showcases exploring hematology, pharmacology, rare clinical cases, and impactful research studies through structured posters, symposiums, and oral protocols."
@@ -581,7 +581,7 @@ const Academicevents = () => {
 
             {/* Galaxy Background layer */}
             <div className="fixed inset-0 z-0 pointer-events-none opacity-20">
-                <Galaxy 
+                <Galaxy
                     starSpeed={0.2}
                     density={1.2}
                     hueShift={220}
@@ -601,11 +601,11 @@ const Academicevents = () => {
 
                 <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                     {academicEvents.map((event, index) => (
-                        <EventCard 
-                            key={event.id} 
-                            event={event} 
-                            index={index} 
-                            onClick={setDetailIndex} 
+                        <EventCard
+                            key={event.id}
+                            event={event}
+                            index={index}
+                            onClick={setDetailIndex}
                             isLowPerf={isLowPerf}
                         />
                     ))}
@@ -700,7 +700,7 @@ const Academicevents = () => {
                                     {detailEvent.multiLinks ? (
                                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                             {detailEvent.multiLinks.map((link, lIdx) => (
-                                                <a 
+                                                <a
                                                     key={lIdx}
                                                     href={link.url}
                                                     target="_blank"
@@ -715,7 +715,7 @@ const Academicevents = () => {
                                         </div>
                                     ) : (
                                         <div className="flex justify-center">
-                                            <a 
+                                            <a
                                                 href={detailEvent.regLink}
                                                 target="_blank"
                                                 rel="noreferrer"
@@ -738,8 +738,8 @@ const Academicevents = () => {
                                             {section.title === "Subjects" ? (
                                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                                     {section.items.map((item, itemIdx) => (
-                                                        <div 
-                                                            key={itemIdx} 
+                                                        <div
+                                                            key={itemIdx}
                                                             className="group relative overflow-hidden bg-[rgba(10,10,15,0.85)]/50 border border-st-red/20 rounded-xl cursor-default hover:-translate-y-1 hover:shadow-[0_5px_15px_rgba(255,0,60,0.15)] transition-all duration-300 flex items-center justify-center p-6 sm:p-8"
                                                         >
                                                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
