@@ -456,7 +456,7 @@ const EventCard = memo(({ event, index, onClick, isLowPerf }) => (
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[rgba(10,10,15,0.85)] to-transparent"></div>
-            <div className={`absolute top-4 right-4 ${isLowPerf ? 'bg-black border-white/20' : 'bg-black/60 backdrop-blur-md border-st-red/30'} px-3 py-1.5 rounded-full border`}>
+            <div className={`absolute top-4 right-4 ${isLowPerf ? 'bg-[#0f0f14] border-white/10' : 'bg-black/60 backdrop-blur-md border-st-red/30'} px-3 py-1.5 rounded-full border`}>
                 <span className="text-white text-lg font-bold uppercase tracking-wider font-title flex items-center gap-2">
                     {event.date.split(' ')[0]}
                 </span>

@@ -74,7 +74,7 @@ const About = () => {
   if (showIntro) {
     return (
       <div
-        className="fixed inset-0 z-[100] bg-black flex items-center justify-center p-4 cursor-pointer"
+        className={`fixed inset-0 z-[100] ${isLowPerf ? 'bg-[#050505]' : 'bg-black'} flex items-center justify-center p-4 cursor-pointer`}
         onClick={() => setShowIntro(false)}
       >
         <style dangerouslySetInnerHTML={{
@@ -309,7 +309,7 @@ const About = () => {
                 {/* Metro Card */}
                 <div className="group relative h-full">
                   <div className="absolute inset-0 bg-gradient-to-r from-st-red/10 to-transparent rounded-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none" />
-                  <div className="relative h-full bg-[#1a0f0a]/60 backdrop-blur-xl border border-st-red/20 shadow-xl rounded-3xl p-6 transition-all duration-500 hover:border-st-red/50 hover:translate-x-2 hover:shadow-[10px_0_40px_rgba(255,0,60,0.15)] flex items-center gap-6">
+                  <div className={`relative h-full ${isLowPerf ? 'bg-[#0f0f14]' : 'bg-[#1a0f0a]/60 backdrop-blur-xl'} border border-st-red/20 shadow-xl rounded-3xl p-6 transition-all duration-500 hover:border-st-red/50 hover:translate-x-2 hover:shadow-[10px_0_40px_rgba(255,0,60,0.15)] flex items-center gap-6`}>
                     <div className="w-16 h-16 shrink-0 rounded-full bg-gradient-to-br from-st-red/20 to-transparent border border-st-red/30 flex items-center justify-center shadow-inner group-hover:scale-110 transition-transform duration-500">
                       <MapPin strokeWidth={1.5} className="w-8 h-8 text-st-red drop-shadow-[0_0_8px_rgba(255,0,60,0.8)]" />
                     </div>
@@ -325,7 +325,7 @@ const About = () => {
                 {/* Bus Card */}
                 <div className="group relative h-full">
                   <div className="absolute inset-0 bg-gradient-to-r from-st-red/10 to-transparent rounded-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none" />
-                  <div className="relative h-full bg-[#1a0f0a]/60 backdrop-blur-xl border border-st-red/20 shadow-xl rounded-3xl p-6 transition-all duration-500 hover:border-st-red/50 hover:translate-x-2 hover:shadow-[10px_0_40px_rgba(255,0,60,0.15)] flex flex-col sm:flex-row items-center sm:items-start gap-6">
+                  <div className={`relative h-full ${isLowPerf ? 'bg-[#0f0f14]' : 'bg-[#1a0f0a]/60 backdrop-blur-xl'} border border-st-red/20 shadow-xl rounded-3xl p-6 transition-all duration-500 hover:border-st-red/50 hover:translate-x-2 hover:shadow-[10px_0_40px_rgba(255,0,60,0.15)] flex flex-col sm:flex-row items-center sm:items-start gap-6`}>
                     <div className="w-16 h-16 shrink-0 rounded-full bg-gradient-to-br from-st-red/20 to-transparent border border-st-red/30 flex items-center justify-center shadow-inner group-hover:scale-110 transition-transform duration-500">
                       <Bus strokeWidth={1.5} className="w-8 h-8 text-st-red drop-shadow-[0_0_8px_rgba(255,0,60,0.8)]" />
                     </div>
@@ -349,7 +349,7 @@ const About = () => {
                 {/* Train / Flight Card */}
                 <div className="group relative h-full sm:col-span-2 lg:col-span-1">
                   <div className="absolute inset-0 bg-gradient-to-r from-st-red/10 to-transparent rounded-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none" />
-                  <div className="relative h-full bg-[#1a0f0a]/60 backdrop-blur-xl border border-st-red/20 shadow-xl rounded-3xl p-6 transition-all duration-500 hover:border-st-red/50 hover:translate-x-2 hover:shadow-[10px_0_40px_rgba(255,0,60,0.15)] flex flex-col sm:flex-row items-center gap-6">
+                  <div className={`relative h-full ${isLowPerf ? 'bg-[#0f0f14]' : 'bg-[#1a0f0a]/60 backdrop-blur-xl'} border border-st-red/20 shadow-xl rounded-3xl p-6 transition-all duration-500 hover:border-st-red/50 hover:translate-x-2 hover:shadow-[10px_0_40px_rgba(255,0,60,0.15)] flex flex-col sm:flex-row items-center gap-6`}>
                     <div className="flex flex-col gap-2 shrink-0">
                       <div className="w-12 h-12 rounded-full bg-gradient-to-br from-st-red/20 to-transparent border border-st-red/30 flex items-center justify-center shadow-inner group-hover:-translate-x-1 transition-transform duration-500">
                         <Train strokeWidth={1.5} className="w-6 h-6 text-st-red drop-shadow-[0_0_8px_rgba(255,0,60,0.8)]" />
@@ -390,7 +390,7 @@ const About = () => {
                   href="https://www.google.com/maps?ll=13.034253,80.206934&z=13&t=m&hl=en&gl=IN&mapclient=embed&cid=11772188360414815231"
                   target="_blank"
                   rel="noreferrer"
-                  className="group relative inline-flex items-center gap-3 px-8 py-4 bg-st-red text-[#050505] font-black tracking-widest uppercase rounded-full overflow-hidden transition-all duration-500 hover:shadow-[0_0_30px_rgba(255,0,60,0.5)] hover:scale-105"
+                  className="group relative inline-flex items-center gap-3 px-8 py-4 bg-st-red text-[#ffffff] font-black tracking-widest uppercase rounded-full overflow-hidden transition-all duration-500 hover:shadow-[0_0_30px_rgba(255,0,60,0.5)] hover:scale-105"
                 >
                   <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
                   <MapPin className="w-5 h-5 relative z-10 animate-bounce" />
@@ -499,7 +499,7 @@ const About = () => {
                   key={i}
                   className="shrink-0 w-[85vw] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] snap-center group relative aspect-video overflow-hidden rounded-2xl border border-st-red/20 shadow-xl cursor-default"
                 >
-                  <div className="absolute inset-0 bg-[#050505]/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
+                <div className={`absolute inset-0 ${isLowPerf ? 'bg-[#050505]/20' : 'bg-[#050505]/20 group-hover:bg-transparent'} transition-colors duration-500 z-10`} />
 
                   <img
                     src={img.src}

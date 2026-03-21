@@ -111,7 +111,7 @@ const FoodAccommodation = () => {
 
           {/* ================= FOOD ================= */}
 
-          <div className="bg-black/70 border border-st-red/30 rounded-3xl p-8 md:p-14 backdrop-blur-md shadow-xl">
+          <div className={`${isLowPerf ? 'bg-[#0f0f14]' : 'bg-black/70 backdrop-blur-md'} border border-st-red/30 rounded-3xl p-8 md:p-14 shadow-xl`}>
 
             <div className="flex items-center gap-4 mb-10 border-b border-st-red/20 pb-6">
 
@@ -158,7 +158,7 @@ const FoodAccommodation = () => {
 
               {/* VEG */}
 
-              <div className="bg-black/60 border border-green-600/30 rounded-2xl p-5 sm:p-7 md:p-9 backdrop-blur-md hover:border-green-500 hover:shadow-[0_0_25px_rgba(34,197,94,0.25)] transition-all group">
+              <div className={`${isLowPerf ? 'bg-[#0f0f14]' : 'bg-black/60 backdrop-blur-md'} border border-green-600/30 rounded-2xl p-5 sm:p-7 md:p-9 hover:border-green-500 hover:shadow-[0_0_25px_rgba(34,197,94,0.25)] transition-all group`}>
 
                 <div className="flex flex-col sm:flex-row justify-between sm:items-center items-start gap-4 mb-8 border-b border-green-600/20 pb-4">
                   <h3 className="text-xl sm:text-2xl font-black text-green-500 uppercase tracking-widest">
@@ -199,7 +199,7 @@ const FoodAccommodation = () => {
 
               {/* NON VEG */}
 
-              <div className="bg-black/60 border border-red-600/30 rounded-2xl p-5 sm:p-7 md:p-9 backdrop-blur-md hover:border-red-500 hover:shadow-[0_0_25px_rgba(255,0,60,0.25)] transition-all group">
+              <div className={`${isLowPerf ? 'bg-[#0f0f14]' : 'bg-black/60 backdrop-blur-md'} border border-red-600/30 rounded-2xl p-5 sm:p-7 md:p-9 hover:border-red-500 hover:shadow-[0_0_25px_rgba(255,0,60,0.25)] transition-all group`}>
 
                 <div className="flex flex-col sm:flex-row justify-between sm:items-center items-start gap-4 mb-8 border-b border-red-600/20 pb-4">
                   <h3 className="text-xl sm:text-2xl font-black text-red-500 uppercase tracking-widest">
@@ -285,7 +285,7 @@ const FoodAccommodation = () => {
 
           {/* ================= ACCOMMODATION ================= */}
 
-          <div className="bg-black/70 border border-st-red/30 rounded-3xl p-8 md:p-14 backdrop-blur-md shadow-xl">
+          <div className={`${isLowPerf ? 'bg-[#0f0f14]' : 'bg-black/70 backdrop-blur-md'} border border-st-red/30 rounded-3xl p-8 md:p-14 shadow-xl`}>
 
             <div className="flex items-center gap-4 mb-10 border-b border-st-red/20 pb-6">
 

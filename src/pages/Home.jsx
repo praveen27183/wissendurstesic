@@ -270,7 +270,7 @@ const Home = () => {
             transition={{ delay: 0.2 }}
             className="relative p-[1px] bg-gradient-to-b from-[#2563ff]/20 to-transparent rounded-2xl group hover:from-[#ff003c]/40 transition-all duration-700"
           >
-            <div className={`${isLowPerf ? 'bg-black border border-white/10' : 'bg-[rgba(10,10,15,0.85)] border border-[rgba(255,0,60,0.25)] backdrop-blur-xl shadow-[0_0_30px_rgba(255,0,60,0.1)]'} p-6 sm:p-8 md:p-14 rounded-2xl space-y-4 md:space-y-6 text-[#cbd5e1] text-sm sm:text-base md:text-xl leading-relaxed font-body text-justify relative overflow-hidden`}>
+            <div className={`${isLowPerf ? 'bg-[#121212] border border-white/10' : 'bg-[rgba(10,10,15,0.85)] border border-[rgba(255,0,60,0.25)] backdrop-blur-xl shadow-[0_0_30px_rgba(255,0,60,0.1)]'} p-6 sm:p-8 md:p-14 rounded-2xl space-y-4 md:space-y-6 text-[#cbd5e1] text-sm sm:text-base md:text-xl leading-relaxed font-body text-justify relative overflow-hidden`}>
               <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-[0.03] pointer-events-none"></div>
               <p className="relative z-10">
                 <span className="text-4xl md:text-5xl text-white group-hover:text-st-red transition-colors font-title font-black float-left mr-2 md:mr-3 mt-1 leading-none drop-shadow-[0_0_10px_rgba(255,255,255,0.4)]">W</span>e, the Organising Committee of WISSENDURST '26, take immense pleasure in welcoming you to this year's academic festival, hosted by ESIC Medical College, Chennai.

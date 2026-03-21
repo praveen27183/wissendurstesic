@@ -77,7 +77,7 @@ const Navbar = () => {
   return (
     <>
       {/* Navbar */}
-      <nav className={`fixed w-full top-0 left-0 z-50 transition-all duration-500 bg-[#0f0f14]/90 backdrop-blur-md border-b border-st-red/20 shadow-[0_10px_30px_rgba(255,0,60,0.15)] py-2`}>
+      <nav className={`fixed w-full top-0 left-0 z-50 transition-all duration-500 ${isLowPerf ? 'bg-[#0f0f14]' : 'bg-[#0f0f14]/90 backdrop-blur-md'} border-b border-st-red/20 shadow-[0_10px_30px_rgba(255,0,60,0.15)] py-2`}>
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="flex justify-between items-center h-14 md:h-20 w-full gap-8">
 
@@ -152,7 +152,7 @@ const Navbar = () => {
                           animate={{ opacity: 1, y: 0, scale: 1 }}
                           exit={{ opacity: 0, y: 10, scale: 0.95 }}
                           transition={{ duration: 0.2 }}
-                          className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 bg-[#0f0f14]/95 backdrop-blur-xl border border-st-red/30 rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.5),0_0_20px_rgba(255,0,60,0.1)] overflow-hidden z-50"
+                          className={`absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 ${isLowPerf ? 'bg-[#0f0f14]' : 'bg-[#0f0f14]/95 backdrop-blur-xl'} border border-st-red/30 rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.5),0_0_20px_rgba(255,0,60,0.1)] overflow-hidden z-50`}
                         >
                           <div className="py-2 max-h-[60vh] overflow-y-auto custom-scrollbar">
                             {navDropdownData[link.dropdownKey].map((item) => (
