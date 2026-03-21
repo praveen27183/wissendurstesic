@@ -1,12 +1,14 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { X } from "lucide-react";
+import { X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { navDropdownData } from "../data/navData";
 
 const Navbar = () => {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -106,27 +108,70 @@ const Navbar = () => {
 
 
             {/* Desktop Menu */}
-            <div className="hidden lg:flex flex-1 items-center justify-end space-x-4 xl:space-x-6">
+            <div className="hidden lg:flex flex-1 items-center justify-end space-x-1 xl:space-x-2">
               {[
                 { to: '/', label: 'Home' },
                 { to: '/registration', label: 'Registration' },
-                { to: '/quizzes', label: 'Quizzes' },
-                { to: '/workshops', label: 'Workshops' },
-                { to: '/academicevents', label: 'Academic Events' },
-                { to: '/debateandoratory', label: 'Debate Forum' },
+                { to: '/quizzes', label: 'Quizzes', dropdownKey: 'quizzes' },
+                { to: '/workshops', label: 'Workshops', dropdownKey: 'workshops' },
+                { to: '/academicevents', label: 'Academic Events', dropdownKey: 'academicEvents' },
+                { to: '/debateandoratory', label: 'Debate Forum', dropdownKey: 'debateForum' },
                 { to: '/foodaccommodation', label: 'Food & Accomm.' },
                 { to: '/aboutus', label: 'About Us' },
                 { to: '/contact', label: 'Contact Us' },
               ].map(link => (
-                <Link
-                  key={link.to}
-                  to={link.to}
-                  onClick={() => window.scrollTo({ top: 0, behavior: 'instant' })}
-                  className={`relative text-[10px] xl:text-xs uppercase font-bold transition whitespace-nowrap group pb-1 ${isActive(link.to) ? 'text-white' : 'text-[#cbd5e1] hover:text-white'}`}
+                <div 
+                  key={link.to} 
+                  className="relative group py-4"
+                  onMouseEnter={() => link.dropdownKey && setActiveDropdown(link.dropdownKey)}
+                  onMouseLeave={() => setActiveDropdown(null)}
                 >
-                  {link.label}
-                  <span className={`absolute bottom-0 left-0 w-full h-[2px] bg-st-red shadow-[0_0_8px_rgba(255,0,60,0.8)] transform origin-left transition-transform duration-300 ${isActive(link.to) ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}></span>
-                </Link>
+                  <Link
+                    to={link.to}
+                    onClick={() => {
+                       window.scrollTo({ top: 0, behavior: 'instant' });
+                       setActiveDropdown(null);
+                    }}
+                    className={`relative text-[10px] xl:text-[11px] uppercase font-bold transition whitespace-nowrap px-2 xl:px-3 py-1 group rounded-md flex items-center gap-1 ${isActive(link.to) ? 'text-white bg-st-red/10' : 'text-[#cbd5e1] hover:text-white hover:bg-white/5'}`}
+                  >
+                    {link.label}
+                    {link.dropdownKey && (
+                      <ChevronDown className={`w-3 h-3 transition-transform duration-300 ${activeDropdown === link.dropdownKey ? 'rotate-180 text-st-red' : 'text-gray-500 group-hover:text-white'}`} />
+                    )}
+                    <span className={`absolute bottom-0 left-0 w-full h-[2px] bg-st-red shadow-[0_0_8px_rgba(255,0,60,0.8)] transform origin-left transition-transform duration-300 ${isActive(link.to) ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}></span>
+                  </Link>
+
+                  {/* Dropdown Menu */}
+                  {link.dropdownKey && (
+                    <AnimatePresence>
+                      {activeDropdown === link.dropdownKey && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                          animate={{ opacity: 1, y: 0, scale: 1 }}
+                          exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                          transition={{ duration: 0.2 }}
+                          className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 bg-[#0f0f14]/95 backdrop-blur-xl border border-st-red/30 rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.5),0_0_20px_rgba(255,0,60,0.1)] overflow-hidden z-50"
+                        >
+                          <div className="py-2 max-h-[60vh] overflow-y-auto custom-scrollbar">
+                            {navDropdownData[link.dropdownKey].map((item) => (
+                              <Link
+                                key={item.id}
+                                to={`${link.to}?id=${item.id}`}
+                                onClick={() => {
+                                  window.scrollTo({ top: 0, behavior: 'instant' });
+                                  setActiveDropdown(null);
+                                }}
+                                className="block px-6 py-3 text-[11px] text-gray-300 hover:text-white hover:bg-st-red/10 border-b border-white/5 last:border-0 transition-colors uppercase tracking-wider font-bold"
+                              >
+                                {item.title}
+                              </Link>
+                            ))}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  )}
+                </div>
               ))}
             </div>
 

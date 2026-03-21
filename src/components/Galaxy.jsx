@@ -1,5 +1,6 @@
 import { Renderer, Program, Mesh, Color, Triangle } from 'ogl';
 import { useEffect, useRef } from 'react';
+import { usePerformance } from '../context/PerformanceContext';
 
 const vertexShader = `
 attribute vec2 uv;
@@ -188,6 +189,7 @@ export default function Galaxy({
   transparent = true,
   ...rest
 }) {
+  const { isLowPerf } = usePerformance();
   const ctnDom = useRef(null);
   const targetMousePos = useRef({ x: 0.5, y: 0.5 });
   const smoothMousePos = useRef({ x: 0.5, y: 0.5 });
@@ -195,7 +197,7 @@ export default function Galaxy({
   const smoothMouseActive = useRef(0.0);
 
   useEffect(() => {
-    if (!ctnDom.current) return;
+    if (!ctnDom.current || isLowPerf) return;
     const ctn = ctnDom.current;
     const renderer = new Renderer({
       alpha: transparent,
@@ -355,6 +357,16 @@ export default function Galaxy({
     autoCenterRepulsion,
     transparent
   ]);
+
+  if (isLowPerf) {
+    return (
+      <div 
+        ref={ctnDom} 
+        className="w-full h-full relative bg-st-darker bg-gradient-to-b from-[#1a0a0a] to-black" 
+        {...rest} 
+      />
+    );
+  }
 
   return <div ref={ctnDom} className="w-full h-full relative" {...rest} />;
 }

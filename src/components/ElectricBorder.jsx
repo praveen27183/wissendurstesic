@@ -1,4 +1,5 @@
 import { useEffect, useRef, useCallback } from 'react';
+import { usePerformance } from '../context/PerformanceContext';
 
 function hexToRgba(hex, alpha = 1) {
   if (!hex) return `rgba(0,0,0,${alpha})`;
@@ -25,6 +26,7 @@ const ElectricBorder = ({
   className,
   style
 }) => {
+  const { isLowPerf } = usePerformance();
   const canvasRef = useRef(null);
   const containerRef = useRef(null);
   const animationRef = useRef(null);
@@ -143,6 +145,8 @@ const ElectricBorder = ({
   );
 
   useEffect(() => {
+    if (isLowPerf) return;
+
     const canvas = canvasRef.current;
     const container = containerRef.current;
     if (!canvas || !container) return;
@@ -265,7 +269,7 @@ const ElectricBorder = ({
       }
       resizeObserver.disconnect();
     };
-  }, [color, speed, chaos, borderRadius, octavedNoise, getRoundedRectPoint]);
+  }, [color, speed, chaos, borderRadius, octavedNoise, getRoundedRectPoint, isLowPerf]);
 
   return (
     <div
@@ -273,25 +277,35 @@ const ElectricBorder = ({
       className={`relative overflow-visible isolate ${className ?? ''}`}
       style={{ '--electric-border-color': color, borderRadius, ...style }}
     >
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-[2]">
-        <canvas ref={canvasRef} className="block" />
-      </div>
+      {!isLowPerf && (
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-[2]">
+          <canvas ref={canvasRef} className="block" />
+        </div>
+      )}
       <div className="absolute inset-0 rounded-[inherit] pointer-events-none z-0">
         <div
           className="absolute inset-0 rounded-[inherit] pointer-events-none"
-          style={{ border: `2px solid ${hexToRgba(color, 0.6)}`, filter: 'blur(1px)' }}
+          style={{ 
+            border: isLowPerf ? `1px solid ${hexToRgba(color, 0.4)}` : `2px solid ${hexToRgba(color, 0.6)}`, 
+            filter: isLowPerf ? 'none' : 'blur(1px)' 
+          }}
         />
         <div
           className="absolute inset-0 rounded-[inherit] pointer-events-none"
-          style={{ border: `2px solid ${color}`, filter: 'blur(4px)' }}
-        />
-        <div
-          className="absolute inset-0 rounded-[inherit] pointer-events-none -z-[1] scale-110 opacity-30"
-          style={{
-            filter: 'blur(32px)',
-            background: `linear-gradient(-30deg, ${color}, transparent, ${color})`
+          style={{ 
+            border: isLowPerf ? `1px solid ${hexToRgba(color, 0.2)}` : `2px solid ${color}`, 
+            filter: isLowPerf ? 'none' : 'blur(4px)' 
           }}
         />
+        {!isLowPerf && (
+          <div
+            className="absolute inset-0 rounded-[inherit] pointer-events-none -z-[1] scale-110 opacity-30"
+            style={{
+              filter: 'blur(32px)',
+              background: `linear-gradient(-30deg, ${color}, transparent, ${color})`
+            }}
+          />
+        )}
       </div>
       <div className="relative rounded-[inherit] z-[1]">{children}</div>
     </div>

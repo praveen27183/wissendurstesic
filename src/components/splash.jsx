@@ -1,5 +1,5 @@
-'use client';
-import { useEffect, useRef } from 'react';
+import { useRef, useEffect } from 'react';
+import { usePerformance } from '../context/PerformanceContext';
 
 function SplashCursor({
   SIM_RESOLUTION = 128,
@@ -17,9 +17,11 @@ function SplashCursor({
   BACK_COLOR = { r: 0.5, g: 0, b: 0 },
   TRANSPARENT = true
 }) {
+  const { isLowPerf } = usePerformance();
   const canvasRef = useRef(null);
 
   useEffect(() => {
+    if (isLowPerf) return;
     const canvas = canvasRef.current;
     if (!canvas) return;
 

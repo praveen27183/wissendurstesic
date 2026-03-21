@@ -2,8 +2,11 @@ import { useState, useEffect } from "react";
 import { UtensilsCrossed, Hotel } from "lucide-react";
 import HeroSection from "../components/herosection";
 import Galaxy from "../components/Galaxy.jsx";
+import OptimizedImage from "../components/OptimizedImage";
+import { usePerformance } from "../context/PerformanceContext";
 
 const FoodAccommodation = () => {
+  const { isLowPerf } = usePerformance();
   const [showIntro, setShowIntro] = useState(true);
 
   useEffect(() => {

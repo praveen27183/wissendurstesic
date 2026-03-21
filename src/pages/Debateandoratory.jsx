@@ -1,8 +1,11 @@
 import { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { ChevronLeft, ChevronRight, Clock, Calendar, X, CheckCircle2 } from 'lucide-react';
 import GradientText from '../components/GradientText';
 import Galaxy from '../components/Galaxy.jsx';
 import HeroSection from '../components/herosection';
+import OptimizedImage from '../components/OptimizedImage';
+import { usePerformance } from '../context/PerformanceContext';
 
 const debateEvents = [
     {
@@ -153,8 +156,20 @@ const debateEvents = [
 ];
 
 const Debateandoratory = () => {
+    const { isLowPerf } = usePerformance();
+    const [searchParams] = useSearchParams();
     const [showIntro, setShowIntro] = useState(true);
     const [detailIndex, setDetailIndex] = useState(null);
+
+    useEffect(() => {
+        const id = searchParams.get('id');
+        if (id) {
+            const idx = debateEvents.findIndex(e => e.id === parseInt(id));
+            if (idx !== -1) {
+                setDetailIndex(idx);
+            }
+        }
+    }, [searchParams]);
 
     useEffect(() => {
         // Automatically hide intro after 8 seconds
@@ -234,12 +249,11 @@ const Debateandoratory = () => {
 
             {/* ── Hero ── */}
             <section className="relative min-h-[45vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden">
-                <img
+                <OptimizedImage
                     src="/asset/hero_sec_for_all/debate_and_oratory_forum.png"
                     alt="Debate & Oratory Hero"
                     className="absolute inset-0 w-full h-full object-cover"
-                    fetchpriority="high"
-                    decoding="sync"
+                    priority={true}
                 />
                 <div className="absolute inset-0 bg-black/65 backdrop-blur-[1px]" />
                 <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
@@ -284,12 +298,10 @@ const Debateandoratory = () => {
                             onClick={() => setDetailIndex(index)}
                         >
                             <div className="relative w-full aspect-video overflow-hidden">
-                                <img
+                                <OptimizedImage
                                     src={event.image}
                                     alt={event.title}
                                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                                    loading="lazy"
-                                    decoding="async"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-[rgba(10,10,15,0.85)] to-transparent"></div>
                                 <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full border border-st-red/30">
@@ -344,12 +356,10 @@ const Debateandoratory = () => {
 
                         {/* LEFT: Full painting & Controls */}
                         <div className="relative w-full md:w-2/5 h-[30vh] md:h-full shrink-0 border-r border-st-red/20">
-                            <img
+                            <OptimizedImage
                                 src={detailBg}
                                 alt=""
                                 className="absolute inset-0 w-full h-full object-cover"
-                                loading="lazy"
-                                decoding="async"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-black via-black/40 to-transparent" />
 

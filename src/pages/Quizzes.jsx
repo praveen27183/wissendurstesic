@@ -1,7 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, memo } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { ChevronLeft, ChevronRight, Clock, Calendar, X, ChevronDown, CheckCircle2 ,Instagram} from 'lucide-react';
 import HeroSection from '../components/herosection';
 import Galaxy from '../components/Galaxy.jsx';
+import OptimizedImage from '../components/OptimizedImage';
+import { usePerformance } from '../context/PerformanceContext';
 
 const quizEvents = [
   {
@@ -182,9 +185,63 @@ const quizEvents = [
   }
 ];
 
+const QuizCard = memo(({ event, index, onClick }) => (
+    <div
+      className="group flex flex-col bg-[rgba(10,10,15,0.85)] border border-st-red/20 rounded-xl overflow-hidden cursor-pointer hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(255,0,60,0.15)] transition-all duration-300"
+      onClick={() => onClick(index)}
+    >
+      <div className="relative w-full aspect-video overflow-hidden">
+        <OptimizedImage
+          src={event.image}
+          alt={event.title}
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[rgba(10,10,15,0.85)] to-transparent"></div>
+        <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full border border-st-red/30">
+          <span className="text-white text-lg font-bold uppercase tracking-wider font-title flex items-center gap-2">
+            {event.date}
+          </span>
+        </div>
+      </div>
+      {event.theme && (
+        <div className="px-6 pt-4">
+          <p className="text-gray-400 text-xs italic">
+            Theme: <span className="text-white/70">{event.theme}</span>
+          </p>
+        </div>
+      )}
+      <div className="flex flex-col p-6 flex-1 bg-[#050505] border-t border-st-red/20">
+        <span className="text-[#ff003c] text-[10px] md:text-xs font-black tracking-widest uppercase mb-1 block font-title">
+          {event.subtitle}
+        </span>
+        <h3 className="text-white text-xl md:text-2xl font-black uppercase leading-tight mb-1 group-hover:text-[#ffffff] transition-colors font-milanesa">
+          {event.title}
+        </h3>
+        
+        <div className="mt-auto pt-4 flex items-center justify-between border-t border-white/5 text-[#9fa0b8] text-[10px] md:text-xs uppercase tracking-widest font-title font-bold">
+          <span className="flex items-center gap-2"><Clock className="w-3.5 h-3.5 text-st-red" /> {event.time || "Single Round Battle"}</span>
+          <span className="text-st-red/50 flex items-center gap-1 group-hover:text-st-red transition-colors">Details <ChevronRight className="w-3 h-3" /></span>
+        </div>
+      </div>
+    </div>
+));
+
 const Quizzes = () => {
-  const [showIntro, setShowIntro] = useState(true);
+    const { isLowPerf } = usePerformance();
+    const [showIntro, setShowIntro] = useState(true);
+  const [searchParams] = useSearchParams();
   const [detailIndex, setDetailIndex] = useState(null);
+
+  useEffect(() => {
+    const id = searchParams.get('id');
+    if (id) {
+      const idx = quizEvents.findIndex(e => e.id === parseInt(id));
+      if (idx !== -1) {
+        setDetailIndex(idx);
+        setShowIntro(false);
+      }
+    }
+  }, [searchParams]);
 
   useEffect(() => {
     // Automatically hide intro after 8 seconds
@@ -286,7 +343,6 @@ const Quizzes = () => {
       {/* ── Event Cards Grid ── */}
       <section className="py-16 px-4 sm:px-8 bg-[#050505]">
 
-        {/* Section Header */}
         <div className="flex items-center justify-center max-w-7xl mx-auto mb-10">
           <div className="h-[1px] bg-[#ff003c]/50 flex-1 max-w-[150px] mr-4"></div>
           <h2 className="text-[#ff003c] font-bold tracking-[0.2em] font-title uppercase text-sm md:text-base">Events Lineup</h2>
@@ -295,46 +351,12 @@ const Quizzes = () => {
 
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:px-12">
           {quizEvents.map((event, index) => (
-            <div
-              key={event.id}
-              className="group flex flex-col bg-[rgba(10,10,15,0.85)] border border-st-red/20 rounded-xl overflow-hidden cursor-pointer hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(255,0,60,0.15)] transition-all duration-300"
-              onClick={() => setDetailIndex(index)}
-            >
-              <div className="relative w-full aspect-video overflow-hidden">
-                <img
-                  src={event.image}
-                  alt={event.title}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[rgba(10,10,15,0.85)] to-transparent"></div>
-                <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full border border-st-red/30">
-                  <span className="text-white text-lg font-bold uppercase tracking-wider font-title flex items-center gap-2">
-                    {event.date}
-                  </span>
-                </div>
-              </div>
-              {event.theme && (
-                <p className="text-gray-400 text-xs italic mb-4">
-                  Theme: <span className="text-white/70">{event.theme}</span>
-                </p>
-              )}
-              <div className="flex flex-col p-6 flex-1 bg-[#050505] border-t border-st-red/20">
-                <span className="text-[#ff003c] text-[10px] md:text-xs font-black tracking-widest uppercase mb-1 block font-title">
-                  {event.subtitle}
-                </span>
-                <h3 className="text-white text-xl md:text-2xl font-black uppercase leading-tight mb-1 group-hover:text-[#ffffff] transition-colors font-milanesa">
-                  {event.title}
-                </h3>
-                
-
-                <div className="mt-auto pt-4 flex items-center justify-between border-t border-white/5 text-[#9fa0b8] text-[10px] md:text-xs uppercase tracking-widest font-title font-bold">
-                  <span className="flex items-center gap-2"><Clock className="w-3.5 h-3.5 text-st-red" /> {event.time || "Single Round Battle"}</span>
-                  <span className="text-st-red/50 flex items-center gap-1 group-hover:text-st-red transition-colors">Details <ChevronRight className="w-3 h-3" /></span>
-                </div>
-              </div>
-            </div>
+            <QuizCard 
+                key={event.id} 
+                event={event} 
+                index={index} 
+                onClick={setDetailIndex} 
+            />
           ))}
         </div>
       </section>
@@ -422,12 +444,10 @@ const Quizzes = () => {
 
             {/* LEFT: Full painting & Controls */}
             <div className="relative w-full md:w-2/5 h-[30vh] md:h-full shrink-0 border-r border-st-red/20">
-              <img
+              <OptimizedImage
                 src={detailBg}
                 alt=""
                 className="absolute inset-0 w-full h-full object-cover"
-                loading="lazy"
-                decoding="async"
               />
               <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-black via-black/40 to-transparent" />
 

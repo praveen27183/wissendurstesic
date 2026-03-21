@@ -6,20 +6,23 @@ import StarBorder from '../components/StarBorder';
 import GlitchText from '../components/GlitchText';
 import GradientText from '../components/GradientText';
 import Galaxy from '../components/Galaxy.jsx';
+import OptimizedImage from '../components/OptimizedImage';
+import { usePerformance } from '../context/PerformanceContext';
 
 const Home = () => {
+  const { isLowPerf } = usePerformance();
+  
   return (
     <div className="min-h-screen font-body bg-[#0a0a0a] text-gray-200 overflow-x-hidden">
       {/* Hero Section */}
       <section className="relative min-h-[65vh] md:min-h-screen flex items-center justify-center overflow-hidden">
-        <img
+        <OptimizedImage
           src="/asset/mainbg/starnger_thingsbg.jpeg"
           alt="Wissendurst Hero"
           className="absolute inset-0 w-full h-full object-cover"
-          fetchpriority="high"
-          decoding="sync"
+          priority={true}
         />
-        <div className="absolute inset-0 bg-[#0a0a0a]/80 backdrop-blur-[2px] z-[1]"></div>
+        <div className={`absolute inset-0 z-[1] ${isLowPerf ? 'bg-[#0a0a0a]/90' : 'bg-[#0a0a0a]/80 backdrop-blur-[2px]'}`}></div>
 
         <div className="absolute inset-0 z-0 pointer-events-none opacity-40">
           <Galaxy 

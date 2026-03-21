@@ -1,20 +1,28 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, lazy, Suspense } from 'react';
+import { PerformanceProvider } from './context/PerformanceContext';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Home from './pages/Home';
-import Workshops from './pages/Workshops';
-import Registration from './pages/Registration';
-import FoodAccommodation from './pages/FoodAccommodation';
-import About from './pages/About';
-import Contactus from './pages/Contactus';
 import IntroAnimation from './components/IntroAnimation';
-import Quizzes from './pages/Quizzes';
-import Academicevents from './pages/Academicevents';
-import Debateandoratory from './pages/Debateandoratory.jsx';
 import SplashCursor from './components/splash';
 
+// Lazy load pages
+const Home = lazy(() => import('./pages/Home'));
+const Academicevents = lazy(() => import('./pages/Academicevents'));
+const Debateandoratory = lazy(() => import('./pages/Debateandoratory.jsx'));
+const Workshops = lazy(() => import('./pages/Workshops'));
+const Registration = lazy(() => import('./pages/Registration'));
+const FoodAccommodation = lazy(() => import('./pages/FoodAccommodation'));
+const About = lazy(() => import('./pages/About'));
+const Contactus = lazy(() => import('./pages/Contactus'));
+const Quizzes = lazy(() => import('./pages/Quizzes'));
 
+// Loading component
+const PageLoader = () => (
+  <div className="min-h-screen bg-st-dark flex items-center justify-center">
+    <div className="w-12 h-12 border-4 border-st-red border-t-transparent rounded-full animate-spin"></div>
+  </div>
+);
 
 // Scroll to top whenever the route changes
 const ScrollToTop = () => {
@@ -36,31 +44,35 @@ function App() {
   };
 
   return (
-    <Router>
-      <SplashCursor />
-      <ScrollToTop />
-      {showIntro ? (
-        <IntroAnimation onComplete={handleIntroComplete} />
-      ) : (
-        <div className="min-h-screen bg-renaissance-dark flex flex-col animate-fade-in transition-opacity duration-1000">
-          <Navbar />
-          <main className="flex-grow pt-20 md:pt-24">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/academicevents" element={<Academicevents />} />
-              <Route path="/debateandoratory" element={<Debateandoratory />} />
-              <Route path="/workshops" element={<Workshops />} />
-              <Route path="/registration" element={<Registration />} />
-              <Route path="/foodaccommodation" element={<FoodAccommodation />} />
-              <Route path="/aboutus" element={<About />} />
-              <Route path="/contact" element={<Contactus />} />
-              <Route path="/quizzes" element={<Quizzes />} />
-            </Routes>
-          </main>
-          <Footer />
-        </div>
-      )}
-    </Router>
+    <PerformanceProvider>
+      <Router>
+        <SplashCursor />
+        <ScrollToTop />
+        {showIntro ? (
+          <IntroAnimation onComplete={handleIntroComplete} />
+        ) : (
+          <div className="min-h-screen bg-renaissance-dark flex flex-col animate-fade-in transition-opacity duration-1000">
+            <Navbar />
+            <main className="flex-grow pt-20 md:pt-24">
+              <Suspense fallback={<PageLoader />}>
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/academicevents" element={<Academicevents />} />
+                  <Route path="/debateandoratory" element={<Debateandoratory />} />
+                  <Route path="/workshops" element={<Workshops />} />
+                  <Route path="/registration" element={<Registration />} />
+                  <Route path="/foodaccommodation" element={<FoodAccommodation />} />
+                  <Route path="/aboutus" element={<About />} />
+                  <Route path="/contact" element={<Contactus />} />
+                  <Route path="/quizzes" element={<Quizzes />} />
+                </Routes>
+              </Suspense>
+            </main>
+            <Footer />
+          </div>
+        )}
+      </Router>
+    </PerformanceProvider>
   );
 }
 

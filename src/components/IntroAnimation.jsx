@@ -57,7 +57,7 @@ const IntroAnimation = ({ onComplete }) => {
   {/* Welcome text */}
   <h3
     className="text-[#ff3333] font-bold tracking-[0.25em] 
-    text-lg sm:text-2xl md:text-4xl lg:text-5xl text-center"
+    text-base sm:text-2xl md:text-4xl lg:text-5xl text-center"
     style={{
       fontFamily: "'Stranger', serif",
       textShadow: "0 0 20px #ff0000, 0 0 40px #cc0000"
@@ -69,7 +69,7 @@ const IntroAnimation = ({ onComplete }) => {
   {/* Main title */}
   <h1
     className="text-[#ff3333] font-bold tracking-[0.15em] 
-    text-5xl sm:text-7xl md:text-[9rem] lg:text-[12rem] text-center"
+    text-3xl min-[400px]:text-4xl sm:text-7xl md:text-[9rem] lg:text-[12rem] text-center"
     style={{
       fontFamily: "'Stranger', serif",
       textShadow: "0 0 30px #ff0000, 0 0 60px #cc0000, 0 0 90px #aa0000"
@@ -134,7 +134,7 @@ const IntroAnimation = ({ onComplete }) => {
                 />
             </div>
 
-            <style jsx>{`
+            <style dangerouslySetInnerHTML={{ __html: `
                 @keyframes shake {
                     0% { transform: translate(1px, 1px) rotate(0deg); }
                     10% { transform: translate(-1px, -2px) rotate(-1deg); }
@@ -148,7 +148,7 @@ const IntroAnimation = ({ onComplete }) => {
                     90% { transform: translate(1px, 2px) rotate(0deg); }
                     100% { transform: translate(1px, -2px) rotate(-1deg); }
                 }
-            `}</style>
+            ` }} />
 
             {/* Skip UI similar to About page */}
             <div className="absolute bottom-8 sm:bottom-12 w-full flex flex-col items-center gap-4 z-[110] pointer-events-none">

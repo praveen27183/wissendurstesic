@@ -1,9 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, memo } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { workshops } from '../data/dummyData';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import HeroSection from '../components/herosection';
 import { motion } from 'framer-motion';
 import Galaxy from '../components/Galaxy.jsx';
+import OptimizedImage from '../components/OptimizedImage';
+import { usePerformance } from '../context/PerformanceContext';
 
 const paintingBackgrounds = [
   // Day 1
@@ -30,9 +33,56 @@ const paintingBackgrounds = [
       "/asset/Workshops/Orthopaedics_Walkmans_Canals.jpg",
 ];
 
+const WorkshopCard = memo(({ workshop, index, bg, onClick }) => (
+  <div
+    className="group flex flex-col bg-[rgba(10,10,15,0.85)] cursor-pointer hover:-translate-y-1 transition-transform duration-300 border border-st-red/20 rounded-xl overflow-hidden shadow-lg"
+    onClick={() => onClick(index)}
+  >
+    <div className="relative w-full aspect-video overflow-hidden">
+      <OptimizedImage
+        src={bg}
+        alt={workshop.title}
+        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-[rgba(10,10,15,0.85)] to-transparent"></div>
+      
+      <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full border border-st-red/30 z-10 transition-transform group-hover:scale-105">
+          <span className="text-white text-[12px] font-bold uppercase tracking-wider font-title flex items-center gap-2">
+              {workshop.date ? workshop.date.split(',')[0] : "TBD"}
+          </span>
+      </div>
+    </div>
+
+    <div className="flex flex-col p-5 md:p-6 flex-1 border-t-2 border-[rgba(10,10,15,0.85)] bg-[#050505]">
+      <span className="text-[#ff003c] text-[10px] md:text-xs font-black tracking-widest uppercase mb-2 block">
+        Workshop
+      </span>
+      <h3
+        className="text-white text-lg md:text-xl font-bold uppercase leading-tight mb-4 group-hover:text-[#ffffff] transition-colors"
+        style={{ fontFamily: '"DM Serif Display", serif' }}
+      >
+        {workshop.title}
+      </h3>
+    </div>
+  </div>
+));
+
 const Workshops = () => {
+  const { isLowPerf } = usePerformance();
   const [showIntro, setShowIntro] = useState(true);
+  const [searchParams] = useSearchParams();
   const [detailIndex, setDetailIndex] = useState(null); // null = grid view
+
+  useEffect(() => {
+    const id = searchParams.get('id');
+    if (id) {
+      const idx = workshops.findIndex(w => w.id === parseInt(id));
+      if (idx !== -1) {
+        setDetailIndex(idx);
+        setShowIntro(false);
+      }
+    }
+  }, [searchParams]);
 
 
 
@@ -144,43 +194,13 @@ const Workshops = () => {
 
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
               {workshops.map((workshop, index) => (
-                <div
+                <WorkshopCard
                   key={workshop.id}
-                  className="group flex flex-col bg-[rgba(10,10,15,0.85)] cursor-pointer hover:-translate-y-1 transition-transform duration-300 border border-st-red/20 rounded-xl overflow-hidden shadow-lg"
-                  onClick={() => setDetailIndex(index)}
-                >
-                  {/* Image top half */}
-                  <div className="relative w-full aspect-video overflow-hidden">
-                    <img
-                      src={paintingBackgrounds[index % paintingBackgrounds.length]}
-                      alt={workshop.title}
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[rgba(10,10,15,0.85)] to-transparent"></div>
-                    
-                    {/* Date Badge */}
-                    <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full border border-st-red/30 z-10 transition-transform group-hover:scale-105">
-                        <span className="text-white text-[12px] font-bold uppercase tracking-wider font-title flex items-center gap-2">
-                            {workshop.date ? workshop.date.split(',')[0] : "TBD"}
-                        </span>
-                    </div>
-                  </div>
-
-                  {/* Text bottom half */}
-                  <div className="flex flex-col p-5 md:p-6 flex-1 border-t-2 border-[rgba(10,10,15,0.85)] bg-[#050505]">
-                    <span className="text-[#ff003c] text-[10px] md:text-xs font-black tracking-widest uppercase mb-2 block">
-                      Workshop
-                    </span>
-                    <h3
-                      className="text-white text-lg md:text-xl font-bold uppercase leading-tight mb-4 group-hover:text-[#ffffff] transition-colors"
-                      style={{ fontFamily: '"DM Serif Display", serif' }}
-                    >
-                      {workshop.title}
-                    </h3>
-                  </div>
-                </div>
+                  workshop={workshop}
+                  index={index}
+                  bg={paintingBackgrounds[index % paintingBackgrounds.length]}
+                  onClick={setDetailIndex}
+                />
               ))}
             </div>
           </section>
@@ -193,12 +213,10 @@ const Workshops = () => {
 
           {/* Hero with painting background */}
           <section className="relative h-[60vh] md:h-[70vh] flex items-center justify-center overflow-hidden">
-            <img
+            <OptimizedImage
               src={detailBg}
               alt=""
               className="absolute inset-0 w-full h-full object-cover transition-all duration-700"
-              loading="lazy"
-              decoding="async"
             />
             <div className="absolute inset-0 bg-black/60"></div>
 

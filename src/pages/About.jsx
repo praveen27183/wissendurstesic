@@ -5,17 +5,17 @@ const aboutImg = "/asset/hero_sec_for_all/about.png";
 const teamImg = "/asset/mainbg/starnger_thingsbg.jpeg";
 import HeroSection from '../components/herosection.jsx';
 import Galaxy from '../components/Galaxy.jsx';
+import OptimizedImage from '../components/OptimizedImage';
+import { usePerformance } from '../context/PerformanceContext';
 
 
 
 const SectionBg = ({ src, opacity = 'opacity-20', children, className = '' }) => (
   <div className={`relative overflow-hidden ${className}`}>
-    <img
+    <OptimizedImage
       src={src}
       alt=""
       className="absolute inset-0 w-full h-full object-cover"
-      loading="lazy"
-      decoding="async"
     />
     <div className={`absolute inset-0 bg-[#050505] ${opacity}`} />
     <div className="absolute inset-0 bg-[#050505]/70" />
