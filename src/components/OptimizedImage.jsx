@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { usePerformance } from '../context/PerformanceContext';
+
 
 const OptimizedImage = ({ 
   src, 
@@ -10,12 +10,14 @@ const OptimizedImage = ({
   height,
   ...props 
 }) => {
-  const { isLowPerf } = usePerformance();
+
   const [error, setError] = useState(false);
 
   // For low-performance, we ensure strictly lazy loading and no fancy decoding
-  const loadingStrategy = isLowPerf ? "lazy" : (priority ? "eager" : "lazy");
-  const decodingStrategy = isLowPerf ? "async" : (priority ? "sync" : "async");
+  const loadingStrategy = priority ? "eager" : "lazy";
+  const decodingStrategy = priority ? "sync" : "async";
+
+
 
   if (error) {
     return (
@@ -33,7 +35,8 @@ const OptimizedImage = ({
       <img
         src={src}
         alt={alt}
-        className={`${className} ${isLowPerf ? '' : 'transition-opacity duration-500'}`}
+        className={`${className} transition-opacity duration-500`}
+
         width={width}
         height={height}
         loading={loadingStrategy}

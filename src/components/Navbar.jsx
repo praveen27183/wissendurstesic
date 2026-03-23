@@ -1,16 +1,16 @@
+
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { navDropdownData } from "../data/navData";
-import { usePerformance } from "../context/PerformanceContext";
+
 
 const Navbar = () => {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
-  const { isLowPerf } = usePerformance();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -77,7 +77,8 @@ const Navbar = () => {
   return (
     <>
       {/* Navbar */}
-      <nav className={`fixed w-full top-0 left-0 z-50 transition-all duration-500 ${isLowPerf ? 'bg-[#0f0f14]' : 'bg-[#0f0f14]/90 backdrop-blur-md'} border-b border-st-red/20 shadow-[0_10px_30px_rgba(255,0,60,0.15)] py-2`}>
+      <nav className="fixed w-full top-0 left-0 z-50 transition-all duration-500 bg-[#0f0f14]/90 backdrop-blur-md border-b border-st-red/20 shadow-[0_10px_30px_rgba(255,0,60,0.15)] py-2">
+
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="flex justify-between items-center h-14 md:h-20 w-full gap-8">
 
@@ -93,6 +94,8 @@ const Navbar = () => {
                   src="/asset/logo/home_page.png"
                   alt=" homepage Logo"
                   className="h-10 md:h-12 lg:h-14 w-auto object-contain drop-shadow-[0_0_8px_rgba(255,255,255,0.4)] relative z-10 transition-transform duration-500 group-hover:scale-105 group-hover:drop-shadow-[0_0_12px_rgba(229,9,20,0.6)]"
+                  fetchpriority="high"
+                  loading="eager"
                 />
               </div>
 
@@ -152,7 +155,8 @@ const Navbar = () => {
                           animate={{ opacity: 1, y: 0, scale: 1 }}
                           exit={{ opacity: 0, y: 10, scale: 0.95 }}
                           transition={{ duration: 0.2 }}
-                          className={`absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 ${isLowPerf ? 'bg-[#0f0f14]' : 'bg-[#0f0f14]/95 backdrop-blur-xl'} border border-st-red/30 rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.5),0_0_20px_rgba(255,0,60,0.1)] overflow-hidden z-50`}
+                          className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 bg-[#0f0f14]/95 backdrop-blur-xl border border-st-red/30 rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.5),0_0_20px_rgba(255,0,60,0.1)] overflow-hidden z-50"
+
                         >
                           <div className="py-2 max-h-[60vh] overflow-y-auto custom-scrollbar">
                             {navDropdownData[link.dropdownKey].map((item) => (
@@ -201,6 +205,7 @@ const Navbar = () => {
             animate="open"
             exit="closed"
             className="fixed inset-0 z-[100] bg-[#0f0f14]/95 backdrop-blur-xl text-white flex flex-col justify-start sm:justify-center items-center overflow-y-auto overflow-x-hidden pt-20 pb-12 sm:py-0"
+
           >
             {/* Close Button */}
             <button

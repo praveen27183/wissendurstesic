@@ -1,10 +1,10 @@
 import React from 'react';
 import GradientText from './GradientText';
 import OptimizedImage from './OptimizedImage';
-import { usePerformance } from '../context/PerformanceContext';
+
 
 const HeroSection = ({ title, subtitle, description, image }) => {
-  const { isLowPerf } = usePerformance();
+
   
   return (
     <section className="relative w-full min-h-[45vh] md:min-h-[60vh] flex items-center justify-center overflow-hidden">
@@ -15,7 +15,9 @@ const HeroSection = ({ title, subtitle, description, image }) => {
         priority={true}
       />
       {/* Dark Overlay */}
-      <div className={`absolute inset-0 bg-black/65 z-[1] ${isLowPerf ? '' : 'backdrop-blur-[1px]'}`} />
+      <div className="absolute inset-0 z-0 bg-gradient-to-t from-[#050505] via-[#050505]/80 to-transparent"></div>
+      <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/80 via-transparent to-transparent"></div>
+
 
   {/* Content */}
   <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">

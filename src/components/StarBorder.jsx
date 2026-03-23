@@ -1,4 +1,4 @@
-import { usePerformance } from '../context/PerformanceContext';
+
 
 const StarBorder = ({
   as: Component = 'button',
@@ -9,7 +9,6 @@ const StarBorder = ({
   children,
   ...rest
 }) => {
-  const { isLowPerf } = usePerformance();
   return (
     <Component
       className={`relative inline-block overflow-hidden rounded-[20px] ${className}`}
@@ -19,7 +18,6 @@ const StarBorder = ({
       }}
       {...rest}
     >
-      {!isLowPerf && (
         <>
           <div
             className="absolute w-[300%] h-[50%] bottom-[-11px] right-[-250%] rounded-full animate-star-movement-bottom z-0"
@@ -52,13 +50,12 @@ const StarBorder = ({
             }}
           ></div>
         </>
-      )}
       <div 
-        className={`relative z-10 ${isLowPerf ? 'bg-[#0f0f14]' : 'bg-gradient-to-b from-[#0f0f14]/90 to-[#050505] border border-gray-800/50 backdrop-blur-md shadow-[0_0_15px_rgba(255,0,60,0.1)]'} text-white text-center rounded-[20px] w-full h-full flex items-center justify-center transition-all hover:bg-[#0f0f14]/50 hover:shadow-[0_0_15px_rgba(255,0,60,0.3)]`}
-        style={isLowPerf ? { border: `1.5px solid ${color}` } : {}}
+        className="relative z-10 bg-gradient-to-b from-[#0f0f14]/90 to-[#050505] border border-gray-800/50 backdrop-blur-md shadow-[0_0_15px_rgba(255,0,60,0.1)] text-white text-center rounded-[20px] w-full h-full flex items-center justify-center transition-all hover:bg-[#0f0f14]/50 hover:shadow-[0_0_15px_rgba(255,0,60,0.3)]"
       >
         {children}
       </div>
+
     </Component>
   );
 };

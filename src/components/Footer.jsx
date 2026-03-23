@@ -1,17 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { usePerformance } from '../context/PerformanceContext';
 
 const Footer = () => {
-  const { isLowPerf } = usePerformance();
   return (
     <footer className="bg-[#050505] text-[#cbd5e1] font-body relative overflow-hidden border-t border-[rgba(255,0,60,0.3)] shadow-[0_-10px_30px_rgba(255,0,60,0.15)]">
 
       {/* Grid overlay */}
-      {!isLowPerf && (
-        <div className="absolute inset-0 opacity-5 bg-[linear-gradient(rgba(31,81,255,0.3)_1px,_transparent_1px),_linear-gradient(90deg,rgba(31,81,255,0.3)_1px,_transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
-      )}
+      <div className="absolute inset-0 opacity-5 bg-[linear-gradient(rgba(31,81,255,0.3)_1px,_transparent_1px),_linear-gradient(90deg,rgba(31,81,255,0.3)_1px,_transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
 
       {/* Top red line */}
       <div className="w-full h-[2px] bg-gradient-to-r from-transparent via-st-red to-transparent opacity-50"></div>
@@ -36,7 +32,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
 
           {/* REACH US */}
-          <div className={`${isLowPerf ? 'bg-[#0f0f14]' : 'bg-[rgba(10,10,15,0.85)] backdrop-blur-[10px]'} border border-[rgba(255,0,60,0.3)] p-6 rounded-lg relative group overflow-hidden`}>
+          <div className="bg-[rgba(10,10,15,0.85)] backdrop-blur-[10px] border border-[rgba(255,0,60,0.3)] p-6 rounded-lg relative group overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-[1px] bg-white/10 group-hover:bg-st-red transition-colors duration-500"></div>
             <h3 className="text-base font-black text-white mb-5 uppercase tracking-[0.3em]">Reach Us</h3>
             <div className="space-y-2 text-sm leading-relaxed text-[#b3b3b3] font-mono">
@@ -47,7 +43,7 @@ const Footer = () => {
           </div>
 
           {/* CONNECT WITH US */}
-          <div className={`${isLowPerf ? 'bg-[#0f0f14]' : 'bg-[rgba(10,10,15,0.85)] backdrop-blur-[10px]'} border border-[rgba(255,0,60,0.3)] p-6 rounded-lg relative group overflow-hidden`}>
+          <div className="bg-[rgba(10,10,15,0.85)] backdrop-blur-[10px] border border-[rgba(255,0,60,0.3)] p-6 rounded-lg relative group overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-[1px] bg-white/10 group-hover:bg-st-red transition-colors duration-500"></div>
             <h3 className="text-base font-black text-white mb-5 uppercase tracking-[0.3em]">Connect With Us</h3>
             <div className="space-y-3 text-sm text-[#b3b3b3] font-mono">
@@ -78,7 +74,7 @@ const Footer = () => {
           </div>
 
           {/* FIND US */}
-          <div className={`${isLowPerf ? 'bg-[#0f0f14]' : 'bg-[rgba(10,10,15,0.85)] backdrop-blur-[10px]'} border border-[rgba(255,0,60,0.3)] p-6 rounded-lg relative group overflow-hidden`}>
+          <div className="bg-[rgba(10,10,15,0.85)] backdrop-blur-[10px] border border-[rgba(255,0,60,0.3)] p-6 rounded-lg relative group overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-[1px] bg-white/10 group-hover:bg-st-red transition-colors duration-500"></div>
             <h3 className="text-base font-black text-white mb-5 uppercase tracking-[0.3em]">Find Us</h3>
             <div className="rounded-lg overflow-hidden border border-white/10">
@@ -97,7 +93,7 @@ const Footer = () => {
           </div>
 
           {/* FOLLOW US & QUICK LINKS */}
-          <div className="bg-[rgba(10,10,15,0.85)] border border-[rgba(255,0,60,0.3)] p-5 sm:p-6 rounded-xl backdrop-blur-md relative group overflow-hidden flex flex-col gap-8">
+          <div className="bg-[rgba(10,10,15,0.85)] border border-[rgba(255,0,60,0.25)] backdrop-blur-xl shadow-[0_0_30px_rgba(255,0,60,0.1)] p-6 sm:p-8 md:p-14 rounded-2xl space-y-4 md:space-y-6 text-[#cbd5e1] text-sm sm:text-base md:text-xl leading-relaxed font-body text-justify relative overflow-hidden flex flex-col gap-8">
             <div className="absolute top-0 left-0 w-full h-[1px] bg-white/10 group-hover:bg-st-red transition-colors duration-500"></div>
 
             {/* Follow Us */}
@@ -166,7 +162,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom copy */}
-      <div className={`relative z-10 border-t border-white/10 ${isLowPerf ? 'bg-[#0a0a0a]' : 'bg-black/90 backdrop-blur-md'}`}>
+      <div className="relative z-10 border-t border-white/10 bg-black/90 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs sm:text-sm text-gray-500 tracking-[0.25em] font-mono uppercase">
           <p className="text-center sm:text-left">© 2026 · WISSENDURST · ESIC Medical College</p>
           <p className="text-center sm:text-right">
@@ -189,3 +185,4 @@ const Footer = () => {
 };
 
 export default Footer;
+

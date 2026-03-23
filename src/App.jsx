@@ -1,11 +1,13 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { useState, useEffect, lazy, Suspense } from 'react';
-import { PerformanceProvider } from './context/PerformanceContext';
+
 import { Analytics } from '@vercel/analytics/react';
 import Navbar from './components/Navbar';
-import Footer from './components/Footer';
 import IntroAnimation from './components/IntroAnimation';
 import SplashCursor from './components/splash';
+
+// Lazy load components
+const Footer = lazy(() => import('./components/Footer'));
 
 // Lazy load pages
 const Home = lazy(() => import('./pages/Home'));
@@ -45,7 +47,7 @@ function App() {
   };
 
   return (
-    <PerformanceProvider>
+
       <Router>
         <Analytics />
         <SplashCursor />
@@ -70,11 +72,13 @@ function App() {
                 </Routes>
               </Suspense>
             </main>
-            <Footer />
+            <Suspense fallback={<div className="h-20 bg-st-dark"></div>}>
+              <Footer />
+            </Suspense>
           </div>
         )}
       </Router>
-    </PerformanceProvider>
+
   );
 }
 

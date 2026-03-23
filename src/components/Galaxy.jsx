@@ -1,6 +1,6 @@
 import { Renderer, Program, Mesh, Color, Triangle } from 'ogl';
 import { useEffect, useRef } from 'react';
-import { usePerformance } from '../context/PerformanceContext';
+
 
 const vertexShader = `
 attribute vec2 uv;
@@ -38,7 +38,7 @@ uniform bool uTransparent;
 
 varying vec2 vUv;
 
-#define NUM_LAYER 6.0
+#define NUM_LAYER 4.0
 #define MAT45 mat2(0.707, -0.707, 0.707, 0.707)
 #define STAR_COLOR_CUTOFF 0.5
 #define PERIOD 3.0
@@ -189,7 +189,7 @@ export default function Galaxy({
   transparent = true,
   ...rest
 }) {
-  const { isLowPerf } = usePerformance();
+
   const ctnDom = useRef(null);
   const targetMousePos = useRef({ x: 0.5, y: 0.5 });
   const smoothMousePos = useRef({ x: 0.5, y: 0.5 });
@@ -197,7 +197,7 @@ export default function Galaxy({
   const smoothMouseActive = useRef(0.0);
 
   useEffect(() => {
-    if (!ctnDom.current || isLowPerf) return;
+    if (!ctnDom.current) return;
     const ctn = ctnDom.current;
     const renderer = new Renderer({
       alpha: transparent,
@@ -271,33 +271,6 @@ export default function Galaxy({
 
       const lerpFactor = 0.05;
       smoothMousePos.current.x += (targetMousePos.current.x - smoothMousePos.current.x) * lerpFactor;
-      smoothMousePos.current.y += (targetMousePos.current.y - smoothMousePos.current.y) * lerpValue; // This looks like a mistake in original source? (lerpValue vs lerpFactor)
-      // Actually, looking at the sourcefetched: smoothMousePos.current.y += (targetMousePos.current.y - smoothMousePos.current.y) * lerpFactor;
-      // Fixed below.
-
-      smoothMousePos.current.x += (targetMousePos.current.x - smoothMousePos.current.x) * lerpFactor;
-      smoothMousePos.current.y += (targetMousePos.current.y - smoothMousePos.current.y) * lerpFactor;
-
-      smoothMouseActive.current += (targetMouseActive.current - smoothMouseActive.current) * lerpFactor;
-
-      program.uniforms.uMouse.value[0] = smoothMousePos.current.x;
-      program.uniforms.uMouse.value[1] = smoothMousePos.current.y;
-      program.uniforms.uMouseActiveFactor.value = smoothMouseActive.current;
-
-      renderer.render({ scene: mesh });
-    }
-    // Fixed the duplicate lerp lines and the wrong variable name from original thinking.
-    // Retrying clean code for the update function.
-    
-    function updateClean(t) {
-      animateId = requestAnimationFrame(updateClean);
-      if (!disableAnimation) {
-        program.uniforms.uTime.value = t * 0.001;
-        program.uniforms.uStarSpeed.value = (t * 0.001 * starSpeed) / 10.0;
-      }
-
-      const lerpFactor = 0.05;
-      smoothMousePos.current.x += (targetMousePos.current.x - smoothMousePos.current.x) * lerpFactor;
       smoothMousePos.current.y += (targetMousePos.current.y - smoothMousePos.current.y) * lerpFactor;
 
       smoothMouseActive.current += (targetMouseActive.current - smoothMouseActive.current) * lerpFactor;
@@ -309,7 +282,8 @@ export default function Galaxy({
       renderer.render({ scene: mesh });
     }
 
-    animateId = requestAnimationFrame(updateClean);
+    animateId = requestAnimationFrame(update);
+
     ctn.appendChild(gl.canvas);
 
     function handleMouseMove(e) {
@@ -357,16 +331,6 @@ export default function Galaxy({
     autoCenterRepulsion,
     transparent
   ]);
-
-  if (isLowPerf) {
-    return (
-      <div 
-        ref={ctnDom} 
-        className="w-full h-full relative bg-st-darker bg-gradient-to-b from-[#1a0a0a] to-black" 
-        {...rest} 
-      />
-    );
-  }
 
   return <div ref={ctnDom} className="w-full h-full relative" {...rest} />;
 }

@@ -11,10 +11,10 @@ import GradientText from '../components/GradientText';
 
 import Galaxy from '../components/Galaxy.jsx';
 import OptimizedImage from '../components/OptimizedImage';
-import { usePerformance } from '../context/PerformanceContext';
+
 
 const Registration = () => {
-  const { isLowPerf } = usePerformance();
+
   const [showIntro, setShowIntro] = useState(true);
 
   useEffect(() => {
@@ -43,7 +43,8 @@ const Registration = () => {
   const TimelineStep = ({ num, title, desc, icon: Icon, isLast }) => (
     <div className="flex gap-5 md:gap-8 group">
       <div className="flex flex-col items-center">
-        <div className={`w-12 h-12 md:w-14 md:h-14 rounded-full ${isLowPerf ? 'bg-[#0f0f14]' : 'bg-black/80 backdrop-blur-sm'} border border-st-red/30 flex items-center justify-center shrink-0 shadow-[0_0_15px_rgba(255,0,60,0.1)] group-hover:bg-st-red/10 group-hover:border-st-red group-hover:scale-110 group-hover:shadow-[0_0_25px_rgba(255,0,60,0.4)] transition-all duration-500`}>
+        <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-black/80 backdrop-blur-sm border border-st-red/30 flex items-center justify-center shrink-0 shadow-[0_0_15px_rgba(255,0,60,0.1)] group-hover:bg-st-red/10 group-hover:border-st-red group-hover:scale-110 group-hover:shadow-[0_0_25px_rgba(255,0,60,0.4)] transition-all duration-500">
+
           <span className="font-title font-bold text-st-red text-xl group-hover:text-[#ffffff] transition-colors">{num}</span>
         </div>
         {!isLast && <div className="w-px h-full min-h-[40px] bg-gradient-to-b from-st-red/40 to-transparent my-3 group-hover:from-st-red transition-colors duration-500"></div>}
@@ -61,9 +62,10 @@ const Registration = () => {
   if (showIntro) {
     return (
       <div
-        className={`fixed inset-0 z-[100] ${isLowPerf ? 'bg-[#050505]' : 'bg-black'} flex items-center justify-center p-4 cursor-pointer`}
+        className="fixed inset-0 z-[100] bg-black flex items-center justify-center p-4 cursor-pointer"
         onClick={() => setShowIntro(false)}
       >
+
         <style dangerouslySetInnerHTML={{
           __html: `
             .text-outline {
@@ -86,7 +88,6 @@ const Registration = () => {
               100% { background-position: 0 0; }
             }
           `}} />
-        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet" />
         <div
           className="text-center w-full flex flex-col items-center justify-center animate-[fadeIn_3s_ease-out_forwards]"
           style={{ fontFamily: "'Cinzel', serif" }}
@@ -115,15 +116,16 @@ const Registration = () => {
 
       {/* ── 1. HERO SECTION ── */}
       <div className="relative min-h-[52vh] md:min-h-[85vh] flex items-center justify-center overflow-hidden">
-        <img
+        <OptimizedImage
           src="/asset/hero_sec_for_all/registration.png"
           alt="Registration Hero"
           className="absolute inset-0 w-full h-full object-cover"
-          fetchpriority="high"
-          decoding="sync"
+          priority={true}
         />
-        <div className={`absolute inset-0 z-0 bg-gradient-to-t from-[#050505] ${isLowPerf ? 'via-[#050505]' : 'via-[#050505]/80'} to-transparent`}></div>
-        <div className={`absolute inset-0 z-0 bg-gradient-to-b ${isLowPerf ? 'from-[#050505]' : 'from-black/80'} via-transparent to-transparent`}></div>
+
+        <div className="absolute inset-0 z-0 bg-gradient-to-t from-[#050505] via-[#050505]/80 to-transparent"></div>
+        <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/80 via-transparent to-transparent"></div>
+
 
         {/* Animated Orbs */}
         <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-st-red/10 rounded-full blur-[120px] animate-pulse pointer-events-none"></div>
@@ -297,7 +299,8 @@ const Registration = () => {
 
           <div className="grid lg:grid-cols-12 gap-6 sm:gap-8">
             {/* Categories */}
-            <div className={`lg:col-span-4 ${isLowPerf ? 'bg-[#0f0f14]' : 'bg-black/40 backdrop-blur-md'} border border-st-red/20 rounded-2xl sm:rounded-3xl p-5 sm:p-8 hover:border-st-red/40 transition-colors`}>
+            <div className="lg:col-span-4 bg-black/40 backdrop-blur-md border border-st-red/20 rounded-2xl sm:rounded-3xl p-5 sm:p-8 hover:border-st-red/40 transition-colors">
+
               <h3 className="text-lg sm:text-xl font-title font-bold text-st-red mb-6 sm:mb-8 uppercase tracking-widest flex items-center gap-3">
                 <UserPlus className="w-5 h-5 sm:w-6 sm:h-6" /> Categories
               </h3>
@@ -322,7 +325,8 @@ const Registration = () => {
             </div>
 
             {/* Events Without General Registration */}
-            <div className={`lg:col-span-8 ${isLowPerf ? 'bg-[#0f0f14]' : 'bg-black/40 backdrop-blur-md'} border border-st-red/20 rounded-2xl sm:rounded-3xl p-5 sm:p-8 hover:border-st-red/40 transition-colors`}>
+            <div className="lg:col-span-8 bg-black/40 backdrop-blur-md border border-st-red/20 rounded-2xl sm:rounded-3xl p-5 sm:p-8 hover:border-st-red/40 transition-colors">
+
               <h3 className="text-lg sm:text-xl font-title font-bold text-st-red mb-6 sm:mb-8 uppercase tracking-widest border-b border-st-red/20 pb-4 sm:pb-6 flex items-center gap-3">
                 <ShieldAlert className="w-5 h-5 sm:w-6 sm:h-6" /> Events Exempt from General Registration
               </h3>
@@ -392,7 +396,8 @@ const Registration = () => {
                 </div>
               </div>
 
-              <div className={`${isLowPerf ? 'bg-[#0a0a0a]' : 'bg-black/50 backdrop-blur-md'} p-5 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl border border-white/10 shadow-[0_0_30px_rgba(255,0,60,0.1)]`}>
+              <div className="bg-black/50 backdrop-blur-md p-5 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl border border-white/10 shadow-[0_0_30px_rgba(255,0,60,0.1)]">
+
 
                 {/* Heading */}
                 <h3 className="text-base sm:text-xl md:text-2xl font-title font-bold text-st-red mb-6 sm:mb-10 uppercase tracking-[0.25em] text-center sm:text-left">
@@ -483,12 +488,14 @@ const Registration = () => {
           </div>
 
           {/* Workshop Registration Track */}
-          <div id="section-workshop" className="bg-[#0f0f14] border border-st-red/20 rounded-3xl sm:rounded-[2rem] p-5 sm:p-8 md:p-12 lg:p-16 shadow-2xl relative overflow-hidden group scroll-mt-28">
+          <div id="section-workshop" className="bg-[#0f0f14] border border-st-red/20 rounded-3xl sm:rounded-[2rem] p-5 sm:p-8 md:p-12 lg:p-16 shadow-2xl relative overflow-hidden group scroll-mt-28 simple-gradient">
+
             <div className="absolute top-0 left-0 w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-st-red/5 rounded-full blur-[80px] md:blur-[100px] pointer-events-none transform -translate-x-1/3 -translate-y-1/3 group-hover:bg-st-red/10 transition-colors duration-700"></div>
 
             <div className="grid lg:grid-cols-[1.5fr_1fr] gap-6 sm:gap-8 lg:gap-20 relative z-10">
 
-              <div className={`order-2 lg:order-1 ${isLowPerf ? 'bg-[#0a0a0a]' : 'bg-black/40'} p-5 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl border border-white/5`}>
+              <div className="order-2 lg:order-1 bg-black/40 p-5 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl border border-white/5">
+
                 <h3 className="text-base sm:text-lg md:text-xl font-title font-bold text-st-red mb-6 sm:mb-10 uppercase tracking-widest">
                   Registration Process
                 </h3>
@@ -565,7 +572,8 @@ const Registration = () => {
                 </div>
               </div>
 
-              <div className={`bg-black/40 ${isLowPerf ? 'bg-[#0a0a0a]' : 'bg-black/40'} p-5 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl border border-white/5`}>
+              <div className="bg-black/40 p-5 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl border border-white/5">
+
                 <h3 className="text-base sm:text-lg md:text-xl font-title font-bold text-white mb-6 sm:mb-10 uppercase tracking-widest">
                   Registration Process
                 </h3>

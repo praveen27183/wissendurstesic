@@ -32,9 +32,9 @@
   <meta property="og:title" content="WISSENDURST 2026 | ESIC Medical College Chennai" />
   <meta property="og:description"
     content="Join WISSENDURST 2026 - Workshops, events, and hands-on experiences." />
- <meta name="og:image" content="public/asset/logo/preview.jpg" />
+  <meta property="og:image" content="/asset/logo/preview.jpg" />
   <!-- 🔥 IMPORTANT: CHANGE IMAGE HERE -->
-  <meta property="og:image" content="public/asset/logo/preview.jpg" />
+  <meta property="og:image" content="/asset/logo/preview.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 
@@ -47,19 +47,32 @@
   <meta name="twitter:title" content="WISSENDURST 2026" />
   <meta name="twitter:description"
     content="Join WISSENDURST 2026 - Chennai's biggest medical fest." />
-  <meta name="twitter:image" content="public/asset/logo/preview.jpg" />
+  <meta name="twitter:image" content="/asset/logo/preview.jpg" />
 
-  <!-- ✅ PERFORMANCE -->
+  <!-- ✅ PERFORMANCE & FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-  <!-- ✅ FONTS -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=DM+Serif+Display&family=Grenze+Gotisch&family=Libre+Baskerville&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=DM+Serif+Display&family=Grenze+Gotisch&family=Libre+Baskerville&family=Cinzel:wght@400;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="preload" href="/asset/logo/home_page.png" as="image" fetchpriority="high">
+  <link rel="preload" href="/asset/hero_sec_for_all/registration.png" as="image" fetchpriority="high">
 
   <!-- ✅ THEME -->
   <meta name="theme-color" content="#000000" />
+
+  <!-- ✅ PRELOADS -->
+  <link rel="preload" href="/asset/mainbg/starnger_thingsbg.jpeg" as="image">
+
+  
+  <!-- ✅ CRITICAL CSS -->
+  <style>
+    :root { --st-dark: #050505; --st-red: #ff003c; --st-blue: #2563ff; }
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background-color: #050505; color: #fff; font-family: system-ui, -apple-system, sans-serif; width: 100%; height: 100%; overflow-x: hidden; }
+    #root { min-height: 100vh; display: flex; flex-direction: column; }
+    .animate-spin { animation: spin 1s linear infinite; }
+    @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+  </style>
 
   <!-- ✅ STRUCTURED DATA -->
   <script type="application/ld+json">

@@ -6,7 +6,7 @@ const teamImg = "/asset/mainbg/starnger_thingsbg.jpeg";
 import HeroSection from '../components/herosection.jsx';
 import Galaxy from '../components/Galaxy.jsx';
 import OptimizedImage from '../components/OptimizedImage';
-import { usePerformance } from '../context/PerformanceContext';
+
 
 
 
@@ -24,7 +24,7 @@ const SectionBg = ({ src, opacity = 'opacity-20', children, className = '' }) =>
 );
 
 const About = () => {
-  const { isLowPerf } = usePerformance();
+
   const [showIntro, setShowIntro] = useState(true);
   const scrollContainerRef = useRef(null);
 
@@ -74,7 +74,7 @@ const About = () => {
   if (showIntro) {
     return (
       <div
-        className={`fixed inset-0 z-[100] ${isLowPerf ? 'bg-[#050505]' : 'bg-black'} flex items-center justify-center p-4 cursor-pointer`}
+        className={`fixed inset-0 z-[100] bg-black flex items-center justify-center p-4 cursor-pointer`}
         onClick={() => setShowIntro(false)}
       >
         <style dangerouslySetInnerHTML={{
@@ -99,7 +99,6 @@ const About = () => {
               100% { background-position: 0 0; }
             }
           `}} />
-        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet" />
         <div
           className="text-center w-full flex flex-col items-center justify-center animate-[fadeIn_3s_ease-out_forwards]"
           style={{ fontFamily: "'Cinzel', serif" }}
@@ -153,9 +152,7 @@ const About = () => {
 
 
       {/* Subtle Ambient Glow Effect inside Background */}
-      {!isLowPerf && (
-        <div className="absolute top-0 left-1/2 w-full max-w-4xl h-[30vh] -translate-x-1/2 bg-st-red/10 blur-[120px] rounded-[100%] pointer-events-none" />
-      )}
+      <div className="absolute top-0 left-1/2 w-full max-w-4xl h-[30vh] -translate-x-1/2 bg-st-red/10 blur-[120px] rounded-[100%] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col gap-24">
 
@@ -164,10 +161,8 @@ const About = () => {
 
           {/* Wissendurst Context Card */}
           <div className="relative group">
-            {!isLowPerf && (
-              <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-white/0 rounded-3xl blur-md transition-all duration-700 group-hover:bg-white/10" />
-            )}
-            <div className={`relative ${isLowPerf ? 'bg-[#0f0f14] border border-white/10 shadow-sm' : 'bg-[#1a0f0a]/60 backdrop-blur-xl border border-st-red/20 shadow-2xl'} rounded-3xl p-8 md:p-12 transition-all duration-500 hover:border-st-red/40 hover:shadow-[0_0_40px_rgba(255,0,60,0.1)]`}>
+            <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-white/0 rounded-3xl blur-md transition-all duration-700 group-hover:bg-white/10" />
+            <div className={`relative bg-[#1a0f0a]/60 backdrop-blur-xl border border-st-red/20 shadow-2xl rounded-3xl p-8 md:p-12 transition-all duration-500 hover:border-st-red/40 hover:shadow-[0_0_40px_rgba(255,0,60,0.1)]`}>
 
               <h2 className="text-4xl md:text-5xl lg:text-5xl font-milanesa font-black mb-8 text-transparent bg-clip-text bg-gradient-to-r from-[#ffffff] via-st-red to-[#ffffff] uppercase tracking-wide drop-shadow-sm">
                 Wissendurst 2026
@@ -221,10 +216,8 @@ const About = () => {
 
           {/* Note From Committee Glass Card */}
           <div className="group relative h-full flex flex-col">
-            {!isLowPerf && (
-              <div className="absolute inset-0 bg-gradient-to-b from-st-red/5 to-transparent rounded-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none" />
-            )}
-            <div className={`relative h-full ${isLowPerf ? 'bg-[#0f0f14] border border-white/10 shadow-sm' : 'bg-[#1a0f0a]/60 backdrop-blur-xl border border-st-red/15 shadow-xl'} rounded-3xl p-8 md:p-10 transition-all duration-500 hover:border-st-red/40 hover:-translate-y-2 flex flex-col`}>
+            <div className="absolute inset-0 bg-gradient-to-b from-st-red/5 to-transparent rounded-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none" />
+            <div className={`relative h-full bg-[#1a0f0a]/60 backdrop-blur-xl border border-st-red/15 shadow-xl rounded-3xl p-8 md:p-10 transition-all duration-500 hover:border-st-red/40 hover:-translate-y-2 flex flex-col`}>
               <h2 className="text-2xl md:text-3xl font-milanesa font-black mb-6 text-st-red uppercase tracking-wide drop-shadow-sm">
                 Note from the Committee
               </h2>
@@ -247,10 +240,8 @@ const About = () => {
 
           {/* About ESIC MCH Glass Card */}
           <div className="group relative h-full flex flex-col">
-            {!isLowPerf && (
-              <div className="absolute inset-0 bg-gradient-to-b from-st-red/5 to-transparent rounded-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none" />
-            )}
-            <div className={`relative h-full ${isLowPerf ? 'bg-[#0f0f14] border border-white/10 shadow-sm' : 'bg-[#1a0f0a]/60 backdrop-blur-xl border border-st-red/15 shadow-xl'} rounded-3xl p-8 md:p-10 transition-all duration-500 hover:border-st-red/40 hover:-translate-y-2 flex flex-col`}>
+            <div className="absolute inset-0 bg-gradient-to-b from-st-red/5 to-transparent rounded-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none" />
+            <div className={`relative h-full bg-[#1a0f0a]/60 backdrop-blur-xl border border-st-red/15 shadow-xl rounded-3xl p-8 md:p-10 transition-all duration-500 hover:border-st-red/40 hover:-translate-y-2 flex flex-col`}>
               <h2 className="text-2xl md:text-3xl font-milanesa font-black mb-6 text-st-red uppercase tracking-wide drop-shadow-sm">
                 About ESIC MCH, Chennai
               </h2>
@@ -309,7 +300,7 @@ const About = () => {
                 {/* Metro Card */}
                 <div className="group relative h-full">
                   <div className="absolute inset-0 bg-gradient-to-r from-st-red/10 to-transparent rounded-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none" />
-                  <div className={`relative h-full ${isLowPerf ? 'bg-[#0f0f14]' : 'bg-[#1a0f0a]/60 backdrop-blur-xl'} border border-st-red/20 shadow-xl rounded-3xl p-6 transition-all duration-500 hover:border-st-red/50 hover:translate-x-2 hover:shadow-[10px_0_40px_rgba(255,0,60,0.15)] flex items-center gap-6`}>
+                  <div className={`relative h-full bg-[#1a0f0a]/60 backdrop-blur-xl border border-st-red/20 shadow-xl rounded-3xl p-6 transition-all duration-500 hover:border-st-red/50 hover:translate-x-2 hover:shadow-[10px_0_40px_rgba(255,0,60,0.15)] flex items-center gap-6`}>
                     <div className="w-16 h-16 shrink-0 rounded-full bg-gradient-to-br from-st-red/20 to-transparent border border-st-red/30 flex items-center justify-center shadow-inner group-hover:scale-110 transition-transform duration-500">
                       <MapPin strokeWidth={1.5} className="w-8 h-8 text-st-red drop-shadow-[0_0_8px_rgba(255,0,60,0.8)]" />
                     </div>
@@ -325,7 +316,7 @@ const About = () => {
                 {/* Bus Card */}
                 <div className="group relative h-full">
                   <div className="absolute inset-0 bg-gradient-to-r from-st-red/10 to-transparent rounded-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none" />
-                  <div className={`relative h-full ${isLowPerf ? 'bg-[#0f0f14]' : 'bg-[#1a0f0a]/60 backdrop-blur-xl'} border border-st-red/20 shadow-xl rounded-3xl p-6 transition-all duration-500 hover:border-st-red/50 hover:translate-x-2 hover:shadow-[10px_0_40px_rgba(255,0,60,0.15)] flex flex-col sm:flex-row items-center sm:items-start gap-6`}>
+                  <div className={`relative h-full bg-[#1a0f0a]/60 backdrop-blur-xl border border-st-red/20 shadow-xl rounded-3xl p-6 transition-all duration-500 hover:border-st-red/50 hover:translate-x-2 hover:shadow-[10px_0_40px_rgba(255,0,60,0.15)] flex flex-col sm:flex-row items-center sm:items-start gap-6`}>
                     <div className="w-16 h-16 shrink-0 rounded-full bg-gradient-to-br from-st-red/20 to-transparent border border-st-red/30 flex items-center justify-center shadow-inner group-hover:scale-110 transition-transform duration-500">
                       <Bus strokeWidth={1.5} className="w-8 h-8 text-st-red drop-shadow-[0_0_8px_rgba(255,0,60,0.8)]" />
                     </div>
@@ -349,7 +340,7 @@ const About = () => {
                 {/* Train / Flight Card */}
                 <div className="group relative h-full sm:col-span-2 lg:col-span-1">
                   <div className="absolute inset-0 bg-gradient-to-r from-st-red/10 to-transparent rounded-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none" />
-                  <div className={`relative h-full ${isLowPerf ? 'bg-[#0f0f14]' : 'bg-[#1a0f0a]/60 backdrop-blur-xl'} border border-st-red/20 shadow-xl rounded-3xl p-6 transition-all duration-500 hover:border-st-red/50 hover:translate-x-2 hover:shadow-[10px_0_40px_rgba(255,0,60,0.15)] flex flex-col sm:flex-row items-center gap-6`}>
+                  <div className={`relative h-full bg-[#1a0f0a]/60 backdrop-blur-xl border border-st-red/20 shadow-xl rounded-3xl p-6 transition-all duration-500 hover:border-st-red/50 hover:translate-x-2 hover:shadow-[10px_0_40px_rgba(255,0,60,0.15)] flex flex-col sm:flex-row items-center gap-6`}>
                     <div className="flex flex-col gap-2 shrink-0">
                       <div className="w-12 h-12 rounded-full bg-gradient-to-br from-st-red/20 to-transparent border border-st-red/30 flex items-center justify-center shadow-inner group-hover:-translate-x-1 transition-transform duration-500">
                         <Train strokeWidth={1.5} className="w-6 h-6 text-st-red drop-shadow-[0_0_8px_rgba(255,0,60,0.8)]" />
@@ -499,7 +490,7 @@ const About = () => {
                   key={i}
                   className="shrink-0 w-[85vw] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] snap-center group relative aspect-video overflow-hidden rounded-2xl border border-st-red/20 shadow-xl cursor-default"
                 >
-                <div className={`absolute inset-0 ${isLowPerf ? 'bg-[#050505]/20' : 'bg-[#050505]/20 group-hover:bg-transparent'} transition-colors duration-500 z-10`} />
+                  <div className={`absolute inset-0 bg-[#050505]/20 group-hover:bg-transparent transition-colors duration-500 z-10`} />
 
                   <img
                     src={img.src}
@@ -508,7 +499,7 @@ const About = () => {
                   />
 
                   <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-[#050505] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20">
-
+                    <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-transparent via-st-red to-transparent opacity-30 shadow-[0_0_15px_rgba(255,0,60,0.2)]"></div>
                   </div>
                 </div>
               ))}
@@ -624,7 +615,7 @@ const About = () => {
                   { role: "Accommodation", names: ["ARAVINDH B", "AFLAHA T"] },
 
                 ].map((item, ii) => (
-                  <div key={ii} className={`flex flex-col p-6 rounded-2xl ${isLowPerf ? 'bg-[#0f0f14] border border-white/10' : ''}`}>
+                  <div key={ii} className="flex flex-col p-6 rounded-2xl">
 
                     {/* Role */}
                     <p className="text-sm border-b border-st-red/30 pb-2 text-st-red uppercase tracking-[0.2em] font-bold mb-4">

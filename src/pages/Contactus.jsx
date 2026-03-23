@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import HeroSection from "../components/herosection";
 import { Phone, Mail } from "lucide-react";
 import Galaxy from "../components/Galaxy.jsx";
-import { usePerformance } from "../context/PerformanceContext";
 
 /* ===============================
    Organizing Committee Contacts
@@ -121,7 +120,7 @@ const Contacts = [
 ];
 
 const Contactus = () => {
-  const { isLowPerf } = usePerformance();
+
   const [showIntro, setShowIntro] = useState(true);
 
   useEffect(() => {
@@ -230,9 +229,9 @@ const Contactus = () => {
             {Contacts.map((col, ci) => (
               <div
                 key={ci}
-                className={`group ${isLowPerf ? 'bg-[#0f0f14] border-white/10 shadow-sm' : 'bg-gradient-to-b from-[#0a0a0f]/80 to-[#050505]/90 backdrop-blur-md border-red-900/30 hover:border-red-500/60 hover:shadow-[0_0_25px_rgba(255,0,60,0.25)] hover:-translate-y-2'} 
+                className="group bg-gradient-to-b from-[#0a0a0f]/80 to-[#050505]/90 backdrop-blur-md border-red-900/30 hover:border-red-500/60 hover:shadow-[0_0_25px_rgba(255,0,60,0.25)] hover:-translate-y-2
               border rounded-2xl p-8
-              transition-all duration-500`}
+              transition-all duration-500"
               >
 
                 {/* ROLE */}
@@ -283,10 +282,10 @@ const Contactus = () => {
 
             <a
               href="mailto:Wissendurst26@gmail.com"
-              className={`group relative ${isLowPerf ? 'bg-[#0f0f14] border-white/10 shadow-sm' : 'bg-[#0f0f14]/80 backdrop-blur-md border-red-900/30 hover:border-red-500/60 hover:shadow-[0_0_35px_rgba(255,0,60,0.2)]'} 
+              className="group relative bg-[#0f0f14]/80 backdrop-blur-md border-red-900/30 hover:border-red-500/60 hover:shadow-[0_0_35px_rgba(255,0,60,0.2)]
             border rounded-2xl p-6 sm:p-10
             transition-all duration-500
-            flex flex-col sm:flex-row items-center gap-6`}
+            flex flex-col sm:flex-row items-center gap-6"
             >
               <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-red-500/10 flex items-center justify-center group-hover:bg-red-500/20 transition-colors">
                 <Mail className="w-8 h-8 sm:w-10 sm:h-10 text-red-500" />

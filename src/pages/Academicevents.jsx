@@ -4,7 +4,7 @@ import { ChevronLeft, ChevronRight, Clock, Calendar, X, ChevronDown, CheckCircle
 import HeroSection from '../components/herosection';
 import Galaxy from '../components/Galaxy.jsx';
 import OptimizedImage from '../components/OptimizedImage';
-import { usePerformance } from '../context/PerformanceContext';
+
 
 const academicEvents = [
     {
@@ -444,9 +444,9 @@ const academicEvents = [
     }
 ];
 
-const EventCard = memo(({ event, index, onClick, isLowPerf }) => (
+const EventCard = memo(({ event, index, onClick }) => (
     <div
-        className={`group flex flex-col ${isLowPerf ? 'bg-[#0f0f14] border-white/10 shadow-sm' : 'bg-[rgba(10,10,15,0.85)] border-st-red/20 hover:shadow-[0_10px_30px_rgba(255,0,60,0.15)] hover:-translate-y-2'} border rounded-xl overflow-hidden cursor-pointer transition-all duration-300`}
+        className="group flex flex-col bg-[rgba(10,10,15,0.85)] border-st-red/20 hover:shadow-[0_10px_30px_rgba(255,0,60,0.15)] hover:-translate-y-2 border rounded-xl overflow-hidden cursor-pointer transition-all duration-300"
         onClick={() => onClick(index)}
     >
         <div className="relative w-full aspect-video overflow-hidden">
@@ -456,7 +456,7 @@ const EventCard = memo(({ event, index, onClick, isLowPerf }) => (
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[rgba(10,10,15,0.85)] to-transparent"></div>
-            <div className={`absolute top-4 right-4 ${isLowPerf ? 'bg-[#0f0f14] border-white/10' : 'bg-black/60 backdrop-blur-md border-st-red/30'} px-3 py-1.5 rounded-full border`}>
+            <div className={`absolute top-4 right-4 bg-black/60 backdrop-blur-md border-st-red/30 px-3 py-1.5 rounded-full border`}>
                 <span className="text-white text-lg font-bold uppercase tracking-wider font-title flex items-center gap-2">
                     {event.date.split(' ')[0]}
                 </span>
@@ -479,7 +479,7 @@ const EventCard = memo(({ event, index, onClick, isLowPerf }) => (
 ));
 
 const Academicevents = () => {
-    const { isLowPerf } = usePerformance();
+
     const [showIntro, setShowIntro] = useState(true);
     const [searchParams] = useSearchParams();
     const [detailIndex, setDetailIndex] = useState(null);
@@ -606,7 +606,6 @@ const Academicevents = () => {
                             event={event}
                             index={index}
                             onClick={setDetailIndex}
-                            isLowPerf={isLowPerf}
                         />
                     ))}
                 </div>
@@ -614,7 +613,7 @@ const Academicevents = () => {
 
             {/* ── Detail Overlay ── */}
             {inDetail && detailEvent && (
-                <div className={`fixed inset-0 z-50 ${isLowPerf ? 'bg-black' : 'bg-black/95 backdrop-blur-xl'} flex flex-col overflow-hidden`}>
+                <div className={`fixed inset-0 z-50 bg-black/95 backdrop-blur-xl flex flex-col overflow-hidden`}>
 
                     {/* Mobile top back bar */}
                     <div className="flex md:hidden items-center justify-between px-4 py-3 bg-[#0f0f14] border-b border-st-red/20 shrink-0 z-30">
@@ -640,13 +639,13 @@ const Academicevents = () => {
 
                         {/* LEFT: Full painting & Controls */}
                         <div className="relative w-full md:w-2/5 h-[30vh] md:h-full shrink-0 border-r border-st-red/20">
-                            <img
+                            <OptimizedImage
                                 src={detailBg}
                                 alt=""
                                 className="absolute inset-0 w-full h-full object-cover"
-                                loading="lazy"
-                                decoding="async"
+                                priority={true}
                             />
+
                             <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-black via-black/40 to-transparent" />
 
                             {/* Desktop Details & Controls */}

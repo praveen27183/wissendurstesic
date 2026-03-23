@@ -1,12 +1,12 @@
+
 import { useState, useEffect } from "react";
 import { UtensilsCrossed, Hotel } from "lucide-react";
 import HeroSection from "../components/herosection";
 import Galaxy from "../components/Galaxy.jsx";
 import OptimizedImage from "../components/OptimizedImage";
-import { usePerformance } from "../context/PerformanceContext";
 
 const FoodAccommodation = () => {
-  const { isLowPerf } = usePerformance();
+
   const [showIntro, setShowIntro] = useState(true);
 
   useEffect(() => {
@@ -111,7 +111,8 @@ const FoodAccommodation = () => {
 
           {/* ================= FOOD ================= */}
 
-          <div className={`${isLowPerf ? 'bg-[#0f0f14]' : 'bg-black/70 backdrop-blur-md'} border border-st-red/30 rounded-3xl p-8 md:p-14 shadow-xl`}>
+          <div className="bg-black/70 backdrop-blur-md border border-st-red/30 rounded-3xl p-8 md:p-14 shadow-xl">
+
 
             <div className="flex items-center gap-4 mb-10 border-b border-st-red/20 pb-6">
 
@@ -158,7 +159,8 @@ const FoodAccommodation = () => {
 
               {/* VEG */}
 
-              <div className={`${isLowPerf ? 'bg-[#0f0f14]' : 'bg-black/60 backdrop-blur-md'} border border-green-600/30 rounded-2xl p-5 sm:p-7 md:p-9 hover:border-green-500 hover:shadow-[0_0_25px_rgba(34,197,94,0.25)] transition-all group`}>
+              <div className="bg-black/60 backdrop-blur-md border border-green-600/30 rounded-2xl p-5 sm:p-7 md:p-9 hover:border-green-500 hover:shadow-[0_0_25px_rgba(34,197,94,0.25)] transition-all group">
+
 
                 <div className="flex flex-col sm:flex-row justify-between sm:items-center items-start gap-4 mb-8 border-b border-green-600/20 pb-4">
                   <h3 className="text-xl sm:text-2xl font-black text-green-500 uppercase tracking-widest">
@@ -199,7 +201,8 @@ const FoodAccommodation = () => {
 
               {/* NON VEG */}
 
-              <div className={`${isLowPerf ? 'bg-[#0f0f14]' : 'bg-black/60 backdrop-blur-md'} border border-red-600/30 rounded-2xl p-5 sm:p-7 md:p-9 hover:border-red-500 hover:shadow-[0_0_25px_rgba(255,0,60,0.25)] transition-all group`}>
+              <div className="bg-black/60 backdrop-blur-md border border-red-600/30 rounded-2xl p-5 sm:p-7 md:p-9 hover:border-red-500 hover:shadow-[0_0_25px_rgba(255,0,60,0.25)] transition-all group">
+
 
                 <div className="flex flex-col sm:flex-row justify-between sm:items-center items-start gap-4 mb-8 border-b border-red-600/20 pb-4">
                   <h3 className="text-xl sm:text-2xl font-black text-red-500 uppercase tracking-widest">
@@ -217,21 +220,21 @@ const FoodAccommodation = () => {
                     <h4 className="text-xs text-white/50 uppercase tracking-widest mb-2">
                       Day 1
                     </h4>
-                    <p>Chicken Masaledar Biryani, Raita, Salan</p>
+                    <p>Chicken Masaledar Biryani, Raita, salna</p>
                   </div>
 
                   <div>
                     <h4 className="text-xs text-white/50 uppercase tracking-widest mb-2">
                       Day 2
                     </h4>
-                    <p>Chicken Achari Biryani, Raita, Salan</p>
+                    <p>Chicken Achari Biryani, Raita, salna</p>
                   </div>
 
                   <div>
                     <h4 className="text-xs text-white/50 uppercase tracking-widest mb-2">
                       Day 3
                     </h4>
-                    <p>Chicken IPL Biryani, Raita, Salan</p>
+                    <p>Chicken IPL Biryani, Raita, salna</p>
                   </div>
 
                 </div>
@@ -255,15 +258,14 @@ const FoodAccommodation = () => {
                     className="text-white hover:text-st-red transition"
                   >
 
-                    Adarsh S: 8590765094
+                    ADARSH S : 8590765094
 
                   </a>
 
                   <a
                     href="tel:8903088587"
                     className="text-white hover:text-st-red transition"
-                  >Pratyush S
-                    Pratyush S : 8903088587
+                  >PRATYUSH S : 8903088587
                   </a>
 
                 </div>
@@ -285,7 +287,8 @@ const FoodAccommodation = () => {
 
           {/* ================= ACCOMMODATION ================= */}
 
-          <div className={`${isLowPerf ? 'bg-[#0f0f14]' : 'bg-black/70 backdrop-blur-md'} border border-st-red/30 rounded-3xl p-8 md:p-14 shadow-xl`}>
+          <div className="bg-black/70 backdrop-blur-md border border-st-red/30 rounded-3xl p-8 md:p-14 shadow-xl">
+
 
             <div className="flex items-center gap-4 mb-10 border-b border-st-red/20 pb-6">
 
@@ -337,7 +340,7 @@ const FoodAccommodation = () => {
                     href="tel:9489544801"
                     className="text-white hover:text-st-red transition"
                   >
-                    Aravindh B : 94895 44801
+                    ARAVINDH B : 94895 44801
                   </a>
 
                 </div>
