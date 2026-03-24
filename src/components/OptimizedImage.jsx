@@ -1,21 +1,22 @@
 import React, { useState } from 'react';
 
 
-const OptimizedImage = ({ 
-  src, 
-  alt, 
-  className = "", 
-  priority = false, 
-  width, 
+const OptimizedImage = ({
+  src,
+  alt,
+  className = "",
+  priority = false,
+  width,
   height,
-  ...props 
+  sizes,
+  ...props
 }) => {
 
   const [error, setError] = useState(false);
 
-  // For low-performance, we ensure strictly lazy loading and no fancy decoding
   const loadingStrategy = priority ? "eager" : "lazy";
-  const decodingStrategy = priority ? "sync" : "async";
+  const decodingStrategy = "async";
+  const fetchPriority = priority ? "high" : "auto";
 
 
 
@@ -41,6 +42,8 @@ const OptimizedImage = ({
         height={height}
         loading={loadingStrategy}
         decoding={decodingStrategy}
+        fetchpriority={fetchPriority}
+        sizes={sizes}
         onError={() => setError(true)}
         {...props}
       />

@@ -37,9 +37,29 @@ const ScrollToTop = () => {
 };
 
 function App() {
+  const [isAndroid, setIsAndroid] = useState(false);
   const [showIntro, setShowIntro] = useState(() => {
     return !sessionStorage.getItem('introSeen');
   });
+
+  useEffect(() => {
+    const ua = navigator.userAgent || '';
+    setIsAndroid(/Android/i.test(ua));
+  }, []);
+
+  useEffect(() => {
+    const criticalImages = [
+      '/asset/logo/home_page.png',
+      '/asset/mainbg/starnger_thingsbg.jpeg',
+      '/asset/logo/wissennobg.png'
+    ];
+
+    criticalImages.forEach((src) => {
+      const image = new Image();
+      image.decoding = 'async';
+      image.src = src;
+    });
+  }, []);
 
   const handleIntroComplete = () => {
     sessionStorage.setItem('introSeen', 'true');
@@ -50,7 +70,7 @@ function App() {
 
       <Router>
         <Analytics />
-        <SplashCursor />
+        {!isAndroid && <SplashCursor />}
         <ScrollToTop />
         {showIntro ? (
           <IntroAnimation onComplete={handleIntroComplete} />

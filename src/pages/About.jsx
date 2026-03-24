@@ -194,7 +194,7 @@ const About = () => {
               {/* Image Frame */}
               <div className="relative aspect-square overflow-hidden rounded-[2rem] border-[1px] border-st-red/40 shadow-[0_20px_50px_rgba(0,0,0,0.5)] transform-gpu transition-all duration-700 hover:rotate-2 hover:scale-[1.02] hover:shadow-[0_30px_60px_rgba(255,0,60,0.25)] bg-[#1A0F0A]">
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1A0F0A] via-transparent to-transparent z-10 opacity-80" />
-                <img
+                <OptimizedImage
                   src={esicBuildingImg}
                   alt="ESIC Building"
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
@@ -427,12 +427,10 @@ const About = () => {
                     {/* Glowing border effect */}
                     <div className="absolute inset-0 border border-st-red/20 rounded-2xl z-20 transition-all duration-500 group-hover:border-st-red/80" />
                     {/* image */}
-                    <img
+                    <OptimizedImage
                       src={place.img}
                       alt={place.name}
                       className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                      loading="lazy"
-                      decoding="async"
                     />
 
                     {/* Subtle vignette / overlay */}
@@ -492,7 +490,7 @@ const About = () => {
                 >
                   <div className={`absolute inset-0 bg-[#050505]/20 group-hover:bg-transparent transition-colors duration-500 z-10`} />
 
-                  <img
+                  <OptimizedImage
                     src={img.src}
                     alt={img.alt}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"

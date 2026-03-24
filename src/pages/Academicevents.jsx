@@ -40,7 +40,7 @@ const academicEvents = [
                     "Must submit the attestation form, duly signed by the Head of the Department in the given format. Link: https://docs.google.com/document/d/1SrowN33hnHr7rgT5Ir58jyFfRbuNs165QHI3qv1XoB4/edit?tab=t.0",
                     "Abstract file must be named: Pathology Poster_Title in WORD (.docx) format (max 10MB).",
                     "Plagiarism or malpractice of any form is strictly prohibited and will lead to direct disqualification.",
-                    "Last date for submission: 23.03.2026"
+                    "Last date for submission: 01.04.26 (Wednesday)"
                 ]
             },
             {
@@ -156,7 +156,7 @@ const academicEvents = [
                     "Ensure that the cases are original and treated at your institution.",
                     "Must submit the attestation form, duly signed by the Head of the Department in the given format. Link: https://docs.google.com/document/d/1SrowN33hnHr7rgT5Ir58jyFfRbuNs165QHI3qv1XoB4/edit?tab=t.0",
                     "Abstract file must be named: Subject_Title in WORD (.docx).",
-                    "Last date for submission: 23-03-2026 (Monday)"
+                    "Last date for submission: 01.04.26 (Wednesday)"
                 ]
             },
             {
@@ -216,7 +216,7 @@ const academicEvents = [
                     "Do not include personal details in the abstract.",
                     "Abstract must be named: Symposium_GS_Title (for General Surgery) and Symposium_GM_Title (for General Medicine).",
                     "Abstract must be submitted in WORD (.docx) form, file must not be more than 10MB.",
-                    "Last date for submission: 23-03-2026 (Monday)"
+                    "Last date for submission: 01.04.26 (Wednesday)"
                 ]
             },
             {
@@ -268,7 +268,7 @@ const academicEvents = [
                     "Abstract file must be named: Protocol_Title.",
                     "Abstract must be submitted in WORD (.docx) form, file must not be more than 10MB.",
                     "Please refrain from adding images.",
-                    "Last Date for submission: 23-04-2026"
+                    "Last Date for submission: 01.04.26 (Wednesday)"
                 ]
             },
             {
@@ -321,7 +321,7 @@ const academicEvents = [
                     "It is mandatory to attach the IEC approval along with the attestation form at the time of submission.",
                     "Abstract file must be named: Research Poster_Title.",
                     "Abstract must be submitted in WORD (.docx) form, file must not be more than 10MB.",
-                    "Last Date for submission: 23-04-2026"
+                    "Last Date for submission: 01.04.26 (Wednesday)"
                 ]
             },
             {

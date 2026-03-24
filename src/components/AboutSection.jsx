@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import OptimizedImage from './OptimizedImage';
 
 const AboutSection = () => {
   return (
@@ -44,12 +45,10 @@ const AboutSection = () => {
           className="flex justify-center mt-8 md:mt-0 relative"
         >
           <div className="absolute inset-0 bg-st-red/5 blur-[80px] rounded-full"></div>
-          <img
+          <OptimizedImage
             src="/asset/logo/wissennobg.png"
             alt="Wissendurst Logo"
             className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 object-contain drop-shadow-[0_0_20px_rgba(255,0,60,0.2)] animate-float hover:drop-shadow-[0_0_30px_rgba(255,0,60,0.6)] relative z-10 transition-all duration-500"
-            loading="lazy"
-            decoding="async"
           />
         </motion.div>
       </div>

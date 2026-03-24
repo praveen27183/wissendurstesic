@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { navDropdownData } from "../data/navData";
+import OptimizedImage from "./OptimizedImage";
 
 
 const Navbar = () => {
@@ -90,12 +91,11 @@ const Navbar = () => {
               <div className="relative">
                 <div className="absolute inset-0 bg-st-red blur-md opacity-0 group-hover:opacity-40 transition-opacity duration-700 rounded-full"></div>
 
-                <img
+                <OptimizedImage
                   src="/asset/logo/home_page.png"
                   alt=" homepage Logo"
                   className="h-10 md:h-12 lg:h-14 w-auto object-contain drop-shadow-[0_0_8px_rgba(255,255,255,0.4)] relative z-10 transition-transform duration-500 group-hover:scale-105 group-hover:drop-shadow-[0_0_12px_rgba(229,9,20,0.6)]"
-                  fetchpriority="high"
-                  loading="eager"
+                  priority
                 />
               </div>
 

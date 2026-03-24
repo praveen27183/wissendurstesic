@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import OptimizedImage from "./OptimizedImage";
 const IntroAnimation = ({ onComplete }) => {
     const [stage, setStage] = useState(0);
 
@@ -32,11 +33,11 @@ const IntroAnimation = ({ onComplete }) => {
             onClick={() => onComplete()}
         >
             {/* Background Image - Netflix Style Dark Theme */}
-            <img
+            <OptimizedImage
                 src="/asset/mainbg/starnger_thingsbg.jpeg"
                 alt=""
                 className={`absolute inset-0 w-full h-full object-cover transition-all duration-[6000ms] ease-out ${stage >= 3 ? 'opacity-30 scale-105 blur-sm' : 'opacity-20 scale-100 blur-none'}`}
-                decoding="async"
+                priority
             />
 
             {/* Background Red Glow/Fog under the explosion */}
@@ -102,35 +103,39 @@ const IntroAnimation = ({ onComplete }) => {
                 ></div>
 
                 {/* Top-Left Piece */}
-                <img
+                <OptimizedImage
                     src="/asset/logo/wissennobg.png"
                     alt="dice-tl"
                     className={`w-48 md:w-72 absolute transition-all ${stage >= 3 ? '-translate-x-[40vw] md:-translate-x-[25vw] -translate-y-[30vh] md:-translate-y-[20vh] -rotate-[35deg] scale-125 opacity-0 duration-[5000ms] ease-out' : 'duration-0'}`}
                     style={{ clipPath: crackPathTL }}
+                    priority
                 />
 
                 {/* Top-Right Piece */}
-                <img
+                <OptimizedImage
                     src="/asset/logo/wissennobg.png"
                     alt="dice-tr"
                     className={`w-48 md:w-72 absolute transition-all ${stage >= 3 ? 'translate-x-[40vw] md:translate-x-[25vw] -translate-y-[30vh] md:-translate-y-[20vh] rotate-[35deg] scale-125 opacity-0 duration-[5000ms] ease-out' : 'duration-0'}`}
                     style={{ clipPath: crackPathTR }}
+                    priority
                 />
 
                 {/* Bottom-Left Piece */}
-                <img
+                <OptimizedImage
                     src="/asset/logo/wissennobg.png"
                     alt="dice-bl"
                     className={`w-48 md:w-72 absolute transition-all ${stage >= 3 ? '-translate-x-[40vw] md:-translate-x-[25vw] translate-y-[30vh] md:translate-y-[20vh] -rotate-[35deg] scale-125 opacity-0 duration-[5000ms] ease-out' : 'duration-0'}`}
                     style={{ clipPath: crackPathBL }}
+                    priority
                 />
 
                 {/* Bottom-Right Piece */}
-                <img
+                <OptimizedImage
                     src="/asset/logo/wissennobg.png"
                     alt="dice-br"
                     className={`w-48 md:w-72 relative transition-all ${stage >= 3 ? 'translate-x-[40vw] md:translate-x-[25vw] translate-y-[30vh] md:translate-y-[20vh] rotate-[35deg] scale-125 opacity-0 duration-[5000ms] ease-out' : 'duration-0'}`}
                     style={{ clipPath: crackPathBR }}
+                    priority
                 />
             </div>
 
