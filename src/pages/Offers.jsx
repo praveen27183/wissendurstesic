@@ -239,12 +239,31 @@ const Offers = () => {
               className="relative text-center w-full max-w-7xl mx-auto flex flex-col items-center justify-center px-6"
               style={{ fontFamily: "'Cinzel', serif" }}
             >
-              <h1 className="text-[1.75rem] sm:text-7xl md:text-8xl lg:text-9xl font-bold leading-[1.05] tracking-tight sm:tracking-wider uppercase flex flex-col space-y-4">
-                <span className="text-outline">BIG PLANS</span>
-                <span className="text-fill-anim" style={{ animationDelay: "0.2s" }}>JUST GOT BETTER</span>
-                <span className="text-outline">SOMETHING EXCITING</span>
-                <span className="text-fill-anim" style={{ animationDelay: "0.4s" }}>IS WAITING FOR YOU</span>
-              </h1>
+              <h1 className="flex flex-col items-center text-center font-bold uppercase leading-tight tracking-tight space-y-2 sm:space-y-4">
+
+  <span className="text-outline 
+    text-[1.8rem] xs:text-[1.8rem] sm:text-5xl md:text-6xl lg:text-8xl">
+    BIG PLANS
+  </span>
+
+  <span className="text-fill-anim 
+    text-[1.8rem] xs:text-[1.8rem] sm:text-5xl md:text-6xl lg:text-8xl"
+    style={{ animationDelay: "0.2s" }}>
+    JUST GOT BETTER
+  </span>
+
+  <span className="text-outline 
+    text-[1.8rem] xs:text-[1.8rem] sm:text-4xl md:text-5xl lg:text-7xl">
+    SOMETHING EXCITING
+  </span>
+
+  <span className="text-fill-anim 
+    text-[1.8rem] xs:text-[1.8rem] sm:text-4xl md:text-5xl lg:text-7xl"
+    style={{ animationDelay: "0.4s" }}>
+    IS WAITING FOR YOU
+  </span>
+
+</h1>
 
               <motion.div
                 initial={{ opacity: 0 }}
@@ -252,7 +271,7 @@ const Offers = () => {
                 transition={{ delay: 1, duration: 1 }}
                 className="mt-12 w-full"
               >
-                <p className="text-white/60 text-base sm:text-3xl tracking-[0.4em] font-sans uppercase animate-pulse px-4 font-black">
+                <p className="text-white/60 text-base sm:text-2xl tracking-[0.2em] font-sans uppercase animate-pulse px-4 font-black">
                   Click anywhere to continue ———→
                 </p>
               </motion.div>
@@ -263,6 +282,7 @@ const Offers = () => {
 
       <div className={`${showIntro ? 'hidden' : 'block'}`}>
         <HeroSection
+          
           title="OFFERS"
           subtitle="SPECIAL DISCOUNTS FOR WORKSHOP"
           description="Grab exclusive combo and group offers now!"

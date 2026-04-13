@@ -3,7 +3,7 @@ import GradientText from './GradientText';
 import OptimizedImage from './OptimizedImage';
 
 
-const HeroSection = ({ title, subtitle, description, image }) => {
+const HeroSection = ({ title , subtitle, description, image }) => {
 
   
   return (
@@ -23,7 +23,7 @@ const HeroSection = ({ title, subtitle, description, image }) => {
   <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
 
     {/* Subtitle */}
-    <span className="block text-1xl sm:text-1xl md:text-1xl font-milanesa font-black text-white tracking-[0.1em] uppercase mb-4">
+    <span className="block text-lg sm:text-xl md:text-2xl font-milanesa font-black text-white tracking-[0.1em] uppercase mb-4">
       {subtitle}
     </span>
 
@@ -31,7 +31,7 @@ const HeroSection = ({ title, subtitle, description, image }) => {
     <GradientText
       colors={['#ffffff', '#ff003c', '#ffffff']}
       animationSpeed={6}
-      className="text-4xl sm:text-6xl md:text-7xl font-milanesa font-black tracking-[0.1em] uppercase mb-4 drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)]"
+      className="text-5xl sm:text-7xl md:text-8xl font-milanesa font-black tracking-[0.1em] uppercase mb-4 drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)]"
     >
       {title}
     </GradientText>
