@@ -16,6 +16,7 @@ const Debateandoratory = lazy(() => import('./pages/Debateandoratory.jsx'));
 const Workshops = lazy(() => import('./pages/Workshops'));
 const Registration = lazy(() => import('./pages/Registration'));
 const FoodAccommodation = lazy(() => import('./pages/FoodAccommodation'));
+const Offers = lazy(() => import('./pages/Offers'));
 const About = lazy(() => import('./pages/About'));
 const Contactus = lazy(() => import('./pages/Contactus'));
 const Quizzes = lazy(() => import('./pages/Quizzes'));
@@ -86,6 +87,7 @@ function App() {
                   <Route path="/workshops" element={<Workshops />} />
                   <Route path="/registration" element={<Registration />} />
                   <Route path="/foodaccommodation" element={<FoodAccommodation />} />
+                  <Route path="/offers" element={<Offers />} />
                   <Route path="/aboutus" element={<About />} />
                   <Route path="/contact" element={<Contactus />} />
                   <Route path="/quizzes" element={<Quizzes />} />

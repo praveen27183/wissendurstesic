@@ -122,8 +122,9 @@ const Navbar = () => {
                 { to: '/academicevents', label: 'Academic Events', dropdownKey: 'academicEvents' },
                 { to: '/debateandoratory', label: 'Debate Forum', dropdownKey: 'debateForum' },
                 { to: '/foodaccommodation', label: 'Food & Accomm.' },
+                { to: '/offers', label: 'Offers' },
                 { to: '/aboutus', label: 'About Us' },
-                { to: '/contact', label: 'Contact Us' },
+                { to: '/contact', label: 'Contact Us' }
               ].map(link => (
                 <div 
                   key={link.to} 
@@ -232,8 +233,9 @@ const Navbar = () => {
   { num: 'V', label: 'ACADEMIC EVENTS', to: '/academicevents' },
   { num: 'VI', label: 'DEBATE FORUM', to: '/debateandoratory' },
   { num: 'VII', label: 'FOOD & ACCOMMODATION', to: '/foodaccommodation' },
-  { num: 'VIII', label: 'ABOUT US', to: '/aboutus' },
-  { num: 'IX', label: 'CONTACT US', to: '/contact' }
+  { num: 'VIII', label: 'OFFERS', to: '/offers' },
+  { num: 'IX', label: 'ABOUT US', to: '/aboutus' },
+  { num: 'X', label: 'CONTACT US', to: '/contact' }
 ].map((item, index) => (
                   <motion.div key={item.to} variants={mainLinkVariants} className={`w-full flex ${index % 2 === 0 ? 'ml-0 sm:ml-12' : 'ml-4 sm:ml-24'}`}>
                     <Link to={item.to} onClick={() => { setIsOpen(false); window.scrollTo({ top: 0, behavior: 'instant' }); }} className="flex items-start sm:items-center group w-fit relative">
