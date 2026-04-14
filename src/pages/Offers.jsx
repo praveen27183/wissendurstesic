@@ -194,8 +194,8 @@ const Offers = () => {
     {
       title: "General Medicine",
       items: [
-        { text: "Group of 3: ₹2700 (₹800/head)", originalPrice: "₹3000" }, 
-        { text: "Group of 4: ₹3200 (₹900/head)", originalPrice: "₹4000" }
+        { text: "Group of 3: ₹2700 (₹900/head)", originalPrice: "₹3000" }, 
+        { text: "Group of 4: ₹3200 (₹800/head)", originalPrice: "₹4000" }
       ],
       link: GROUP_REGISTER_LINK
     }
@@ -353,7 +353,6 @@ const Offers = () => {
               "Special offers are available for groups of 3 and 4 participants.",
               "One group member must contact AHMED SHAMEER (9633669164) before starting.",
               "A single bulk payment should be made for the entire group after confirmation.",
-              "Each member must still register individually using their own form.",
               "The same payment screenshot must be uploaded by every member of the group.",
               "Incorrect or incomplete group registrations will not be considered for the offer."
             ]}

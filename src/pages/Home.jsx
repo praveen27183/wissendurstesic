@@ -96,7 +96,8 @@ const Home = () => {
               </motion.div>
             </Link>
             <a
-              href="https://drive.google.com/file/d/1RPLAc9NQObbfb3Cz_5VuYbagoFcm2ERD/view?usp=drivesdk"
+              // href="https://drive.google.com/file/d/1RPLAc9NQObbfb3Cz_5VuYbagoFcm2ERD/view?usp=drivesdk"
+              href="https://drive.google.com/file/d/1ia-s0sfwBU5Wx74BN-WPXt2NE1S5jEoz/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="col-span-2 sm:col-span-1 w-full sm:w-auto"
